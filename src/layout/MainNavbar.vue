@@ -8,7 +8,7 @@
   >
     <template>
       <router-link v-popover:popover1 class="navbar-brand" to="/">
-        Now Ui Kit
+        TeaZeap
       </router-link>
       <el-popover
         ref="popover1"
@@ -23,19 +23,9 @@
       </el-popover>
     </template>
     <template slot="navbar-menu">
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          href="https://www.creative-tim.com/product/vue-now-ui-kit"
-          target="_blank"
-        >
-          <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-          <p>Download</p>
-        </a>
-      </li>
       <drop-down
         tag="li"
-        title="Components"
+        title="How it Works"
         icon="now-ui-icons design_app"
         class="nav-item"
       >
@@ -51,10 +41,10 @@
         </a>
       </drop-down>
       <drop-down
-              tag="li"
-              title="Examples"
-              icon="now-ui-icons design_image"
-              class="nav-item"
+          tag="li"
+          title="Our Services"
+          icon="now-ui-icons design_image"
+          class="nav-item"
       >
         <nav-link to="/landing">
           <i class="now-ui-icons education_paper"></i> Landing
@@ -68,13 +58,22 @@
       </drop-down>
       <li class="nav-item">
         <a
-          class="nav-link btn btn-neutral"
+          class="nav-link "
           href="https://www.creative-tim.com/product/vue-now-ui-kit-pro"
           target="_blank"
         >
           <i class="now-ui-icons arrows-1_share-66"></i>
-          <p>Upgrade to PRO</p>
+          <p>About Us</p>
         </a>
+      </li>
+      <li class="nav-item">
+        <nav-link
+          class="nav-link btn btn-neutral"
+          to="/login"
+        >
+          <i class="now-ui-icons arrows-1_share-66"></i>
+          <p>Apply Now</p>
+        </nav-link>
       </li>
 
       <li class="nav-item">

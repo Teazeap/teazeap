@@ -4,6 +4,7 @@ import Index from './pages/Index.vue';
 import Landing from './pages/Landing.vue';
 import Login from './pages/Login.vue';
 import Profile from './pages/Profile.vue';
+import Jobs from './pages/Jobs.vue';
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
 
@@ -13,7 +14,7 @@ export default new Router({
   linkExactActiveClass: 'active',
   routes: [
     {
-      path: '/',
+      path: '/index',
       name: 'index',
       components: { default: Index, header: MainNavbar, footer: MainFooter },
       props: {
@@ -22,7 +23,7 @@ export default new Router({
       }
     },
     {
-      path: '/landing',
+      path: '/',
       name: 'landing',
       components: { default: Landing, header: MainNavbar, footer: MainFooter },
       props: {
@@ -34,6 +35,14 @@ export default new Router({
       path: '/login',
       name: 'login',
       components: { default: Login, header: MainNavbar },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: '/jobs',
+      name: 'Jobs',
+      components: { default: Jobs, header: MainNavbar, footer: MainFooter  },
       props: {
         header: { colorOnScroll: 400 }
       }

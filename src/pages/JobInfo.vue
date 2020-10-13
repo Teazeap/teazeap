@@ -7,7 +7,7 @@
       >
       </parallax>
       <div class="container">
-        <h1 class="title">Teazeap's Record</h1>
+        <h1 class="title">Teazeap's Record Infobdbdbdb</h1>
         <p class="category">Join our ever expanding clientele</p>
         <div class="content">
           <div class="social-description">
@@ -47,7 +47,7 @@
           </a>
         </div>
         <div class="row">
-          <JobCard  v-for="n in 6" :key="n"/>
+          Details for a single job
         </div>
       </div>
     </div>
@@ -55,13 +55,11 @@
 </template>
 <script>
 import { Tabs, TabPane } from '@/components';
-import JobCard from '@/pages/JobCard'
 
 export default {
-  name: 'jobs',
+  name: 'JobInfo',
   bodyClass: 'profile-page',
   components: {
-    JobCard
   }
 };
 </script>

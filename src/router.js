@@ -5,6 +5,7 @@ import Landing from './pages/Landing.vue';
 import Login from './pages/Login.vue';
 import Profile from './pages/Profile.vue';
 import Jobs from './pages/Jobs.vue';
+import JobInfo from './pages/JobInfo.vue';
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
 
@@ -41,11 +42,26 @@ export default new Router({
     },
     {
       path: '/jobs',
-      name: 'Jobs',
+      name: 'JobsMain',
       components: { default: Jobs, header: MainNavbar, footer: MainFooter  },
       props: {
         header: { colorOnScroll: 400 }
       }
+    },
+    {
+      path: '/jobs/:id',
+      name: 'Jobs',
+      components: { default: JobInfo, header: MainNavbar, footer: MainFooter  },
+      props: {
+        header: { colorOnScroll: 400 }
+      },
+      children: [
+        {
+          path: 'info',
+          name: 'JobInfo',
+          components: { default: JobInfo, header: MainNavbar, footer: MainFooter  }
+        }
+      ]
     },
     {
       path: '/profile',

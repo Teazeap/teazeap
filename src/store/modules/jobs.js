@@ -17,7 +17,6 @@ const actions = {
       let formattedJob = {...job.fields,...job.sys,imageUrl}
       return formattedJob
     })
-    console.log(formattedJobs);
     commit('setJobs', formattedJobs)
   }
 };

@@ -148,7 +148,6 @@ export default {
   },
   async created() {
     await this.fetchJobs()
-    console.log(this.job);
   }
 };
 </script>

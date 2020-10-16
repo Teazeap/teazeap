@@ -1,22 +1,30 @@
 <template>
-  <div class="col-md-6 col-lg-4">
-    <div class="card" style="width: 20rem;">
-      <img class="card-img-top" src="img/avatar.jpg" alt="Card image cap">
+    <div class="card col-12 col-md-6 col-lg-4 col-xl-2 ">
+      <img class="card-img-top" :src="job.imageUrl[0]" alt="Card image cap">
       <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <router-link :to="{name: 'JobInfo', params: {id:3}}" tag="button" class="btn btn-primary">View Job</router-link>
-        <!-- <router-link :to="{name: 'JobInfo', params: {id:3}}" tag="button" class="btn btn-primary">add share button</router-link> -->
+        <h4 class="card-title">{{ job.school }}</h4>
+        <h6>
+        <i class="now-ui-icons location_pin"></i> {{ job.city }}
+        </h6>
+      </div>
+      <div class="card-footer mt-7">
+        <router-link :to="{name: 'JobInfo', params: {id:job.id}}" tag="button" class="btn btn-primary stretched-link">View Job</router-link>
       </div>
     </div>
-  </div>
-</template>
+</template>    
 
 <script>
 export default {
   name: 'job-card',
   bodyClass: 'profile-page',
   components: {
+  },
+  props: {
+    job: {
+      type: Object,
+      required: true,
+      default: () => {}
+    }
   }
 }
 </script>

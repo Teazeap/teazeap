@@ -59,7 +59,10 @@ export default new Router({
         {
           path: 'info',
           name: 'JobInfo',
-          components: { default: JobInfo, header: MainNavbar, footer: MainFooter  }
+          components: { default: JobInfo, header: MainNavbar, footer: MainFooter  },
+          props: {
+            header: { colorOnScroll: 400 }
+          }
         }
       ]
     },

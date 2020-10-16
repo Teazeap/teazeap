@@ -1,32 +1,34 @@
 <template>
   <div>
-    <div class="page-header clear-filter" filter-color="orange">
-      <parallax
-        class="page-header-image"
-        style="background-image:url('img/bg5.jpg')"
-      >
-      </parallax>
-      <div class="container">
-        <h1 class="title">Teazeap's Record</h1>
-        <p class="category">Join our ever expanding clientele</p>
-        <div class="content">
-          <div class="social-description">
-            <h2>26</h2>
-            <p>Current Jobs</p>
-          </div>
-          <div class="social-description">
-            <h2>26</h2>
-            <p>Clients</p>
-          </div>
-          <div class="social-description">
-            <h2>48</h2>
-            <p>Schools</p>
+     <div class="page-header page-header-medium">
+        <parallax
+          class="page-header-image"
+          style="background-image: url('img/bg5.jpg')"
+        >
+        </parallax>
+        <div class="row mt-lg-5">
+          <div class="container">
+            <h1 class="title">TeaZeaP Recruiting Agency</h1>
+            <p class="category">Join our ever expanding clientele</p>
+              <div class="content">
+                <div class="social-description">
+                  <h2>{{allJobs.length}}</h2>
+                  <p>Current Jobs</p>
+                </div>
+                <div class="social-description">
+                  <h2>26</h2>
+                  <p>Clients</p>
+                </div>
+                <div class="social-description">
+                  <h2>48</h2>
+                  <p>Schools</p>
+                </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     <div class="section">
-      <div class="container text-center">
+      <div class="container-fluid text-center">
         <div class="button-container">
           <a href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
           <a
@@ -46,23 +48,58 @@
             <i class="fab fa-instagram"></i>
           </a>
         </div>
-        <div class="row">
-          <JobCard  v-for="n in 6" :key="n"/>
+        <div class="card-deck row-fluid no-gutters">
+          <JobCard  v-for="job in allJobs" :key="job.id" :job="job"/>
         </div>
       </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-end">
+          <div class="col align-self-end">
+            <Pagination
+              type="primary"
+              :page-count="10"
+              v-model="pagination.simple"
+            />
+          </div>
+        </div>
     </div>
   </div>
 </template>
 <script>
-import { Tabs, TabPane } from '@/components';
+import { Pagination } from '@/components';
 import JobCard from '@/pages/JobCard'
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: 'jobs',
-  bodyClass: 'profile-page',
+  bodyClass: 'landing-page',
   components: {
-    JobCard
+    JobCard,
+    Pagination,
+  },
+  computed: {
+    ...mapGetters(['allJobs']),
+  },
+  methods: {
+    ...mapActions(['fetchJobs'])
+  },
+  created() {
+    this.fetchJobs()
+  },
+   data() {
+    return {
+      pagination: {
+        simple: 1,
+        default: 2,
+        full: 3
+      }
+    };
   }
 };
 </script>
-<style></style>
+<style>
+.tab-content.tab-content-padding {
+  padding: 20px;
+}
+</style>

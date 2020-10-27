@@ -28,7 +28,7 @@
         </div>
       </div>
     <div class="section">
-      <div class="container-fluid text-center">
+      <div class="container text-center">
         <div class="button-container">
           <a href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
           <a
@@ -48,17 +48,20 @@
             <i class="fab fa-instagram"></i>
           </a>
         </div>
-        <div class="card-deck row-fluid no-gutters">
-          <JobCard  v-for="job in allJobs" :key="job.id" :job="job"/>
+        <div class="row">
+          <JobCard  v-for="job in allJobs.slice(start,end)" :key="job.id" :job="job"/>
         </div>
       </div>
     </div>
     <div class="container">
         <div class="row justify-content-end">
-          <div class="col align-self-end">
+          <div class="col align-self-end offset-xl-9 offset-md-9 offset-sm-9">
             <Pagination
               type="primary"
-              :page-count="10"
+              :total="pagination.total"
+              :page-count="pagination.pageCount"
+              :per-page="pagination.perPage"
+              @input="changePage"
               v-model="pagination.simple"
             />
           </div>
@@ -79,10 +82,12 @@ export default {
     Pagination,
   },
   computed: {
-    ...mapGetters(['allJobs']),
+    ...mapGetters(['allJobs'])
   },
-  methods: {
-    ...mapActions(['fetchJobs'])
+  watch: {
+    allJobs () {
+      this.handlePagination()
+    }
   },
   created() {
     this.fetchJobs()
@@ -92,10 +97,27 @@ export default {
       pagination: {
         simple: 1,
         default: 2,
-        full: 3
-      }
+        full: 3,
+        pageCount: 1,
+        total: 0,
+        perPage: 6
+      },
+      jobs: [],
+      start: 6,
+      end: 12
     };
-  }
+  },
+  methods: {
+    ...mapActions(['fetchJobs']),
+    handlePagination () {
+      this.pagination.total = this.allJobs.length 
+      this.pagination.pageCount = Math.ceil(this.allJobs.length / 6)
+    },
+    changePage (value) {
+      this.start = (this.pagination.perPage * value) - this.pagination.perPage
+      this.end = this.pagination.perPage * value
+    }
+  },
 };
 </script>
 <style>

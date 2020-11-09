@@ -116,11 +116,7 @@ export default {
     NavLink,
     [Popover.name]: Popover
   },
-  methods: {
-    handleClick () {
-      console.log('here');
-    }
-  }
+  methods: {}
 };
 </script>
 

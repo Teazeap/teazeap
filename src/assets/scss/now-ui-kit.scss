@@ -72,3 +72,27 @@
 .list-content{
   text-align: left !important;
 }
+
+.select-rounded {
+  border-radius: 15px !important;
+}
+input[type="file"]{
+  border-radius:15px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+}
+
+.upload-button {
+  max-width: 80px;
+  margin-right: 17px;
+  bottom: 16px;
+  right: 10px;
+}
+.btn-upload {
+  background-color: #f96332;
+  border-radius: 30px;
+  margin-right: 20px;
+}
+.nav-ul ul {
+  height: 80px !important;
+}

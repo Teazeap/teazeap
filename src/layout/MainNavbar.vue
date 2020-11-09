@@ -16,40 +16,33 @@
         tag="li"
         title="How it Works"
         icon="now-ui-icons design_app"
-        class="nav-item"
+        class="nav-item nav-ul"
       >
-        <nav-link to="/">
-          <i class="now-ui-icons business_chart-pie-36"></i> All components
+        <nav-link to="/process">
+          <i class="now-ui-icons files_single-copy-04"></i> Application Process
         </nav-link>
-        <a
-          href="https://demos.creative-tim.com/vue-now-ui-kit/documentation"
-          target="_blank"
-          class="dropdown-item"
-        >
-          <i class="now-ui-icons design_bullet-list-67"></i> Documentation
-        </a>
+       <nav-link to="/qualification">
+          <i class="now-ui-icons education_hat"></i> Qualification 
+        </nav-link>
       </drop-down>
       <drop-down
           tag="li"
           title="Our Services"
           icon="now-ui-icons design_image"
-          class="nav-item"
+          class="nav-item nav-ul"
       >
-        <nav-link to="/landing">
-          <i class="now-ui-icons education_paper"></i> Landing
+        <nav-link to="/our-services/teachers">
+          <i class="now-ui-icons education_paper"></i> Teachers
         </nav-link>
-        <nav-link to="/login">
-          <i class="now-ui-icons users_circle-08"></i> Login
-        </nav-link>
-        <nav-link to="/profile">
-          <i class="now-ui-icons users_single-02"></i> Profile
+        <nav-link to="/our-services/schools">
+          <i class="now-ui-icons education_hat"></i> Schools
         </nav-link>
       </drop-down>
       <li class="nav-item">
         <a
-          class="nav-link "
-          href="https://www.creative-tim.com/product/vue-now-ui-kit-pro"
-          target="_blank"
+          class="nav-link"
+          href="./"
+          target="_self"
         >
           <i class="now-ui-icons arrows-1_share-66"></i>
           <p>About Us</p>
@@ -122,6 +115,11 @@ export default {
     Navbar,
     NavLink,
     [Popover.name]: Popover
+  },
+  methods: {
+    handleClick () {
+      console.log('here');
+    }
   }
 };
 </script>

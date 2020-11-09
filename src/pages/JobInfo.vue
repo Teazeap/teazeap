@@ -48,74 +48,161 @@
       </div>
     </div>
     <div>
-        <div class="container-fluid">
-          <div class="row-fluid">
+        <div class="container-fluid ">
+          <div class="row-fluid card-deck no-gutters">
             <div class="col-md-12 col-lg-6 ml-auto col-xl-6 mr-auto">
-              <p class="category">Apply for this Job</p>
+              <p class="category">Apply</p>
               <!-- Nav tabs -->
-              <card>
-                <tabs
-                  slot="raw-content"
-                  data-background-color="orange"
-                  tab-content-classes="tab-content-padding text-center"
-                  class="nav-fill list-content"
-                >
-                  <tab-pane>
-                    <template slot="label">
-                      <i class="now-ui-icons objects_umbrella-13"></i> Personal Details
-                    </template>
-                    <p class="text-left">
-                      I think that’s a responsibility that I have, to push
-                      possibilities, to show people, this is the level that things
-                      could be at. So when you get something that has the name Kanye
-                      West on it, it’s supposed to be pushing the furthest
-                      possibilities. I will be the leader of a company that ends up
-                      being worth billions of dollars, because I got the answers. I
-                      understand culture. I am the nucleus.
-                    </p>
-                  </tab-pane>
-                  <tab-pane>
-                    <template slot="label">
-                      <i class="now-ui-icons shopping_cart-simple"></i> Upload CV
-                    </template>
-                    <p>
-                      I will be the leader of a company that ends up being worth
-                      billions of dollars, because I got the answers. I understand
-                      culture. I am the nucleus. I think that’s a responsibility
-                      that I have, to push possibilities, to show people, this is
-                      the level that things could be at. I think that’s a
-                      responsibility that I have, to push possibilities, to show
-                      people, this is the level that things could be at.
-                    </p>
-                  </tab-pane>
-                  <tab-pane>
-                    <template slot="label">
-                      <i class="now-ui-icons shopping_shop"></i> Upload Video (Optional)
-                    </template>
-                    <p>
-                      I think that’s a responsibility that I have, to push
-                      possibilities, to show people, this is the level that things
-                      could be at. So when you get something that has the name Kanye
-                      West on it, it’s supposed to be pushing the furthest
-                      possibilities. I will be the leader of a company that ends up
-                      being worth billions of dollars, because I got the answers. I
-                      understand culture. I am the nucleus.
-                    </p>
-                  </tab-pane>
-                  <tab-pane>
-                    <template slot="label">
-                      <i class="now-ui-icons ui-2_settings-90"></i> Settings
-                    </template>
-                    <p>
-                      "I will be the leader of a company that ends up being worth
-                      billions of dollars, because I got the answers. I understand
-                      culture. I am the nucleus. I think that’s a responsibility
-                      that I have, to push possibilities, to show people, this is
-                      the level that things could be at."
-                    </p>
-                  </tab-pane>
-                </tabs>
-              </card>
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label>Name</label>
+                    <fg-input 
+                      type="text"
+                      :class="`input-sm ${errors.has('name') ? 'has-danger' : ''}`"
+                      placeholder="name..."
+                      v-model="form.firstName"
+                      v-validate="'required'"
+                      name="name"
+                    >
+                    </fg-input>
+                    <span v-show="errors.has('name')" class="text-danger">{{ errors.first('name') }}</span>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>Surname</label>
+                    <fg-input 
+                      type="text"
+                      :class="`input-sm ${errors.has('name') ? 'has-danger' : ''}`"
+                      placeholder="surame..."
+                      v-model="form.lastName"
+                      v-validate="'required'"
+                      name="surname"
+                    >
+                    </fg-input>
+                    <span v-show="errors.has('surname')" class="text-danger">{{ errors.first('surname') }}</span>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>Email</label>
+                    <fg-input 
+                      type="email"
+                      :class="`input-sm ${errors.has('name') ? 'has-danger' : ''}`"
+                      class="input-sm"
+                      placeholder="Email..."
+                      v-model="form.email"
+                      v-validate="'required|email'"
+                      name="email"
+                    >
+                    </fg-input>
+                    <span v-show="errors.has('email')" class="text-danger">{{ errors.first('email') }}</span>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>Gender</label>
+                    <select id="inputState" class="custom-select select-rounded" v-model="form.gender">
+                      <option selected>Male</option>
+                      <option>Female</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>Nationality</label>
+                    <select id="inputState" class="custom-select select-rounded" v-model="form.country">
+                        <option v-for="(country,index) in countries" :key="index">{{ country }}</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>Date of Birth</label>
+                    <div class="datepicker-container">
+                      <fg-input
+                        :class="`${(pickers.datePicker === ''&& submitClicked) ? 'has-danger' : ''}`"
+                      >
+                        <el-date-picker
+                          type="date"
+                          popper-class="date-picker date-picker-primary"
+                          placeholder="Date Time Picker"
+                          v-model="pickers.datePicker"
+                          v-validate="'required'"
+                          name="D.O.B"
+                        >
+                        </el-date-picker>
+                      </fg-input>
+                      <span v-show="errors.has('D.O.B')" class="text-danger">{{ errors.first('D.O.B') }}</span>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-12" id="filesList">
+                    <label class="d-flex">Do you have a teaching license or sub teaching license issued by state government?
+                    </label>
+                    <div class="d-flex">
+                      <n-radio v-model="license.yes" label="1">Yes</n-radio>
+                      <n-radio v-model="license.yes" label="2">No</n-radio>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6" id="filesList">
+                    <label class="d-flex">Upload CV (Required)</label>
+                    <div class="d-flex">
+                        <div class="col-md-3 upload-button">
+                            <label class="btn btn-default btn-upload">
+                                Upload <input type="file" hidden @change="fileChangedHandler" :disabled="isUploading">
+                            </label>
+                        </div>
+                        <div class="col-md-5 col-lg-6 col-xl-6 ml-md-n12 mr-lg-12">
+                          <p class="text-danger" v-if="!isUploading && !uploaded">
+                            Please upload cv...
+                          </p>
+                          <img  v-if="isUploading" v-lazy="'img/Ellipsis-3s-128px.svg'" alt="Rounded Image" style="width:30px; height: 30px" />
+                          <p v-if="uploaded" class="text-success">{{selectedFile.name }}</p>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="form-group col-md-6" id="filesList">
+                    <label class="d-flex">Upload Video (Optional)</label>
+                    <div class="d-flex">
+                        <div class="col-md-3 upload-button">
+                            <label class="btn btn-default btn-upload disabled">
+                                Upload <input type="file" hidden @change="fileChangedHandler" disabled>
+                            </label>
+                        </div>
+                        <div class="col-md-5 col-lg-6 col-xl-6 ml-md-n12 mr-lg-12">
+                          <p class="text-danger" v-if="!isUploading && !uploaded">
+                            Upload video...
+                          </p>
+                          <img  v-if="false" v-lazy="'img/Ellipsis-3s-128px.svg'" alt="Rounded Image" style="width:30px; height: 30px" />
+                          <p v-if="false" class="text-success">{{selectedFile.name }}</p>
+                        </div>
+                      </div>
+                  </div>
+                  <!-- <div class="form-group col-md-6" id="filesList">
+                    <label class="d-flex">Upload Video (Optional)</label>
+                    <div class="d-flex">
+                      <div class="col-md-3 upload-upload">
+                           <n-button id="browseButton"  round @click="(e) => e.preventDefault()" :disabled="isUploading" class="btn btn-primary mt-n1 d-flex mr-1" >
+                              <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
+                            </n-button>
+                        </div>
+                        <div class="col-md-5 col-lg-6 col-xl-6 ml-md-n12 mr-lg-12">
+                          <p class="text-warning" v-if="!isVideoUploading">
+                            Upload a video...
+                          </p>
+                          <img  v-if="isVideoUploading" v-lazy="'img/Ellipsis-3s-128px.svg'" alt="Rounded Image" style="width:30px; height: 30px" />
+                          <p v-if="videoUploaded" class="text-success">{{selectedFile.name }}</p>
+                        </div>
+                      </div>
+                  </div> -->
+                  <div>
+                    <Uploader
+                      ref="FileUploads"
+                      browse_button="browseButton"
+                      drop_element="filesList"
+                      :url="'/preDestruct/'"
+                      :filters="{prevent_duplicates:false, mime_types: [{title: 'Pdf Files',extensions: 'pdf'}]}"
+                      chunk_size="10MB"
+                      :files-added="inputUploader"
+                    />
+                  </div>
+                </div>
+                <n-button type="submit" @click="hadleSubmit"  round class="btn btn-primary" :disabled="isUploading">
+                  Submit
+                </n-button>
+              </form>
             </div>
           </div>
         </div>
@@ -124,30 +211,132 @@
 </template>
 <script>
 import { mapGetters, mapActions } from "vuex";
-import { Card, Tabs, TabPane } from '@/components';
+import { Card, Tabs, TabPane, Button, FormGroupInput, Radio } from '@/components';
+import { DatePicker, Icon } from 'element-ui';
+import Uploader from '@/components/FileUploads/uploader'
 
 export default {
   name: 'JobInfo',
   bodyClass: 'profile-page',
    components: {
-    Card,
-    Tabs,
-    TabPane
+    [Radio.name]: Radio,
+    [DatePicker.name]: DatePicker,
+    [Button.name]: Button,
+    [FormGroupInput.name]: FormGroupInput,
+    Uploader
   },
   computed: {
-    ...mapGetters(['allJobs']),
+    ...mapGetters(['allJobs', 'assets']),
     job () {
       let job = this.allJobs.filter(item => item.id === this.$route.params.id)
       return job[0]
+    },
+    computedAsset () {
+      return this.asset
     }
   },
   data: () => ({
+    currentJob: {},
+    selectedFile: {},
+    up: {},
+    files: null,
+    id: '',
+    submitClicked: false,
+    pickers: {
+      datePicker: ''
+    },
+    isUploading: false,
+    uploaded: false,
+    isVideoUploading: false,
+    videoUploaded: false,
+    license: {
+      yes: '2'
+    },
+    form: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        description: '',
+        gender: 'Male',
+        country: 'Afghanistan'
+      },
+    countries: [
+      "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegowina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia (Hrvatska)", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "France Metropolitan", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard and Mc Donald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao, People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia, The Former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia (Slovak Republic)", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "St. Helena", "St. Pierre and Miquelon", "Sudan", "Suriname", "Svalbard and Jan Mayen Islands", "Eswation", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"
+    ]
   }),
   methods: {
-    ...mapActions(['fetchJobs'])
+    ...mapActions(['fetchJobs']),
+    async handleDownload () {
+      const fullName = `${this.form.firstName} ${this.form.lastName}`
+      this.selectedFile.fullName = fullName
+      this.selectedFile.entryId = this.currentJob.id
+      this.selectedFile.description = this.description
+      this.$store.dispatch('uploadCv', this.selectedFile).then( () => {
+        this.isUploading = false
+        this.uploaded = true
+      })
+    },
+    inputUploader (up) {
+    },
+    hadleSubmit (e) {
+      e.preventDefault()
+      this.submitClicked = true
+      this.$validator.validateAll()
+        .then((result) => {
+          if(result) {
+            if (this.uploaded) {
+              this.applicationCompleted()
+            } else {
+              this.uploadRequired()
+            }
+          }
+        })
+    },
+    applicationCompleted () {
+      this.$swal({
+        title: 'Application sent',
+        text: 'You will recieve email for confirmation',
+        icon: 'success',
+        confirmButtonText: 'Okay'
+      }).then((result) => {
+        if(result.value) {
+          this.$router.push({name: 'JobsMain'})
+        }
+      })
+    },
+    uploadRequired () {
+      this.$swal({
+        title: 'Application Error',
+        text: 'Please upload your latest CV',
+        icon: 'error',
+        confirmButtonText: 'Okay'
+      })
+    },
+    fileChangedHandler (e) {
+      this.$validator.validateAll()
+      .then ((result) => {
+        if (result) {
+          this.selectedFile = event.target.files[0]
+          this.isUploading = true
+          this.description = 
+            `
+              Full Name : ${this.form.firstName} ${this.form.lastName}
+              Country   : ${this.form.country}
+              Email     : ${this.form.email}
+              Gender    : ${this.form.gender}
+              D.O.B     : ${this.pickers.datePicker}
+              Lisence   : ${this.license === '1' ? 'yes' : 'no'}
+            `
+            this.handleDownload()
+        }
+      })
+      
+    },
   },
   async created() {
     await this.fetchJobs()
+    let job = this.allJobs.filter(item => item.id === this.$route.params.id)
+    this.currentJob = job[0]
   }
 };
 </script>

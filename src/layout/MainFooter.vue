@@ -8,33 +8,33 @@
       <nav>
         <ul>
           <li>
-            <a href="https://www.creative-tim.com">
-              Creative Tim
-            </a>
+            <router-link v-popover:popover1 class="navbar-brand" to="/">
+              TeaZeap
+            </router-link>
           </li>
           <li>
-            <a href="https:///presentation.creative-tim.com">
+            <router-link v-popover:popover1 class="navbar-brand" to="/">
               About Us
-            </a>
+            </router-link>
           </li>
           <li>
-            <a href="https:///blog.creative-tim.com">
-              Blog
-            </a>
+            <router-link v-popover:popover1 class="navbar-brand" to="/our-services/teachers">
+              Services
+            </router-link>
           </li>
         </ul>
       </nav>
       <div class="copyright">
         &copy; {{ year }}, Designed by
-        <a href="https:///www.invisionapp.com" target="_blank" rel="noopener"
-          >Invision</a
+        <a href="https://twitter.com/gondwe_muzi" target="_blank" rel="noopener"
+          >Legacy Inc.</a
         >. Coded by
-        <a href="https://binarcode.com" target="_blank" rel="noopener"
-          >BinarCode</a
+        <a href="https://twitter.com/gondwe_muzi" target="_blank" rel="noopener"
+          >Muzi P. Gondwe</a
         >
         and
-        <a href="https://www.creative-tim.com" target="_blank" rel="noopener"
-          >Creative Tim</a
+        <a href="https://www.facebook.com/calerb.louisjean/" target="_blank" rel="noopener"
+          >Calerbucci Jake</a
         >.
       </div>
     </div>

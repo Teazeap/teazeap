@@ -20,9 +20,18 @@ import App from './App.vue';
 import router from './router';
 import NowUiKit from './plugins/now-ui-kit';
 import store from './store';
-
+import VeeValidate from "vee-validate";
+import VueSweetalert2 from 'vue-sweetalert2'
+import 'sweetalert2/dist/sweetalert2.min.css';
 Vue.config.productionTip = false;
 
+const options = {
+  confirmButtonColor: '#f96332',
+  cancelButtonColor: '#ff7674',
+};
+
+Vue.use(VeeValidate);
+Vue.use(VueSweetalert2, options)
 Vue.use(NowUiKit);
 
 new Vue({

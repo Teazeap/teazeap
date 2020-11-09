@@ -2,6 +2,10 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Index from './pages/Index.vue';
 import Landing from './pages/Landing.vue';
+import Schools from './pages/Schools.vue';
+import Teachers from './pages/Teachers.vue';
+import Process from './pages/ApplicationProcess.vue';
+import Qualication from './pages/Qualification.vue';
 import Login from './pages/Login.vue';
 import Profile from './pages/Profile.vue';
 import Jobs from './pages/Jobs.vue';
@@ -27,6 +31,42 @@ export default new Router({
       path: '/',
       name: 'landing',
       components: { default: Landing, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/our-services/schools',
+      name: 'schools',
+      components: { default: Schools, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/process',
+      name: 'process',
+      components: { default: Process, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/qualification',
+      name: 'qualification',
+      components: { default: Qualication, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/our-services/teachers',
+      name: 'teachers',
+      components: { default: Teachers, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: 'black' }

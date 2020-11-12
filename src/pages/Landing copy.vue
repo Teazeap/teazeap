@@ -95,8 +95,8 @@
                 ></a>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 col-xl-4 offset-lg-4 offset-xl-4 py-2">
-            <div class="card h-70">
+          <div class="col-md-6 col-lg-4 col-xl-4 offset-md-4 py-2">
+            <div class="card h-80">
               <div class="mb-n4">
                 <img class="card-img-top " src="img/cedric.jpg" alt="Card image cap">
               </div>
@@ -116,12 +116,128 @@
       </div>
       </div>
     </div>
-    <div class="section  text-center">
+
+
+
+
+
+
+    <div class="section section-team text-center">
+      <div class="container">
+        <h2 class="title">Here is our team</h2>
+        <div class="team">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="team-player">
+                <img
+                  src="img/clifton.jpg"
+                  alt="Thumbnail Image"
+                  class="rounded-circle img-fluid img-raised"
+                />
+                <h4 class="title">Clifton Moreau</h4>
+                <p class="category text-primary">Chief Executive Officer</p>
+                <p class="description">
+                  You can write here details about one of your team members. You
+                  can give more details about what they do. Feel free to add
+                  some <a href="#">links</a> for people to be able to follow
+                  them outside the site.
+                </p>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="team-player">
+                <img
+                  src="img/calerb.jpg"
+                  alt="Thumbnail Image"
+                  class="rounded-circle img-fluid img-raised"
+                />
+                <h4 class="title">Calerb Louis Jean</h4>
+                <p class="category text-primary">Project manager</p>
+                <p class="description">
+                  You can write here details about one of your team members. You
+                  can give more details about what they do. Feel free to add
+                  some <a href="#">links</a> for people to be able to follow
+                  them outside the site.
+                </p>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
+                  ><i class="fab fa-google-plus"></i
+                ></a>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="team-player">
+                <img
+                  src="img/wixy.jpg"
+                  alt="Thumbnail Image"
+                  class="rounded-circle img-fluid img-raised"
+                />
+                <h4 class="title">Nnenia Stephens</h4>
+                <p class="category text-primary">Communication Director</p>
+                <p class="description">
+                  You can write here details about one of your team members. You
+                  can give more details about what they do. Feel free to add
+                  some <a href="#">links</a> for people to be able to follow
+                  them outside the site.
+                </p>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
+                  ><i class="fab fa-facebook-square"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="team-player">
+                <img
+                  src="img/cedric.jpg"
+                  alt="Thumbnail Image"
+                  class="rounded-circle img-fluid img-raised"
+                />
+                <h4 class="title">Cedric Joseph</h4>
+                <p class="category text-primary">Back-end Developer</p>
+                <p class="description">
+                  You can write here details about one of your team members. You
+                  can give more details about what they do. Feel free to add
+                  some <a href="#">links</a> for people to be able to follow
+                  them outside the site.
+                </p>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
+                  ><i class="fab fa-facebook-square"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section-contact-us text-center">
       <div class="container">
         <h2 class="title">Want to work with us?</h2>
-        <p class="description">Your teaching career is very important to us.</p>
+        <p class="description">Your project is very important to us.</p>
         <div class="row">
-          <div class="col-lg-5 col-sm-12 text-center ml-auto mr-auto col-md-10">
+          <div class="col-lg-6 text-center ml-auto mr-auto col-md-8">
             <fg-input
               class="input-lg"
               placeholder="First Name..."

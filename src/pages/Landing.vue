@@ -37,6 +37,39 @@
         <div class="separator separator-primary"></div>
       </div>
     </div>
+    <div class="section section-about-us">
+      <div class="container text-center">
+          <div class="row justify-content-around">
+            <div class="col-md-3">
+              <div class="team-player">
+                <i class="now-ui-icons education_hat"></i>
+                <h4 class="title">Full time Teacher</h4>
+                <p class="description">
+                  Reliable and trustworthy teachers that are committed to working in harmony with their school full time in order to provide a fun and safe learning environment for students.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="team-player">
+                <i class="now-ui-icons education_hat"></i>
+                <h4 class="title">Part time Teacher</h4>
+                <p class="description">
+                  Reliable and trustworthy teachers that are committed to working in harmony with their school part time in order to provide a fun and safe learning environment for students.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="team-player">
+                <i class="now-ui-icons education_hat"></i>
+                <h4 class="title">Sub Teacher</h4>
+                <p class="description">
+                  Reliable, and trustworthy teachers open to fill in when requested by a school and willing to meet their needs.
+                </p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
     <div class="section">
       <div class="container text-center">
          <h2 class="title">Here is our team</h2>
@@ -158,13 +191,13 @@
   </div>
 </template>
 <script>
-import { Button, FormGroupInput } from '@/components';
+import { Button, FormGroupInput, Tabs, TabPane } from '@/components';
 export default {
   name: 'landing',
   bodyClass: 'landing-page',
   components: {
     [Button.name]: Button,
-    [FormGroupInput.name]: FormGroupInput
+    [FormGroupInput.name]: FormGroupInput,
   },
   data() {
     return {

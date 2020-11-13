@@ -51,7 +51,7 @@
         <div class="container-fluid ">
           <div class="row-fluid card-deck no-gutters">
             <div class="col-md-12 col-lg-6 ml-auto col-xl-6 mr-auto">
-              <p class="category">Apply</p>
+              <p class="card-title font-weight-bold text-center">Apply</p>
               <!-- Nav tabs -->
               <form>
                 <div class="form-row">
@@ -141,7 +141,7 @@
                     <div class="d-flex">
                         <div class="col-md-3 upload-button">
                             <label class="btn btn-default btn-upload">
-                                Upload <input type="file" hidden @change="fileChangedHandler" :disabled="isUploading">
+                                Upload <input type="file" hidden @change="fileChangedHandler" :disabled="isUploading" accept="application/pdf">
                             </label>
                         </div>
                         <div class="col-md-5 col-lg-6 col-xl-6 ml-md-n12 mr-lg-12">

@@ -50,6 +50,16 @@
       </li>
       <li class="nav-item">
         <nav-link
+          class="nav-link"
+          style="color: white"
+          to="/admin/jobs"
+        >
+          <i class="now-ui-icons arrows-1_share-66"></i>
+          <p>Admin</p>
+        </nav-link>
+      </li>
+      <li class="nav-item">
+        <nav-link
           class="nav-link btn btn-neutral"
           to="/jobs"
         >

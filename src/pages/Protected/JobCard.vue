@@ -11,7 +11,7 @@
           </h6>
         </div>
         <div class="card-footer mt-7" v-if="isLink">
-          <router-link :to="{name: 'JobInfo', params: {id:job.id}}" tag="button" class="btn btn-primary stretched-link">View Job</router-link>
+          <router-link :to="{name: 'AdminJobInfo', params: {id:job.id}}" tag="button" class="btn btn-primary stretched-link">View Job</router-link>
         </div>
       </div>
     </div>

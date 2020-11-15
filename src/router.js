@@ -12,6 +12,8 @@ import Jobs from './pages/Jobs/Jobs.vue';
 import JobInfo from './pages/Jobs/JobInfo.vue';
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
+import AdminJobs from './pages/Protected/Jobs';
+import AdminJobInfo from './pages/Protected/JobInfo';
 
 Vue.use(Router);
 
@@ -114,7 +116,34 @@ export default new Router({
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: 'black' }
       }
-    }
+    },
+    /**     admin protected pages */
+    {
+      path: '/admin/jobs',
+      name: 'JobsAdminMain',
+      components: { default: AdminJobs, header: MainNavbar, footer: MainFooter  },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: '/admin/jobs/:id',
+      name: 'AdminJobs',
+      components: { default: AdminJobInfo, header: MainNavbar, footer: MainFooter  },
+      props: {
+        header: { colorOnScroll: 400 }
+      },
+      children: [
+        {
+          path: 'applications',
+          name: 'AdminJobInfo',
+          components: { default: AdminJobInfo, header: MainNavbar, footer: MainFooter  },
+          props: {
+            header: { colorOnScroll: 400 }
+          }
+        }
+      ]
+    },
   ],
   scrollBehavior: to => {
     if (to.hash) {

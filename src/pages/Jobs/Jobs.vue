@@ -71,7 +71,7 @@
 </template>
 <script>
 import { Pagination } from '@/components';
-import JobCard from '@/pages/JobCard'
+import JobCard from '@/pages/Jobs/JobCard'
 import { mapGetters, mapActions } from "vuex";
 
 export default {

@@ -31,7 +31,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8 ml-auto mr-auto text-center">
-              <h2 class="title">Application Process</h2>
+              <h2 class="title">Qualification</h2>
               <h5 class="description">
                 TeaZeaP services guarantee schools are connected and provided with the best school teachers. Full time, part time, and substitute teacher positions are available.
                 TeaZeaP is here to support our partners. In addition to job placements our team is available to mediate between schools and teachers. This may include communicating, clarifying or solving any potential misunderstandings between the two parties. Mentorship and helpful resources are readily available to teachers.
@@ -85,7 +85,7 @@
 </template>
 <script>
 import { Pagination } from '@/components';
-import JobCard from '@/pages/JobCard'
+import JobCard from '@/pages/Jobs/JobCard'
 import { mapGetters, mapActions } from "vuex";
 
 export default {

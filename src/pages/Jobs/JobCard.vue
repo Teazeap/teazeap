@@ -10,7 +10,7 @@
           <i class="now-ui-icons location_pin"></i> {{ job.city }}
           </h6>
         </div>
-        <div class="card-footer mt-7">
+        <div class="card-footer mt-7" v-if="isLink">
           <router-link :to="{name: 'JobInfo', params: {id:job.id}}" tag="button" class="btn btn-primary stretched-link">View Job</router-link>
         </div>
       </div>
@@ -28,6 +28,11 @@ export default {
       type: Object,
       required: true,
       default: () => {}
+    },
+    isLink: {
+      type: Boolean,
+      required: true,
+      default: () => true
     }
   }
 }

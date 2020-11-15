@@ -2,14 +2,14 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Index from './pages/Index.vue';
 import Landing from './pages/Landing.vue';
-import Schools from './pages/Schools.vue';
-import Teachers from './pages/Teachers.vue';
-import Process from './pages/ApplicationProcess.vue';
-import Qualication from './pages/Qualification.vue';
+import Schools from './pages/Services/Schools.vue';
+import Teachers from './pages/Services/Teachers.vue';
+import Process from './pages/Procedure/ApplicationProcess.vue';
+import Qualification from './pages/Procedure/Qualification.vue';
 import Login from './pages/Login.vue';
 import Profile from './pages/Profile.vue';
-import Jobs from './pages/Jobs.vue';
-import JobInfo from './pages/JobInfo.vue';
+import Jobs from './pages/Jobs/Jobs.vue';
+import JobInfo from './pages/Jobs/JobInfo.vue';
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
 
@@ -57,7 +57,7 @@ export default new Router({
     {
       path: '/qualification',
       name: 'qualification',
-      components: { default: Qualication, header: MainNavbar, footer: MainFooter },
+      components: { default: Qualification, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: 'black' }

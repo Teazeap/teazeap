@@ -31,10 +31,10 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8 ml-auto mr-auto text-center">
-              <h2 class="title">Qualification</h2>
+              <h2 class="title">Finding Your Next Teacher</h2>
               <h5 class="description">
-                TeaZeaP services guarantee schools are connected and provided with the best school teachers. Full time, part time, and substitute teacher positions are available.
-                TeaZeaP is here to support our partners. In addition to job placements our team is available to mediate between schools and teachers. This may include communicating, clarifying or solving any potential misunderstandings between the two parties. Mentorship and helpful resources are readily available to teachers.
+                TeaZeaP services guarantee schools are connected and provided with the best school teachers. We will help them find the right full time, part-time, or substitute teacher at the time needed. 
+                TeaZeaP is here to support our partners. In addition to job placements our team is available to mediate between schools and teachers. This may include communicating, clarifying or solving any potential misunderstandings between the two parties. Mentorship and helpful resources are readily available to teachers. And besides our services go further, we even have the option of going abroad to the country of choice of the schools to fetch the right teachers for them.
               </h5>
             </div>
           </div>
@@ -63,7 +63,7 @@
             </a>
           </div>
           <div class="row">
-            <JobCard  v-for="job in allJobs.slice(start,end)" :key="job.id" :job="job"/>
+            <JobCard :isLink="false" v-for="job in allJobs.slice(start,end)" :key="job.id" :job="job"/>
           </div>
         </div>
       </div>
@@ -85,11 +85,11 @@
 </template>
 <script>
 import { Pagination } from '@/components';
-import JobCard from '@/pages/JobCard'
+import JobCard from '@/pages/Jobs/JobCard'
 import { mapGetters, mapActions } from "vuex";
 
 export default {
-  name: 'applicationProcess',
+  name: 'jobs',
   bodyClass: 'landing-page',
   components: {
     JobCard,

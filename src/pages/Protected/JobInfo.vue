@@ -54,7 +54,6 @@ export default {
     ...mapGetters(['allJobs', 'assets']),
     resumes () {
       let job = this.allJobs.filter(item => item.id === this.$route.params.id)
-      console.log(job[0].resumes)
       return job[0].resumes
     },
     job () {

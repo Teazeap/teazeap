@@ -54,7 +54,7 @@
           style="color: white"
           to="/admin/jobs"
         >
-          <i class="now-ui-icons arrows-1_share-66"></i>
+          <i class="now-ui-icons ui-1_settings-gear-63"></i>
           <p>Admin</p>
         </nav-link>
       </li>

@@ -141,7 +141,7 @@
                     <div class="d-flex">
                         <div class="col-md-3 upload-button">
                             <label class="btn btn-default btn-upload">
-                                Upload <input type="file" hidden @change="fileChangedHandler" :disabled="isUploading" accept="application/pdf">
+                                Upload <input type="file" hidden @change="fileChangedHandler" :disabled="isUploading || isVideoUploading" accept="application/pdf">
                             </label>
                         </div>
                         <div class="col-md-5 col-lg-6 col-xl-6 ml-md-n12 mr-lg-12">
@@ -157,16 +157,16 @@
                     <label class="d-flex">Upload Video (Optional)</label>
                     <div class="d-flex">
                         <div class="col-md-3 upload-button">
-                            <label class="btn btn-default btn-upload disabled">
-                                Upload <input type="file" hidden @change="fileChangedHandler" disabled>
+                            <label class="btn btn-default btn-upload">
+                                Upload <input type="file"  hidden @change="videoChangedHandler" accept="video/mp4,video/x-m4v,video/*" :disabled="isUploading || isVideoUploading" >
                             </label>
                         </div>
                         <div class="col-md-5 col-lg-6 col-xl-6 ml-md-n12 mr-lg-12">
-                          <p class="text-danger" v-if="!isUploading && !uploaded">
+                          <p class="text-danger" v-if="!isVideoUploading && !videoUploaded">
                             Upload video...
                           </p>
-                          <img  v-if="false" v-lazy="'img/Ellipsis-3s-128px.svg'" alt="Rounded Image" style="width:30px; height: 30px" />
-                          <p v-if="false" class="text-success">{{selectedFile.name }}</p>
+                          <img  v-if="isVideoUploading" v-lazy="'img/Ellipsis-3s-128px.svg'" alt="Rounded Image" style="width:30px; height: 30px" />
+                          <p v-if="videoUploaded" class="text-success">{{selectedVideoFile.name }}</p>
                         </div>
                       </div>
                   </div>
@@ -199,7 +199,7 @@
                     />
                   </div>
                 </div>
-                <n-button type="submit" @click="hadleSubmit"  round class="btn btn-primary" :disabled="isUploading">
+                <n-button type="submit" @click="hadleSubmit"  round class="btn btn-primary" :disabled="isUploading || isVideoUploading">
                   Submit
                 </n-button>
               </form>
@@ -238,6 +238,7 @@ export default {
   data: () => ({
     currentJob: {},
     selectedFile: {},
+    selectedVideoFile: {},
     up: {},
     files: null,
     id: '',
@@ -318,7 +319,34 @@ export default {
         if (result) {
           this.selectedFile = event.target.files[0]
           this.isUploading = true
-          this.description =  JSON.stringify({
+          this.description =  this.formatDescription()
+          this.handleDownload()
+        }
+      })
+    },
+    videoChangedHandler (e) {
+      this.$validator.validateAll()
+      .then ((result) => {
+        if (result) {
+          this.selectedVideoFile = event.target.files[0]
+          this.isVideoUploading = true
+          this.description =  this.formatDescription()
+          this.handleVideoUpload()
+        }
+      })
+    },
+    async handleVideoUpload () {
+      const fullName = `${this.form.firstName} ${this.form.lastName}`
+      this.selectedVideoFile.fullName = fullName
+      this.selectedVideoFile.entryId = this.currentJob.id
+      this.selectedVideoFile.description = this.description
+      this.$store.dispatch('uploadVideo', this.selectedVideoFile).then( () => {
+        this.isVideoUploading = false
+        this.videoUploaded = true
+      })
+    },
+    formatDescription () {
+      return JSON.stringify({
               fullName : `${this.form.firstName} ${this.form.lastName}`,
               country   : `${this.form.country}`,
               email     : `${this.form.email}`,
@@ -326,11 +354,7 @@ export default {
               dob     : `${this.pickers.datePicker}`,
               lisence   : `${this.license === '1' ? 'yes' : 'no'}`,
           })
-          this.handleDownload()
-        }
-      })
-      
-    },
+    }
   },
   async created() {
     await this.fetchJobs()

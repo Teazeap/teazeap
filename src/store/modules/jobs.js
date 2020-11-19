@@ -75,6 +75,48 @@ const actions = {
         .catch(error => {reject(error)})
     })
    
+  },
+  uploadVideo({commit, dispatch}, file) {
+    return new Promise ((resolve, reject) => {
+        client.getSpace('dr15y1pi2yc9')
+        .then((space) => space.getEnvironment('master-2020-10-14'))
+        .then((environment) => environment.createAssetFromFiles({
+          fields: {
+            title: {
+              'en-US': file.fullName
+            },
+            description: {
+              'en-US': file.description
+            },
+            file: {
+              'en-US': {
+                contentType: "video/mp4",
+                fileName: file.name,
+                file
+              }
+            }
+          }
+        }))
+        .then((asset) => asset.processForAllLocales())
+        .then((asset) => asset.publish())
+        .then((asset) => {
+          commit('setAsset', asset)
+          client.getSpace('dr15y1pi2yc9')
+            .then((space) => space.getEnvironment('master-2020-10-14'))
+            .then((environment) => environment.getEntry(file.entryId))
+            .then((entry) => {
+              // assign uploaded image as an entry field
+              const newVideo = {"sys": {"id": asset.sys.id, "linkType": "Asset", "type": "Link"}}
+              entry.fields["videos"]["en-US"].push(newVideo)
+              return entry.update()
+            }).then ((entry) => {
+              entry.publish()
+              dispatch('fetchJobs')
+              resolve(entry)
+            })
+        })
+        .catch(error => {reject(error)})
+    })
   }
 };
 const mutations = {

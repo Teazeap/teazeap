@@ -38,6 +38,16 @@
           <i class="now-ui-icons education_hat"></i> Schools
         </nav-link>
       </drop-down>
+      <drop-down
+          tag="li"
+          title="Admin"
+          icon="now-ui-icons ui-1_settings-gear-63"
+          class="nav-item nav-ul nav-setting"
+      >
+        <nav-link to="/admin/jobs">
+          <i class="now-ui-icons education_hat"></i> View Applications
+        </nav-link>
+      </drop-down>
       <li class="nav-item">
         <a
           class="nav-link"
@@ -48,7 +58,7 @@
           <p>About Us</p>
         </a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <nav-link
           class="nav-link"
           style="color: white"
@@ -57,7 +67,7 @@
           <i class="now-ui-icons ui-1_settings-gear-63"></i>
           <p>Admin</p>
         </nav-link>
-      </li>
+      </li> -->
       <li class="nav-item">
         <nav-link
           class="nav-link btn btn-neutral"

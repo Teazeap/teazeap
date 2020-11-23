@@ -13,6 +13,7 @@ import JobInfo from './pages/Jobs/JobInfo.vue';
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
 import AdminJobs from './pages/Protected/Jobs';
+import store from '@/store'
 import AdminJobInfo from './pages/Protected/JobInfo';
 
 Vue.use(Router);
@@ -124,6 +125,11 @@ export default new Router({
       components: { default: AdminJobs, header: MainNavbar, footer: MainFooter  },
       props: {
         header: { colorOnScroll: 400 }
+      },
+      beforeEnter: (to, from, next) => {
+        const isAuthenticated = store.getters.user
+        if (to.name == 'JobsAdminMain' && !isAuthenticated) next({ name: 'login' })
+        else next()
       }
     },
     {

@@ -128,24 +128,6 @@
                 ></a>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 col-xl-4 offset-lg-4 offset-xl-4 py-2">
-            <div class="card h-70">
-              <div class="mb-n4">
-                <img class="card-img-top " src="img/cedric.jpg" alt="Card image cap">
-              </div>
-              <div class="card-body mt-n6">
-                <h4 class="card-title">Cedric Joseph</h4>
-                <h4 class="card-title text-primary">Back-end Developer</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-                <a href="#pablo" class="card-link btn btn-primary btn-icon btn-round"
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round"
-                  ><i class="fab fa-linkedin"></i
-                ></a>
-            </div>
-          </div>
       </div>
       </div>
     </div>
@@ -154,7 +136,9 @@
 </template>
 <script>
 import { Button, FormGroupInput, Tabs, TabPane } from '@/components';
+import MainFooter from '@/layout/MainFooter';
 import  Contact  from "@/pages/Services/Contact";
+
 export default {
   name: 'landing',
   bodyClass: 'landing-page',

@@ -4,7 +4,7 @@
     :class="{ [`footer-${type}`]: type }"
     :data-background-color="backgroundColor"
   >
-    <div class="container">
+    <div class="container text-center">
       <nav>
         <ul>
           <li>
@@ -22,12 +22,17 @@
               Services
             </router-link>
           </li>
+          <li>
+            <router-link v-popover:popover1 class="navbar-brand" to="/admin/jobs">
+              Admin
+            </router-link>
+          </li>
         </ul>
       </nav>
       <div class="copyright">
-        &copy; {{ year }}, Designed by
+        &copy; {{ year }}, 
         <a href="https://twitter.com/gondwe_muzi" target="_blank" rel="noopener"
-          >Legacy Inc.</a
+          > Designed by Legacy Inc.</a
         >. Coded by
         <a href="https://twitter.com/gondwe_muzi" target="_blank" rel="noopener"
           >Muzi P. Gondwe</a
@@ -41,6 +46,7 @@
   </footer>
 </template>
 <script>
+
 export default {
   props: {
     backgroundColor: String,

@@ -30,7 +30,7 @@
     <div class="section">
       <div class="container text-center">
         <div class="button-container">
-          <a href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
+          <n-button  @click="logOut" class="btn btn-primary btn-round btn-lg">Log Out</n-button>
           <a
             href="#button"
             class="btn btn-default btn-round btn-lg btn-icon"
@@ -70,7 +70,7 @@
   </div>
 </template>
 <script>
-import { Pagination } from '@/components';
+import { Pagination, Button } from '@/components';
 import JobCard from '@/pages/Protected/JobCard'
 import { mapGetters, mapActions } from "vuex";
 
@@ -79,6 +79,7 @@ export default {
   bodyClass: 'landing-page',
   components: {
     JobCard,
+    [Button.name]: Button,
     Pagination,
   },
   computed: {
@@ -116,6 +117,10 @@ export default {
     changePage (value) {
       this.start = (this.pagination.perPage * value) - this.pagination.perPage
       this.end = this.pagination.perPage * value
+    },
+    logOut () {
+      this.$store.dispatch('logout')
+      this.$router.push({name: 'landing'})
     }
   },
 };

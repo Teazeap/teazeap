@@ -13,6 +13,10 @@
               <i class="now-ui-icons location_pin"></i>
               <p>{{ job.city }}</p>
             </div>
+            <div class="social-description">
+              <img src="img/calendar-clock.png" style="width:12%; height: 12%"/>
+              <p>{{ handleTime(job.fullTime) }}</p>
+            </div>
         </div>
       </div>
     </div>
@@ -41,6 +45,14 @@
                 <h5 class="card-title font-weight-bold">What We Offer</h5>
                <ul class="text-left">
                 <li v-for="(item, index) in job.benefits" :key="index" >{{ item }}</li>
+              </ul>
+              </div>
+            </div>
+            <div class="card col-12 col-xs-12  col-sm-12 col-md-12 col-lg-4 col-xl-6">
+              <div class="card-body">
+                <h5 class="card-title font-weight-bold">Schedule</h5>
+               <ul class="text-left">
+                <li v-for="(item, index) in job.schedule" :key="index" >{{ `${item.Day} : ${item.Time} ` }}</li>
               </ul>
               </div>
             </div>
@@ -145,7 +157,7 @@
                             </label>
                         </div>
                         <div class="col-md-5 col-lg-6 col-xl-6 ml-md-n12 mr-lg-12">
-                          <p class="text-danger" v-if="!isUploading && !uploaded">
+                          <p style="color: #f96332" v-if="!isUploading && !uploaded">
                             Please upload cv...
                           </p>
                           <img  v-if="isUploading" v-lazy="'img/Ellipsis-3s-128px.svg'" alt="Rounded Image" style="width:30px; height: 30px" />
@@ -162,41 +174,13 @@
                             </label>
                         </div>
                         <div class="col-md-5 col-lg-6 col-xl-6 ml-md-n12 mr-lg-12">
-                          <p class="text-danger" v-if="!isVideoUploading && !videoUploaded">
+                          <p style="color: #f96332" v-if="!isVideoUploading && !videoUploaded">
                             Upload video...
                           </p>
                           <img  v-if="isVideoUploading" v-lazy="'img/Ellipsis-3s-128px.svg'" alt="Rounded Image" style="width:30px; height: 30px" />
                           <p v-if="videoUploaded" class="text-success">{{selectedVideoFile.name }}</p>
                         </div>
                       </div>
-                  </div>
-                  <!-- <div class="form-group col-md-6" id="filesList">
-                    <label class="d-flex">Upload Video (Optional)</label>
-                    <div class="d-flex">
-                      <div class="col-md-3 upload-upload">
-                           <n-button id="browseButton"  round @click="(e) => e.preventDefault()" :disabled="isUploading" class="btn btn-primary mt-n1 d-flex mr-1" >
-                              <i class="now-ui-icons arrows-1_cloud-upload-94"></i>
-                            </n-button>
-                        </div>
-                        <div class="col-md-5 col-lg-6 col-xl-6 ml-md-n12 mr-lg-12">
-                          <p class="text-warning" v-if="!isVideoUploading">
-                            Upload a video...
-                          </p>
-                          <img  v-if="isVideoUploading" v-lazy="'img/Ellipsis-3s-128px.svg'" alt="Rounded Image" style="width:30px; height: 30px" />
-                          <p v-if="videoUploaded" class="text-success">{{selectedFile.name }}</p>
-                        </div>
-                      </div>
-                  </div> -->
-                  <div>
-                    <Uploader
-                      ref="FileUploads"
-                      browse_button="browseButton"
-                      drop_element="filesList"
-                      :url="'/preDestruct/'"
-                      :filters="{prevent_duplicates:false, mime_types: [{title: 'Pdf Files',extensions: 'pdf'}]}"
-                      chunk_size="10MB"
-                      :files-added="inputUploader"
-                    />
                   </div>
                 </div>
                 <n-button type="submit" @click="hadleSubmit"  round class="btn btn-primary" :disabled="isUploading || isVideoUploading">
@@ -213,7 +197,6 @@
 import { mapGetters, mapActions } from "vuex";
 import { Card, Tabs, TabPane, Button, FormGroupInput, Radio } from '@/components';
 import { DatePicker, Icon } from 'element-ui';
-import Uploader from '@/components/FileUploads/uploader'
 
 export default {
   name: 'JobInfo',
@@ -222,8 +205,7 @@ export default {
     [Radio.name]: Radio,
     [DatePicker.name]: DatePicker,
     [Button.name]: Button,
-    [FormGroupInput.name]: FormGroupInput,
-    Uploader
+    [FormGroupInput.name]: FormGroupInput
   },
   computed: {
     ...mapGetters(['allJobs', 'assets']),
@@ -276,8 +258,6 @@ export default {
         this.isUploading = false
         this.uploaded = true
       })
-    },
-    inputUploader (up) {
     },
     hadleSubmit (e) {
       e.preventDefault()
@@ -354,6 +334,9 @@ export default {
               dob     : `${this.pickers.datePicker}`,
               lisence   : `${this.license === '1' ? 'yes' : 'no'}`,
           })
+    },
+    handleTime (fullTime) {
+      return fullTime? 'Full Time' : 'Sub'
     }
   },
   async created() {

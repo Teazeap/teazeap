@@ -22,7 +22,7 @@
           <router-link :to="{name: 'JobsAdminMain'}" tag="button" class="btn btn-primary btn-round btn-lg">Back To Jobs</router-link>
         </div>
            <h2 class="title">Applications</h2>
-         <div class="card-deck row no-gutters" v-if="resumes.length > 0">
+         <div class="card-deck row-fluid no-gutters" v-if="resumes.length > 0">
             <div class="card col-12 col-xs-12  col-sm-12 col-md-12 col-lg-4 col-xl-4" v-for="(applicant, index) in resumes" :key="index"  >
               <div class="card-body text-center">
                 <h5 class="card-title font-weight-bold">{{ applicant.fields.title  }}</h5>

@@ -4,55 +4,57 @@
         <h2 class="title">Want to work with us?</h2>
         <p class="description">Your teaching career is very important to us.</p>
         <div class="row">
-          <form name="homepage" method="POST" data-netlify="true">
               <div class="col-lg-5 col-sm-12 text-center ml-auto mr-auto col-md-10">
-                <span v-if="false">
-                  <p>
-                    <label>Your Name: <input v-model="form.fullName" type="text" name="name" /></label>   
-                  </p>
-                  <p>
-                    <label>Your Email: <input v-model="form.email" type="email" name="email" /></label>
-                  </p>
-                  <p>
-                    <label>Message: <textarea v-model="form.message" name="message"></textarea></label>
-                  </p>
-                </span>
-               
-                <fg-input
-                  class="input-lg"
-                  placeholder="First Name..."
-                  v-model="form.fullName"
-                  type="text"
-                  addon-left-icon="now-ui-icons users_circle-08"
-                  name="Full Name"
-                >
-                </fg-input>
-                <fg-input
-                  class="input-lg"
-                  placeholder="Email Here..."
-                  type="email"
-                  v-model="form.email"
-                  addon-left-icon="now-ui-icons ui-1_email-85"
-                >
-                </fg-input>
-                <div class="textarea-container">
-                  <textarea
-                    class="form-control"
-                    name="name"
-                    rows="4"
-                    cols="80"
-                    v-model="form.message"
-                    placeholder="Type a message..."
-                  ></textarea>
-                </div>
-                <div class="send-button">
-                  <n-button type="submit" round block @click="sendMessage" size="lg"
-                    >Send Message</n-button
-                  >
-                </div>
+                <form name="homepage" method="POST" data-netlify="true">
+                    <span v-if="false">
+                      <p>
+                        <label>Your Name: <input v-model="form.fullName" type="text" name="name" /></label>   
+                      </p>
+                      <p>
+                        <label>Your Email: <input v-model="form.email" type="email" name="email" /></label>
+                      </p>
+                      <p>
+                        <label>Message: <textarea v-model="form.message" name="message"></textarea></label>
+                      </p>
+                    </span>
+                  
+                    <fg-input
+                      class="input-lg"
+                      placeholder="First Name..."
+                      v-model="form.fullName"
+                      type="text"
+                      addon-left-icon="now-ui-icons users_circle-08"
+                      name="Full Name"
+                    >
+                    </fg-input>
+                    <fg-input
+                      class="input-lg"
+                      placeholder="Email Here..."
+                      type="email"
+                      v-model="form.email"
+                      addon-left-icon="now-ui-icons ui-1_email-85"
+                    >
+                    </fg-input>
+                    <div class="textarea-container">
+                      <textarea
+                        class="form-control"
+                        name="name"
+                        rows="4"
+                        cols="80"
+                        v-model="form.message"
+                        placeholder="Type a message..."
+                      ></textarea>
+                    </div>
+                    <div class="field">
+                      <div data-netlify-recaptcha="true"></div>
+                    </div>
+                    <div class="send-button">
+                      <n-button type="submit" round   class="btn btn-primary btn-lg"
+                        >Send Message</n-button
+                      >
+                    </div>
+                </form>
             </div>
-          </form>
-          
         </div>
       </div>
     </div>

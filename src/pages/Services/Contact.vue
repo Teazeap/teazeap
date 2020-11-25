@@ -4,19 +4,26 @@
         <h2 class="title">Want to work with us?</h2>
         <p class="description">Your teaching career is very important to us.</p>
         <div class="row">
-          <form name="simple-form" method="POST" data-netlify="true">
-            <input type="hidden" name="simple-form" value="name_of_my_form" />
-            <p>
-              <label>Your Name: <input type="text" name="name"/></label>
-            </p>
-            <p>
-              <label>Your Email: <input type="email" name="email"/></label>
-            </p>
-            <p>
-              <label>Message: <input type="textarea" name="message"/></label>
-            </p>
-            <p><button type="submit">Send</button></p>
-          </form>
+           <form
+              name="ask-question"
+              method="post"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              @submit.prevent="handleSubmit"
+              >
+              <input type="hidden" name="form-name" value="ask-question" />
+              <label v-for="(panelist, index) in panelists" :key="index">
+                <input
+                  type="radio"
+                  name="panelist"
+                  :value="panelist"
+                  @input="ev => updatePanelist"
+                  :checked="form.askPerson === panelist"
+                />
+                <span>{{ panelist }}</span>
+              </label>
+              <button>Submit</button>
+            </form>
           <!-- <div class="col-lg-5 col-sm-12 text-center ml-auto mr-auto col-md-10">
             <form name="homepage" method="POST" data-netlify="true" netlify>
                 <span v-if="false">
@@ -73,6 +80,7 @@
 
 <script>
 import { Button, FormGroupInput, Tabs, TabPane } from '@/components';
+import axios from 'axios'
 
 export default {
   name: 'contact',
@@ -85,7 +93,8 @@ export default {
         form: {
           fullName: '',
           email: '',
-          message: ''
+          message: '',
+          askPerson: ""
         },
         panelists: ['Evan You', 'Chris Fritz'],
         currentPanelist: 'Evan You'
@@ -106,6 +115,26 @@ export default {
       },
       updatePanelist (ev) {
         this.currentPanelist = ev.target.value
+      },
+      encode (data) {
+        return Object.keys(data)
+          .map(
+            key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+          )
+          .join("&");
+      },
+      handleSubmit () {
+        const axiosConfig = {
+          header: { "Content-Type": "application/x-www-form-urlencoded" }
+        };
+        axios.post(
+          "/",
+          this.encode({
+            "form-name": "ask-question",
+            ...this.form
+          }),
+          axiosConfig
+        );
       }
     }
 }

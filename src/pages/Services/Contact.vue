@@ -6,7 +6,7 @@
         <div class="row">
               <div class="col-lg-5 col-sm-12 text-center ml-auto mr-auto col-md-10">
                 <form name="homepage" method="POST" data-netlify="true" netlify>
-                    <span v-if="false">
+                    <span>
                       <p>
                         <label>Your Name: <input v-model="form.fullName" type="text" name="name" /></label>   
                       </p>
@@ -44,9 +44,6 @@
                         v-model="form.message"
                         placeholder="Type a message..."
                       ></textarea>
-                    </div>
-                    <div class="field">
-                      <div data-netlify-recaptcha="true"></div>
                     </div>
                     <div class="send-button">
                       <button type="submit" class="btn-round btn btn-primary btn-lg" rounded >Send Message</button>

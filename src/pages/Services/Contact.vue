@@ -49,7 +49,8 @@
                       <div data-netlify-recaptcha="true"></div>
                     </div>
                     <div class="send-button">
-                      <n-button type="submit" round   class="btn btn-primary btn-lg"
+                      <button type="submit" class="btn-round btn btn-primary btn-lg" rounded >Send Message</button>
+                      <n-button v-if="false" type="submit" round   class="btn btn-primary btn-lg"
                         >Send Message</n-button
                       >
                     </div>

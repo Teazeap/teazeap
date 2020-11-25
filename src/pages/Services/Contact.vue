@@ -4,14 +4,18 @@
         <h2 class="title">Want to work with us?</h2>
         <p class="description">Your teaching career is very important to us.</p>
         <div class="row">
-          <form name="simple-form" hidden method="post">
-            <input type="hidden" name="form-name" value="simple-form" /><input
-              type="text"
-              name="name"
-            />
-            <input type="email" name="email" />
-            <input type="textarea" name="message" />
-            <button type="submit">Send</button>
+          <form name="simple-form" method="POST" data-netlify="true">
+            <input type="hidden" name="simple-form" value="name_of_my_form" />
+            <p>
+              <label>Your Name: <input type="text" name="name"/></label>
+            </p>
+            <p>
+              <label>Your Email: <input type="email" name="email"/></label>
+            </p>
+            <p>
+              <label>Message: <input type="textarea" name="message"/></label>
+            </p>
+            <p><button type="submit">Send</button></p>
           </form>
           <!-- <div class="col-lg-5 col-sm-12 text-center ml-auto mr-auto col-md-10">
             <form name="homepage" method="POST" data-netlify="true" netlify>

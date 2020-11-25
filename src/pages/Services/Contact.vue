@@ -5,35 +5,42 @@
         <p class="description">Your teaching career is very important to us.</p>
         <div class="row">
           <div class="col-lg-5 col-sm-12 text-center ml-auto mr-auto col-md-10">
-            <form @submit.prevent="handleSubmit" name="contact" method="POST" data-netlify="true" netlify-honeybot="bot-field">
+            <form @submit.prevent="handleSubmit" name="contact" method="POST" data-netlify="true" netlify-honeybot="bot-field" class="needs-validation" novalidate>
                 <input type="hidden" name="bot-field" value="contact">
                 <fg-input
-                  class="input-lg"
+                  :class="`input-lg ${errors.has('name') ? 'has-danger' : ''}`"
                   placeholder="First Name..."
                   v-model="form.name"
                   type="text"
+                  v-validate="'required'"
                   addon-left-icon="now-ui-icons users_circle-08"
                   name="name"
                 >
                 </fg-input>
+                <span v-show="errors.has('name')" class="text-danger">{{ errors.first('name') }}</span>
                 <fg-input
-                  class="input-lg"
+                  :class="`input-lg ${errors.has('name') ? 'has-danger' : ''}`"
                   placeholder="Email Here..."
                   type="email"
+                  v-validate="'required|email'"
                   v-model="form.email"
                   addon-left-icon="now-ui-icons ui-1_email-85"
-                   name="email"
+                  name="email"
                 >
                 </fg-input>
+                <span v-show="errors.has('email')" class="text-danger">{{ errors.first('email') }}</span>
                 <div class="textarea-container">
                   <textarea
                     class="form-control"
+                    :class="`${errors.has('name') ? 'has-danger' : ''}`"
                     rows="4"
                     cols="80"
                     v-model="form.message"
+                    v-validate="'required'"
                     name="message"
                     placeholder="Type a message..."
                   ></textarea>
+                  <span v-show="errors.has('message')" class="text-danger">{{ errors.first('message') }}</span>
                 </div>
                 <div class="send-button">
                   <button class="btn-round btn btn-primary btn-lg" rounded >Send Message</button>
@@ -76,21 +83,28 @@ export default {
         confirmButtonText: 'Okay'
         }).then((result) => {
         if(result.value) {
-          this.form = {}
+            this.form = {}
+            this.$validator.reset()
           }
         })
       },
       handleSubmit () {
-        fetch('/', {
-          method: 'post',
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: this.encode({
-            'form-name': 'contact',
-            ...this.form
-          })
-        }).then(() => {
-          this.sendMessage()
+        this.$validator.validateAll()
+        .then(result => {
+          if (result) {
+            fetch('/', {
+            method: 'post',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: this.encode({
+              'form-name': 'contact',
+              ...this.form
+              })
+            }).then(() => {
+              this.sendMessage()
+            })
+          }
         })
+        
       },
        encode (data) {
         return Object.keys(data)

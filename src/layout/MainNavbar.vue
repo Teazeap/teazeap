@@ -62,22 +62,9 @@
         <a
           class="nav-link"
           rel="tooltip"
-          title="Follow us on Twitter"
-          data-placement="bottom"
-          href="https://twitter.com/CreativeTim"
-          target="_blank"
-        >
-          <i class="fab fa-twitter"></i>
-          <p class="d-lg-none d-xl-none">Twitter</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          rel="tooltip"
           title="Like us on Facebook"
           data-placement="bottom"
-          href="https://www.facebook.com/CreativeTim"
+          href="https://www.facebook.com/teazeap"
           target="_blank"
         >
           <i class="fab fa-facebook-square"></i>
@@ -90,7 +77,7 @@
           rel="tooltip"
           title="Follow us on Instagram"
           data-placement="bottom"
-          href="https://www.instagram.com/CreativeTimOfficial"
+          href="https://www.instagram.com/teazeap/"
           target="_blank"
         >
           <i class="fab fa-instagram"></i>

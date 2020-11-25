@@ -31,22 +31,12 @@
       <div class="container text-center">
         <div class="button-container">
           <n-button  @click="logOut" class="btn btn-primary btn-round btn-lg">Log Out</n-button>
-          <a
-            href="#button"
-            class="btn btn-default btn-round btn-lg btn-icon"
-            rel="tooltip"
-            title="Follow me on Twitter"
-          >
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a
-            href="#button"
-            class="btn btn-default btn-round btn-lg btn-icon"
-            rel="tooltip"
-            title="Follow me on Instagram"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
+        <a href="https://www.facebook.com/teazeap" target="_blank" class="btn btn-primary btn-icon btn-round">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="https://www.instagram.com/teazeap/" class="btn btn-primary btn-icon btn-round" target="_blank" >
+              <i class="fab fa-instagram"></i>
+            </a>
         </div>
         <div class="row">
           <JobCard  v-for="job in allJobs.slice(start,end)" :key="job.id" :job="job"/>

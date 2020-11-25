@@ -4,25 +4,15 @@
         <h2 class="title">Want to work with us?</h2>
         <p class="description">Your teaching career is very important to us.</p>
         <div class="row">
-           <form
-              name="ask-question"
-              method="post"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              >
-              <input type="hidden" name="form-name" value="ask-question" />
-              <label v-for="(panelist, index) in panelists" :key="index">
-                <input
-                  type="radio"
-                  name="panelist"
-                  :value="panelist"
-                  @input="ev => updatePanelist"
-                  :checked="panelist === currentPanelist"
-                />
-                <span>{{ panelist }}</span>
-              </label>
-              <button>Submit</button>
-            </form>
+          <form name="simple-form" hidden method="post">
+            <input type="hidden" name="form-name" value="simple-form" /><input
+              type="text"
+              name="name"
+            />
+            <input type="email" name="email" />
+            <input type="textarea" name="message" />
+            <button type="submit">Send</button>
+          </form>
           <!-- <div class="col-lg-5 col-sm-12 text-center ml-auto mr-auto col-md-10">
             <form name="homepage" method="POST" data-netlify="true" netlify>
                 <span v-if="false">

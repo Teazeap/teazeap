@@ -4,26 +4,18 @@
         <h2 class="title">Want to work with us?</h2>
         <p class="description">Your teaching career is very important to us.</p>
         <div class="row">
-           <form
-              name="ask-question"
-              method="post"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              @submit.prevent="handleSubmit"
-              >
-              <input type="hidden" name="form-name" value="ask-question" />
-              <label v-for="(panelist, index) in panelists" :key="index">
-                <input
-                  type="radio"
-                  name="panelist"
-                  :value="panelist"
-                  @input="ev => updatePanelist"
-                  :checked="form.askPerson === panelist"
-                />
-                <span>{{ panelist }}</span>
-              </label>
-              <button>Submit</button>
-            </form>
+          <form
+            name="add-subscriber"
+            id="myForm"
+            method="post"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            enctype="application/x-www-form-urlencoded"
+            @submit.prevent="handleFormSubmit">
+              <input type="hidden" name="form-name" value="add-subscriber" />
+              <input type="email" name="userEmail" v-model="formData.userEmail">
+              <button type="submit" name="button">Subscribe</button>
+          </form>
           <!-- <div class="col-lg-5 col-sm-12 text-center ml-auto mr-auto col-md-10">
             <form name="homepage" method="POST" data-netlify="true" netlify>
                 <span v-if="false">
@@ -96,6 +88,9 @@ export default {
           message: '',
           askPerson: ""
         },
+        formData: {
+          userEmail: null,
+        },
         panelists: ['Evan You', 'Chris Fritz'],
         currentPanelist: 'Evan You'
       };
@@ -116,26 +111,36 @@ export default {
       updatePanelist (ev) {
         this.currentPanelist = ev.target.value
       },
-      encode (data) {
-        return Object.keys(data)
-          .map(
-            key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-          )
-          .join("&");
-      },
-      handleSubmit () {
-        const axiosConfig = {
-          header: { "Content-Type": "application/x-www-form-urlencoded" }
-        };
-        axios.post(
-          "/",
-          this.encode({
-            "form-name": "ask-question",
-            ...this.form
-          }),
-          axiosConfig
-        );
-      }
+      encode(data) {  
+            const formData = new FormData();
+            
+            for (const key of Object.keys(data)) {
+                formData.append(key, data[key]);
+            }
+            
+            return formData;
+        },
+      handleFormSubmit(e) {
+            const axiosConfig = {
+                header: { "Content-Type": "application/x-www-form-urlencoded" }
+            };
+
+            axios.post(
+                location.href, 
+                this.encode({
+                    'form-name': e.target.getAttribute("name"),
+                    ...this.formData,
+                }),
+                axiosConfig
+            )
+            .then(data => console.log(data))
+            .catch(error => console.log(error))
+            // .then(document.getElementById("myForm").innerHTML = `
+            // <div>
+            //     Thank you! I received your submission.
+            // </div>
+            // `)
+        }
     }
 }
 </script>

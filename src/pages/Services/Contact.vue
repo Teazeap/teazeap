@@ -4,39 +4,16 @@
         <h2 class="title">Want to work with us?</h2>
         <p class="description">Your teaching career is very important to us.</p>
         <div class="row">
-          <form
-            name="add-subscriber"
-            id="myForm"
-            method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            enctype="application/x-www-form-urlencoded"
-            @submit.prevent="handleFormSubmit">
-              <input type="hidden" name="form-name" value="add-subscriber" />
-              <input type="email" name="userEmail" v-model="formData.userEmail">
-              <button type="submit" name="button">Subscribe</button>
-          </form>
-          <!-- <div class="col-lg-5 col-sm-12 text-center ml-auto mr-auto col-md-10">
-            <form name="homepage" method="POST" data-netlify="true" netlify>
-                <span v-if="false">
-                  <p>
-                    <label>Your Name: <input v-model="form.fullName" type="text" name="name" /></label>   
-                  </p>
-                  <p>
-                    <label>Your Email: <input v-model="form.email" type="email" name="email" /></label>
-                  </p>
-                  <p>
-                    <label>Message: <textarea v-model="form.message" name="message"></textarea></label>
-                  </p>
-                </span>
-              
+          <div class="col-lg-5 col-sm-12 text-center ml-auto mr-auto col-md-10">
+            <form @submit.prevent="handleSubmit" name="contact" method="POST" data-netlify="true" netlify-honeybot="bot-field">
+                <input type="hidden" name="bot-field" value="contact">
                 <fg-input
                   class="input-lg"
                   placeholder="First Name..."
-                  v-model="form.fullName"
+                  v-model="form.name"
                   type="text"
                   addon-left-icon="now-ui-icons users_circle-08"
-                  name="Full Name"
+                  name="name"
                 >
                 </fg-input>
                 <fg-input
@@ -45,26 +22,27 @@
                   type="email"
                   v-model="form.email"
                   addon-left-icon="now-ui-icons ui-1_email-85"
+                   name="email"
                 >
                 </fg-input>
                 <div class="textarea-container">
                   <textarea
                     class="form-control"
-                    name="name"
                     rows="4"
                     cols="80"
                     v-model="form.message"
+                    name="message"
                     placeholder="Type a message..."
                   ></textarea>
                 </div>
                 <div class="send-button">
-                  <button type="submit" class="btn-round btn btn-primary btn-lg" rounded >Send Message</button>
+                  <button class="btn-round btn btn-primary btn-lg" rounded >Send Message</button>
                   <n-button v-if="false" type="submit" round   class="btn btn-primary btn-lg"
                     >Send Message</n-button
                   >
                 </div>
             </form>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -83,16 +61,10 @@ export default {
     data() {
       return {
         form: {
-          fullName: '',
+          name: '',
           email: '',
           message: '',
-          askPerson: ""
         },
-        formData: {
-          userEmail: null,
-        },
-        panelists: ['Evan You', 'Chris Fritz'],
-        currentPanelist: 'Evan You'
       };
     },
     methods : {
@@ -108,37 +80,25 @@ export default {
           }
         })
       },
-      updatePanelist (ev) {
-        this.currentPanelist = ev.target.value
+      handleSubmit () {
+        fetch('/', {
+          method: 'post',
+          header: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: this.encode({
+            'form-name': 'contact',
+            ...this.form
+          })
+        }).then(() => {
+          this.sendMessage()
+        })
       },
-      encode(data) {  
-            const formData = new FormData();
-            
-            for (const key of Object.keys(data)) {
-                formData.append(key, data[key]);
-            }
-            
-            return formData;
-        },
-      handleFormSubmit(e) {
-            const axiosConfig = {
-                header: { "Content-Type": "application/x-www-form-urlencoded" }
-            };
-
-            axios.post(
-                location.href, 
-                this.encode({
-                    'form-name': e.target.getAttribute("name"),
-                    ...this.formData,
-                }),
-                axiosConfig
-            )
-            // .then(document.getElementById("myForm").innerHTML = `
-            // <div>
-            //     Thank you! I received your submission.
-            // </div>
-            // `)
-        }
+       encode (data) {
+        return Object.keys(data)
+          .map(
+            key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+          )
+          .join("&");
+      },
     }
 }
 </script>

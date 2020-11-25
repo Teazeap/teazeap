@@ -78,7 +78,7 @@ export default {
       sendMessage () {
         this.$swal({
         title: 'Message sent',
-        text: 'You will recieve email for confirmation',
+        text: 'Our staff will contact you',
         icon: 'success',
         confirmButtonText: 'Okay'
         }).then((result) => {

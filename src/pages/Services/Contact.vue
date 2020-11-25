@@ -5,7 +5,7 @@
         <p class="description">Your teaching career is very important to us.</p>
         <div class="row">
               <div class="col-lg-5 col-sm-12 text-center ml-auto mr-auto col-md-10">
-                <form name="homepage" method="POST" data-netlify="true">
+                <form name="homepage" method="POST" data-netlify="true" netlify>
                     <span v-if="false">
                       <p>
                         <label>Your Name: <input v-model="form.fullName" type="text" name="name" /></label>   

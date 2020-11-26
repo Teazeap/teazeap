@@ -39,7 +39,9 @@
           <div class="row justify-content-around">
             <div class="col-md-3">
               <div class="team-player">
-                <i class="now-ui-icons education_hat"></i>
+                <span style="color: #f96332;">
+                  <i class="fas fa-address-card fa-5x"></i>
+                </span>
                 <h4 class="title">Full time Teacher</h4>
                 <p class="description">
                   Reliable and trustworthy teachers that are committed to working in harmony with their school full time in order to provide a fun and safe learning environment for students.
@@ -48,7 +50,9 @@
             </div>
             <div class="col-md-3">
               <div class="team-player">
-                <i class="now-ui-icons education_hat"></i>
+                <span style="color: #f96332;">
+                  <i class="fas fa-address-card fa-5x"></i>
+                </span>
                 <h4 class="title">Part time Teacher</h4>
                 <p class="description">
                   Reliable and trustworthy teachers that are committed to working in harmony with their school part time in order to provide a fun and safe learning environment for students.
@@ -57,7 +61,9 @@
             </div>
             <div class="col-md-3">
               <div class="team-player">
-                <i class="now-ui-icons education_hat"></i>
+                <span style="color: #f96332;">
+                  <i class="fas fa-address-card fa-5x"></i>
+                </span>
                 <h4 class="title">Sub Teacher</h4>
                 <p class="description">
                   Reliable, and trustworthy teachers open to fill in when requested by a school and willing to meet their needs.
@@ -79,7 +85,7 @@
               <div class="card-body mt-n6">
                 <h4 class="card-title">Clifton Moreau</h4>
                 <h4 class="card-title text-primary">Chief Executive Officer</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text font-italic">“It takes 20 years to build a reputation and five minutes to ruin it. If you think about that, you’ll do things differently.”</p>
               </div>
                 <a href="#pablo" class="card-link btn btn-primary btn-icon btn-round"
                   ><i class="fab fa-twitter"></i
@@ -97,7 +103,7 @@
               <div class="card-body mt-n6">
                 <h4 class="card-title">Calerb Louis Jean</h4>
                 <h4 class="card-title text-primary">Project Manager</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text font-italic"> “As you navigate through the rest of your life, be open to collaboration. Other people and other people’s ideas are often better than your own.” </p>
               </div>
                 <a href="#pablo" class="card-link btn btn-primary btn-icon btn-round"
                   ><i class="fab fa-twitter"></i
@@ -115,7 +121,7 @@
               <div class="card-body mt-n6">
                 <h4 class="card-title">Nnenia Stephens</h4>
                 <h4 class="card-title text-primary">Communication Director</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text font-italic">“Without publicity there can be no public support, and without public support every nation must decay.”</p>
               </div>
                 <a href="#pablo" class="card-link btn btn-primary btn-icon btn-round"
                   ><i class="fab fa-twitter"></i

@@ -30,6 +30,7 @@ export default new Router({
         footer: { backgroundColor: 'black' }
       }
     },
+    { path: '*', redirect: '/' },
     {
       path: '/',
       name: 'landing',

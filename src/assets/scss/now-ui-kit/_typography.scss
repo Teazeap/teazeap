@@ -3,7 +3,7 @@ input,
 optgroup,
 select,
 textarea{
-    font-family: $sans-serif-family;
+    font-family: 'Montserrat', sans-serif;
 }
 h1,h2,h3,h4,h5,h6{
     font-weight: $font-weight-normal;
@@ -67,7 +67,7 @@ h6, .h6{
 }
 p{
     line-height: 1.61em;
-    font-weight: 300;
+    font-weight: 50%;
     font-size: 1.2em;
 }
 
@@ -92,13 +92,13 @@ p{
 .description,
 .card-description,
 .footer-big p{
-    color: $dark-gray;
-    font-weight: $font-weight-light;
+    color: $black-color;
+    font-weight: 50%;
 }
 .category{
     text-transform: capitalize;
-    font-weight: $font-weight-bold;
-    color: $dark-gray;
+    font-weight: 50%;
+    color: $black-color;
 }
 .text-primary {
   color: $brand-primary !important;

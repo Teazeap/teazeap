@@ -184,9 +184,6 @@
                       </div>
                   </div>
                 </div>
-                <n-button type="submit" v-if="false"  round class="btn btn-primary" :disabled="isUploading || isVideoUploading">
-                  Submit
-                </n-button>
                 <button class="btn-round btn btn-primary" rounded :disabled="isUploading || isVideoUploading" >Submit</button>
               </form>
             </div>
@@ -241,6 +238,7 @@ export default {
         firstName: '',
         lastName: '',
         email: '',
+        message: '',
         description: '',
         gender: 'Male',
         country: 'Afghanistan'
@@ -263,6 +261,8 @@ export default {
     },
     handleSubmit (e) {
       this.submitClicked = true
+      this.form.name = `${this.form.firstName} ${this.form.lastName}`
+      this.form.message = this.description
       this.$validator.validateAll()
         .then((result) => {
           if(result) {

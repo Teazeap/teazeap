@@ -44,9 +44,6 @@
                 </div>
                 <div class="send-button">
                   <button class="btn-round btn btn-primary btn-lg" rounded >Send Message</button>
-                  <n-button v-if="false" type="submit" round   class="btn btn-primary btn-lg"
-                    >Send Message</n-button
-                  >
                 </div>
             </form>
           </div>

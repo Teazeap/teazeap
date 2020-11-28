@@ -25,44 +25,52 @@
         <div class="button-container">
           <router-link :to="{name: 'JobsMain'}" tag="button" class="btn btn-primary btn-round btn-lg">Back To Jobs</router-link>
         </div>
-         <div class="card-deck row-fluid no-gutters">
-            <div class="card col-12 col-xs-12  col-sm-12 col-md-12 col-lg-4 col-xl-6">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Introduction</h5>
-                <p class="card-text text-left">{{ job.description}}</p>
+         <div class="row">
+            <div class="col-12 col-xs-12  col-sm-12 col-md-12 col-lg-6 col-xl-6 py-2 offset-xl-1" >
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Introduction</h5>
+                  <p class="card-text text-left">{{ job.description}}</p>
+                </div>
               </div>
             </div>
-            <div class="card col-12 col-xs-12  col-sm-12 col-md-12 col-lg-4 col-xl-6">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Requirements</h5>
-               <ul class="text-left">
-                <li v-for="(item, index) in job.requirements" :key="index" >{{ item }}</li>
-              </ul>
+            <div class="col-12 col-xs-12  col-sm-12 col-md-12 col-lg-6 col-xl-4 py-2">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Requirements</h5>
+                <ul class="text-left">
+                  <li v-for="(item, index) in job.requirements" :key="index" >{{ item }}</li>
+                </ul>
+                </div>
               </div>
             </div>
-            <div class="card col-12 col-xs-12  col-sm-12 col-md-12 col-lg-4 col-xl-6">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">What We Offer</h5>
-               <ul class="text-left">
-                <li v-for="(item, index) in job.benefits" :key="index" >{{ item }}</li>
-              </ul>
+            <div class="col-12 col-xs-12  col-sm-12 col-md-12 col-lg-6 col-xl-6 py-2 offset-xl-1">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">What We Offer</h5>
+                <ul class="text-left">
+                  <li v-for="(item, index) in job.benefits" :key="index" >{{ item }}</li>
+                </ul>
+                </div>
               </div>
             </div>
-            <div class="card col-12 col-xs-12  col-sm-12 col-md-12 col-lg-4 col-xl-6">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Schedule</h5>
-               <ul class="text-left">
-                <li v-for="(item, index) in job.schedule" :key="index" >{{ `${item.Day} : ${item.Time} ` }}</li>
-              </ul>
+            <div class="col-12 col-xs-12  col-sm-12 col-md-12 col-lg-4 col-xl-4 py-2">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Schedule</h5>
+                  <ul class="text-left">
+                    <li v-for="(item, index) in job.schedule" :key="index" >{{ `${item.Day} : ${item.Time} ` }}</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
       </div>
     </div>
     <div>
-        <div class="container-fluid ">
-          <div class="row-fluid card-deck no-gutters">
-            <div class="col-md-12 col-lg-6 ml-auto col-xl-6 mr-auto">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-8 col-xl-6 align-self-center">
               <p class="card-title font-weight-bold text-center">Apply</p>
               <!-- Nav tabs -->
               <form @submit.prevent="handleSubmit" name="job-applications" method="POST" data-netlify="true" netlify-honeybot="bot-field" class="needs-validation" novalidate>

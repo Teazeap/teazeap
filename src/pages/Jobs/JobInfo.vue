@@ -65,7 +65,8 @@
             <div class="col-md-12 col-lg-6 ml-auto col-xl-6 mr-auto">
               <p class="card-title font-weight-bold text-center">Apply</p>
               <!-- Nav tabs -->
-              <form>
+              <form @submit.prevent="handleSubmit" name="job-applications" method="POST" data-netlify="true" netlify-honeybot="bot-field" class="needs-validation" novalidate>
+                <input type="hidden" name="bot-field" value="job-applications">
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label>Name</label>
@@ -183,9 +184,7 @@
                       </div>
                   </div>
                 </div>
-                <n-button type="submit" @click="hadleSubmit"  round class="btn btn-primary" :disabled="isUploading || isVideoUploading">
-                  Submit
-                </n-button>
+                <button class="btn-round btn btn-primary" rounded :disabled="isUploading || isVideoUploading" >Submit</button>
               </form>
             </div>
           </div>
@@ -239,6 +238,7 @@ export default {
         firstName: '',
         lastName: '',
         email: '',
+        message: '',
         description: '',
         gender: 'Male',
         country: 'Afghanistan'
@@ -259,19 +259,31 @@ export default {
         this.uploaded = true
       })
     },
-    hadleSubmit (e) {
-      e.preventDefault()
+    handleSubmit (e) {
       this.submitClicked = true
+      this.form.name = `${this.form.firstName} ${this.form.lastName}`
+      this.form.message = this.description
       this.$validator.validateAll()
         .then((result) => {
           if(result) {
             if (this.uploaded) {
+              this.handleNetlifyForm()
               this.applicationCompleted()
             } else {
               this.uploadRequired()
             }
           }
         })
+    },
+    handleNetlifyForm () {
+      fetch('/', {
+      method: 'post',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: this.encode({
+        'form-name': 'job-applications',
+        ...this.form
+        })
+      })
     },
     applicationCompleted () {
       this.$swal({
@@ -337,7 +349,14 @@ export default {
     },
     handleTime (fullTime) {
       return fullTime? 'Full Time' : 'Sub'
-    }
+    },
+    encode (data) {
+        return Object.keys(data)
+          .map(
+            key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+          )
+          .join("&");
+    },
   },
   async created() {
     await this.fetchJobs()

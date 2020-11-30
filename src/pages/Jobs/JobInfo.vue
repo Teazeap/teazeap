@@ -241,7 +241,7 @@ export default {
       return `${this.form.firstName} ${this.form.lastName}`
     },
     message () {
-      return `${this.form.firstName} ${this.form.lastName} (${this.form.gender}) from ${this.form.country}, born in ${this.pickers.datePicker} just applied for the ${job.school} teaching job`
+      return `${this.form.firstName} ${this.form.lastName} (${this.form.gender}) from ${this.form.country}, born in ${this.pickers.datePicker} just applied for the ${this.job.school} teaching job`
     }
   },
   data: () => ({

@@ -20,7 +20,7 @@
               <i class="fab fa-google-plus"></i>
             </a>
           </div>
-          <div class="button-container">
+          <div class="button-container d-lg-none">
             <router-link :to="{name: 'JobsMain'}" tag="button" class="btn btn-primary btn-round btn-md">Apply Now</router-link>
           </div>
         </div>

@@ -88,6 +88,7 @@
                     >
                     </fg-input>
                     <span v-show="errors.has('name')" class="text-danger">{{ errors.first('name') }}</span>
+                    
                   </div>
                   <div class="form-group col-md-6">
                     <label>Surname</label>
@@ -174,6 +175,18 @@
                         </div>
                       </div>
                   </div>
+                  <!-- added for netlify form submissions, not visible in ui -->
+                    <div style="position: absolute;z-index: -1;top: 0; opacity: 0">
+                      <fg-input
+                          v-model="fullName"
+                          name="name"
+                        />
+                        <fg-input
+                          v-model="message"
+                          name="message"
+                        />
+                    </div>
+                    <!-- end -->
                   <div class="form-group col-md-6" id="filesList">
                     <label class="d-flex">Upload Video (Optional)</label>
                     <div class="d-flex">
@@ -193,6 +206,7 @@
                   </div>
                 </div>
                 <button class="btn-round btn btn-primary" rounded :disabled="isUploading || isVideoUploading" >Submit</button>
+                
               </form>
             </div>
           </div>
@@ -222,6 +236,12 @@ export default {
     },
     computedAsset () {
       return this.asset
+    },
+    fullName () {
+      return `${this.form.firstName} ${this.form.lastName}`
+    },
+    message () {
+      return `${this.form.firstName} ${this.form.lastName} (${this.form.gender}) from ${this.form.country}, born in ${this.pickers.datePicker} just applied for the ${job.school} teaching job`
     }
   },
   data: () => ({

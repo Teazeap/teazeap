@@ -12,7 +12,8 @@
       </router-link>
     </template>
     <template slot="navbar-menu">
-      <drop-down
+      <!-- removed for now, until we get update on what to put -->
+      <!-- <drop-down
         tag="li"
         title="How it Works"
         icon="now-ui-icons design_app"
@@ -24,7 +25,7 @@
        <nav-link to="/qualification">
           <i class="now-ui-icons education_hat"></i> Qualification 
         </nav-link>
-      </drop-down>
+      </drop-down> -->
       <drop-down
           tag="li"
           title="Our Services"

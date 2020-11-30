@@ -119,7 +119,6 @@ const actions = {
     })
   },
   updateView ({commit, dispatch},entryId) {
-    console.log(entryId);
     client.getSpace('dr15y1pi2yc9')
       .then((space) => space.getEnvironment('master-2020-10-14'))
       .then((environment) => environment.getEntry(entryId))

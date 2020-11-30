@@ -80,8 +80,10 @@ export default {
         },
       };
     },
-    subject () {
-      return `Contact Form Message:  ${this.form.name}`
+    computed: {
+      subject () {
+        return `Contact Form Message:  ${this.form.name}`
+      }
     },
     methods : {
       sendMessage () {

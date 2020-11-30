@@ -14,7 +14,7 @@
             </div>
             <div class="col-6">
               <h6>
-                <img src="img/eye.png" style="width:12%; height: 12%"> {{ formatViews(job.resumes.length + 4)}}
+                <img src="img/eye.png" style="width:12%; height: 12%"> {{ job.views + 4 }}
               </h6>
             </div>
           </div>
@@ -54,9 +54,6 @@ export default {
       const createdAt = moment(new Date(date))
       const now = moment(new Date())
       return createdAt.from(now)
-    },
-    formatViews (applications) {
-      return applications + Math.round(Math.random() * 100)
     }
   }
 }

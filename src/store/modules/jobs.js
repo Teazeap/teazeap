@@ -117,6 +117,21 @@ const actions = {
         })
         .catch(error => {reject(error)})
     })
+  },
+  updateView ({commit, dispatch},entryId) {
+    client.getSpace('dr15y1pi2yc9')
+      .then((space) => space.getEnvironment('master-2020-10-14'))
+      .then((environment) => environment.getEntry(entryId))
+      .then((entry) => {
+        // assign uploaded image as an entry field
+        let currentViews = entry.fields["views"]["en-US"]
+        entry.fields["views"]["en-US"] = currentViews + 1
+        return entry.update()
+      }).then ((entry) => {
+        entry.publish()
+        dispatch('fetchJobs')
+        resolve(entry)
+      })
   }
 };
 const mutations = {

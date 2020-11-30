@@ -412,6 +412,7 @@ export default {
     await this.fetchJobs()
     let job = this.allJobs.filter(item => item.id === this.$route.params.id)
     this.currentJob = job[0]
+    this.$store.dispatch('updateView',this.currentJob.id)
   }
 };
 </script>

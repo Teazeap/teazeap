@@ -6,9 +6,18 @@
         </div>
         <div class="card-body">
           <h4 class="card-title">{{ job.school }}</h4>
-          <h6>
-          <i class="now-ui-icons location_pin"></i> {{ job.city }}
-          </h6>
+          <div class="row">
+            <div class="col-6">
+              <h6>
+                <i class="now-ui-icons location_pin"></i> {{ job.city }}
+              </h6>
+            </div>
+            <div class="col-6">
+              <h6>
+                <img src="img/eye.png" style="width:12%; height: 12%"> {{ job.views}}
+              </h6>
+            </div>
+          </div>
           <div class="row mb-n3">
              <div v-if="job.resumes.length === 1" style="color: #f96332" class="col-5">no applicants</div> 
             <div v-else class="col-5 text-success">{{ formatApplicants(job.resumes.length) }}</div>            

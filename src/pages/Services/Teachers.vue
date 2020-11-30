@@ -83,22 +83,22 @@ export default {
         {
           picUrl: 'img/serge.jpg',
           name: 'Serge Jhally',
-          message: `"TeaZeaP has been really helpful, their services are efficient effective and fast. I liked working with TeaZeaP."`
+          message: `"TeaZeaP has been really helpful, their service is efficient effective and fast. I liked working with TeaZeaP."`
         },
         {
           picUrl: 'img/molie.jpg',
           name: 'Fermodelie Pierre',
-          message: `"TeaZeaP is one of the best place to come when it comes to find the best English teaching Gig."`
+          message: `"TeaZeaP is one of the best place to come when it comes to finding the best English teaching Gig."`
         },
         {
           picUrl: 'img/pic3.jpg',
           name: 'Drew',
-          message: `"TeaZeaP they work with the best schools and they would pretty much facilitate everything for the teachers"`
+          message: `"TeaZeaP..they work with the best schools and they would pretty much facilitate everything for the teachers"`
         },
         {
           picUrl: 'img/daniella.jpg',
           name: 'Daniella',
-          message: `"TeaZeaP experience so far is reliable, honest, genuine, easily accessible to talk to someone through any kinds of platforms."`
+          message: `"TeaZeaP experience  is reliable, honest, genuine, easily accessible to talk to someone through any kinds of platforms."`
         }
       ],
       cardClass: 'col-md-6 col-lg-4 col-xl-4 py-2',

@@ -185,6 +185,10 @@
                           v-model="message"
                           name="message"
                         />
+                         <fg-input
+                          v-model="subject"
+                          name="subject"
+                        />
                     </div>
                     <!-- end -->
                   <div class="form-group col-md-6" id="filesList">
@@ -242,6 +246,9 @@ export default {
     },
     message () {
       return `${this.form.firstName} ${this.form.lastName} (${this.form.gender}) from ${this.form.country}, born in ${this.pickers.datePicker} just applied for the ${this.job.school} teaching job`
+    },
+    subject () {
+      return `${this.form.firstName} ${this.form.lastName} - ${this.job.school}`
     }
   },
   data: () => ({
@@ -268,6 +275,7 @@ export default {
         email: '',
         message: '',
         description: '',
+        subject: '',
         gender: 'Male',
         country: 'Afghanistan'
       },
@@ -290,7 +298,8 @@ export default {
     handleSubmit (e) {
       this.submitClicked = true
       this.form.name = `${this.form.firstName} ${this.form.lastName}`
-      this.form.message = this.description
+      this.form.message = this.message
+      this.form.subject = this.subject
       this.$validator.validateAll()
         .then((result) => {
           if(result) {

@@ -45,6 +45,14 @@
                 <div class="send-button">
                   <button class="btn-round btn btn-primary btn-lg" rounded >Send Message</button>
                 </div>
+                 <!-- added for netlify form submissions, not visible in ui -->
+                <div style="position: absolute;z-index: -1;top: 0; opacity: 0">
+                      <fg-input
+                      v-model="subject"
+                      name="subject"
+                    />
+                </div>
+                <!-- end -->
             </form>
           </div>
         </div>
@@ -68,8 +76,12 @@ export default {
           name: '',
           email: '',
           message: '',
+          subject: ''
         },
       };
+    },
+    subject () {
+      return `Contact Form Message:  ${this.form.name}`
     },
     methods : {
       sendMessage () {
@@ -86,6 +98,7 @@ export default {
         })
       },
       handleSubmit () {
+        this.form.subject = this.subject
         this.$validator.validateAll()
         .then(result => {
           if (result) {

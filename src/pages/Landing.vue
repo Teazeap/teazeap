@@ -8,7 +8,7 @@
       </parallax>
       <div class="content-center">
         <div class="container">
-          <h1 class="title">TeaZeaP Recruiting Agency</h1>
+          <h1 class="title" data-aos="zoom-in" data-aos-duration="1000">TeaZeaP Recruiting Agency</h1>
           <div class="text-center">
             <a href="https://www.facebook.com/teazeap" target="_blank" class="btn btn-primary btn-icon btn-round">
               <i class="fab fa-facebook-square"></i>
@@ -27,8 +27,8 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">Who are we?</h2>
-            <h5 class="description">
+            <h2 class="title" data-aos="fade-right" data-aos-duration="1500">Who are we?</h2>
+            <h5 class="description" data-aos="fade-left" data-aos-duration="1500">
               TeaZeaP services guarantee schools are connected and provided with the best school teachers. Full time, part time, and substitute teacher positions are available.
               TeaZeaP is here to support our partners. In addition to job placements our team is available to mediate between schools and teachers. This may include communicating, clarifying or solving any potential misunderstandings between the two parties. Mentorship and helpful resources are readily available to teachers.
             </h5>
@@ -43,10 +43,10 @@
             <div class="col-md-3">
               <div class="team-player">
                 <span style="color: #f96332;">
-                  <i class="fas fa-address-card fa-5x"></i>
+                  <i class="fas fa-address-card fa-5x" data-aos="fade-down" data-aos-duration="1500"></i>
                 </span>
-                <h4 class="title">Full time Teacher</h4>
-                <p class="description">
+                <h4 class="title" data-aos="fade-right" data-aos-duration="1500">Full time Teacher</h4>
+                <p class="description" data-aos="fade-up" data-aos-duration="1500">
                   Reliable and trustworthy teachers that are committed to working in harmony with their school full time in order to provide a fun and safe learning environment for students.
                 </p>
               </div>
@@ -54,10 +54,10 @@
             <div class="col-md-3">
               <div class="team-player">
                 <span style="color: #f96332;">
-                  <i class="fas fa-address-card fa-5x"></i>
+                  <i class="fas fa-address-card fa-5x" data-aos="fade-down" data-aos-duration="1500"></i>
                 </span>
-                <h4 class="title">Part time Teacher</h4>
-                <p class="description">
+                <h4 class="title" data-aos="fade-left" data-aos-duration="1500">Part time Teacher</h4>
+                <p class="description" data-aos="fade-up" data-aos-duration="1500">
                   Reliable and trustworthy teachers that are committed to working in harmony with their school part time in order to provide a fun and safe learning environment for students.
                 </p>
               </div>
@@ -65,10 +65,10 @@
             <div class="col-md-3">
               <div class="team-player">
                 <span style="color: #f96332;">
-                  <i class="fas fa-address-card fa-5x"></i>
+                  <i class="fas fa-address-card fa-5x" data-aos="fade-down" data-aos-duration="1500"></i>
                 </span>
-                <h4 class="title">Sub Teacher</h4>
-                <p class="description">
+                <h4 class="title" data-aos="fade-left" data-aos-duration="1500">Sub Teacher</h4>
+                <p class="description" data-aos="fade-up" data-aos-duration="1500">
                   Reliable, and trustworthy teachers open to fill in when requested by a school and willing to meet their needs.
                 </p>
               </div>
@@ -80,7 +80,7 @@
       <div class="container text-center">
          <h2 class="title">Here is our team</h2>
       <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4  py-2">
+          <div class="col-md-6 col-lg-4 col-xl-4  py-2" data-aos="zoom-in" data-aos-duration="1500">
             <div class="card h-80">
               <div class="mb-n4">
                 <img class="card-img-top " src="img/clifton.jpg" alt="Card image cap">
@@ -98,7 +98,7 @@
                 ></a>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 col-xl-4  py-2">
+          <div class="col-md-6 col-lg-4 col-xl-4  py-2" data-aos="zoom-in" data-aos-duration="1500">
             <div class="card h-80">
               <div class="mb-n4">
                 <img class="card-img-top " src="img/calerb.jpg" alt="Card image cap">
@@ -116,7 +116,7 @@
                 ></a>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 col-xl-4  py-2">
+          <div class="col-md-6 col-lg-4 col-xl-4  py-2" data-aos="zoom-in" data-aos-duration="1500">
             <div class="card h-80">
               <div class="mb-n4">
                 <img class="card-img-top " src="img/wixy.jpg" alt="Card image cap">

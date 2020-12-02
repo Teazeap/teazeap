@@ -23,6 +23,8 @@ import store from './store';
 import VeeValidate from "vee-validate";
 import VueSweetalert2 from 'vue-sweetalert2'
 import 'sweetalert2/dist/sweetalert2.min.css';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 Vue.config.productionTip = false;
 
 const options = {
@@ -37,5 +39,8 @@ Vue.use(NowUiKit);
 new Vue({
   router,
   store,
+  created () {
+    AOS.init()
+},
   render: h => h(App)
 }).$mount('#app');

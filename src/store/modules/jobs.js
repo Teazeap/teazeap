@@ -2,8 +2,7 @@ import Client from '../../contentful'
 import * as contentful from 'contentful-management'
 const contentType = 'application/pdf';
 var client = contentful.createClient({
-  // This is the access token for this space. Normally you get the token in the Contentful web app
-  accessToken: 'CFPAT-p9feBff9O0kxcpoMK0RdpJDxFCb0thB1LaqCuENBCAI',
+  accessToken: process.env.VUE_APP_ACCESS_TOKEN,
 })
 
 const state = {
@@ -35,7 +34,7 @@ const actions = {
   },
   uploadCv({commit, dispatch}, file) {
     return new Promise ((resolve, reject) => {
-        client.getSpace('dr15y1pi2yc9')
+        client.getSpace(process.env.VUE_APP_SPACE)
         .then((space) => space.getEnvironment('master-2020-10-14'))
         .then((environment) => environment.createAssetFromFiles({
           fields: {
@@ -58,7 +57,7 @@ const actions = {
         .then((asset) => asset.publish())
         .then((asset) => {
           commit('setAsset', asset)
-          client.getSpace('dr15y1pi2yc9')
+          client.getSpace(process.env.VUE_APP_SPACE)
             .then((space) => space.getEnvironment('master-2020-10-14'))
             .then((environment) => environment.getEntry(file.entryId))
             .then((entry) => {
@@ -78,7 +77,7 @@ const actions = {
   },
   uploadVideo({commit, dispatch}, file) {
     return new Promise ((resolve, reject) => {
-        client.getSpace('dr15y1pi2yc9')
+        client.getSpace(process.env.VUE_APP_SPACE)
         .then((space) => space.getEnvironment('master-2020-10-14'))
         .then((environment) => environment.createAssetFromFiles({
           fields: {
@@ -101,7 +100,7 @@ const actions = {
         .then((asset) => asset.publish())
         .then((asset) => {
           commit('setAsset', asset)
-          client.getSpace('dr15y1pi2yc9')
+          client.getSpace(process.env.VUE_APP_SPACE)
             .then((space) => space.getEnvironment('master-2020-10-14'))
             .then((environment) => environment.getEntry(file.entryId))
             .then((entry) => {
@@ -119,7 +118,7 @@ const actions = {
     })
   },
   updateView ({commit, dispatch},entryId) {
-    client.getSpace('dr15y1pi2yc9')
+    client.getSpace(process.env.VUE_APP_SPACE)
       .then((space) => space.getEnvironment('master-2020-10-14'))
       .then((environment) => environment.getEntry(entryId))
       .then((entry) => {

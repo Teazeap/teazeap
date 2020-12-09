@@ -19,7 +19,12 @@
           </li>
           <li>
             <router-link v-popover:popover1 class="navbar-brand" to="/our-services/teachers">
-              Services
+              Teachers
+            </router-link>
+          </li>
+          <li>
+            <router-link v-popover:popover1 class="navbar-brand" to="/our-services/schools">
+              Schools
             </router-link>
           </li>
           <li>
@@ -31,10 +36,8 @@
       </nav>
       <div class="copyright">
         &copy; {{ year }}, 
-        <a href="https://twitter.com/gondwe_muzi" target="_blank" rel="noopener"
-          > Designed by Legacy Inc.</a
-        >. Coded by
-        <a href="https://twitter.com/gondwe_muzi" target="_blank" rel="noopener"
+        Coded by
+        <a href="https://muzi-gondwe.netlify.app/" target="_blank" rel="noopener"
           >Muzi P. Gondwe</a
         >
         and

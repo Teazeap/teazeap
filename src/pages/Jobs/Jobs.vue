@@ -1,48 +1,49 @@
 <template>
   <div>
-     <div class="page-header page-header-medium">
-        <parallax
-          class="page-header-image"
-          style="background-image: url('img/bg5.jpg')"
-        >
-        </parallax>
-        <div class="row mt-lg-5">
-          <div class="container">
-            <h1 class="title">TeaZeaP Recruiting Agency</h1>
-            <p class="category">Join our ever expanding clientele</p>
-              <div class="content">
-                <div class="social-description">
-                  <h2>{{allJobs.length}}</h2>
-                  <p>Current Jobs</p>
-                </div>
-                <div class="social-description">
-                  <h2>26</h2>
-                  <p>Clients</p>
-                </div>
-                <div class="social-description">
-                  <h2>48</h2>
-                  <p>Schools</p>
-                </div>
+    <div class="page-header page-header-small">
+      <parallax
+        class="page-header-image"
+        style="background-image: url('img/bg5.jpg')"
+      >
+      </parallax>
+      <div class="content-center">
+        <div class="container">
+          <h1 class="title">TeaZeaP Recruiting Agency</h1>
+          <div class="text-center row">
+            <div class="col-4">
+              <h2 class="mb-2">{{allJobs.length}}</h2>
+              <p>Current Jobs</p>
+            </div>
+            <div class="col-4">
+              <h2 class="mb-2">26</h2>
+              <p>Clients</p>
+            </div>
+            <div class="col-4">
+              <h2 class="mb-2">48</h2>
+              <p>Schools</p>
+            </div>
+            <div class="col-12">
+              <a href="https://www.facebook.com/teazeap" target="_blank" class="btn btn-primary btn-icon btn-round">
+                <i class="fab fa-facebook-square"></i>
+              </a>
+              <a href="https://www.instagram.com/teazeap/" class="btn btn-primary btn-icon btn-round" target="_blank" >
+                <i class="fab fa-instagram"></i>
+              </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
     <div class="section">
       <div class="container text-center">
-        <div class="button-container">
-          <a href="https://www.facebook.com/teazeap" target="_blank" class="btn btn-primary btn-icon btn-round">
-              <i class="fab fa-facebook-square"></i>
-            </a>
-            <a href="https://www.instagram.com/teazeap/" class="btn btn-primary btn-icon btn-round" target="_blank" >
-              <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-        <div class="row">
+        <div class="row justify-content-center">
           <JobCard  v-for="job in allJobs.slice(start,end)" :key="job.id" :job="job"/>
         </div>
+        <h4 v-if="noJobs" class="card-title text-primary">Jobs Currently Unvailable</h4>
       </div>
+       <Contact v-if="noJobs" />
     </div>
-    <div class="container">
+    <div class="container" v-if="!noJobs">
         <div class="row justify-content-end">
           <div class="col align-self-end offset-xl-9 offset-md-9 offset-sm-9">
             <Pagination
@@ -62,11 +63,13 @@
 import { Pagination } from '@/components';
 import JobCard from '@/pages/Jobs/JobCard'
 import { mapGetters, mapActions } from "vuex";
+import  Contact  from "@/pages/Services/Contact";
 
 export default {
   name: 'jobs',
   bodyClass: 'landing-page',
   components: {
+    Contact,
     JobCard,
     Pagination,
   },
@@ -76,6 +79,7 @@ export default {
   watch: {
     allJobs () {
       this.handlePagination()
+      this.checkJobs()
     }
   },
   created() {
@@ -93,6 +97,7 @@ export default {
       },
       jobs: [],
       start: 6,
+      noJobs: false,
       end: 12
     };
   },
@@ -105,6 +110,9 @@ export default {
     changePage (value) {
       this.start = (this.pagination.perPage * value) - this.pagination.perPage
       this.end = this.pagination.perPage * value
+    },
+    checkJobs () {
+      this.noJobs = this.allJobs.length === 0
     }
   },
 };

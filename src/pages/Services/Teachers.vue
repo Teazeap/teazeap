@@ -30,9 +30,9 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">Finding Your Next Job</h2>
+            <h2 class="title">{{$t('teachers.find')}}</h2>
             <h5 class="description">
-              Your success is important to us. TeaZeaP has curated partnerships with various employers looking to fill full-time, part-time, and substitute teacher positions. Through our platform you will be promoted as a candidate for a number of openings. If your resume is a good match for our clients’ needs, a recruiter will reach out to you to ensure the opportunity fits your goals and preferences. From there, our team will prepare you for every step of the hiring process, from the interview to placement. And even in helping you get settled in the apartment and city, you would like. We would have one of our team members accompany you all along the way.
+              {{$t('teachers.success')}}
             </h5>
           </div>
         </div>
@@ -41,7 +41,7 @@
     </div>
      <div class="section">
       <div class="container text-center">
-         <h2 class="title">Teachers' Testimonials</h2>
+         <h2 class="title">{{$t('teachers.testimonials')}}</h2>
       <div class="row">
           <div :class="[cardClass, index === 3 ? last : '']" v-for="(testimony, index) in testimonials" :key="index">
             <div class="card h-100">

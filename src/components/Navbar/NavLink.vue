@@ -2,26 +2,31 @@
   <component
     :is="componentType"
     :to="to"
+    :text="text"
     class="dropdown-item"
-    @click.native.stop="closeNav"
+    @click="onLanguageChange"
   >
     <slot></slot>
   </component>
 </template>
 <script>
 export default {
-  name: 'nav-link',
-  inject: ['closeNavbar'],
+  name: "nav-link",
+  inject: ["closeNavbar"],
   props: {
     to: {
       type: [String, Object],
-      default: undefined
-    }
+      default: undefined,
+    },
+    text: {
+      type: String,
+      default: "",
+    },
   },
   computed: {
     componentType() {
-      return this.to ? 'router-link' : 'a';
-    }
+      return this.to ? "router-link" : "a";
+    },
   },
   methods: {
     closeNav() {
@@ -29,10 +34,15 @@ export default {
         this.closeNavbar();
       }
       if (this.closeDropDown) {
-        this.closeDropDown()
+        this.closeDropDown();
       }
-    }
-  }
+    },
+    onLanguageChange() {
+      if (this.text) {
+        this.$emit("onLanguageChange", this.text);
+      }
+    },
+  },
 };
 </script>
 <style></style>

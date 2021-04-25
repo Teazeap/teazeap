@@ -1,15 +1,15 @@
 <template>
   <div class="section text-center">
       <div class="container">
-        <h2 class="title">Want to work with us?</h2>
-        <p class="description">Your teaching career is very important to us.</p>
+        <h2 class="title">{{$t('contact.with-us')}}</h2>
+        <p class="description">{{$t('contact.important')}}</p>
         <div class="row">
           <div class="col-lg-5 col-sm-12 text-center ml-auto mr-auto col-md-10">
             <form @submit.prevent="handleSubmit" name="contact" method="POST" data-netlify="true" netlify-honeybot="bot-field" class="needs-validation" novalidate>
                 <input type="hidden" name="bot-field" value="contact">
                 <fg-input
                   :class="`input-lg ${errors.has('name') ? 'has-danger' : ''}`"
-                  placeholder="First Name..."
+                  :placeholder="[[firstPlaceholder]]"
                   v-model="form.name"
                   type="text"
                   v-validate="'required'"
@@ -20,7 +20,7 @@
                 <span v-show="errors.has('name')" class="text-danger">{{ errors.first('name') }}</span>
                 <fg-input
                   :class="`input-lg ${errors.has('name') ? 'has-danger' : ''}`"
-                  placeholder="Email Here..."
+                  :placeholder="[[emailPlaceholder]]"
                   type="email"
                   v-validate="'required|email'"
                   v-model="form.email"
@@ -38,12 +38,12 @@
                     v-model="form.message"
                     v-validate="'required'"
                     name="message"
-                    placeholder="Type a message..."
+                    :placeholder="[[sendPlaceholder]]"
                   ></textarea>
                   <span v-show="errors.has('message')" class="text-danger">{{ errors.first('message') }}</span>
                 </div>
                 <div class="send-button">
-                  <button class="btn-round btn btn-primary btn-lg" rounded >Send Message</button>
+                  <button class="btn-round btn btn-primary btn-lg" rounded >{{$t('contact.send')}}</button>
                 </div>
                  <!-- added for netlify form submissions, not visible in ui -->
                 <div style="position: absolute;z-index: -1;top: 0; opacity: 0">
@@ -83,6 +83,15 @@ export default {
     computed: {
       subject () {
         return `Contact Form Message:  ${this.form.name}`
+      },
+      sendPlaceholder () {
+        return this.$t('contact.type')
+      },
+      emailPlaceholder () {
+        return this.$t('contact.email')
+      },
+      firstPlaceholder () {
+        return this.$t('contact.name')
       }
     },
     methods : {
@@ -102,6 +111,7 @@ export default {
       handleSubmit () {
         this.form.subject = this.subject
         this.$validator.validateAll()
+        this.$t()
         .then(result => {
           if (result) {
             fetch('/', {

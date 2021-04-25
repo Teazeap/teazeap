@@ -59,6 +59,20 @@
         </nav-link>
       </li>
 
+      <drop-down
+          tag="li"
+          title="Langauge"
+          icon="now-ui-icons business_globe"
+          class="nav-item nav-ul"
+      >
+        <nav-link text="en" @onLanguageChange="onLanguageChange">
+          <i class="now-ui-icons travel_istanbul"></i> English
+        </nav-link>
+        <nav-link text="zh" @onLanguageChange="onLanguageChange">
+          <i class="now-ui-icons transportation_air-baloon"></i> Chinese
+        </nav-link>
+      </drop-down>
+
       <li class="nav-item">
         <a
           class="nav-link"
@@ -104,7 +118,12 @@ export default {
     NavLink,
     [Popover.name]: Popover
   },
-  methods: {}
+  methods: {
+    onLanguageChange (language) {
+      this.$i18n.locale = language === 'en' ? 'en' : 'zh'
+      localStorage.setItem('teapZeapLang', this.$i18n.locale)
+    }
+   }
 };
 </script>
 

@@ -23,6 +23,7 @@ import store from './store';
 import VeeValidate from "vee-validate";
 import VueSweetalert2 from 'vue-sweetalert2'
 import 'sweetalert2/dist/sweetalert2.min.css';
+import i18n from './i18n'
 Vue.config.productionTip = false;
 
 const options = {
@@ -37,5 +38,6 @@ Vue.use(NowUiKit);
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app');

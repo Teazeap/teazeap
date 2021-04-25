@@ -8,19 +8,19 @@
       </parallax>
       <div class="content-center">
         <div class="container">
-          <h1 class="title">TeaZeaP Recruiting Agency</h1>
+          <h1 class="title">{{$t('schools.find')}}</h1>
           <div class="text-center row">
             <div class="col-4">
               <h2 class="mb-2">{{allJobs.length}}</h2>
-              <p>Current Jobs</p>
+              <p>{{$t('schools.jobs')}}</p>
             </div>
             <div class="col-4">
               <h2 class="mb-2">26</h2>
-              <p>Clients</p>
+              <p>{{$t('schools.clients')}}</p>
             </div>
             <div class="col-4">
               <h2 class="mb-2">48</h2>
-              <p>Schools</p>
+              <p>{{$t('schools.schools')}}</p>
             </div>
             <div class="col-12">
               <a href="https://www.facebook.com/teazeap" target="_blank" class="btn btn-primary btn-icon btn-round">
@@ -38,10 +38,9 @@
         <div class="container">
           <div class="row">
             <div class="col-md-8 ml-auto mr-auto text-center">
-              <h2 class="title">Finding Your Next Teacher</h2>
+              <h2 class="title">{{$t('schools.find')}}</h2>
               <h5 class="description">
-                TeaZeaP services guarantee schools are connected and provided with the best school teachers. We will help them find the right full time, part-time, or substitute teacher at the time needed. 
-                TeaZeaP is here to support our partners. In addition to job placements our team is available to mediate between schools and teachers. This may include communicating, clarifying or solving any potential misunderstandings between the two parties. Mentorship and helpful resources are readily available to teachers. And besides our services go further, we even have the option of going abroad to the country of choice of the schools to fetch the right teachers for them.
+               {{$t('schools.success')}}
               </h5>
             </div>
           </div>

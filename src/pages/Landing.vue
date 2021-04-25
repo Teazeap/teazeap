@@ -207,10 +207,8 @@ export default {
       
       if(storedLanguage){
         this.$i18n.locale = storedLanguage
-        console.log(this.$i18n.locale);
       } else {
         this.$i18n.locale = browserLanguage.includes("zh") ? "zh" : "en"
-        console.log(this.$i18n.locale);
       }
     },
   },

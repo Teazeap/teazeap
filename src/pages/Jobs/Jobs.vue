@@ -12,15 +12,15 @@
           <div class="text-center row">
             <div class="col-4">
               <h2 class="mb-2">{{allJobs.length}}</h2>
-              <p>Current Jobs</p>
+              <p>{{$t('schools.jobs')}}</p>
             </div>
             <div class="col-4">
               <h2 class="mb-2">26</h2>
-              <p>Clients</p>
+              <p>{{$t('schools.clients')}}</p>
             </div>
             <div class="col-4">
               <h2 class="mb-2">48</h2>
-              <p>Schools</p>
+              <p>{{$t('schools.schools')}}</p>
             </div>
             <div class="col-12">
               <a href="https://www.facebook.com/teazeap" target="_blank" class="btn btn-primary btn-icon btn-round">
@@ -39,7 +39,7 @@
         <div class="row justify-content-center">
           <JobCard  v-for="job in allJobs.slice(start,end)" :key="job.id" :job="job"/>
         </div>
-        <h4 v-if="noJobs" class="card-title text-primary">Jobs Currently Unvailable</h4>
+        <h4 v-if="noJobs" class="card-title text-primary">{{$t('schools.no-jobs')}}</h4>
       </div>
        <Contact v-if="noJobs" />
     </div>

@@ -5,7 +5,9 @@
     "about-us": "首頁",
     "apply-now": "立刻申請",
     "teachers":"師資陣容",
-    "schools": "學校"
+    "schools": "學校",
+    "language": "語",
+    "admin": "行政人員"
   },
   "landing-page": {
     "who": "我們是誰",
@@ -42,7 +44,8 @@
     "success": "TeaZeaP 服務保證學校能擁有最優良的師資，不論是正職、兼職還是代課教師。TeaZeaP 確保我們的夥伴得到完善的協助，除了安排任職，我們同時負責教師與學校兩端的溝通，以避免未清楚溝通所造成的任何誤會。 同時我們也提供教師能有導師協助及所需的資源。",
     "jobs": "應徵職務",
     "clients": "客戶",
-    "schools": "學校"
+    "schools": "學校",
+    "no-jobs":"當前不可用的工作"
   },
   "testimonials": "教師見證"
 }

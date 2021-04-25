@@ -28,15 +28,15 @@
       </drop-down> -->
       <drop-down
           tag="li"
-          title="Our Services"
+          :title="ourServices"
           icon="now-ui-icons design_image"
           class="nav-item nav-ul"
       >
         <nav-link to="/our-services/teachers">
-          <i class="now-ui-icons education_paper"></i> Teachers
+          <i class="now-ui-icons education_paper"></i> {{$t('nav.teachers')}}
         </nav-link>
         <nav-link to="/our-services/schools">
-          <i class="now-ui-icons education_hat"></i> Schools
+          <i class="now-ui-icons education_hat"></i> {{$t('nav.schools')}}
         </nav-link>
       </drop-down>
       <li class="nav-item">
@@ -46,7 +46,7 @@
           target="_self"
         >
           <i class="now-ui-icons arrows-1_share-66"></i>
-          <p>About Us</p>
+          <p>{{$t('nav.about-us')}}</p>
         </a>
       </li>
       <li class="nav-item">
@@ -55,13 +55,13 @@
           to="/jobs"
         >
           <i class="now-ui-icons arrows-1_share-66"></i>
-          <p>Apply Now</p>
+          <p>{{$t('nav.apply-now')}}</p>
         </nav-link>
       </li>
 
       <drop-down
           tag="li"
-          title="Langauge"
+          :title="language"
           icon="now-ui-icons business_globe"
           class="nav-item nav-ul"
       >
@@ -117,6 +117,14 @@ export default {
     Navbar,
     NavLink,
     [Popover.name]: Popover
+  },
+  computed: {
+    ourServices () {
+      return this.$t('nav.our-services');
+    },
+    language () {
+      return this.$t('nav.language');
+    }
   },
   methods: {
     onLanguageChange (language) {

@@ -14,22 +14,22 @@
           </li>
           <li>
             <router-link v-popover:popover1 class="navbar-brand" to="/">
-              About Us
+              {{$t('nav.about-us')}}
             </router-link>
           </li>
           <li>
             <router-link v-popover:popover1 class="navbar-brand" to="/our-services/teachers">
-              Teachers
+              {{$t('nav.teachers')}}
             </router-link>
           </li>
           <li>
             <router-link v-popover:popover1 class="navbar-brand" to="/our-services/schools">
-              Schools
+              {{$t('nav.schools')}}
             </router-link>
           </li>
           <li>
             <router-link v-popover:popover1 class="navbar-brand" to="/admin/jobs">
-              Admin
+              {{$t('nav.admin')}}
             </router-link>
           </li>
         </ul>

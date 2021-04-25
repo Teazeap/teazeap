@@ -5,7 +5,9 @@
     "about-us": "About Us",
     "apply-now": "Apply Now",
     "teachers": "Teachers",
-    "schools": "Schools"
+    "schools": "Schools",
+    "language": "Language",
+    "admin": "Admin"
   },
   "landing-page": {
     "who": "Who we are",
@@ -41,7 +43,8 @@
     "success": " TeaZeaP services guarantee schools are connected and provided with the best school teachers. We will help them find the right full time, part-time, or substitute teacher at the time needed. TeaZeaP is here to support our partners. In addition to job placements our team is available to mediate between schools and teachers. This may include communicating, clarifying or solving any potential misunderstandings between the two parties. Mentorship and helpful resources are readily available to teachers. And besides our services go further, we even have the option of going abroad to the country of choice of the schools to fetch the right teachers for them.",
     "jobs": "Current Jobs",
     "clients": "Clients",
-    "schools": "Schools"
+    "schools": "Schools",
+    "no-jobs": "Jobs Currently Unavailable"
   },
   "testimonials": "Teachers' Testimonials"
 }

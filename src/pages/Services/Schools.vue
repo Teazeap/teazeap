@@ -8,7 +8,7 @@
       </parallax>
       <div class="content-center">
         <div class="container">
-          <h1 class="title">{{$t('schools.find')}}</h1>
+          <h1 class="title">TeaZeaP Recruiting Agency</h1>
           <div class="text-center row">
             <div class="col-4">
               <h2 class="mb-2">{{allJobs.length}}</h2>

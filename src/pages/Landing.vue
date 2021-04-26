@@ -30,7 +30,7 @@
               :to="{ name: 'JobsMain' }"
               tag="button"
               class="btn btn-primary btn-round btn-md"
-              >Apply Now</router-link
+              >{{$t('nav.apply-now')}}</router-link
             >
           </div>
         </div>

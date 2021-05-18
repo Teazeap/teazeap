@@ -111,7 +111,6 @@ export default {
       handleSubmit () {
         this.form.subject = this.subject
         this.$validator.validateAll()
-        this.$t()
         .then(result => {
           if (result) {
             fetch('/', {

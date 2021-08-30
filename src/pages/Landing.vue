@@ -97,7 +97,7 @@
               <div class="mb-n4">
                 <img
                   class="card-img-top "
-                  src="img/clifton.jpg"
+                  src="img/ceo.jpg"
                   alt="Card image cap"
                 />
               </div>
@@ -105,7 +105,7 @@
                 <h4 class="card-title">Clifton Moreau</h4>
                 <h4 class="card-title text-primary">{{ $t("landing-page.chief") }}</h4>
                 <p class="card-text font-italic">
-                  {{ $t("landing-page.chief-quotes") }}
+                  {{ $t("landing-page.chief-quote") }}
                 </p>
               </div>
               <a
@@ -149,7 +149,7 @@
               <div class="mb-n4">
                 <img
                   class="card-img-top "
-                  src="img/wixy.jpg"
+                  src="img/nnenia.jpg"
                   alt="Card image cap"
                 />
               </div>

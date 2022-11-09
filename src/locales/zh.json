@@ -1,51 +1,55 @@
 {
-  "message": "你好",
-  "nav" : {
-    "our-services": "服務",
-    "about-us": "首頁",
-    "apply-now": "立刻申請",
-    "teachers":"師資陣容",
-    "schools": "學校",
-    "language": "語言",
-    "admin": "行政人員"
-  },
-  "landing-page": {
-    "who": "我們是誰",
-    "goals": "TeaZeaP 服務保證學校能擁有最優良的師資，不論是正職、兼職還是代課教師。TeaZeaP確保我們的夥伴得到完善的協助，除了安排任職，我們同時負責教師與學校兩端的溝通，以避免未清楚溝通所造成的任何誤會。 同時我們也提供教師能有導師協助及所需的資源。",
-    "full-time": "正職教師",
-    "full-time-desc": "我們值得信賴正職教師致力於在學校的工作，維持和樂工作氣氛， 以帶給學生有趣及安全的學習環境",
-    "part-time": "兼職教師",
-    "part-time-desc": "我們值得信賴的兼職教師致力於在學校的工作，維持和樂工作氣氛， 以帶給學生有趣及安全的學習環境",
-    "sub-teacher": "代課教師",
-    "sub-desc": "我們值得信賴的代課教師致力擔任代理一職，並達成學校交辦進度。",
-    "team": "認識我們的團隊領導陣容",
-    "chief": "執行長",
-    "chief-quote": "“It takes 20 years to build a reputation and five minutes to ruin it. If you think about that, you’ll do things differently.”",
-    "project": "專案經理",
-    "project-quote": "“As you navigate through the rest of your life, be open to collaboration. Other people and other people’s ideas are often better than your own.” ",
-    "comm": "通訊主管",
-    "comm-quote": "“Without publicity there can be no public support, and without public support every nation must decay.”"
-  },
-  "contact": {
-    "with-us":"與我們聯繫",
-    "important": "您的教學生涯是我們的驕傲",
-    "name": "姓名",
-    "email": "電子信箱",
-    "type": "輸入訊息...",
-    "send": "轉送訊息"
-  },
-  "teachers": {
-    "find": "為您找到下一份工作",
-    "success": "您的成就是我們的驕傲，TeaZeaP與許多雇主密切合作。透過我們的平台，我們會將您的履歷推廣至各個職缺，如果您的履歷與我們的客戶配對成功，招募專員將會與您聯繫，並與您確認此職缺符合您的條件及職涯目標。我們的團隊將會一步步的協助您從面試到成為職員。",
-    "testimonials":"教師見證"
-  },
-  "schools": {
-    "find": "為您找到下一位教師",
-    "success": "TeaZeaP 服務保證學校能擁有最優良的師資，不論是正職、兼職還是代課教師。TeaZeaP 確保我們的夥伴得到完善的協助，除了安排任職，我們同時負責教師與學校兩端的溝通，以避免未清楚溝通所造成的任何誤會。 同時我們也提供教師能有導師協助及所需的資源。",
-    "jobs": "應徵職務",
-    "clients": "客戶",
-    "schools": "學校",
-    "no-jobs":"當前不可用的工作"
-  },
-  "testimonials": "教師見證"
+    "message": "你好",
+    "nav": {
+        "our-services": "服務",
+        "about-us": "首頁",
+        "apply-now": "立刻申請",
+        "teachers": "師資陣容",
+        "schools": "學校",
+        "language": "語言",
+        "admin": "行政人員",
+        "create-profile": "Create Profile"
+    },
+    "landing-page": {
+        "who": "我們是誰",
+        "goals": "TeaZeaP 服務保證學校能擁有最優良的師資，不論是正職、兼職還是代課教師。TeaZeaP確保我們的夥伴得到完善的協助，除了安排任職，我們同時負責教師與學校兩端的溝通，以避免未清楚溝通所造成的任何誤會。 同時我們也提供教師能有導師協助及所需的資源。",
+        "full-time": "正職教師",
+        "full-time-desc": "我們值得信賴正職教師致力於在學校的工作，維持和樂工作氣氛， 以帶給學生有趣及安全的學習環境",
+        "part-time": "兼職教師",
+        "part-time-desc": "我們值得信賴的兼職教師致力於在學校的工作，維持和樂工作氣氛， 以帶給學生有趣及安全的學習環境",
+        "sub-teacher": "代課教師",
+        "sub-desc": "我們值得信賴的代課教師致力擔任代理一職，並達成學校交辦進度。",
+        "team": "認識我們的團隊領導陣容",
+        "chief": "執行長",
+        "chief-quote": "“It takes 20 years to build a reputation and five minutes to ruin it. If you think about that, you’ll do things differently.”",
+        "project": "專案經理",
+        "project-quote": "“As you navigate through the rest of your life, be open to collaboration. Other people and other people’s ideas are often better than your own.” ",
+        "comm": "通訊主管",
+        "comm-quote": "“Without publicity there can be no public support, and without public support every nation must decay.”"
+    },
+    "contact": {
+        "with-us": "與我們聯繫",
+        "important": "您的教學生涯是我們的驕傲",
+        "name": "姓名",
+        "email": "電子信箱",
+        "type": "輸入訊息...",
+        "send": "轉送訊息"
+    },
+    "teachers": {
+        "find": "為您找到下一份工作",
+        "success": "您的成就是我們的驕傲，TeaZeaP與許多雇主密切合作。透過我們的平台，我們會將您的履歷推廣至各個職缺，如果您的履歷與我們的客戶配對成功，招募專員將會與您聯繫，並與您確認此職缺符合您的條件及職涯目標。我們的團隊將會一步步的協助您從面試到成為職員。",
+        "testimonials": "教師見證"
+    },
+    "schools": {
+        "find": "為您找到下一位教師",
+        "success": "TeaZeaP 服務保證學校能擁有最優良的師資，不論是正職、兼職還是代課教師。TeaZeaP 確保我們的夥伴得到完善的協助，除了安排任職，我們同時負責教師與學校兩端的溝通，以避免未清楚溝通所造成的任何誤會。 同時我們也提供教師能有導師協助及所需的資源。",
+        "jobs": "應徵職務",
+        "clients": "客戶",
+        "schools": "學校",
+        "no-jobs": "當前不可用的工作"
+    },
+    "profiles": {
+        "no-profiles": "Profiles Currently Unavailable"
+    },
+    "testimonials": "教師見證"
 }

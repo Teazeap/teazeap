@@ -1,50 +1,54 @@
 {
-  "message": "hello i18n !!",
-  "nav": {
-    "our-services": "Our Services",
-    "about-us": "About Us",
-    "apply-now": "Apply Now",
-    "teachers": "Teachers",
-    "schools": "Schools",
-    "language": "Language",
-    "admin": "Admin"
-  },
-  "landing-page": {
-    "who": "Who we are",
-    "goals": "TeaZeaP services guarantee schools are connected and provided with the best school teachers. Full time, part time, and substitute teacher positions are available.TeaZeaP is here to support our partners. In addition to job placements our team is available to mediate between schools and teachers. This may include communicating, clarifying or solving any potential misunderstandings between the two parties. Mentorship and helpful resources are readily available to teachers.",
-    "full-time": "Full time Teacher",
-    "full-time-desc": "Reliable and trustworthy teachers that are committed to working in harmony with their school full time in order to provide a fun and safe learning environment for students.",
-    "part-time": "Part time Teacher",
-    "part-time-desc": "Reliable and trustworthy teachers that are committed to working in harmony with their school part time in order to provide a fun and safe learning environment for students.",
-    "sub-teacher": "Sub Teacher",
-    "sub-desc": "Reliable, and trustworthy teachers open to fill in when requested by a school and willing to meet their needs.",
-    "team": "Here is our team",
-    "chief": "Founder and CEO",
-    "chief-quote": "“It takes 20 years to build a reputation and five minutes to ruin it. If you think about that, you’ll do things differently.”",
-    "project": "Co-founder and COO",
-    "project-quote": "“As you navigate through the rest of your life, be open to collaboration. Other people and other people’s ideas are often better than your own.” ",
-    "comm": "Co-founder and CCO",
-    "comm-quote": "“Without publicity there can be no public support, and without public support every nation must decay.”"
-  },
-  "contact": {
-    "with-us":"Want to work with us?",
-    "important": "Your teaching career is very important to us.",
-    "name": "First Name...",
-    "email": "Email Here...",
-    "type": "Type a message...",
-    "send": "Send Message"
-  },
-  "teachers": {
-    "find": "Finding Your Next Job",
-    "success": "Your success is important to us. TeaZeaP has curated partnerships with various employers looking to fill full-time, part-time, and substitute teacher positions. Through our platform you will be promoted as a candidate for a number of openings. If your resume is a good match for our clients’ needs, a recruiter will reach out to you to ensure the opportunity fits your goals and preferences. From there, our team will prepare you for every step of the hiring process, from the interview to placement. And even in helping you get settled in the apartment and city, you would like. We would have one of our team members accompany you all along the way."
-  },
-  "schools": {
-    "find": "Finding Your Next Teacher",
-    "success": " TeaZeaP services guarantee schools are connected and provided with the best school teachers. We will help them find the right full time, part-time, or substitute teacher at the time needed. TeaZeaP is here to support our partners. In addition to job placements our team is available to mediate between schools and teachers. This may include communicating, clarifying or solving any potential misunderstandings between the two parties. Mentorship and helpful resources are readily available to teachers. And besides our services go further, we even have the option of going abroad to the country of choice of the schools to fetch the right teachers for them.",
-    "jobs": "Current Jobs",
-    "clients": "Clients",
-    "schools": "Schools",
-    "no-jobs": "Jobs Currently Unavailable"
-  },
-  "testimonials": "Teachers' Testimonials"
+    "message": "hello i18n !!",
+    "nav": {
+        "our-services": "Our Services",
+        "about-us": "About Us",
+        "apply-now": "Apply Now",
+        "teachers": "Teachers",
+        "schools": "Schools",
+        "language": "Language",
+        "admin": "Admin",
+        "create-profile": "Create Profile"
+    },
+    "landing-page": {
+        "who": "Who we are",
+        "goals": "TeaZeaP services guarantee schools are connected and provided with the best school teachers. Full time, part time, and substitute teacher positions are available.TeaZeaP is here to support our partners. In addition to job placements our team is available to mediate between schools and teachers. This may include communicating, clarifying or solving any potential misunderstandings between the two parties. Mentorship and helpful resources are readily available to teachers.",
+        "full-time": "Full time Teacher",
+        "full-time-desc": "Reliable and trustworthy teachers that are committed to working in harmony with their school full time in order to provide a fun and safe learning environment for students.",
+        "part-time": "Part time Teacher",
+        "part-time-desc": "Reliable and trustworthy teachers that are committed to working in harmony with their school part time in order to provide a fun and safe learning environment for students.",
+        "sub-teacher": "Sub Teacher",
+        "sub-desc": "Reliable, and trustworthy teachers open to fill in when requested by a school and willing to meet their needs.",
+        "team": "Here is our team",
+        "chief": "Founder and CEO",
+        "chief-quote": "“It takes 20 years to build a reputation and five minutes to ruin it. If you think about that, you’ll do things differently.”",
+        "project": "Co-founder and COO",
+        "project-quote": "“As you navigate through the rest of your life, be open to collaboration. Other people and other people’s ideas are often better than your own.” ",
+        "comm": "Co-founder and CCO",
+        "comm-quote": "“Without publicity there can be no public support, and without public support every nation must decay.”"
+    },
+    "contact": {
+        "with-us": "Want to work with us?",
+        "important": "Your teaching career is very important to us.",
+        "name": "First Name...",
+        "email": "Email Here...",
+        "type": "Type a message...",
+        "send": "Send Message"
+    },
+    "teachers": {
+        "find": "Finding Your Next Job",
+        "success": "Your success is important to us. TeaZeaP has curated partnerships with various employers looking to fill full-time, part-time, and substitute teacher positions. Through our platform you will be promoted as a candidate for a number of openings. If your resume is a good match for our clients’ needs, a recruiter will reach out to you to ensure the opportunity fits your goals and preferences. From there, our team will prepare you for every step of the hiring process, from the interview to placement. And even in helping you get settled in the apartment and city, you would like. We would have one of our team members accompany you all along the way."
+    },
+    "schools": {
+        "find": "Finding Your Next Teacher",
+        "success": " TeaZeaP services guarantee schools are connected and provided with the best school teachers. We will help them find the right full time, part-time, or substitute teacher at the time needed. TeaZeaP is here to support our partners. In addition to job placements our team is available to mediate between schools and teachers. This may include communicating, clarifying or solving any potential misunderstandings between the two parties. Mentorship and helpful resources are readily available to teachers. And besides our services go further, we even have the option of going abroad to the country of choice of the schools to fetch the right teachers for them.",
+        "jobs": "Current Jobs",
+        "clients": "Clients",
+        "schools": "Schools",
+        "no-jobs": "Jobs Currently Unavailable"
+    },
+    "profiles": {
+        "no-profiles": "Profiles Currently Unavailable"
+    },
+    "testimonials": "Teachers' Testimonials"
 }

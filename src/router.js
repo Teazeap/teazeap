@@ -7,7 +7,8 @@ import Teachers from './pages/Services/Teachers.vue';
 import Process from './pages/Procedure/ApplicationProcess.vue';
 import Qualification from './pages/Procedure/Qualification.vue';
 import Login from './pages/Login.vue';
-import Profile from './pages/Profile.vue';
+// import Profile from './pages/Profile.vue';
+import Profiles from './pages/Profile/Profiles.vue';
 import Jobs from './pages/Jobs/Jobs.vue';
 import JobInfo from './pages/Jobs/JobInfo.vue';
 import MainNavbar from './layout/MainNavbar.vue';
@@ -93,6 +94,14 @@ export default new Router({
       }
     },
     {
+      path: '/create-profile',
+      name: 'Profiles',
+      components: { default: Profiles, header: MainNavbar, footer: MainFooter  },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
       path: '/jobs/:id',
       name: 'Jobs',
       components: { default: JobInfo, header: MainNavbar, footer: MainFooter  },
@@ -110,15 +119,15 @@ export default new Router({
         }
       ]
     },
-    {
-      path: '/profile',
-      name: 'profile',
-      components: { default: Profile, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 },
-        footer: { backgroundColor: 'black' }
-      }
-    },
+    // {
+    //   path: '/profile',
+    //   name: 'profile',
+    //   components: { default: Profile, header: MainNavbar, footer: MainFooter },
+    //   props: {
+    //     header: { colorOnScroll: 400 },
+    //     footer: { backgroundColor: 'black' }
+    //   }
+    // },
     /**     admin protected pages */
     {
       path: '/admin/jobs',

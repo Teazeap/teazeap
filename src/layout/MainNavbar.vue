@@ -12,20 +12,6 @@
       </router-link>
     </template>
     <template slot="navbar-menu">
-      <!-- removed for now, until we get update on what to put -->
-      <!-- <drop-down
-        tag="li"
-        title="How it Works"
-        icon="now-ui-icons design_app"
-        class="nav-item nav-ul"
-      >
-        <nav-link to="/process">
-          <i class="now-ui-icons files_single-copy-04"></i> Application Process
-        </nav-link>
-       <nav-link to="/qualification">
-          <i class="now-ui-icons education_hat"></i> Qualification 
-        </nav-link>
-      </drop-down> -->
       <drop-down
           tag="li"
           :title="ourServices"
@@ -56,6 +42,16 @@
         >
           <i class="now-ui-icons arrows-1_share-66"></i>
           <p>{{$t('nav.apply-now')}}</p>
+        </nav-link>
+      </li>
+
+      <li class="nav-item">
+        <nav-link
+          class="nav-link  btn btn-neutral btn-profile"
+          to="/create-profile"
+        >
+          <i class="now-ui-icons users_single-02"></i>
+          <p>{{$t('nav.create-profile')}}</p>
         </nav-link>
       </li>
 

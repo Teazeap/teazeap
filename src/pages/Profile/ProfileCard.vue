@@ -1,49 +1,46 @@
 <template>
   <div class="col-md-6 col-lg-4 col-xl-4  py-2">
-    <!-- <div class="card h-100">
-      <div>
-        <img
-          class="card-img-top "
-          :src="profilePicUrl"
-          alt="Card image cap"
-          style="width:100%; height: 230px"
-        />
-      </div>
-      <div class="card-body" style="margin-bottom: -15px">
-          <h4 class="card-title">{{ job.school }}</h4>
-           <div class="row">
-            <div class="col-6">
-              <h6>
-                <i class="now-ui-icons location_pin"></i> {{ job.city }}
-              </h6>
-            </div>
-            <div class="col-6">
-              <h6>
-                <img src="img/eye.png" style="width:12%; height: 12%"> {{ job.views + 4 }}
-              </h6>
-            </div>
-          </div>
-          <div class="row mb-n3">
-            <div class="col-5 text-success">{{ job.resumes.length + 4}} applicants</div>
-            <div class="col-7" style="color: #f96332">posted: {{ postedAt(job.createdAt) }}</div>
-          </div>
-        </div>
-        <div class="card-footer mt-7" v-if="isLink">
-          <router-link :to="{name: 'JobInfo', params: {id:job.id}}" tag="button" class="btn btn-primary stretched-link">View Job</router-link>
-        </div>
-    </div> -->
     <v-app id="inspire">
-      <v-card class="mx-auto" max-width="344">
-        <v-img :src="profilePicUrl" height="200px"></v-img>
+      <v-card class="mx-auto profile-card" width="350" :elevation="4">
+        <v-img :src="profilePicUrl" height="350px"></v-img>
 
         <v-card-title> {{ profile.name }} {{ profile.surname }} </v-card-title>
 
-        <v-card-subtitle>
-          {{ profile.country }}
-        </v-card-subtitle>
+        <v-card-text>
+          <v-row align="center" class="mx-0">
+            <div>
+              {{ profile.country[0].name }}
+            </div>
 
-        <v-card-actions>
-          <v-btn color="orange lighten-2" text  @click="show = !show">
+            <div class="grey--text ml-1 mt-1">
+              <country-flag :country="profile.country[0]['alpha-2']" size="small"
+              />
+            </div>
+          </v-row>
+        </v-card-text>
+
+        <v-card-text class="d-flex justify-end justify-space-between pt-2 pb-2">
+          <div class="d-flex">
+            <div class="mr-2 font-weight-medium">
+              Teaching Experience:
+            </div>
+            <div>
+              {{ profile.teachingExperience }}
+            </div>
+          </div>
+
+          <div class="d-flex">
+            <div class="mr-2 font-weight-medium">
+              Years In Taiwan:
+            </div>
+            <div>
+              {{ profile.yearsInTaiwan }}
+            </div>
+          </div>
+        </v-card-text>
+
+        <v-card-actions class="pt-0">
+          <v-btn style="color: #f96332" text @click="show = !show">
             View more
           </v-btn>
 
@@ -57,8 +54,7 @@
         <v-expand-transition>
           <div v-show="show">
             <v-divider></v-divider>
-
-            <v-card-text>
+            <v-card-text class="text-justify">
               {{ profile.description }}
             </v-card-text>
           </div>
@@ -103,3 +99,21 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.v-application--wrap {
+  height: 100%;
+  min-height: 100%;
+}
+
+.profile-card {
+  -webkit-box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
+  box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
+  transition: 0.3s;
+}
+
+.profile-card:hover {
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+</style>

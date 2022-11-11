@@ -8,7 +8,7 @@
         </parallax>
         <div class="row mt-lg-5">
           <div class="container">
-            <h1 class="title">TeaZeaP Recruiting Agency</h1>
+            <h1 class="title company-name">TeaZeaP Recruiting Agency</h1>
             <p class="category">Join our ever expanding clientele</p>
               <div class="content">
                 <div class="social-description">
@@ -124,7 +124,7 @@ export default {
   methods: {
     ...mapActions(['fetchJobs']),
     handlePagination () {
-      this.pagination.total = this.allJobs.length 
+      this.pagination.total = this.allJobs.length
       this.pagination.pageCount = Math.ceil(this.allJobs.length / 6)
     },
     changePage (value) {

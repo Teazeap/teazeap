@@ -8,7 +8,7 @@
       </parallax>
       <div class="content-center">
         <div class="container">
-          <h1 class="title">TeaZeaP Recruiting Agency</h1>
+          <h1 class="title company-name">TeaZeaP Recruiting Agency</h1>
           <div class="text-center row">
             <div class="col-4">
               <h2 class="mb-2">{{allJobs.length}}</h2>
@@ -104,7 +104,7 @@ export default {
   methods: {
     ...mapActions(['fetchJobs']),
     handlePagination () {
-      this.pagination.total = this.allJobs.length 
+      this.pagination.total = this.allJobs.length
       this.pagination.pageCount = Math.ceil(this.allJobs.length / 6)
     },
     changePage (value) {

@@ -11,5 +11,9 @@ module.exports = {
       localeDir: 'locales',
       enableInSFC: false
     }
-  }
+  },
+
+  transpileDependencies: [
+    'vuetify'
+  ]
 };

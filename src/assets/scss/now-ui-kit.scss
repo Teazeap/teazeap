@@ -96,13 +96,14 @@ input[type="file"] {
 }
 
 .btn-profile {
-    color: #FFFFFF;
-    background-color: #f96332;
+    color: #FFFFFF !important;
+    background-color: #f96332 !important;
 }
 
 .btn-profile:hover {
-    color: #FFFFFF;
-    background-color: #f96332;
+    color: #FFFFFF !important;
+    background-color: #f96332 !important;
+    box-shadow: 0 3px 8px 0 rgb(0 0 0 / 17%) !important;
 }
 
 .fixed-top {

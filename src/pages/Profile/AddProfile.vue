@@ -25,7 +25,7 @@
               <fg-input
                 type="text"
                 :class="`input-sm ${errors.has('name') ? 'has-danger' : ''}`"
-                placeholder="name..."
+                placeholder="Name..."
                 v-model="form.firstName"
                 v-validate="'required'"
                 name="name"
@@ -41,7 +41,7 @@
               <fg-input
                 type="text"
                 :class="`input-sm ${errors.has('name') ? 'has-danger' : ''}`"
-                placeholder="surame..."
+                placeholder="Surname..."
                 v-model="form.lastName"
                 v-validate="'required'"
                 name="surname"
@@ -131,13 +131,15 @@
                 min="0"
                 :class="`input-sm ${errors.has('name') ? 'has-danger' : ''}`"
                 class="input-sm"
-                placeholder="Description..."
+                placeholder="Years In Taiwan..."
                 v-model="form.yearsInTaiwan"
                 v-validate="'required'"
                 name="yearsInTaiwan"
               >
               </fg-input>
-              <span v-show="errors.has('yearsInTaiwan')" class="text-danger"> The Years In Taiwan field is required.</span>
+              <span v-show="errors.has('yearsInTaiwan')" class="text-danger">
+                The Years In Taiwan field is required.</span
+              >
             </div>
             <!-- Nationality -->
             <div class="form-group col-md-6">
@@ -162,9 +164,7 @@
                 <fg-input
                   :class="
                     `${
-                      pickers.datePicker === '' && submitClicked
-                        ? 'has-danger'
-                        : ''
+                      form.birthDate === '' && submitClicked ? 'has-danger' : ''
                     }`
                   "
                 >
@@ -172,15 +172,14 @@
                     type="date"
                     popper-class="date-picker date-picker-primary"
                     placeholder="Date Time Picker"
-                    v-model="pickers.datePicker"
-                    :picker-options="datePickerOptions"
+                    v-model="form.birthDate"
                     v-validate="'required'"
-                    name="D.O.B"
+                    name="birthDate"
                   >
                   </el-date-picker>
                 </fg-input>
-                <span v-show="errors.has('D.O.B')" class="text-danger">{{
-                  errors.first("D.O.B")
+                <span v-show="errors.has('birthDate')" class="text-danger">{{
+                  errors.first("birthDate")
                 }}</span>
               </div>
             </div>
@@ -190,10 +189,16 @@
                 by state government?
               </label>
               <div class="d-flex">
-                <n-radio v-model="license.yes" label="1">Yes</n-radio>
-                <n-radio v-model="license.yes" label="2">No</n-radio>
+                <n-radio v-model="form.hasCertificate" label="true"
+                  >Yes</n-radio
+                >
+                <n-radio v-model="form.hasCertificate" label="false"
+                  >No</n-radio
+                >
               </div>
             </div>
+
+            <!-- CV -->
             <div class="form-group col-md-6" id="filesList">
               <label class="d-flex">Upload CV (Required)</label>
               <div class="d-flex">
@@ -204,7 +209,7 @@
                       type="file"
                       hidden
                       @change="fileChangedHandler"
-                      :disabled="isUploading || isVideoUploading"
+                      :disabled="isUploading || isProfilePictureUploading"
                       accept="application/pdf"
                     />
                   </label>
@@ -225,15 +230,9 @@
                 </div>
               </div>
             </div>
-            <!-- added for netlify form submissions, not visible in ui -->
-            <div style="position: absolute;z-index: -1;top: 0; opacity: 0">
-              <fg-input v-model="fullName" name="name" />
-              <fg-input v-model="message" name="message" />
-              <fg-input v-model="subject" name="subject" />
-            </div>
-            <!-- end -->
+            <!-- profile picture -->
             <div class="form-group col-md-6" id="filesList">
-              <label class="d-flex">Upload Video (Optional)</label>
+              <label class="d-flex">Upload Profile Picture</label>
               <div class="d-flex">
                 <div class="col-md-3 upload-button">
                   <label class="btn btn-default btn-upload">
@@ -241,39 +240,52 @@
                     <input
                       type="file"
                       hidden
-                      @change="videoChangedHandler"
-                      accept="video/mp4,video/x-m4v,video/*"
-                      :disabled="isUploading || isVideoUploading"
+                      @change="profilePictureChangedHandler"
+                      accept="image/png, image/gif, image/jpeg"
+                      :disabled="isUploading || isProfilePictureUploading"
                     />
                   </label>
                 </div>
                 <div class="col-md-5 col-lg-6 col-xl-6 ml-md-n12 mr-lg-12">
                   <p
                     style="color: #f96332"
-                    v-if="!isVideoUploading && !videoUploaded"
+                    v-if="!isProfilePictureUploading && !profilePictureUploaded"
                   >
-                    Upload video...
+                    Upload profile picture...
                   </p>
                   <img
-                    v-if="isVideoUploading"
+                    v-if="isProfilePictureUploading"
                     v-lazy="'img/Ellipsis-3s-128px.svg'"
                     alt="Rounded Image"
                     style="width:30px; height: 30px"
                   />
-                  <p v-if="videoUploaded" class="text-success">
-                    {{ selectedVideoFile.name }}
+                  <p v-if="profilePictureUploaded" class="text-success">
+                    {{ selectedProfilePictureFile.name }}
                   </p>
                 </div>
               </div>
             </div>
+            <!-- added for netlify form submissions, not visible in ui -->
+            <div style="position: absolute;z-index: -1;top: 0; opacity: 0">
+              <fg-input v-model="fullName" name="name" />
+              <fg-input v-model="message" name="message" />
+              <fg-input v-model="subject" name="subject" />
+            </div>
+            <!-- end -->
           </div>
           <button
             class="btn-round btn btn-primary"
             rounded
-            :disabled="isUploading || isVideoUploading"
+            :disabled="isUploading || isProfilePictureUploading"
           >
             Submit
           </button>
+          <img
+                    v-if="isProfileAssetUploading"
+                    v-lazy="'img/Ellipsis-3s-128px.svg'"
+                    alt="Rounded Image"
+                    style="width:30px; height: 30px"
+                  />
         </form>
       </div>
     </div>
@@ -283,6 +295,7 @@
 import { mapGetters, mapActions } from "vuex";
 import { Button, FormGroupInput, Radio } from "@/components";
 import { DatePicker, Icon } from "element-ui";
+import { v4 as uuidv4 } from "uuid";
 
 export default {
   name: "AddProfile",
@@ -309,7 +322,7 @@ export default {
       return `${this.form.firstName} ${this.form.lastName} (${
         this.form.gender
       }) from ${this.form.country}, born in ${this.formatDate(
-        this.pickers.datePicker
+        this.form.birthDate
       )} just applied for the ${this.job?.school} teaching job`;
     },
     subject() {
@@ -322,33 +335,31 @@ export default {
   data: () => ({
     currentJob: {},
     selectedFile: {},
-    selectedVideoFile: {},
+    selectedProfilePictureFile: {},
     up: {},
     files: null,
     id: "",
     submitClicked: false,
-    pickers: {
-      datePicker: ""
-    },
     isUploading: false,
     uploaded: false,
-    isVideoUploading: false,
-    videoUploaded: false,
-    license: {
-      yes: "2"
-    },
+    isProfilePictureUploading: false,
+    profilePictureUploaded: false,
+    isProfileAssetUploading: false,
     form: {
       firstName: "",
       lastName: "",
+      birthDate: "",
       email: "",
       message: "",
-      description: "",
       subject: "",
       gender: "Male",
       country: "Afghanistan",
       teachingExperience: null,
       yearsInTaiwan: null,
-      description: ""
+      description: "",
+      uploadedCvAsset: {},
+      uploadedProfilePictureAsset: {},
+      hasCertificate: "false"
     },
     countries: [
       {
@@ -1354,32 +1365,44 @@ export default {
     ]
   }),
   methods: {
-    ...mapActions(["fetchJobs"]),
-    async handleDownload() {
+    ...mapActions(["fetchJobs", "addProfile"]),
+    async handleProfileCVUpload() {
       const fullName = `${this.form.firstName} ${this.form.lastName}`;
       this.selectedFile.fullName = fullName;
-      this.selectedFile.entryId = this.currentJob.id;
+      this.selectedFile.entryId = uuidv4();
       this.selectedFile.description = this.description;
-      this.$store.dispatch("uploadCv", this.selectedFile).then(() => {
-        this.isUploading = false;
-        this.uploaded = true;
-      });
+      this.$store
+        .dispatch("uploadProfileAsset", this.selectedFile)
+        .then(asset => {
+          this.form.uploadedCvAsset = asset;
+          this.isUploading = false;
+          this.uploaded = true;
+        });
     },
-    handleSubmit(e) {
-      this.submitClicked = true;
-      this.form.name = `${this.form.firstName} ${this.form.lastName}`;
-      this.form.message = this.message;
-      this.form.subject = this.subject;
-      this.$validator.validateAll().then(result => {
-        if (result) {
-          if (this.uploaded) {
-            this.handleNetlifyForm();
-            this.applicationCompleted();
-          } else {
-            this.uploadRequired();
-          }
+    async handleSubmit(e) {
+      const result = await this.$validator.validateAll();
+      if (result) {
+        if (this.uploaded) {
+          // this.handleNetlifyForm();
+          this.isProfileAssetUploading = true;
+          await this.handleAddProfile();
+          this.isProfileAssetUploading = false;
+          this.applicationCompleted();
+        } else {
+          this.uploadRequired();
         }
-      });
+      }
+    },
+    async handleAddProfile() {
+      const profile = {
+        ...this.form,
+        country: this.countryInfo,
+        teachingExperience: parseInt(this.form.teachingExperience),
+        yearsInTaiwan: parseInt(this.form.yearsInTaiwan),
+        entryId: uuidv4(),
+        hasCertificate: this.form.hasCertificate === "true" ? true : false
+      };
+      await this.addProfile(profile);
     },
     handleNetlifyForm() {
       fetch("/", {
@@ -1393,13 +1416,13 @@ export default {
     },
     applicationCompleted() {
       this.$swal({
-        title: "Application sent",
-        text: "You will recieve email for confirmation",
+        title: "Profile application sent",
+        text: "You will recieve email for your profile has been published",
         icon: "success",
         confirmButtonText: "Okay"
       }).then(result => {
         if (result.value) {
-          this.$router.push({ name: "JobsMain" });
+          this.$router.push({ name: "landing" });
         }
       });
     },
@@ -1417,29 +1440,32 @@ export default {
           this.selectedFile = event.target.files[0];
           this.isUploading = true;
           this.description = this.formatDescription();
-          this.handleDownload();
+          this.handleProfileCVUpload();
         }
       });
     },
-    videoChangedHandler(e) {
+    profilePictureChangedHandler(e) {
       this.$validator.validateAll().then(result => {
         if (result) {
-          this.selectedVideoFile = event.target.files[0];
-          this.isVideoUploading = true;
+          this.selectedProfilePictureFile = event.target.files[0];
+          this.isProfilePictureUploading = true;
           this.description = this.formatDescription();
-          this.handleVideoUpload();
+          this.handleProfilePictureUpload();
         }
       });
     },
-    async handleVideoUpload() {
+    async handleProfilePictureUpload() {
       const fullName = `${this.form.firstName} ${this.form.lastName}`;
-      this.selectedVideoFile.fullName = fullName;
-      this.selectedVideoFile.entryId = this.currentJob.id;
-      this.selectedVideoFile.description = this.description;
-      this.$store.dispatch("uploadVideo", this.selectedVideoFile).then(() => {
-        this.isVideoUploading = false;
-        this.videoUploaded = true;
-      });
+      this.selectedProfilePictureFile.fullName = fullName;
+      this.selectedProfilePictureFile.entryId = uuidv4();
+      this.selectedProfilePictureFile.description = this.description;
+      this.$store
+        .dispatch("uploadProfileAsset", this.selectedProfilePictureFile)
+        .then(asset => {
+          this.form.uploadedProfilePictureAsset = asset;
+          this.isProfilePictureUploading = false;
+          this.profilePictureUploaded = true;
+        });
     },
     formatDescription() {
       return JSON.stringify({
@@ -1447,8 +1473,8 @@ export default {
         country: `${this.form.country}`,
         email: `${this.form.email}`,
         gender: `${this.form.gender}`,
-        dob: `${this.pickers.datePicker}`,
-        lisence: `${this.license === "1" ? "yes" : "no"}`
+        birthDate: `${this.form.birthDate}`,
+        lisence: `${this.form.license === "true" ? "yes" : "no"}`
       });
     },
     handleTime(fullTime) {
@@ -1468,12 +1494,6 @@ export default {
       }
       return date;
     }
-  },
-  async created() {
-    await this.fetchJobs();
-    let job = this.allJobs;
-    this.currentJob = job[0];
-    // this.$store.dispatch("updateView", this.currentJob?.id);
   }
 };
 </script>

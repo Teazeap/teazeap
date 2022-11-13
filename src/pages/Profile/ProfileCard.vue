@@ -4,7 +4,7 @@
       <v-card class="mx-auto profile-card" width="350" :elevation="4">
         <v-img :src="profilePicUrl" height="350px"></v-img>
 
-        <v-card-title> {{ profile.name }} {{ profile.surname }} </v-card-title>
+        <v-card-title> {{ profile.firstName }} {{ profile.lastName }} </v-card-title>
 
         <v-card-text>
           <v-row align="center" class="mx-0">
@@ -12,7 +12,7 @@
               {{ profile.country[0].name }}
             </div>
 
-            <div class="grey--text ml-1 mt-1">
+            <div class="grey--text ml-1">
               <country-flag :country="profile.country[0]['alpha-2']" size="small"
               />
             </div>

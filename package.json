@@ -24,6 +24,7 @@
     "nouislider": "^14.6.0",
     "plupload": "~2.3.6",
     "roboto-fontface": "*",
+    "uuid": "^9.0.0",
     "vee-validate": "2.1.7",
     "vue": "^2.6.11",
     "vue-country-flag": "^2.3.2",

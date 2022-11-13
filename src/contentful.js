@@ -2,5 +2,6 @@ import { createClient } from "contentful";
 
 export default createClient ({
   space: process.env.VUE_APP_SPACE,
-  accessToken: process.env.VUE_APP_ACCESSTOKEN
+  accessToken: process.env.VUE_APP_ACCESSTOKEN,
+  host: "cdn.contentful.com"
 });

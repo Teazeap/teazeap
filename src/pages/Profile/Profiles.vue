@@ -44,14 +44,15 @@
       </div>
     </div>
     <!-- profiles -->
-    <div class="section profile-section">
-      <span v-if="!noProfiles">
+    <div class="section profile-section" id="referenceSection">
+      <span v-if="!noProfiles" style="textAlign: center">
         <h2 class="title">Meet Our Teachers</h2>
         <p class="description">Your teaching career is very important to us.</p>
-        <div class="container text-center">
+        <div class="container">
+          <ProfileSearch @search="handleSearch" />
           <div class="row justify-content-center">
             <ProfileCard
-              v-for="profile in allProfiles.slice(start, end)"
+              v-for="profile in filteredProfiles.slice(start, end)"
               :key="profile.id"
               :profile="profile"
             />
@@ -60,32 +61,32 @@
             {{ $t("profiles.no-profiles") }}
           </h4>
         </div>
+        <div class="row justify-content-end mt-2">
+          <div class="col align-self-end offset-xl-9 offset-md-9 offset-sm-9">
+            <Pagination
+              type="primary"
+              :total="pagination.total"
+              :page-count="pagination.pageCount"
+              :per-page="pagination.perPage"
+              @input="changePage"
+              v-model="pagination.simple"
+            />
+          </div>
+        </div>
       </span>
       <AddProfile />
       <Contact v-if="noProfiles" />
-    </div>
-    <div class="container" v-if="!noProfiles">
-      <div class="row justify-content-end">
-        <div class="col align-self-end offset-xl-9 offset-md-9 offset-sm-9">
-          <Pagination
-            type="primary"
-            :total="pagination.total"
-            :page-count="pagination.pageCount"
-            :per-page="pagination.perPage"
-            @input="changePage"
-            v-model="pagination.simple"
-          />
-        </div>
-      </div>
     </div>
   </div>
 </template>
 <script>
 import { Pagination } from "@/components";
 import ProfileCard from "@/pages/Profile/ProfileCard";
+import { Button, FormGroupInput, Radio } from "@/components";
 import { mapGetters, mapActions } from "vuex";
 import Contact from "@/pages/Services/Contact";
 import AddProfile from "./AddProfile.vue";
+import ProfileSearch from "./ProfileSearch.vue";
 
 export default {
   name: "profiles",
@@ -94,15 +95,20 @@ export default {
     Contact,
     ProfileCard,
     Pagination,
-    AddProfile
+    AddProfile,
+    ProfileSearch,
+    [Radio.name]: Radio,
+    [Button.name]: Button,
+    [FormGroupInput.name]: FormGroupInput
   },
   computed: {
     ...mapGetters(["allProfiles"])
   },
   watch: {
     allProfiles() {
-      this.handlePagination();
+      this.handleSearch({});
       this.checkProfiles();
+      this.handlePagination();
     }
   },
   created() {
@@ -118,24 +124,99 @@ export default {
         total: 0,
         perPage: 6
       },
+      search: {
+        name: ""
+      },
       jobs: [],
       start: 6,
       noProfiles: false,
-      end: 12
+      filteredProfiles: [],
+      end: 12,
     };
+  },
+  beforeDestroy() {
+    this.clearHash();
   },
   methods: {
     ...mapActions(["fetchProfiles"]),
     handlePagination() {
-      this.pagination.total = this.allProfiles.length;
-      this.pagination.pageCount = Math.ceil(this.allProfiles.length / 6);
+      this.pagination.total = this.filteredProfiles.length;
+      this.pagination.pageCount = Math.ceil(this.filteredProfiles.length / 6);
     },
     changePage(value) {
       this.start = this.pagination.perPage * value - this.pagination.perPage;
       this.end = this.pagination.perPage * value;
     },
+    clearHash() {
+      window.location.hash = "";
+    },
     checkProfiles() {
-      this.noProfiles = this.allProfiles.length === 0;
+      this.noProfiles = this.filteredProfiles.length === 0;
+    },
+    handleSearch(searchParams) {
+      let filteredProfiles = [];
+      filteredProfiles = this.allProfiles;
+
+      if (Object.keys(searchParams).length === 0) {
+        this.filteredProfiles = this.allProfiles;
+        this.handlePagination();
+        return;
+      }
+
+      const { name, country, teachingExperience } = searchParams;
+
+      // search by fullName
+      if (name) {
+        const searchRegex = new RegExp(`${name}`, "i");
+        filteredProfiles = this.allProfiles.filter(profile => {
+          const fullName = `${profile.firstName} ${profile.lastName}`;
+          const searchResult = fullName.match(searchRegex);
+          return !!searchResult;
+        });
+      }
+
+      // filfter by nationality
+      if (country) {
+        filteredProfiles = filteredProfiles.filter(
+          profile => profile.country[0].name === country
+        );
+      }
+
+      // filfter by teachingExperience
+      if (teachingExperience) {
+        filteredProfiles = filteredProfiles.filter(
+          profile => profile.teachingExperience === parseInt(teachingExperience)
+        );
+      }
+
+      // no search results with search params
+      if (
+        filteredProfiles.length === 0 &&
+        (name || country || teachingExperience)
+      ) {
+        if (this.allProfiles.length > 6) {
+          // get 6 random profiles
+          const randomIndex = this.getRandomArbitrary(this.allProfiles.length);
+          this.filteredProfiles = this.allProfiles.filter((profile, index) => {
+            return randomIndex.includes(index);
+          });
+        } else {
+          this.filteredProfiles = this.allProfiles;
+        }
+        this.handlePagination();
+        return;
+      }
+
+      this.filteredProfiles = filteredProfiles;
+      this.handlePagination();
+    },
+    getRandomArbitrary(max) {
+      const randomIntsSet = new Set();
+      while (randomIntsSet.size < 6) {
+        const randomInt = Math.floor(Math.random() * max);
+        randomIntsSet.add(randomInt);
+      }
+      return [...randomIntsSet];
     }
   }
 };

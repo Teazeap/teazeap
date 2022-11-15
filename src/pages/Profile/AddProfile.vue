@@ -1,10 +1,12 @@
 <template>
   <div class="container-fluid">
-    <h2 class="title">Want to join our communtiy of teachers?</h2>
-    <p class="description">
-      Join a global community of over 200,000 TEFL teachers working throughout
-      the world!
-    </p>
+    <div style="textAlign: center">
+      <h2 class="title">Want to join our communtiy of teachers?</h2>
+      <p class="description">
+        Join a global community of over 200,000 TEFL teachers working throughout
+        the world!
+      </p>
+    </div>
     <div class="row justify-content-center">
       <div class="col-md-12 col-lg-8 col-xl-6 align-self-center">
         <!-- Nav tabs -->
@@ -281,11 +283,11 @@
             Submit
           </button>
           <img
-                    v-if="isProfileAssetUploading"
-                    v-lazy="'img/Ellipsis-3s-128px.svg'"
-                    alt="Rounded Image"
-                    style="width:30px; height: 30px"
-                  />
+            v-if="isProfileAssetUploading"
+            v-lazy="'img/Ellipsis-3s-128px.svg'"
+            alt="Rounded Image"
+            style="width:30px; height: 30px"
+          />
         </form>
       </div>
     </div>

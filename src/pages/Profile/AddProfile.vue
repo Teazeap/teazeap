@@ -12,14 +12,14 @@
         <!-- Nav tabs -->
         <form
           @submit.prevent="handleSubmit"
-          name="job-applications"
+          name="profile-applications"
           method="POST"
           data-netlify="true"
           netlify-honeybot="bot-field"
           class="needs-validation"
           novalidate
         >
-          <input type="hidden" name="bot-field" value="job-applications" />
+          <input type="hidden" name="bot-field" value="profile-applications" />
           <div class="form-row">
             <div class="form-group col-md-6">
               <!-- name -->
@@ -321,14 +321,14 @@ export default {
       return `${this.form.firstName} ${this.form.lastName}`;
     },
     message() {
-      return `${this.form.firstName} ${this.form.lastName} (${
+      return `${this.fullName} (${
         this.form.gender
-      }) from ${this.form.country}, born in ${this.formatDate(
+      }) (${this.form.email}) from ${this.form.country}, born in ${this.formatDate(
         this.form.birthDate
-      )} just applied for the ${this.job?.school} teaching job`;
+      )} just applied for a teacher's profile`;
     },
     subject() {
-      return `New Job Application: ${this.form.firstName} ${this.form.lastName} - ${this.job?.school}`;
+      return `New Profile Application: ${this.fullName}`;
     },
     countryInfo() {
       return this.countries.find(c => c.name == this.form.country);
@@ -1385,10 +1385,10 @@ export default {
       const result = await this.$validator.validateAll();
       if (result) {
         if (this.uploaded) {
-          // this.handleNetlifyForm();
           this.isProfileAssetUploading = true;
           await this.handleAddProfile();
           this.isProfileAssetUploading = false;
+          this.handleNetlifyForm();
           this.applicationCompleted();
         } else {
           this.uploadRequired();
@@ -1407,12 +1407,17 @@ export default {
       await this.addProfile(profile);
     },
     handleNetlifyForm() {
+      const netlifyForm = {}
+      netlifyForm.name = this.fullName
+      netlifyForm.email = this.form.email
+      netlifyForm.message = this.message
+      netlifyForm.subject = this.subject
       fetch("/", {
         method: "post",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: this.encode({
-          "form-name": "job-applications",
-          ...this.form
+          "form-name": "profile-applications",
+          ...netlifyForm
         })
       });
     },

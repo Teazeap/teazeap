@@ -81,7 +81,7 @@ export default {
     handleLogIn () {
       if (this.form.userName === this.userName && this.password === this.form.password) {
         this.$store.dispatch('login')
-        this.$router.push({name: 'JobsAdminMain'})
+        this.$router.push({name: 'Dashboard'})
       } else {
         this.$swal({
         title: 'Login Error',

@@ -16,6 +16,11 @@ import MainFooter from "./layout/MainFooter.vue";
 import AdminJobs from "./pages/Protected/Jobs";
 import store from "@/store";
 import AdminJobInfo from "./pages/Protected/JobInfo";
+import Dashboard from "./pages/Protected/Dashboard/index.vue";
+import DashboardJobs from "./pages/Protected/Dashboard/AllJobs.vue";
+import DashboardJobsApplications from "./pages/Protected/Dashboard/JobApplications.vue";
+import DashboardProfiles from "./pages/Protected/Dashboard/Profiles.vue";
+import DashboardProfileApplications from "./pages/Protected/Dashboard/ProfileApplications.vue";
 
 Vue.use(Router);
 
@@ -180,6 +185,65 @@ export default new Router({
           }
         }
       ]
+    },
+    // dashboard
+    {
+      path: "/admin/dashboard",
+      name: "Dashboard",
+      redirect: { name: 'DashboardJobs' },
+      components: {
+        default: Dashboard
+      },
+      props: {
+        header: { colorOnScroll: 400 }
+      },
+      children: [
+        {
+          path: "jobs",
+          name: "DashboardJobs",
+          components: {
+            default: DashboardJobs,
+          },
+          props: {
+            header: { colorOnScroll: 400 }
+          }
+        },
+        {
+          path: "jobs-applications",
+          name: "DashboardJobsApplications",
+          components: {
+            default: DashboardJobsApplications,
+          },
+          props: {
+            header: { colorOnScroll: 400 }
+          }
+        },
+        {
+          path: "profiles",
+          name: "DashboardProfiles",
+          components: {
+            default: DashboardProfiles,
+          },
+          props: {
+            header: { colorOnScroll: 400 }
+          }
+        },
+        {
+          path: "profile-applications",
+          name: "DashboardProfileApplications",
+          components: {
+            default: DashboardProfileApplications,
+          },
+          props: {
+            header: { colorOnScroll: 400 }
+          }
+        }
+      ],
+      beforeEnter: (to, from, next) => {
+        const isAuthenticated = store.getters.user;
+        if (to.name == "Dashboard" && !isAuthenticated) next({ name: "login" });
+        else next();
+      }
     }
   ],
   scrollBehavior: to => {

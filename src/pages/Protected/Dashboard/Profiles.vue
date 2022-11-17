@@ -14,6 +14,7 @@
       </v-card-title>
       <v-data-table
         :headers="headers"
+        :loading="loading"
         :items="allProfiles"
         :search="search"
         item-key="id"
@@ -30,6 +31,11 @@
             <p>{{ item.description }}</p>
           </td>
         </template>
+        <template v-slot:item.actions="{ item }">
+          <v-btn small rounded color="success" dark @click="unPublishItem(item)">
+            Unpublish
+          </v-btn>
+        </template>
       </v-data-table>
     </v-card>
   </v-app>
@@ -42,22 +48,26 @@ export default {
   computed: {
     ...mapGetters(["allProfiles"])
   },
-  watch: {
-    allProfiles() {
-      this.handleProfiles();
-    }
-  },
   created() {
     this.fetchProfiles();
   },
   methods: {
-    ...mapActions(["fetchProfiles"]),
-    handleProfiles() {}
+    ...mapActions(["fetchProfiles","unPublishProfile"]),
+    async unPublishItem(item) {
+      try {
+        this.loading = true;
+        await this.unPublishProfile(item.id);
+        this.loading = false;
+      } catch (e) {
+        this.loading = false;
+      }
+    }
   },
   data() {
     return {
       search: "",
       expanded: [],
+      loading: false,
       singleExpand: false,
       headers: [
         {
@@ -71,7 +81,9 @@ export default {
         { text: "Gender", value: "gender" },
         { text: "Teaching Experience", value: "teachingExperience" },
         { text: "Years In Taiwan", value: "yearsInTaiwan" },
-        { text: "Birth Date", value: "birthDate" }
+        { text: "Birth Date", value: "birthDate" },
+        { text: "Update At Date", value: "updatedAt" },
+        { text: "Actions", value: "actions", sortable: false }
       ]
     };
   }

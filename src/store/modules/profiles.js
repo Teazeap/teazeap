@@ -1,4 +1,5 @@
 import Client from "../../contentful";
+import PreviewClient from "../../preview-contentful";
 import * as contentful from "contentful-management";
 const contentType = "application/pdf";
 var client = contentful.createClient({
@@ -7,13 +8,13 @@ var client = contentful.createClient({
 
 const state = {
   profiles: [],
+  previewProfiles: [],
   asset: {},
   assets: []
 };
 const getters = {
-  allProfiles: state => state.profiles
-  // asset: (state) => state.asset,
-  // assets: (state) => state.assets
+  allProfiles: state => state.profiles,
+  allPreviewProfiles: state => state.previewProfiles
 };
 const actions = {
   async fetchProfiles({ commit, dispatch }) {
@@ -27,7 +28,18 @@ const actions = {
     });
 
     commit("setProfiles", formattedProfiles);
-    // dispatch('fetchAssets')
+  },
+  async fetchPreviewProfiles({ commit, dispatch }) {
+    const response = await PreviewClient.getEntries({
+      content_type: "teachersProfiles"
+    });
+    let formattedProfiles = response.items.map(profile => {
+      let imageUrl = profile.fields.profilePicture.fields.file.url;
+      let formattedProfile = { ...profile.fields, ...profile.sys, imageUrl };
+      return formattedProfile;
+    });
+
+    commit("setPreviewProfiles", formattedProfiles);
   },
   async addProfile({ commit, dispatch }, profile) {
     // Create profile
@@ -108,6 +120,40 @@ const actions = {
           })
         )
         .then(entry => {
+          resolve(entry);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  },
+  async publishProfile({ commit, dispatch }, entryId) {
+    return new Promise((resolve, reject) => {
+      client
+        .getSpace(process.env.VUE_APP_SPACE)
+        .then(space => space.getEnvironment("master-2020-10-14"))
+        .then(environment => environment.getEntry(entryId))
+        .then(entry => entry.publish())
+        .then(entry => {
+          dispatch('fetchProfiles')
+          dispatch('fetchPreviewProfiles')
+          resolve(entry);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  },
+  async unPublishProfile({ commit, dispatch }, entryId) {
+    return new Promise((resolve, reject) => {
+      client
+        .getSpace(process.env.VUE_APP_SPACE)
+        .then(space => space.getEnvironment("master-2020-10-14"))
+        .then(environment => environment.getEntry(entryId))
+        .then(entry => entry.unpublish())
+        .then(entry => {
+          dispatch('fetchProfiles')
+          dispatch('fetchPreviewProfiles')
           resolve(entry);
         })
         .catch(error => {
@@ -223,9 +269,9 @@ const actions = {
   }
 };
 const mutations = {
-  setProfiles: (state, profiles) => (state.profiles = profiles)
-  // setAsset: (state, asset) => (state.asset = asset),
-  // setAssets: (state, assets) => (state.assets = assets)
+  setProfiles: (state, profiles) => (state.profiles = profiles),
+  setPreviewProfiles: (state, previewProfiles) =>
+    (state.previewProfiles = previewProfiles)
 };
 
 export default {

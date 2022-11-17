@@ -1,7 +1,5 @@
 <template>
   <v-app id="inspire">
-    <!-- <v-navigation-drawer v-model="drawer" app>
-    </v-navigation-drawer> -->
     <v-navigation-drawer v-model="drawer" :mini-variant.sync="mini" app>
       <v-list-item class="px-2">
         <v-list-item-avatar>
@@ -9,10 +7,6 @@
         </v-list-item-avatar>
 
         <v-list-item-title>Jake</v-list-item-title>
-        <!--
-        <v-btn icon @click.stop="mini = !mini">
-          <v-icon>mdi-chevron-left</v-icon>
-        </v-btn> -->
       </v-list-item>
 
       <v-divider class="mt-2"></v-divider>
@@ -32,6 +26,14 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+
+      <template v-slot:append>
+        <div class="pa-2">
+          <v-btn block class="red--text" @click="logOut">
+            Logout
+          </v-btn>
+        </div>
+      </template>
     </v-navigation-drawer>
 
     <v-app-bar app>
@@ -40,7 +42,7 @@
       <v-toolbar-title>Dashboard</v-toolbar-title>
     </v-app-bar>
 
-    <v-main>
+    <v-main class="ma-1">
       <router-view />
     </v-main>
     <v-footer dark padless v-bind="localAttrs">
@@ -96,6 +98,10 @@ export default {
     },
     handleRoute(item) {
       this.$router.push({ name: item.route });
+    },
+    logOut() {
+      this.$store.dispatch("logout");
+      this.$router.push({ name: "landing" });
     }
   }
 };

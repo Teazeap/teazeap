@@ -1,39 +1,21 @@
 <template>
-  <div class="col-md-6 col-lg-4 col-xl-4">
+  <div class="col-md-6 col-lg-4 col-xl-4" >
     <v-app id="inspire">
       <v-card
         outlined
         class="mx-auto  profile-card"
-        width="350"
         :elevation="4"
 
       >
-        <v-img :position="profile.position" :src="profile.pictureUrl" height="350px" ></v-img>
+        <v-img  :src="testimonial.picUrl"></v-img>
 
-        <v-card-title
-          class="d-flex mt-2 justify-content-center team-name font-weight-bold"
-        >
-          {{ profile.name }}
-        </v-card-title>
-        <v-card-title class="d-flex mt-n4 text-primary justify-content-center">
-          {{ $t(profile.title) }}
+        <v-card-title class="d-flex  team-name text-primary justify-content-center">
+          {{ $t(testimonial.name) }}
         </v-card-title>
 
         <v-card-text class="font-italic team-quote">
-          {{ $t(profile.quote) }}
+          {{ $t(testimonial.message) }}
         </v-card-text>
-
-        <v-card-actions
-          class="pt-0 d-flex justify-content-center"
-          :class="{ 'mt-n6': adjustCardAction }"
-        >
-          <a class="card-link btn btn-primary btn-icon btn-round"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a class="btn btn-primary btn-icon btn-round"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-        </v-card-actions>
       </v-card>
     </v-app>
   </div>
@@ -41,20 +23,17 @@
 
 <script>
 export default {
-  name: "team-card",
+  name: "testimonial-card",
   bodyClass: "profile-page",
   components: {},
   props: {
-    profile: {
+    testimonial: {
       type: Object,
       required: true,
       default: () => {}
     }
   },
   computed: {
-    adjustCardAction() {
-      return this.profile.name === "Calerb Louis Jean";
-    }
   },
   methods: {}
 };

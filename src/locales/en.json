@@ -37,7 +37,8 @@
     },
     "teachers": {
         "find": "Finding Your Next Job",
-        "success": "Your success is important to us. TeaZeaP has curated partnerships with various employers looking to fill full-time, part-time, and substitute teacher positions. Through our platform you will be promoted as a candidate for a number of openings. If your resume is a good match for our clients’ needs, a recruiter will reach out to you to ensure the opportunity fits your goals and preferences. From there, our team will prepare you for every step of the hiring process, from the interview to placement. And even in helping you get settled in the apartment and city, you would like. We would have one of our team members accompany you all along the way."
+        "success": "Your success is important to us. TeaZeaP has curated partnerships with various employers looking to fill full-time, part-time, and substitute teacher positions. Through our platform you will be promoted as a candidate for a number of openings. If your resume is a good match for our clients’ needs, a recruiter will reach out to you to ensure the opportunity fits your goals and preferences. From there, our team will prepare you for every step of the hiring process, from the interview to placement. And even in helping you get settled in the apartment and city, you would like. We would have one of our team members accompany you all along the way.",
+        "testimonials": "Teachers' Testimonials"
     },
     "schools": {
         "find": "Finding Your Next Teacher",

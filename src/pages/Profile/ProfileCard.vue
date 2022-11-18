@@ -100,7 +100,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .v-application--wrap {
   height: 100%;
   min-height: 100%;
@@ -110,6 +110,7 @@ export default {
   -webkit-box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
   box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
   transition: 0.3s;
+  border-radius: 24px !important;
 }
 
 .profile-card:hover {

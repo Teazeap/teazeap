@@ -88,88 +88,11 @@
         </div>
       </div>
     </div>
-    <div class="section">
+    <div class="section mt-0 pt-0">
       <div class="container text-center">
         <h2 class="title">{{ $t("landing-page.team") }}</h2>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4  py-2">
-            <div class="card h-80">
-              <div class="mb-n4">
-                <img
-                  class="card-img-top "
-                  src="img/ceo.jpg"
-                  alt="Card image cap"
-                />
-              </div>
-              <div class="card-body mt-n6">
-                <h4 class="card-title">Clifton Moreau</h4>
-                <h4 class="card-title text-primary">{{ $t("landing-page.chief") }}</h4>
-                <p class="card-text font-italic">
-                  {{ $t("landing-page.chief-quote") }}
-                </p>
-              </div>
-              <a
-                href="#pablo"
-                class="card-link btn btn-primary btn-icon btn-round"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="#pablo" class="btn btn-primary btn-icon btn-round"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-4  py-2">
-            <div class="card h-80">
-              <div class="mb-n4">
-                <img
-                  class="card-img-top "
-                  src="img/calerb.jpg"
-                  alt="Card image cap"
-                />
-              </div>
-              <div class="card-body mt-n6">
-                <h4 class="card-title">Calerb Louis Jean</h4>
-                <h4 class="card-title text-primary">{{ $t("landing-page.project") }}</h4>
-                <p class="card-text font-italic">
-                 {{ $t("landing-page.project-quote") }}
-                </p>
-              </div>
-              <a
-                href="#pablo"
-                class="card-link btn btn-primary btn-icon btn-round"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="#pablo" class="btn btn-primary btn-icon btn-round"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-4  py-2">
-            <div class="card h-80">
-              <div class="mb-n4">
-                <img
-                  class="card-img-top "
-                  src="img/nnenia.jpg"
-                  alt="Card image cap"
-                />
-              </div>
-              <div class="card-body mt-n6">
-                <h4 class="card-title">Nnenia Stephens</h4>
-                <h4 class="card-title text-primary">{{ $t("landing-page.comm") }}</h4>
-                <p class="card-text font-italic">
-                  {{ $t("landing-page.comm-quote") }}
-                </p>
-              </div>
-              <a
-                href="#pablo"
-                class="card-link btn btn-primary btn-icon btn-round"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="#pablo" class="btn btn-primary btn-icon btn-round"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-            </div>
-          </div>
+        <div class="row mt-4">
+          <TeamCard v-for="(profile, index) in team" :key="index" :profile="profile"/>
         </div>
       </div>
     </div>
@@ -179,6 +102,7 @@
 <script>
 import { Button, FormGroupInput} from "@/components";
 import Contact from "@/pages/Services/Contact";
+import TeamCard from './TeamCard.vue';
 
 export default {
   name: "landing",
@@ -187,6 +111,7 @@ export default {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
     Contact,
+    TeamCard
   },
   data() {
     return {
@@ -195,6 +120,27 @@ export default {
         email: "",
         message: "",
       },
+      team: [{
+        name: "Clifton Moreau",
+        quote: "landing-page.chief-quote",
+        pictureUrl: "img/ceo.jpg",
+        title: "landing-page.chief",
+        position: "top",
+      },
+      {
+        name: "Calerb Louis Jean",
+        quote: "landing-page.project-quote",
+        pictureUrl: "img/jake.jpg",
+        title: "landing-page.project",
+        position: "center",
+      },
+      {
+        name: "Nnenia Stephens",
+        quote: "landing-page.comm-quote",
+        pictureUrl: "img/nnenia.jpg",
+        title: "landing-page.comm",
+        position: "center",
+      }]
     };
   },
   created() {

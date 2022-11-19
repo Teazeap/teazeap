@@ -1,10 +1,20 @@
-import Client from "../../contentful";
-import PreviewClient from "../../preview-contentful";
 import * as contentful from "contentful-management";
+import { createClient } from "contentful";
+const ContentfulConfig = require("../../contentful-config");
+
 const contentType = "application/pdf";
+let config = ContentfulConfig.getConfig(true);
 var client = contentful.createClient({
-  accessToken: process.env.VUE_APP_ACCESS_TOKEN
+  accessToken: process.env.VUE_APP_ACCESS_TOKEN,
 });
+
+// cdn.contentful.com
+config = ContentfulConfig.getConfig(false);
+const Client = createClient(config);
+
+// preview.contentful.com
+config = ContentfulConfig.getConfig(true);
+const PreviewClient = createClient(config);
 
 const state = {
   profiles: [],
@@ -62,7 +72,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       client
         .getSpace(process.env.VUE_APP_SPACE)
-        .then(space => space.getEnvironment("master-2020-10-14"))
+        .then(space => space.getEnvironment(config.environment))
         .then(environment =>
           environment.createEntryWithId("teachersProfiles", entryId, {
             fields: {
@@ -131,7 +141,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       client
         .getSpace(process.env.VUE_APP_SPACE)
-        .then(space => space.getEnvironment("master-2020-10-14"))
+        .then(space => space.getEnvironment(config.environment))
         .then(environment => environment.getEntry(entryId))
         .then(entry => entry.publish())
         .then(entry => {
@@ -148,7 +158,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       client
         .getSpace(process.env.VUE_APP_SPACE)
-        .then(space => space.getEnvironment("master-2020-10-14"))
+        .then(space => space.getEnvironment(config.environment))
         .then(environment => environment.getEntry(entryId))
         .then(entry => entry.unpublish())
         .then(entry => {
@@ -169,7 +179,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       client
         .getSpace(process.env.VUE_APP_SPACE)
-        .then(space => space.getEnvironment("master-2020-10-14"))
+        .then(space => space.getEnvironment(config.environment))
         .then(environment =>
           environment.createAssetFromFiles({
             fields: {
@@ -203,7 +213,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       client
         .getSpace(process.env.VUE_APP_SPACE)
-        .then(space => space.getEnvironment("master-2020-10-14"))
+        .then(space => space.getEnvironment(config.environment))
         .then(environment =>
           environment.createAssetFromFiles({
             fields: {
@@ -229,7 +239,7 @@ const actions = {
           commit("setAsset", asset);
           client
             .getSpace(process.env.VUE_APP_SPACE)
-            .then(space => space.getEnvironment("master-2020-10-14"))
+            .then(space => space.getEnvironment(config.environment))
             .then(environment => environment.getEntry(file.entryId))
             .then(entry => {
               // assign uploaded image as an entry field
@@ -253,7 +263,7 @@ const actions = {
   updateView({ commit, dispatch }, entryId) {
     client
       .getSpace(process.env.VUE_APP_SPACE)
-      .then(space => space.getEnvironment("master-2020-10-14"))
+      .then(space => space.getEnvironment(config.environment))
       .then(environment => environment.getEntry(entryId))
       .then(entry => {
         // assign uploaded image as an entry field

@@ -67,5 +67,6 @@ export default {
 }
 .team-name {
   font-size: 24px;
+  font-weight: 500;
 }
 </style>

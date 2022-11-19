@@ -75,7 +75,6 @@
         </div>
       </span>
       <AddProfile />
-      <Contact v-if="noProfiles" />
     </div>
   </div>
 </template>
@@ -84,7 +83,6 @@ import { Pagination } from "@/components";
 import ProfileCard from "@/pages/Profile/ProfileCard";
 import { Button, FormGroupInput, Radio } from "@/components";
 import { mapGetters, mapActions } from "vuex";
-import Contact from "@/pages/Services/Contact";
 import AddProfile from "./AddProfile.vue";
 import ProfileSearch from "./ProfileSearch.vue";
 
@@ -92,7 +90,6 @@ export default {
   name: "profiles",
   bodyClass: "landing-page",
   components: {
-    Contact,
     ProfileCard,
     Pagination,
     AddProfile,

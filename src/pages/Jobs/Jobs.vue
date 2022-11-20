@@ -43,12 +43,19 @@
       </div>
     </div>
     <div class="section">
-      <span v-if="!noJobs" >
+      <span v-if="!noJobs"  class="text-center" >
         <h2 class="title pt-0">Teaching Jobs</h2>
         <p class="description mb-8">
           Your teaching career is very important to us.
         </p>
       </span>
+      <div class="container text-center mt-16" v-if="jobsLoading">
+        <img
+          v-lazy="'img/Ellipsis-3s-128px.svg'"
+          alt="Rounded Image"
+          style="width:30px; height: 30px"
+        />
+      </div>
       <div class="container text-center mt-16">
         <div class="row justify-content-center">
           <JobCard
@@ -94,7 +101,7 @@ export default {
     Pagination
   },
   computed: {
-    ...mapGetters(["allJobs"])
+    ...mapGetters(["allJobs"]),
   },
   watch: {
     allJobs() {
@@ -102,8 +109,10 @@ export default {
       this.checkJobs();
     }
   },
-  created() {
-    this.fetchJobs();
+  async created() {
+    this.jobsLoading = true;
+    await this.fetchJobs();
+    this.jobsLoading = false;
   },
   data() {
     return {
@@ -118,7 +127,8 @@ export default {
       jobs: [],
       start: 6,
       noJobs: false,
-      end: 12
+      end: 12,
+      jobsLoading: true
     };
   },
   methods: {

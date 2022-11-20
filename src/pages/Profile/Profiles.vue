@@ -74,6 +74,13 @@
           </div>
         </div>
       </span>
+      <div class="container text-center mt-16" v-if="profilesLoading">
+        <img
+          v-lazy="'img/Ellipsis-3s-128px.svg'"
+          alt="Rounded Image"
+          style="width:30px; height: 30px"
+        />
+      </div>
       <AddProfile />
     </div>
   </div>
@@ -108,8 +115,10 @@ export default {
       this.handlePagination();
     }
   },
-  created() {
-    this.fetchProfiles();
+  async created() {
+    this.profilesLoading = true;
+    await this.fetchProfiles();
+    this.profilesLoading = false;
   },
   data() {
     return {
@@ -124,6 +133,7 @@ export default {
       search: {
         name: ""
       },
+      profilesLoading: true,
       jobs: [],
       start: 6,
       noProfiles: false,

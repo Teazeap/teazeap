@@ -55,6 +55,16 @@
         </nav-link>
       </li>
 
+      <li class="nav-item">
+        <nav-link
+          class="nav-link  btn btn-neutral"
+          to="/blog"
+        >
+          <i class="now-ui-icons users_single-02"></i>
+          <p>{{$t('nav.blog')}}</p>
+        </nav-link>
+      </li>
+
       <drop-down
           tag="li"
           :title="language"

@@ -7,6 +7,7 @@
         "teachers": "師資陣容",
         "schools": "學校",
         "language": "語言",
+        "blog": "Blog",
         "admin": "行政人員",
         "create-profile": "Create Profile"
     },
@@ -50,6 +51,9 @@
     },
     "profiles": {
         "no-profiles": "Profiles Currently Unavailable"
+    },
+    "blog": {
+        "no-blogs": "Blog Posts Currently Unavailable"
     },
     "testimonials": "教師見證"
 }

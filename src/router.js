@@ -9,6 +9,7 @@ import Qualification from "./pages/Procedure/Qualification.vue";
 import Login from "./pages/Login.vue";
 // import Profile from './pages/Profile.vue';
 import Profiles from "./pages/Profile/Profiles.vue";
+import Blogs from "./pages/Blog/Blogs.vue";
 import Jobs from "./pages/Jobs/Jobs.vue";
 import JobInfo from "./pages/Jobs/JobInfo.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
@@ -106,6 +107,14 @@ export default new Router({
       path: "/create-profile",
       name: "Profiles",
       components: { default: Profiles, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/Blog",
+      name: "Blogs",
+      components: { default: Blogs, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 }
       }

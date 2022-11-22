@@ -8,6 +8,7 @@
         "schools": "Schools",
         "language": "Language",
         "admin": "Admin",
+        "blog": "Blog",
         "create-profile": "Create Profile"
     },
     "landing-page": {
@@ -50,6 +51,9 @@
     },
     "profiles": {
         "no-profiles": "Profiles Currently Unavailable"
+    },
+    "blog": {
+        "no-blogs": "Blog Posts Currently Unavailable"
     },
     "testimonials": "Teachers' Testimonials"
 }

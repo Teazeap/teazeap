@@ -25,6 +25,9 @@
         <template v-slot:item.country="{ item }">
           {{ item.country[0].name }}
         </template>
+        <template v-slot:item.birthDate="{ item }">
+          {{ formatDate(item.birthDate, "DD MMM YYYY") }}
+        </template>
         <template v-slot:expanded-item="{ headers, item }">
           <td :colspan="headers.length">
             <h4 class="font-weight-black">Description</h4>
@@ -45,7 +48,9 @@
 </template>
 
 <script>
+import moment from "moment";
 import { mapGetters, mapActions } from "vuex";
+
 export default {
   name: "dashboard-profile-applications",
   computed: {
@@ -76,6 +81,10 @@ export default {
       this.draftProfiles = this.allPreviewProfiles.filter(p => {
         return !allProfileIds.includes(p.id);
       });
+    },
+    formatDate(date, format = "llll") {
+      const createdAt = moment(new Date(date));
+      return createdAt.format(format);
     },
     editItem(item) {},
     async publishItem(item) {

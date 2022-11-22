@@ -25,6 +25,12 @@
         <template v-slot:item.country="{ item }">
           {{ item.country[0].name }}
         </template>
+        <template v-slot:item.birthDate="{ item }">
+          {{ formatDate(item.birthDate, "DD-MM-YYYY") }}
+        </template>
+         <template v-slot:item.updatedAt="{ item }">
+          {{ formatDate(item.updatedAt, "DD-MM-YYYY") }}
+        </template>
         <template v-slot:expanded-item="{ headers, item }">
           <td :colspan="headers.length">
             <h4 class="font-weight-black">Description</h4>
@@ -32,7 +38,13 @@
           </td>
         </template>
         <template v-slot:item.actions="{ item }">
-          <v-btn small rounded color="success" dark @click="unPublishItem(item)">
+          <v-btn
+            small
+            rounded
+            color="success"
+            dark
+            @click="unPublishItem(item)"
+          >
             Unpublish
           </v-btn>
         </template>
@@ -42,7 +54,9 @@
 </template>
 
 <script>
+import moment from "moment";
 import { mapGetters, mapActions } from "vuex";
+
 export default {
   name: "dashboard-profiles",
   computed: {
@@ -52,7 +66,11 @@ export default {
     this.fetchProfiles();
   },
   methods: {
-    ...mapActions(["fetchProfiles","unPublishProfile"]),
+    ...mapActions(["fetchProfiles", "unPublishProfile"]),
+    formatDate(date, format = "llll") {
+      const createdAt = moment(new Date(date));
+      return createdAt.format(format);
+    },
     async unPublishItem(item) {
       try {
         this.loading = true;

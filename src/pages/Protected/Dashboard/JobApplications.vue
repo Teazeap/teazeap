@@ -31,6 +31,9 @@
         <template v-slot:item.resumes="{ item }">
           {{ item.resumes.length }}
         </template>
+        <template v-slot:item.updatedAt="{ item }">
+          {{ formatDate(item.updatedAt) }}
+        </template>
         <template v-slot:item.resumes="{ item }">
           <v-chip :color="getColor(item.resumes.length)" dark>
             {{ item.resumes.slice(1).length }}
@@ -123,7 +126,7 @@
                     </td>
                     <td>
                       {{
-                        formatDescription(applicant.fields.description, "dob")
+                        formatDate(formatDescription(applicant.fields.description, "dob"), 'DD MMM YYYY')
                       }}
                     </td>
                   </tr>
@@ -139,7 +142,9 @@
 </template>
 
 <script>
+import moment from "moment";
 import { mapGetters, mapActions } from "vuex";
+
 export default {
   name: "dashboard-job-applications",
   computed: {
@@ -159,6 +164,10 @@ export default {
   methods: {
     ...mapActions(["fetchJobs"]),
     editItem(item) {},
+    formatDate(date, format = 'llll') {
+      const createdAt = moment(new Date(date));
+      return createdAt.format(format);;
+    },
     async publishItem(item) {
       try {
         this.loading = true;
@@ -176,8 +185,8 @@ export default {
       const applicantDetails = JSON.parse(description);
       return applicantDetails[key];
     },
-    getURL (url) {
-      return `https://${url}`
+    getURL(url) {
+      return `https://${url}`;
     }
   },
   data() {

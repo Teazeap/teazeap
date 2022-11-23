@@ -72,13 +72,31 @@ export default {
       const createdAt = moment(new Date(date));
       return createdAt.format(format);
     },
+    handleAlert({ title, text, icon }) {
+      this.$swal({
+        title,
+        text,
+        icon,
+        confirmButtonText: "Okay"
+      }).then(result => {
+        this.loading = false;
+      });
+    },
     async unPublishItem(item) {
       try {
         this.loading = true;
         await this.unPublishProfile(item.id);
-        this.loading = false;
+        this.handleAlert({
+          title: "Teacher's Profile Unpublished Successfully",
+          text: "Has been removed from profile page",
+          icon: "success"
+        });
       } catch (e) {
-        this.loading = false;
+        this.handleAlert({
+          title: "Teacher's Profile Not Unpublished",
+          text: "Please try again",
+          icon: "error"
+        });
       }
     }
   },

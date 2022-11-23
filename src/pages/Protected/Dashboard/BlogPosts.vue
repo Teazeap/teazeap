@@ -92,6 +92,12 @@ export default {
   created() {
     this.fetchPreviewBlogPosts();
     this.fetchBlogPosts();
+    this.unwatch = this.$store.watch(
+      (state, getters) => getters.allPreviewBlogPosts,
+      (newValue, oldValue) => {
+        this.handleBlogPosts();
+      }
+    );
   },
   methods: {
     ...mapActions([
@@ -122,7 +128,6 @@ export default {
           icon: "success"
         });
       } catch (e) {
-        console.log(e);
         this.handleAlert({
           title: "Blog Post Not Published",
           text: "Please try again",
@@ -130,7 +135,7 @@ export default {
         });
       }
     },
-      async handleItemUnPublish(item) {
+    async handleItemUnPublish(item) {
       try {
         this.loading = true;
         await this.unPublishBlog(item.id);
@@ -140,7 +145,6 @@ export default {
           icon: "success"
         });
       } catch (e) {
-        console.log(e);
         this.handleAlert({
           title: "Blog Post Not Unpublished",
           text: "Please try again",

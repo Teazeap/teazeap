@@ -80,6 +80,12 @@ export default {
   created() {
     this.fetchPreviewProfiles();
     this.fetchProfiles();
+    this.unwatch = this.$store.watch(
+      (state, getters) => getters.allPreviewProfiles,
+      (newValue, oldValue) => {
+        this.handleProfiles();
+      }
+    );
   },
   methods: {
     ...mapActions(["fetchProfiles", "fetchPreviewProfiles", "publishProfile"]),
@@ -94,13 +100,31 @@ export default {
       return createdAt.format(format);
     },
     editItem(item) {},
+    handleAlert({ title, text, icon }) {
+      this.$swal({
+        title,
+        text,
+        icon,
+        confirmButtonText: "Okay"
+      }).then(result => {
+        this.loading = false;
+      });
+    },
     async publishItem(item) {
       try {
         this.loading = true;
         await this.publishProfile(item.id);
-        this.loading = false;
+        this.handleAlert({
+          title: "Teacher's Profile Published Successfully",
+          text: "View it in the profile page",
+          icon: "success"
+        });
       } catch (e) {
-        this.loading = false;
+        this.handleAlert({
+          title: "Teacher's Profile Not Published",
+          text: "Please try again",
+          icon: "error"
+        });
       }
     }
   },

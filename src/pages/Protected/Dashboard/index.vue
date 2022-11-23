@@ -102,6 +102,7 @@ export default {
       this.drawer = !this.drawer;
     },
     handleRoute(item) {
+      if (this.$router.history.current.name === item.route) return;
       this.$router.push({ name: item.route });
     },
     logOut() {
@@ -121,6 +122,6 @@ export default {
 }
 
 .v-list-item__icon {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 </style>

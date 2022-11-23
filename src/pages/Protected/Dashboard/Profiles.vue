@@ -28,7 +28,7 @@
         <template v-slot:item.birthDate="{ item }">
           {{ formatDate(item.birthDate, "DD-MM-YYYY") }}
         </template>
-         <template v-slot:item.updatedAt="{ item }">
+        <template v-slot:item.updatedAt="{ item }">
           {{ formatDate(item.updatedAt, "DD-MM-YYYY") }}
         </template>
         <template v-slot:expanded-item="{ headers, item }">
@@ -41,7 +41,8 @@
           <v-btn
             small
             rounded
-            color="success"
+            class="text-capitalize"
+            color="red"
             dark
             @click="unPublishItem(item)"
           >

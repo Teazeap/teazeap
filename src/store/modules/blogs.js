@@ -24,7 +24,7 @@ const state = {
 };
 const getters = {
   allBlogPosts: state => state.blogPosts,
-  allPreviewblogPosts: state => state.previewBlogPosts
+  allPreviewBlogPosts: state => state.previewBlogPosts
 };
 const actions = {
   async fetchBlogPosts({ commit, dispatch }) {
@@ -45,17 +45,24 @@ const actions = {
 
     commit("setBlogPosts", formattedBlogPosts);
   },
-  async fetchPreviewblogPosts({ commit, dispatch }) {
+  async fetchPreviewBlogPosts({ commit, dispatch }) {
     const response = await PreviewClient.getEntries({
       content_type: "blogPosts"
     });
-    let formattedBlogPosts = response.items.map(profile => {
-      let imageUrl = profile.fields.profilePicture.fields.file.url;
-      let formattedProfile = { ...profile.fields, ...profile.sys, imageUrl };
-      return formattedProfile;
+
+    let formattedBlogPosts = response.items.map(post => {
+      let authorAvatarUrl = post.fields.authorAvatar.fields.file.url;
+      let blogPostImageUrl = post.fields.blogPostImage.fields.file.url;
+      let formattedBlogPost = {
+        ...post.fields,
+        ...post.sys,
+        authorAvatarUrl,
+        blogPostImageUrl
+      };
+      return formattedBlogPost;
     });
 
-    commit("setPreviewblogPosts", formattedBlogPosts);
+    commit("setPreviewBlogPosts", formattedBlogPosts);
   },
   async addBlog({ commit, dispatch }, profile) {
     // Create profile
@@ -152,7 +159,7 @@ const actions = {
         .then(entry => entry.publish())
         .then(entry => {
           dispatch("fetchBlogPosts");
-          dispatch("fetchPreviewblogPosts");
+          dispatch("fetchPreviewBlogPosts");
           resolve(entry);
         })
         .catch(error => {
@@ -169,7 +176,7 @@ const actions = {
         .then(entry => entry.unpublish())
         .then(entry => {
           dispatch("fetchBlogPosts");
-          dispatch("fetchPreviewblogPosts");
+          dispatch("fetchPreviewBlogPosts");
           resolve(entry);
         })
         .catch(error => {
@@ -235,7 +242,7 @@ const actions = {
 };
 const mutations = {
   setBlogPosts: (state, blogPosts) => (state.blogPosts = blogPosts),
-  setPreviewblogPosts: (state, previewBlogPosts) =>
+  setPreviewBlogPosts: (state, previewBlogPosts) =>
     (state.previewBlogPosts = previewBlogPosts)
 };
 

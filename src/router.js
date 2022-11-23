@@ -22,6 +22,7 @@ import DashboardJobs from "./pages/Protected/Dashboard/AllJobs.vue";
 import DashboardJobsApplications from "./pages/Protected/Dashboard/JobApplications.vue";
 import DashboardProfiles from "./pages/Protected/Dashboard/Profiles.vue";
 import DashboardProfileApplications from "./pages/Protected/Dashboard/ProfileApplications.vue";
+import DashboardBlogPosts from "./pages/Protected/Dashboard/BlogPosts.vue";
 
 Vue.use(Router);
 
@@ -242,6 +243,16 @@ export default new Router({
           name: "DashboardProfileApplications",
           components: {
             default: DashboardProfileApplications,
+          },
+          props: {
+            header: { colorOnScroll: 400 }
+          }
+        },
+        {
+          path: "blog-posts",
+          name: "DashboardBlogPosts",
+          components: {
+            default: DashboardBlogPosts,
           },
           props: {
             header: { colorOnScroll: 400 }

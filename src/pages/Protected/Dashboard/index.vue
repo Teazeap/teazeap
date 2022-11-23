@@ -87,6 +87,11 @@ export default {
         title: "Profiles Applications",
         icon: "mdi-notebook-edit",
         route: "DashboardProfileApplications"
+      },
+      {
+        title: "Blog Posts",
+        icon: "mdi-message-bulleted",
+        route: "DashboardBlogPosts"
       }
     ],
     mini: false,
@@ -113,5 +118,9 @@ export default {
 }
 .v-main {
   height: 100vh;
+}
+
+.v-list-item__icon {
+    margin-right: 20px;
 }
 </style>

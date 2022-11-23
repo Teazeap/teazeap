@@ -38,7 +38,14 @@
           <v-icon small class="mr-2" @click="editItem(item)">
             mdi-pencil
           </v-icon>
-          <v-btn small rounded color="success" dark @click="publishItem(item)">
+          <v-btn
+            class="text-capitalize"
+            small
+            rounded
+            color="success"
+            dark
+            @click="publishItem(item)"
+          >
             Publish
           </v-btn>
         </template>

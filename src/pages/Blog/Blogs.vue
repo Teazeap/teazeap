@@ -192,11 +192,9 @@ export default {
 
       // no search results with search params
       if (filteredBlogPosts.length === 0 && (text || category)) {
-        console.log("here is no search results");
         if (this.allBlogPosts.length > 6) {
           // get 6 random profiles
           const randomIndex = this.getRandomArbitrary(this.allBlogPosts.length);
-          console.log("randomIndex", randomIndex);
           this.filteredBlogPosts = this.allBlogPosts.filter(
             (profile, index) => {
               return randomIndex.includes(index);

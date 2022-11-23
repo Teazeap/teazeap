@@ -6,8 +6,8 @@
         width="340"
         height="510"
         :elevation="4"
-        :href="blogPost.youtubeLink"
-        target="_blank"
+        link
+        :to="{ name: 'BlogInfo', params: { id: blogPost.id } }"
       >
         <v-img
           position="top"

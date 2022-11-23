@@ -12,6 +12,7 @@ import Profiles from "./pages/Profile/Profiles.vue";
 import Blogs from "./pages/Blog/Blogs.vue";
 import Jobs from "./pages/Jobs/Jobs.vue";
 import JobInfo from "./pages/Jobs/JobInfo.vue";
+import BlogInfo from "./pages/Blog/BlogInfo.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import AdminJobs from "./pages/Protected/Jobs";
@@ -105,22 +106,6 @@ export default new Router({
       }
     },
     {
-      path: "/create-profile",
-      name: "Profiles",
-      components: { default: Profiles, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 }
-      }
-    },
-    {
-      path: "/Blog",
-      name: "Blogs",
-      components: { default: Blogs, header: MainNavbar, footer: MainFooter },
-      props: {
-        header: { colorOnScroll: 400 }
-      }
-    },
-    {
       path: "/jobs/:id",
       name: "Jobs",
       components: { default: JobInfo, header: MainNavbar, footer: MainFooter },
@@ -133,6 +118,48 @@ export default new Router({
           name: "JobInfo",
           components: {
             default: JobInfo,
+            header: MainNavbar,
+            footer: MainFooter
+          },
+          props: {
+            header: { colorOnScroll: 400 }
+          }
+        }
+      ]
+    },
+    {
+      path: "/create-profile",
+      name: "Profiles",
+      components: { default: Profiles, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/blog",
+      name: "Blogs",
+      components: { default: Blogs, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/blog/:id",
+      name: "BlogInfo",
+      components: {
+        default: BlogInfo,
+        header: MainNavbar,
+        footer: MainFooter
+      },
+      props: {
+        header: { colorOnScroll: 400 }
+      },
+      children: [
+        {
+          path: "info",
+          name: "BlogInfo",
+          components: {
+            default: BlogInfo,
             header: MainNavbar,
             footer: MainFooter
           },
@@ -200,7 +227,7 @@ export default new Router({
     {
       path: "/admin/dashboard",
       name: "Dashboard",
-      redirect: { name: 'DashboardJobs' },
+      redirect: { name: "DashboardJobs" },
       components: {
         default: Dashboard
       },
@@ -209,50 +236,50 @@ export default new Router({
       },
       children: [
         {
-          path: "jobs",
+          path: "/jobs",
           name: "DashboardJobs",
           components: {
-            default: DashboardJobs,
+            default: DashboardJobs
           },
           props: {
             header: { colorOnScroll: 400 }
           }
         },
         {
-          path: "jobs-applications",
+          path: "/jobs-applications",
           name: "DashboardJobsApplications",
           components: {
-            default: DashboardJobsApplications,
+            default: DashboardJobsApplications
           },
           props: {
             header: { colorOnScroll: 400 }
           }
         },
         {
-          path: "profiles",
+          path: "/profiles",
           name: "DashboardProfiles",
           components: {
-            default: DashboardProfiles,
+            default: DashboardProfiles
           },
           props: {
             header: { colorOnScroll: 400 }
           }
         },
         {
-          path: "profile-applications",
+          path: "/profile-applications",
           name: "DashboardProfileApplications",
           components: {
-            default: DashboardProfileApplications,
+            default: DashboardProfileApplications
           },
           props: {
             header: { colorOnScroll: 400 }
           }
         },
         {
-          path: "blog-posts",
+          path: "/blog-posts",
           name: "DashboardBlogPosts",
           components: {
-            default: DashboardBlogPosts,
+            default: DashboardBlogPosts
           },
           props: {
             header: { colorOnScroll: 400 }

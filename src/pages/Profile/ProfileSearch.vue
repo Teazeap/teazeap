@@ -84,6 +84,7 @@
 </template>
 <script>
 import { Button, FormGroupInput, Radio } from "@/components";
+import debounce from "lodash.debounce";
 
 export default {
   name: "profile-search",
@@ -93,10 +94,21 @@ export default {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput
   },
-  computed: {
-    // countryInfo() {
-    //   return this.countries.find(c => c.name == this.search.country);
-    // }
+  watch: {
+    search: {
+      handler(newValue) {
+        this.debouncedCallback(newValue);
+      },
+      deep: true
+    }
+  },
+  created() {
+    this.debouncedCallback = debounce(newValue => {
+      this.$emit("search", newValue);
+    }, 500);
+  },
+  beforeUnmount() {
+    this.debouncedCallback.cancel();
   },
   data() {
     return {

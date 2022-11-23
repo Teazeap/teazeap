@@ -49,7 +49,7 @@
         <h2 class="title mb-0">Blog Posts</h2>
         <p class="description pt-0">Follow our journey....</p>
         <div class="container mt-4">
-          <!-- <BlogSearch @search="handleSearch" /> -->
+          <BlogSearch @search="handleSearch" />
           <div class="row justify-content-center">
             <BlogCard
               v-for="blogPost in filteredBlogPosts.slice(start, end)"
@@ -61,7 +61,10 @@
             {{ $t("blog.no-profiles") }}
           </h4>
         </div>
-        <div class="row justify-content-end mt-2" v-show="pagination.pageCount > 1">
+        <div
+          class="row justify-content-end mt-2"
+          v-show="pagination.pageCount > 1"
+        >
           <div class="col align-self-end offset-xl-9 offset-md-9 offset-sm-9">
             <Pagination
               type="primary"
@@ -98,6 +101,7 @@ export default {
   components: {
     BlogCard,
     Pagination,
+    BlogSearch,
     [Radio.name]: Radio,
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput
@@ -167,23 +171,32 @@ export default {
         return;
       }
 
-      const { name } = searchParams;
+      const { text, category } = searchParams;
 
       // search by fullName
-      if (name) {
-        const searchRegex = new RegExp(`${name}`, "i");
-        filteredBlogPosts = this.allBlogPosts.filter(profile => {
-          const fullName = `${profile.firstName} ${profile.lastName}`;
-          const searchResult = fullName.match(searchRegex);
+      if (text) {
+        const searchRegex = new RegExp(`${text}`, "i");
+        filteredBlogPosts = this.allBlogPosts.filter(blog => {
+          const { title, description } = blog;
+          const searchResult =
+            title.match(searchRegex) || description.match(searchRegex);
           return !!searchResult;
         });
       }
+      // filfter by category
+      if (category) {
+        filteredBlogPosts = filteredBlogPosts.filter(
+          blog => blog.category === category
+        );
+      }
 
       // no search results with search params
-      if (filteredBlogPosts.length === 0 && name) {
+      if (filteredBlogPosts.length === 0 && (text || category)) {
+        console.log("here is no search results");
         if (this.allBlogPosts.length > 6) {
           // get 6 random profiles
           const randomIndex = this.getRandomArbitrary(this.allBlogPosts.length);
+          console.log("randomIndex", randomIndex);
           this.filteredBlogPosts = this.allBlogPosts.filter(
             (profile, index) => {
               return randomIndex.includes(index);

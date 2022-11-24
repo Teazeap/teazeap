@@ -28,8 +28,9 @@
             :to="{ name: 'JobInfo', params: { id: job.id } }"
             tag="button"
             class="btn btn-primary view-job stretched-link"
-            >View Job</router-link
           >
+            View Job
+          </router-link>
         </v-card-actions>
       </v-card>
     </v-app>

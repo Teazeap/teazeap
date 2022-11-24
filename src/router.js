@@ -39,7 +39,6 @@ export default new Router({
         footer: { backgroundColor: "black" }
       }
     },
-    { path: "*", redirect: "/" },
     {
       path: "/",
       name: "landing",
@@ -137,7 +136,7 @@ export default new Router({
     },
     {
       path: "/blog",
-      name: "Blogs",
+      name: "BlogsMain",
       components: { default: Blogs, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 }
@@ -145,7 +144,7 @@ export default new Router({
     },
     {
       path: "/blog/:id",
-      name: "BlogInfo",
+      name: "Blogs",
       components: {
         default: BlogInfo,
         header: MainNavbar,
@@ -153,31 +152,8 @@ export default new Router({
       },
       props: {
         header: { colorOnScroll: 400 }
-      },
-      children: [
-        {
-          path: "info",
-          name: "BlogInfo",
-          components: {
-            default: BlogInfo,
-            header: MainNavbar,
-            footer: MainFooter
-          },
-          props: {
-            header: { colorOnScroll: 400 }
-          }
-        }
-      ]
+      }
     },
-    // {
-    //   path: '/profile',
-    //   name: 'profile',
-    //   components: { default: Profile, header: MainNavbar, footer: MainFooter },
-    //   props: {
-    //     header: { colorOnScroll: 400 },
-    //     footer: { backgroundColor: 'black' }
-    //   }
-    // },
     /**     admin protected pages */
     {
       path: "/admin/jobs",
@@ -291,7 +267,8 @@ export default new Router({
         if (to.name == "Dashboard" && !isAuthenticated) next({ name: "login" });
         else next();
       }
-    }
+    },
+    { path: "*", redirect: "/" },
   ],
   scrollBehavior: to => {
     if (to.hash) {

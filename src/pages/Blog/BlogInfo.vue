@@ -1,92 +1,95 @@
 <template>
   <div>
-    <div class="page-header clear-filter" filter-color="orange">
-      <parallax
-        class="page-header-image"
-        :style="`background-image: url(${blogPostImageUrl})`"
-      >
-      </parallax>
-      <div class="container">
-        <h1 class="title">{{ blogPost.title }}</h1>
-        <div class="content"></div>
+    <div v-if="blogPost.title">
+      <div class="page-header clear-filter" filter-color="orange">
+        <parallax
+          class="page-header-image"
+          :style="`background-image: url(${blogPostImageUrl})`"
+        >
+        </parallax>
+        <div class="container">
+          <h1 class="title">{{ blogPost.title }}</h1>
+          <div class="content"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="container-fluid text-start">
+          <div class="button-container">
+            <router-link
+              :to="{ name: 'BlogsMain' }"
+              tag="button"
+              class="btn btn-primary btn-round btn-lg"
+              >Back To Blogs</router-link
+            >
+          </div>
+          <v-app>
+            <div class="row justify-content-start" :class="rowClassObject">
+              <div
+                class="col-12 col-xs-12  col-sm-12 col-md-12 col-lg-8 col-xl-6 py-2 offset-xl-1"
+              >
+                <div class="row justify-content-start">
+                  <div class="col-24">
+                    <div class="py-2 offset-xl-1">
+                      <v-list-item
+                        two-line
+                        class="my-0 py-0 mx-md-2 px-md-2 mx-lg-0 px-lg-0"
+                      >
+                        <v-list-item-avatar size="50" color="grey">
+                          <img :src="authorAvatarUrl" alt="John" />
+                        </v-list-item-avatar>
+
+                        <v-list-item-content>
+                          <v-list-item-title class="mb-1">
+                            {{ blogPost.author }}
+                          </v-list-item-title>
+                          <v-list-item-subtitle>{{
+                            postedAt(blogPost.updatedAt)
+                          }}</v-list-item-subtitle>
+                        </v-list-item-content>
+                      </v-list-item>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-24">
+                    <div class="py-2 mx-2 px-2 offset-xl-1">
+                      <p class="card-text text-left">
+                        {{ blogPost.description }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col mt-2 hidden-md-and-down"
+                v-if="otherBlogPosts.length > 0"
+              >
+                <p class="pt-0 mb-4 featured-blogs">Feature Blogs</p>
+                <div
+                  class="row"
+                  v-for="(blogPost, index) in otherBlogPosts.slice(0, 4)"
+                  :key="index"
+                >
+                  <BlogMiniCard :blog-post="blogPost" />
+                </div>
+              </div>
+            </div>
+            <div class="row "></div>
+          </v-app>
+        </div>
       </div>
     </div>
-    <div class="section">
-      <div class="container-fluid text-start">
-        <div class="button-container">
-          <router-link
-            :to="{ name: 'Blogs' }"
-            tag="button"
-            class="btn btn-primary btn-round btn-lg"
-            >Back To Blogs</router-link
-          >
-        </div>
-        <v-app>
-          <div class="row justify-content-start">
-            <div
-              class="col-12 col-xs-12  col-sm-12 col-md-12 col-lg-8 col-xl-6 py-2 offset-xl-1"
-            >
-              <div class="row justify-content-start">
-                <div class="col-24">
-                  <div class="py-2 offset-xl-1">
-                    <v-list-item
-                      two-line
-                      class="my-0 py-0 mx-md-2 px-md-2 mx-lg-0 px-lg-0"
-                    >
-                      <v-list-item-avatar size="50" color="grey">
-                        <img :src="authorAvatarUrl" alt="John" />
-                      </v-list-item-avatar>
-
-                      <v-list-item-content>
-                        <v-list-item-title class="mb-1">
-                          {{ blogPost.author }}
-                        </v-list-item-title>
-                        <v-list-item-subtitle>{{
-                          postedAt(blogPost.updatedAt)
-                        }}</v-list-item-subtitle>
-                      </v-list-item-content>
-                    </v-list-item>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-24">
-                  <div class="py-2 mx-2 px-2 offset-xl-1">
-                    <p class="card-text text-left">
-                      {{ blogPost.description }}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col mt-2 hidden-md-and-down">
-              <p class="pt-0 mb-4 featured-blogs">Feature Blogs</p>
-              <div
-                class="row"
-                v-for="(blogPost, index) in otherBlogPosts.slice(0, 4)"
-                :key="index"
-              >
-                <BlogMiniCard :blog-post="blogPost" />
-              </div>
-            </div>
-          </div>
-          <div class="row "></div>
-        </v-app>
-      </div>
+    <div class="container text-center mt-16" v-else>
+      <img
+        v-lazy="'img/Ellipsis-3s-128px.svg'"
+        alt="Rounded Image"
+        style="width:30px; height: 30px"
+      />
     </div>
   </div>
 </template>
 <script>
 import { mapGetters, mapActions } from "vuex";
-import {
-  Card,
-  Tabs,
-  TabPane,
-  Button,
-  FormGroupInput,
-  Radio
-} from "@/components";
-import { DatePicker, Icon } from "element-ui";
 import moment from "moment";
 import BlogMiniCard from "./BlogMiniCard.vue";
 
@@ -96,23 +99,22 @@ export default {
   components: { BlogMiniCard },
   computed: {
     ...mapGetters(["allBlogPosts"]),
-    blogPost() {
-      let blogPost = this.allBlogPosts.find(
-        item => item.id === this.$route.params.id
-      );
-      return blogPost;
-    },
     blogPostImageUrl() {
-      return `https:${this.blogPost.blogPostImageUrl}`;
+      return `https:${this.blogPost?.blogPostImageUrl}`;
     },
     authorAvatarUrl() {
-      return `https:${this.blogPost.authorAvatarUrl}`;
+      return `https:${this.blogPost?.authorAvatarUrl}`;
     },
     otherBlogPosts() {
       let blogPost = this.allBlogPosts.filter(
         item => item.id !== this.$route.params.id
       );
       return blogPost;
+    },
+    rowClassObject() {
+      return {
+        "justify-content-center": this.otherBlogPosts.length === 0
+      };
     }
   },
   data: () => ({
@@ -122,7 +124,8 @@ export default {
       "Social Life": "red darken-4",
       Travel: "green",
       Housing: "orange darken-4"
-    }
+    },
+    blogPost: {}
   }),
   methods: {
     ...mapActions(["fetchBlogPosts"]),
@@ -138,8 +141,15 @@ export default {
   },
   async created() {
     await this.fetchBlogPosts();
-    // let job = this.allBlogPosts.filter(item => item.id === this.$route.params.id);
-    // this.currentBlogPost = job[0];
+    this.blogPost = this.allBlogPosts.find(
+      item => item.id === this.$route.params.id
+    );
+    if (!this.blogPost?.title) {
+      this.$router.push({ name: "BlogsMain" });
+    }
+    this.$router
+      .push({ path: this.$route.path, replace: true })
+      .catch(() => {});
   }
 };
 </script>

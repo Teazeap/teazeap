@@ -7,7 +7,7 @@
         min-width="344"
         outlined
         link
-        :to="{ name: 'BlogInfo', params: { id: blogPost.id } }"
+        :to="{ name: 'Blogs', params: { id: blogPost.id } }"
       >
         <v-list-item two-line>
           <v-list-item-content>

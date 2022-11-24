@@ -7,7 +7,7 @@
         height="510"
         :elevation="4"
         link
-        :to="{ name: 'BlogInfo', params: { id: blogPost.id } }"
+        :to="{ name: 'Blogs', params: { id: blogPost.id } }"
       >
         <v-img
           position="top"

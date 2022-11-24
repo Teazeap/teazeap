@@ -43,13 +43,13 @@
         </div>
       </div>
     </div>
-    <!-- profiles -->
+    <!-- blog post -->
     <div class="section profile-section" id="referenceSection">
-      <span v-if="!noBlogPosts" style="textAlign: center">
+      <span style="textAlign: center">
         <h2 class="title mb-0">Blog Posts</h2>
         <p class="description pt-0">Follow our journey....</p>
         <div class="container mt-4">
-          <BlogSearch @search="handleSearch" />
+          <BlogSearch @search="handleSearch" v-if="!noBlogPosts" />
           <div class="row justify-content-center">
             <BlogCard
               v-for="blogPost in filteredBlogPosts.slice(start, end)"
@@ -57,8 +57,8 @@
               :blogPost="blogPost"
             />
           </div>
-          <h4 v-if="noBlogPosts" class="card-title text-primary">
-            {{ $t("blog.no-profiles") }}
+          <h4 v-if="noBlogPosts" class="card-title">
+            {{ $t("blog.no-blogs") }}
           </h4>
         </div>
         <div

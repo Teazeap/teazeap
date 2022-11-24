@@ -78,7 +78,7 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label>Name</label>
-                    <fg-input 
+                    <fg-input
                       type="text"
                       :class="`input-sm ${errors.has('name') ? 'has-danger' : ''}`"
                       placeholder="name..."
@@ -88,11 +88,11 @@
                     >
                     </fg-input>
                     <span v-show="errors.has('name')" class="text-danger">{{ errors.first('name') }}</span>
-                    
+
                   </div>
                   <div class="form-group col-md-6">
                     <label>Surname</label>
-                    <fg-input 
+                    <fg-input
                       type="text"
                       :class="`input-sm ${errors.has('name') ? 'has-danger' : ''}`"
                       placeholder="surame..."
@@ -105,7 +105,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label>Email</label>
-                    <fg-input 
+                    <fg-input
                       type="email"
                       :class="`input-sm ${errors.has('name') ? 'has-danger' : ''}`"
                       class="input-sm"
@@ -211,7 +211,7 @@
                   </div>
                 </div>
                 <button class="btn-round btn btn-primary" rounded :disabled="isUploading || isVideoUploading" >Submit</button>
-                
+
               </form>
             </div>
           </div>
@@ -411,8 +411,8 @@ export default {
   async created() {
     await this.fetchJobs()
     let job = this.allJobs.filter(item => item.id === this.$route.params.id)
+    if (job.length == 0) this.$router.push({ name: "JobsMain" });
     this.currentJob = job[0]
-    this.$store.dispatch('updateView',this.currentJob.id)
   }
 };
 </script>

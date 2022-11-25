@@ -117,6 +117,13 @@ export default {
       };
     }
   },
+  watch: {
+    $route() {
+      this.blogPost = this.allBlogPosts.find(
+      item => item.id === this.$route.params.id
+    );
+    }
+  },
   data: () => ({
     catergoryColorPallete: {
       Immigration: "primary",

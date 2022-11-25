@@ -13,35 +13,28 @@
     </template>
     <template slot="navbar-menu">
       <drop-down
-          tag="li"
-          :title="ourServices"
-          icon="now-ui-icons design_image"
-          class="nav-item nav-ul"
+        tag="li"
+        :title="ourServices"
+        icon="now-ui-icons design_image"
+        class="nav-item nav-ul"
       >
         <nav-link to="/our-services/teachers">
-          <i class="now-ui-icons education_paper"></i> {{$t('nav.teachers')}}
+          <i class="now-ui-icons education_paper"></i> {{ $t("nav.teachers") }}
         </nav-link>
         <nav-link to="/our-services/schools">
-          <i class="now-ui-icons education_hat"></i> {{$t('nav.schools')}}
+          <i class="now-ui-icons education_hat"></i> {{ $t("nav.schools") }}
         </nav-link>
       </drop-down>
       <li class="nav-item">
-        <a
-          class="nav-link"
-          href="./"
-          target="_self"
-        >
+        <a class="nav-link" href="./" target="_self">
           <i class="now-ui-icons arrows-1_share-66"></i>
-          <p>{{$t('nav.about-us')}}</p>
+          <p>{{ $t("nav.about-us") }}</p>
         </a>
       </li>
       <li class="nav-item">
-        <nav-link
-          class="nav-link btn btn-neutral"
-          to="/jobs"
-        >
-          <i class="now-ui-icons arrows-1_share-66"></i>
-          <p>{{$t('nav.apply-now')}}</p>
+        <nav-link class="nav-link btn btn-neutral" to="/jobs">
+          <i class="now-ui-icons arrows-1_share-66  nav-link-icon"></i>
+          <p>{{ $t("nav.apply-now") }}</p>
         </nav-link>
       </li>
 
@@ -50,26 +43,23 @@
           class="nav-link  btn btn-neutral btn-profile"
           to="/create-profile"
         >
-          <i class="now-ui-icons users_single-02"></i>
-          <p>{{$t('nav.create-profile')}}</p>
+          <i class="now-ui-icons users_single-02 nav-link-icon"></i>
+          <p>{{ $t("nav.create-profile") }}</p>
         </nav-link>
       </li>
 
       <li class="nav-item">
-        <nav-link
-          class="nav-link  btn btn-neutral"
-          to="/blog"
-        >
-          <i class="now-ui-icons users_single-02"></i>
-          <p>{{$t('nav.blog')}}</p>
+        <nav-link class="nav-link  btn  btn-neutral btn-blog" to="/blog">
+          <i class="now-ui-icons files_paper nav-link-icon"></i>
+          <p>{{ $t("nav.blog") }}</p>
         </nav-link>
       </li>
 
       <drop-down
-          tag="li"
-          :title="language"
-          icon="now-ui-icons business_globe"
-          class="nav-item nav-ul"
+        tag="li"
+        :title="language"
+        icon="now-ui-icons business_globe"
+        class="nav-item nav-ul"
       >
         <nav-link text="en" @onLanguageChange="onLanguageChange">
           <i class="now-ui-icons travel_istanbul"></i> English
@@ -110,10 +100,10 @@
 </template>
 
 <script>
-import { DropDown, Navbar, NavLink } from '@/components';
-import { Popover } from 'element-ui';
+import { DropDown, Navbar, NavLink } from "@/components";
+import { Popover } from "element-ui";
 export default {
-  name: 'main-navbar',
+  name: "main-navbar",
   props: {
     transparent: Boolean,
     colorOnScroll: Number
@@ -125,20 +115,25 @@ export default {
     [Popover.name]: Popover
   },
   computed: {
-    ourServices () {
-      return this.$t('nav.our-services');
+    ourServices() {
+      return this.$t("nav.our-services");
     },
-    language () {
-      return this.$t('nav.language');
+    language() {
+      return this.$t("nav.language");
     }
   },
   methods: {
-    onLanguageChange (language) {
-      this.$i18n.locale = language === 'en' ? 'en' : 'zh'
-      localStorage.setItem('teapZeapLang', this.$i18n.locale)
+    onLanguageChange(language) {
+      this.$i18n.locale = language === "en" ? "en" : "zh";
+      localStorage.setItem("teapZeapLang", this.$i18n.locale);
     }
-   }
+  }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.nav-link-icon {
+  right: 6px;
+  top: 2px !important;
+}
+</style>

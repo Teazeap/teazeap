@@ -69,12 +69,14 @@
 <script>
 import moment from "moment";
 import { mapGetters, mapActions } from "vuex";
+import SendEmailMixin from "@/mixins/SendEmailMixin";
 
 export default {
   name: "dashboard-blog-posts",
   computed: {
     ...mapGetters(["allBlogPosts", "allPreviewBlogPosts"])
   },
+  mixins: [SendEmailMixin],
   watch: {
     allPreviewBlogPosts: {
       handler() {
@@ -119,6 +121,7 @@ export default {
     },
     editItem(item) {},
     async handleItemPublish(item) {
+      this.sendEmail("email");
       try {
         this.loading = true;
         await this.publishBlog(item.id);

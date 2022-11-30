@@ -126,7 +126,13 @@
                     </td>
                     <td>
                       {{
-                        formatDate(formatDescription(applicant.fields.description, "dob"), 'DD MMM YYYY')
+                        formatDate(
+                          formatDescription(
+                            applicant.fields.description,
+                            "dob"
+                          ),
+                          "DD MMM YYYY"
+                        )
                       }}
                     </td>
                   </tr>
@@ -164,9 +170,9 @@ export default {
   methods: {
     ...mapActions(["fetchJobs"]),
     editItem(item) {},
-    formatDate(date, format = 'llll') {
+    formatDate(date, format = "llll") {
       const createdAt = moment(new Date(date));
-      return createdAt.format(format);;
+      return createdAt.format(format);
     },
     async publishItem(item) {
       try {

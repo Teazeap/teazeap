@@ -6,8 +6,7 @@
         width="340"
         height="510"
         :elevation="4"
-        link
-        :to="{ name: 'Blogs', params: { id: blogPost.id } }"
+        @click="handleCardClick"
       >
         <v-img
           position="top"
@@ -48,6 +47,18 @@
               postedAt(blogPost.updatedAt)
             }}</v-list-item-subtitle>
           </v-list-item-content>
+
+          <v-btn
+            outlined
+            small
+            fab
+            class="video-icon"
+            :href="blogPost.youtubeLink"
+            target="_blank"
+            @click="e => handleVideoLinkClick(e)"
+          >
+            <v-icon color="red"> mdi-youtube</v-icon>
+          </v-btn>
         </v-list-item>
       </v-card>
     </v-app>
@@ -100,6 +111,12 @@ export default {
     getCatagoryColor(catergory) {
       const color = this.catergoryColorPallete[catergory];
       return color ? color : "green";
+    },
+    handleCardClick() {
+      this.$router.push({ name: "BlogInfo", params: { id: this.blogPost.id } });
+    },
+    handleVideoLinkClick(e) {
+      e.stopPropagation();
     }
   }
 };
@@ -144,5 +161,13 @@ export default {
   text-align: start;
   font-size: 24px;
   font-weight: 600;
+}
+
+.video-icon {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.video-icon:hover {
+  text-decoration: none !important;
 }
 </style>

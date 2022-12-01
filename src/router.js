@@ -7,7 +7,6 @@ import Teachers from "./pages/Services/Teachers.vue";
 import Process from "./pages/Procedure/ApplicationProcess.vue";
 import Qualification from "./pages/Procedure/Qualification.vue";
 import Login from "./pages/Login.vue";
-// import Profile from './pages/Profile.vue';
 import Profiles from "./pages/Profile/Profiles.vue";
 import Blogs from "./pages/Blog/Blogs.vue";
 import Jobs from "./pages/Jobs/Jobs.vue";
@@ -15,9 +14,7 @@ import JobInfo from "./pages/Jobs/JobInfo.vue";
 import BlogInfo from "./pages/Blog/BlogInfo.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
-import AdminJobs from "./pages/Protected/Jobs";
 import store from "@/store";
-import AdminJobInfo from "./pages/Protected/JobInfo";
 import Dashboard from "./pages/Protected/Dashboard/index.vue";
 import DashboardJobs from "./pages/Protected/Dashboard/AllJobs.vue";
 import DashboardJobsApplications from "./pages/Protected/Dashboard/JobApplications.vue";
@@ -30,6 +27,83 @@ Vue.use(Router);
 export default new Router({
   linkExactActiveClass: "active",
   routes: [
+    // dashboard
+    {
+      path: "/admin/login",
+      name: "login",
+      components: { default: Login, header: MainNavbar },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
+      path: "/admin/dashboard",
+      name: "Dashboard",
+      redirect: { name: "DashboardJobs" },
+      components: {
+        default: Dashboard
+      },
+      props: {
+        header: { colorOnScroll: 400 }
+      },
+      children: [
+        {
+          path: "jobs",
+          name: "DashboardJobs",
+          components: {
+            default: DashboardJobs
+          },
+          props: {
+            header: { colorOnScroll: 400 }
+          }
+        },
+        {
+          path: "jobs-applications",
+          name: "DashboardJobsApplications",
+          components: {
+            default: DashboardJobsApplications
+          },
+          props: {
+            header: { colorOnScroll: 400 }
+          }
+        },
+        {
+          path: "profiles",
+          name: "DashboardProfiles",
+          components: {
+            default: DashboardProfiles
+          },
+          props: {
+            header: { colorOnScroll: 400 }
+          }
+        },
+        {
+          path: "profile-applications",
+          name: "DashboardProfileApplications",
+          components: {
+            default: DashboardProfileApplications
+          },
+          props: {
+            header: { colorOnScroll: 400 }
+          }
+        },
+        {
+          path: "blog-posts",
+          name: "DashboardBlogPosts",
+          components: {
+            default: DashboardBlogPosts
+          },
+          props: {
+            header: { colorOnScroll: 400 }
+          }
+        }
+      ],
+      beforeEnter: (to, from, next) => {
+        const isAuthenticated = store.getters.user;
+        if (to.name == "Dashboard" && !isAuthenticated) next({ name: "login" });
+        else next();
+      }
+    },
     {
       path: "/index",
       name: "index",
@@ -89,14 +163,6 @@ export default new Router({
       }
     },
     {
-      path: "/login",
-      name: "login",
-      components: { default: Login, header: MainNavbar },
-      props: {
-        header: { colorOnScroll: 400 }
-      }
-    },
-    {
       path: "/jobs",
       name: "JobsMain",
       components: { default: Jobs, header: MainNavbar, footer: MainFooter },
@@ -140,7 +206,7 @@ export default new Router({
       components: { default: Blogs, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 }
-      }
+      },
     },
     {
       path: "/blog/:id",
@@ -152,44 +218,13 @@ export default new Router({
       },
       props: {
         header: { colorOnScroll: 400 }
-      }
-    },
-    /**     admin protected pages */
-    {
-      path: "/admin/jobs",
-      name: "JobsAdminMain",
-      components: {
-        default: AdminJobs,
-        header: MainNavbar,
-        footer: MainFooter
-      },
-      props: {
-        header: { colorOnScroll: 400 }
-      },
-      beforeEnter: (to, from, next) => {
-        const isAuthenticated = store.getters.user;
-        if (to.name == "JobsAdminMain" && !isAuthenticated)
-          next({ name: "login" });
-        else next();
-      }
-    },
-    {
-      path: "/admin/jobs/:id",
-      name: "AdminJobs",
-      components: {
-        default: AdminJobInfo,
-        header: MainNavbar,
-        footer: MainFooter
-      },
-      props: {
-        header: { colorOnScroll: 400 }
       },
       children: [
         {
-          path: "applications",
-          name: "AdminJobInfo",
+          path: "info",
+          name: "BlogInfo",
           components: {
-            default: AdminJobInfo,
+            default: BlogInfo,
             header: MainNavbar,
             footer: MainFooter
           },
@@ -199,76 +234,7 @@ export default new Router({
         }
       ]
     },
-    // dashboard
-    {
-      path: "/admin/dashboard",
-      name: "Dashboard",
-      redirect: { name: "DashboardJobs" },
-      components: {
-        default: Dashboard
-      },
-      props: {
-        header: { colorOnScroll: 400 }
-      },
-      children: [
-        {
-          path: "/jobs",
-          name: "DashboardJobs",
-          components: {
-            default: DashboardJobs
-          },
-          props: {
-            header: { colorOnScroll: 400 }
-          }
-        },
-        {
-          path: "/jobs-applications",
-          name: "DashboardJobsApplications",
-          components: {
-            default: DashboardJobsApplications
-          },
-          props: {
-            header: { colorOnScroll: 400 }
-          }
-        },
-        {
-          path: "/profiles",
-          name: "DashboardProfiles",
-          components: {
-            default: DashboardProfiles
-          },
-          props: {
-            header: { colorOnScroll: 400 }
-          }
-        },
-        {
-          path: "/profile-applications",
-          name: "DashboardProfileApplications",
-          components: {
-            default: DashboardProfileApplications
-          },
-          props: {
-            header: { colorOnScroll: 400 }
-          }
-        },
-        {
-          path: "/blog-posts",
-          name: "DashboardBlogPosts",
-          components: {
-            default: DashboardBlogPosts
-          },
-          props: {
-            header: { colorOnScroll: 400 }
-          }
-        }
-      ],
-      beforeEnter: (to, from, next) => {
-        const isAuthenticated = store.getters.user;
-        if (to.name == "Dashboard" && !isAuthenticated) next({ name: "login" });
-        else next();
-      }
-    },
-    { path: "*", redirect: "/" },
+    { path: "*", redirect: "/" }
   ],
   scrollBehavior: to => {
     if (to.hash) {

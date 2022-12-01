@@ -125,40 +125,7 @@ export default {
     },
     handleEmailNotification() {
       const email = {};
-      email.message = `
-      <div>
-      Dear ${this.form.name}
-    </div>
-    <div>
-      <p>
-        The Teazeap recruiting team is very happy you have chosen us to help you find the best placement that will suit you.
-      </p>
-    </div>
-    <div>
-      <p>
-        In order for us to fully assist you in the process, we would like to have some relevant information.
-      </p>
-    </div>
-    <ol>
-      <li>For starters, where are you from and where are you currently located?</li>
-      <li>Do you have any teaching experience and are you familiar with teaching kindergarten?</li>
-      <li>Do you have any teaching certificates?</li>
-      <li>Are you fully vaccinated?</li>
-      <li>Finally, When will you be willing to relocate to Taiwan?</li>
-    </ol>
-    <div>
-      <p>
-        Last but not least when will you be available for a quick e-meeting this week?
-      </p>
-    </div>
-    <div>
-      <p>
-        Hope to hear from you soon
-      </p>
-    </div>
-    </div>
-
-      `;
+      email.message = `<div> Dear ${this.form.name} </div> <div> <p> The Teazeap recruiting team is very happy you have chosen us to help you find the best placement that will suit you. </p> </div> <div> <p> In order for us to fully assist you in the process, we would like to have some relevant information. </p> </div> <ol> <li>For starters, where are you from and where are you currently located?</li> <li>Do you have any teaching experience and are you familiar with teaching kindergarten?</li> <li>Do you have any teaching certificates?</li> <li>Are you fully vaccinated?</li> <li>Finally, When will you be willing to relocate to Taiwan?</li> </ol> <div> <p> Last but not least when will you be available for a quick e-meeting this week? </p> </div> <div> <p> Hope to hear from you soon </p> </div> </div>`;
       email.subject = "Thanks for reaching out to us";
       email.address = this.form.email;
       email.regards = "Regards,";

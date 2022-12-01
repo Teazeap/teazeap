@@ -115,47 +115,7 @@ export default {
     handleEmailNotification(item) {
       const fullName = `${item.firstName} ${item.lastName}`;
       const email = {};
-      email.message = `
-      <div>
-      Dear ${fullName}
-    </div>
-    <div>
-      <p>
-        The Teazeap team is pleased to inform you that the profile you created
-        on ${this.formatDate(
-          item.createdAt,
-          "DD MMMM YYYY"
-        )} has been approved and published on the Teazeap website.
-      </p>
-    </div>
-    <div>
-      <p>
-        You can follow this
-        <a href="https://www.teazeap.com/#/create-profile">link</a> to verify.
-      </p>
-    </div>
-    <div>
-      <p>
-        Furthermore, please contact us if you wish to stop your profile
-        subscription to our list via teazearecruitingagency@gmail.com with
-        titled
-        <span style="font-weight: bold">
-          Unsubscribe Profile
-        </span>
-      </p>
-    </div>
-    <div>
-      <p>
-        If you are not the intended recipient, please ignore this email.
-      </p>
-    </div>
-    <div>
-      <p>
-        Again, we are honored to have you with us.
-      </p>
-    </div>
-
-      `;
+      email.message = `<div> Dear ${fullName} </div> <div> <p> The Teazeap team is pleased to inform you that the profile you created on ${this.formatDate( item.createdAt, 'DD MMMM YYYY' )} has been approved and published on the Teazeap website. </p> </div> <div> <p> You can follow this <a href='https://www.teazeap.com/#/create-profile'>link</a> to verify. </p> </div> <div> <p> Furthermore, please contact us if you wish to stop your profile subscription to our list via teazearecruitingagency@gmail.com with titled <span style='font-weight: bold'> Unsubscribe Profile </span> </p> </div> <div> <p> If you are not the intended recipient, please ignore this email. </p> </div> <div> <p> Again, we are honored to have you with us. </p> </div>`;
       email.subject = "Your profile has been approved";
       email.address = item.email
       email.regards = "Warm regards,";

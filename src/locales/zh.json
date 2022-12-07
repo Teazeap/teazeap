@@ -9,7 +9,8 @@
         "language": "語言",
         "admin": "行政人員",
         "create-profile": "Create Profile",
-        "blog": "Blog"
+        "blog": "Blog",
+        "no-blogs": "No Blogs"
     },
     "landing-page": {
         "who": "我們是誰",

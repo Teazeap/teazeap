@@ -55,7 +55,12 @@ export default new Router({
           },
           props: {
             header: { colorOnScroll: 400 }
-          }
+          },
+          beforeEnter: (to, from, next) => {
+            const isAuthenticated = store.getters.user
+            if (!isAuthenticated) next({ name: 'login' })
+            else next()
+          },
         },
         {
           path: "jobs-applications",
@@ -65,7 +70,12 @@ export default new Router({
           },
           props: {
             header: { colorOnScroll: 400 }
-          }
+          },
+          beforeEnter: (to, from, next) => {
+            const isAuthenticated = store.getters.user
+            if (!isAuthenticated) next({ name: 'login' })
+            else next()
+          },
         },
         {
           path: "profiles",
@@ -75,7 +85,12 @@ export default new Router({
           },
           props: {
             header: { colorOnScroll: 400 }
-          }
+          },
+          beforeEnter: (to, from, next) => {
+            const isAuthenticated = store.getters.user
+            if (!isAuthenticated) next({ name: 'login' })
+            else next()
+          },
         },
         {
           path: "profile-applications",
@@ -85,7 +100,12 @@ export default new Router({
           },
           props: {
             header: { colorOnScroll: 400 }
-          }
+          },
+          beforeEnter: (to, from, next) => {
+            const isAuthenticated = store.getters.user
+            if (!isAuthenticated) next({ name: 'login' })
+            else next()
+          },
         },
         {
           path: "blog-posts",
@@ -95,7 +115,12 @@ export default new Router({
           },
           props: {
             header: { colorOnScroll: 400 }
-          }
+          },
+          beforeEnter: (to, from, next) => {
+            const isAuthenticated = store.getters.user
+            if (!isAuthenticated) next({ name: 'login' })
+            else next()
+          },
         }
       ],
       beforeEnter: (to, from, next) => {

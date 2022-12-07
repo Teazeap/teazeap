@@ -26,7 +26,7 @@
               <a
                 href="https://www.facebook.com/teazeap"
                 target="_blank"
-                class="btn btn-primary btn-icon btn-round"
+                class="btn btn-primary btn-icon btn-round mx-2"
               >
                 <i class="fab fa-facebook-square"></i>
               </a>

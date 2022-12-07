@@ -4,7 +4,7 @@
       <v-card
         class="mx-auto blog-mini-card"
         max-width="444"
-        min-width="344"
+        min-width="444"
         outlined
         link
         :to="{ name: 'BlogInfo', params: { id: blogPost.id } }"
@@ -29,7 +29,12 @@
             </div>
           </v-list-item-content>
 
-          <v-list-item-avatar tile size="80" color="grey">
+          <v-list-item-avatar
+            tile
+            size="80"
+            color="grey"
+            style="border-radius: 12px !important"
+          >
             <img :src="blogPostImageUrl" alt="John" />
           </v-list-item-avatar>
         </v-list-item>

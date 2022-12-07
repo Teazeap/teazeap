@@ -22,7 +22,7 @@
               <a
                 href="https://www.facebook.com/teazeap"
                 target="_blank"
-                class="btn btn-primary btn-icon btn-round"
+                class="btn btn-primary btn-icon btn-round mx-2"
               >
                 <i class="fab fa-facebook-square"></i>
               </a>
@@ -43,7 +43,7 @@
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
             <h2 class="title">{{ $t("landing-page.who") }}</h2>
-            <h5 class="description">
+            <h5 class="description text-justify" >
               {{ $t("landing-page.goals") }}
             </h5>
           </div>
@@ -60,7 +60,7 @@
                 <i class="fas fa-address-card fa-5x"></i>
               </span>
               <h4 class="title">{{ $t("landing-page.full-time") }}</h4>
-              <p class="description">
+              <p class="description text-justify">
                 {{ $t("landing-page.full-time-desc") }}
               </p>
             </div>
@@ -71,7 +71,7 @@
                 <i class="fas fa-address-card fa-5x"></i>
               </span>
               <h4 class="title">{{ $t("landing-page.part-time") }}</h4>
-              <p class="description">
+              <p class="description text-justify">
                 {{ $t("landing-page.part-time-desc") }}
               </p>
             </div>
@@ -82,7 +82,7 @@
                 <i class="fas fa-address-card fa-5x"></i>
               </span>
               <h4 class="title">{{ $t("landing-page.sub-teacher") }}</h4>
-              <p class="description">
+              <p class="description text-justify">
                 {{ $t("landing-page.sub-desc") }}
               </p>
             </div>

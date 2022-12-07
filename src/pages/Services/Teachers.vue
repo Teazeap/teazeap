@@ -10,13 +10,13 @@
         <div class="container">
           <h1 class="title company-name">TeaZeaP Recruiting Agency</h1>
           <div class="text-center">
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+            <a href="#pablo" class="btn btn-primary btn-icon btn-round mx-2">
               <i class="fab fa-facebook-square"></i>
             </a>
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+            <a href="#pablo" class="btn btn-primary btn-icon btn-round mx-2">
               <i class="fab fa-twitter"></i>
             </a>
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+            <a href="#pablo" class="btn btn-primary btn-icon btn-round mx-2">
               <i class="fab fa-google-plus"></i>
             </a>
           </div>
@@ -31,7 +31,7 @@
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
             <h2 class="title">{{$t('teachers.find')}}</h2>
-            <h5 class="description">
+            <h5 class="description text-justify">
               {{$t('teachers.success')}}
             </h5>
           </div>

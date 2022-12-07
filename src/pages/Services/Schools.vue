@@ -23,7 +23,7 @@
               <p>{{$t('schools.schools')}}</p>
             </div>
             <div class="col-12">
-              <a href="https://www.facebook.com/teazeap" target="_blank" class="btn btn-primary btn-icon btn-round">
+              <a href="https://www.facebook.com/teazeap" target="_blank" class="btn btn-primary btn-icon btn-round mx-2">
                 <i class="fab fa-facebook-square"></i>
               </a>
               <a href="https://www.instagram.com/teazeap/" class="btn btn-primary btn-icon btn-round" target="_blank" >
@@ -39,7 +39,7 @@
           <div class="row">
             <div class="col-md-8 ml-auto mr-auto text-center">
               <h2 class="title">{{$t('schools.find')}}</h2>
-              <h5 class="description">
+              <h5 class="description text-justify">
                {{$t('schools.success')}}
               </h5>
             </div>

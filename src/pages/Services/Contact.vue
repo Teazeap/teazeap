@@ -112,14 +112,15 @@ export default {
     sendMessage() {
       this.$swal({
         title: "Message sent",
-        text: "Our staff will contact you",
+        text: "You can now start creating your Teazeap Profile",
         icon: "success",
-        confirmButtonText: "Okay"
+        confirmButtonText: "Create Profile"
       }).then(result => {
         if (result.value) {
           this.handleEmailNotification();
           this.form = {};
           this.$validator.reset();
+          this.$router.push({name: 'Profiles'})
         }
       });
     },

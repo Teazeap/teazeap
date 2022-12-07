@@ -9,29 +9,31 @@
       <div class="content-center">
         <div class="container">
           <h1 class="title company-name">TeaZeaP Recruiting Agency</h1>
-          <div class="text-center">
-            <a
-              href="https://www.facebook.com/teazeap"
-              target="_blank"
-              class="btn btn-primary btn-icon btn-round"
-            >
-              <i class="fab fa-facebook-square"></i>
-            </a>
-            <a
-              href="https://www.instagram.com/teazeap/"
-              class="btn btn-primary btn-icon btn-round"
-              target="_blank"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-          <div class="button-container d-lg-none">
-            <router-link
-              :to="{ name: 'JobsMain' }"
-              tag="button"
-              class="btn btn-primary btn-round btn-md"
-              >{{$t('nav.apply-now')}}</router-link
-            >
+          <div class="text-center row">
+            <div class="col-12">
+              <router-link
+                  :to="{ name: 'JobsMain' }"
+                  tag="button"
+                  class="btn btn-primary btn-round btn-md"
+                  >{{ $t("nav.apply-now") }}</router-link
+                >
+            </div>
+            <div class="col-12">
+              <a
+                href="https://www.facebook.com/teazeap"
+                target="_blank"
+                class="btn btn-primary btn-icon btn-round"
+              >
+                <i class="fab fa-facebook-square"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/teazeap/"
+                class="btn btn-primary btn-icon btn-round"
+                target="_blank"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -42,7 +44,7 @@
           <div class="col-md-8 ml-auto mr-auto text-center">
             <h2 class="title">{{ $t("landing-page.who") }}</h2>
             <h5 class="description">
-             {{ $t("landing-page.goals") }}
+              {{ $t("landing-page.goals") }}
             </h5>
           </div>
         </div>
@@ -92,7 +94,11 @@
       <div class="container text-center">
         <h2 class="title">{{ $t("landing-page.team") }}</h2>
         <div class="row mt-4">
-          <TeamCard v-for="(profile, index) in team" :key="index" :profile="profile"/>
+          <TeamCard
+            v-for="(profile, index) in team"
+            :key="index"
+            :profile="profile"
+          />
         </div>
       </div>
     </div>
@@ -100,9 +106,9 @@
   </div>
 </template>
 <script>
-import { Button, FormGroupInput} from "@/components";
+import { Button, FormGroupInput } from "@/components";
 import Contact from "@/pages/Services/Contact";
-import TeamCard from './TeamCard.vue';
+import TeamCard from "./TeamCard.vue";
 
 export default {
   name: "landing",
@@ -118,29 +124,31 @@ export default {
       form: {
         firstName: "",
         email: "",
-        message: "",
+        message: ""
       },
-      team: [{
-        name: "Clifton Moreau",
-        quote: "landing-page.chief-quote",
-        pictureUrl: "img/ceo.jpg",
-        title: "landing-page.chief",
-        position: "top",
-      },
-      {
-        name: "Calerb Louis Jean",
-        quote: "landing-page.project-quote",
-        pictureUrl: "img/jake.jpg",
-        title: "landing-page.project",
-        position: "center",
-      },
-      {
-        name: "Nnenia Stephens",
-        quote: "landing-page.comm-quote",
-        pictureUrl: "img/nnenia.jpg",
-        title: "landing-page.comm",
-        position: "center",
-      }]
+      team: [
+        {
+          name: "Clifton Moreau",
+          quote: "landing-page.chief-quote",
+          pictureUrl: "img/ceo.jpg",
+          title: "landing-page.chief",
+          position: "top"
+        },
+        {
+          name: "Calerb Louis Jean",
+          quote: "landing-page.project-quote",
+          pictureUrl: "img/jake.jpg",
+          title: "landing-page.project",
+          position: "center"
+        },
+        {
+          name: "Nnenia Stephens",
+          quote: "landing-page.comm-quote",
+          pictureUrl: "img/nnenia.jpg",
+          title: "landing-page.comm",
+          position: "center"
+        }
+      ]
     };
   },
   created() {
@@ -151,12 +159,12 @@ export default {
       const browserLanguage = navigator.language;
       const storedLanguage = localStorage.getItem("teapZeapLang");
 
-      if(storedLanguage){
-        this.$i18n.locale = storedLanguage
+      if (storedLanguage) {
+        this.$i18n.locale = storedLanguage;
       } else {
-        this.$i18n.locale = browserLanguage.includes("zh") ? "zh" : "en"
+        this.$i18n.locale = browserLanguage.includes("zh") ? "zh" : "en";
       }
-    },
-  },
+    }
+  }
 };
 </script>

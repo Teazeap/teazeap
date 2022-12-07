@@ -78,8 +78,6 @@ const actions = {
       publishDate
     } = blog;
 
-    console.log(blog);
-
     return new Promise((resolve, reject) => {
       client
         .getSpace(process.env.VUE_APP_SPACE)

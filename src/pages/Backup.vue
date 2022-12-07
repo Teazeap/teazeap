@@ -164,39 +164,3 @@ export default {
   }
 };
 </script>
-
-
-
- 
-
-
-
-
-
-
-    // client.getSpace('dr15y1pi2yc9')
-    // .then((space) => space.getEnvironment('master-2020-10-14'))
-    // .then((environment) => environment.getAsset('57brVeyY6Yhp079YoS5TnK'))
-    // .then((asset) => {
-    //   console.log(asset);
-    // })
-
-    // client.getSpace('dr15y1pi2yc9')
-    // .then((space) => space.getEnvironment('master-2020-10-14'))
-    // .then((environment) => environment.getEntry('1PsCdpZP2rb2YuTOSrsEFY'))
-    // .then((asset) => {
-    //   console.log(asset);
-    // })
-
-    // client.getSpace('dr15y1pi2yc9')
-    // .then((space) => space.getEnvironment('master-2020-10-14'))
-    // .then((environment) => environment.getEntry('1PsCdpZP2rb2YuTOSrsEFY'))
-    // .then((entry) => {
-    //   console.log(entry.fields["resumes"]);
-    // })
-
-    // client.getSpace('dr15y1pi2yc9')
-    //   .then((space) => space.getEntry('1PsCdpZP2rb2YuTOSrsEFY'))
-    //   .then((entry) => {
-    //     console.log(entry);
-    //   })

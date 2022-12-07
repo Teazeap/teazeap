@@ -167,7 +167,7 @@
           </td>
         </template>
         <template v-slot:item.actions="{ item }">
-          <v-icon small class="mr-2" @click="editItem(item)">
+          <v-icon small class="mr-2" @click="editItem(item)" v-if="false">
             mdi-pencil
           </v-icon>
           <v-btn
@@ -335,7 +335,6 @@ export default {
           });
           this.closeDialog();
         } catch (error) {
-          console.log(error)
           this.dialogLoading = false;
           this.handleAlert({
             title: "Blog Post Not Created",

@@ -50,5 +50,8 @@
         "schools": "學校",
         "no-jobs": "當前不可用的工作"
     },
+    "blog": {
+        "no-blogs": "No Blogs"
+    },
     "testimonials": "教師見證"
 }

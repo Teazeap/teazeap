@@ -50,5 +50,8 @@
         "schools": "Schools",
         "no-jobs": "Jobs Currently Unavailable"
     },
+    "blog": {
+        "no-blogs": "No Blogs"
+    },
     "testimonials": "Testimonials"
 }

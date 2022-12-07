@@ -8,7 +8,7 @@
       </parallax>
       <div class="content-center">
         <div class="container">
-          <h1 class="title">TeaZeaP Recruiting Agency</h1>
+          <h1 class="title company-name">TeaZeaP Recruiting Agency</h1>
           <div class="text-center">
             <a href="#pablo" class="btn btn-primary btn-icon btn-round">
               <i class="fab fa-facebook-square"></i>
@@ -39,30 +39,21 @@
         <div class="separator separator-primary"></div>
       </div>
     </div>
-     <div class="section">
+     <div class="section pt-0">
       <div class="container text-center">
          <h2 class="title">{{$t('teachers.testimonials')}}</h2>
-      <div class="row">
-          <div :class="[cardClass, index === 3 ? last : '']" v-for="(testimony, index) in testimonials" :key="index">
-            <div class="card h-100">
-              <div class="mb-n4">
-                <img class="card-img-top " :src="testimony.picUrl" alt="Card image cap" >
-              </div>
-              <div class="card-body mt-n6">
-                <h4 class="card-title text-primary">{{ testimony.name }}</h4>
-                <p class="card-text font-italic">{{ testimony.message }}</p>
-              </div>
-            </div>
-          </div>
+      <div class="row mt-2">
+          <TesimonialsCard v-for="(testimonial, index) in testimonials" :key="index" :testimonial="testimonial"/>
       </div>
       </div>
     </div>
-    <Contact />
+    <Contact class="pt-0"/>
   </div>
 </template>
 <script>
 import { Button, FormGroupInput } from '@/components';
 import  Contact  from "@/pages/Services/Contact";
+import TesimonialsCard from './TesimonialsCard.vue';
 
 export default {
   name: 'teachers',
@@ -70,7 +61,8 @@ export default {
   components: {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
-    Contact
+    Contact,
+    TesimonialsCard
   },
   data() {
     return {

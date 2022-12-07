@@ -8,25 +8,33 @@
       </parallax>
       <div class="content-center">
         <div class="container">
-          <h1 class="title">TeaZeaP Recruiting Agency</h1>
+          <h1 class="title company-name">TeaZeaP Recruiting Agency</h1>
           <div class="text-center row">
             <div class="col-4">
-              <h2 class="mb-2">{{allJobs.length}}</h2>
-              <p>{{$t('schools.jobs')}}</p>
+              <h2 class="mb-2">{{ allJobs.length }}</h2>
+              <p>{{ $t("schools.jobs") }}</p>
             </div>
             <div class="col-4">
               <h2 class="mb-2">26</h2>
-              <p>{{$t('schools.clients')}}</p>
+              <p>{{ $t("schools.clients") }}</p>
             </div>
             <div class="col-4">
               <h2 class="mb-2">48</h2>
-              <p>{{$t('schools.schools')}}</p>
+              <p>{{ $t("schools.schools") }}</p>
             </div>
             <div class="col-12">
-              <a href="https://www.facebook.com/teazeap" target="_blank" class="btn btn-primary btn-icon btn-round">
+              <a
+                href="https://www.facebook.com/teazeap"
+                target="_blank"
+                class="btn btn-primary btn-icon btn-round"
+              >
                 <i class="fab fa-facebook-square"></i>
               </a>
-              <a href="https://www.instagram.com/teazeap/" class="btn btn-primary btn-icon btn-round" target="_blank" >
+              <a
+                href="https://www.instagram.com/teazeap/"
+                class="btn btn-primary btn-icon btn-round"
+                target="_blank"
+              >
                 <i class="fab fa-instagram"></i>
               </a>
             </div>
@@ -35,57 +43,78 @@
       </div>
     </div>
     <div class="section">
-      <div class="container text-center">
-        <div class="row justify-content-center">
-          <JobCard  v-for="job in allJobs.slice(start,end)" :key="job.id" :job="job"/>
-        </div>
-        <h4 v-if="noJobs" class="card-title text-primary">{{$t('schools.no-jobs')}}</h4>
+      <span v-if="!noJobs"  class="text-center" >
+        <h2 class="title pt-0">Teaching Jobs</h2>
+        <p class="description mb-8">
+          Your teaching career is very important to us.
+        </p>
+      </span>
+      <div class="container text-center mt-16" v-if="jobsLoading">
+        <img
+          v-lazy="'img/Ellipsis-3s-128px.svg'"
+          alt="Rounded Image"
+          style="width:30px; height: 30px"
+        />
       </div>
-       <Contact v-if="noJobs" />
+      <div class="container text-center mt-16">
+        <div class="row justify-content-center">
+          <JobCard
+            v-for="job in allJobs.slice(start, end)"
+            :key="job.id"
+            :job="job"
+          />
+        </div>
+        <h4 v-if="noJobs" class="card-title text-primary">
+          {{ $t("schools.no-jobs") }}
+        </h4>
+      </div>
+      <Contact v-if="noJobs" />
     </div>
     <div class="container" v-if="!noJobs">
-        <div class="row justify-content-end">
-          <div class="col align-self-end offset-xl-9 offset-md-9 offset-sm-9">
-            <Pagination
-              type="primary"
-              :total="pagination.total"
-              :page-count="pagination.pageCount"
-              :per-page="pagination.perPage"
-              @input="changePage"
-              v-model="pagination.simple"
-            />
-          </div>
+      <div class="row justify-content-end">
+        <div class="col align-self-end offset-xl-9 offset-md-9 offset-sm-9">
+          <Pagination
+            type="primary"
+            :total="pagination.total"
+            :page-count="pagination.pageCount"
+            :per-page="pagination.perPage"
+            @input="changePage"
+            v-model="pagination.simple"
+          />
         </div>
+      </div>
     </div>
   </div>
 </template>
 <script>
-import { Pagination } from '@/components';
-import JobCard from '@/pages/Jobs/JobCard'
+import { Pagination } from "@/components";
+import JobCard from "@/pages/Jobs/JobCard";
 import { mapGetters, mapActions } from "vuex";
-import  Contact  from "@/pages/Services/Contact";
+import Contact from "@/pages/Services/Contact";
 
 export default {
-  name: 'jobs',
-  bodyClass: 'landing-page',
+  name: "jobs",
+  bodyClass: "landing-page",
   components: {
     Contact,
     JobCard,
-    Pagination,
+    Pagination
   },
   computed: {
-    ...mapGetters(['allJobs'])
+    ...mapGetters(["allJobs"]),
   },
   watch: {
-    allJobs () {
-      this.handlePagination()
-      this.checkJobs()
+    allJobs() {
+      this.handlePagination();
+      this.checkJobs();
     }
   },
-  created() {
-    this.fetchJobs()
+  async created() {
+    this.jobsLoading = true;
+    await this.fetchJobs();
+    this.jobsLoading = false;
   },
-   data() {
+  data() {
     return {
       pagination: {
         simple: 1,
@@ -98,23 +127,24 @@ export default {
       jobs: [],
       start: 6,
       noJobs: false,
-      end: 12
+      end: 12,
+      jobsLoading: true
     };
   },
   methods: {
-    ...mapActions(['fetchJobs']),
-    handlePagination () {
-      this.pagination.total = this.allJobs.length 
-      this.pagination.pageCount = Math.ceil(this.allJobs.length / 6)
+    ...mapActions(["fetchJobs"]),
+    handlePagination() {
+      this.pagination.total = this.allJobs.length;
+      this.pagination.pageCount = Math.ceil(this.allJobs.length / 6);
     },
-    changePage (value) {
-      this.start = (this.pagination.perPage * value) - this.pagination.perPage
-      this.end = this.pagination.perPage * value
+    changePage(value) {
+      this.start = this.pagination.perPage * value - this.pagination.perPage;
+      this.end = this.pagination.perPage * value;
     },
-    checkJobs () {
-      this.noJobs = this.allJobs.length === 0
+    checkJobs() {
+      this.noJobs = this.allJobs.length === 0;
     }
-  },
+  }
 };
 </script>
 <style>

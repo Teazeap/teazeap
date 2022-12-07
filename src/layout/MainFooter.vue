@@ -14,34 +14,51 @@
           </li>
           <li>
             <router-link v-popover:popover1 class="navbar-brand" to="/">
-              {{$t('nav.about-us')}}
+              {{ $t("nav.about-us") }}
             </router-link>
           </li>
           <li>
-            <router-link v-popover:popover1 class="navbar-brand" to="/our-services/teachers">
-              {{$t('nav.teachers')}}
+            <router-link
+              v-popover:popover1
+              class="navbar-brand"
+              to="/our-services/teachers"
+            >
+              {{ $t("nav.teachers") }}
             </router-link>
           </li>
           <li>
-            <router-link v-popover:popover1 class="navbar-brand" to="/our-services/schools">
-              {{$t('nav.schools')}}
+            <router-link
+              v-popover:popover1
+              class="navbar-brand"
+              to="/our-services/schools"
+            >
+              {{ $t("nav.schools") }}
             </router-link>
           </li>
           <li>
-            <router-link v-popover:popover1 class="navbar-brand" to="/admin/jobs">
-              {{$t('nav.admin')}}
+            <router-link
+              v-popover:popover1
+              class="navbar-brand"
+              to="/admin/login"
+            >
+              {{ $t("nav.admin") }}
             </router-link>
           </li>
         </ul>
       </nav>
       <div class="copyright">
-        &copy; {{ year }}, 
-        Coded by
-        <a href="https://muzi-gondwe.netlify.app/" target="_blank" rel="noopener"
+        &copy; {{ year }}, Coded by
+        <a
+          href="https://muzi-gondwe.netlify.app/"
+          target="_blank"
+          rel="noopener"
           >Muzi P. Gondwe</a
         >
         and
-        <a href="https://www.facebook.com/calerb.louisjean/" target="_blank" rel="noopener"
+        <a
+          href="https://www.facebook.com/calerb.louisjean/"
+          target="_blank"
+          rel="noopener"
           >Calerbucci Jake</a
         >.
       </div>
@@ -49,7 +66,6 @@
   </footer>
 </template>
 <script>
-
 export default {
   props: {
     backgroundColor: String,

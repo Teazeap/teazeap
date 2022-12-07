@@ -24,6 +24,12 @@ import VeeValidate from "vee-validate";
 import VueSweetalert2 from 'vue-sweetalert2'
 import 'sweetalert2/dist/sweetalert2.min.css';
 import i18n from './i18n'
+import vuetify from './plugins/vuetify'
+import 'roboto-fontface/css/roboto/roboto-fontface.css'
+import '@fortawesome/fontawesome-free/css/all.css'
+import CountryFlag from 'vue-country-flag'
+
+Vue.component('country-flag', CountryFlag)
 Vue.config.productionTip = false;
 
 const options = {
@@ -39,5 +45,6 @@ new Vue({
   router,
   store,
   i18n,
+  vuetify,
   render: h => h(App)
 }).$mount('#app');

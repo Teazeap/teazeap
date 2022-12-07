@@ -78,7 +78,7 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label>Name</label>
-                    <fg-input 
+                    <fg-input
                       type="text"
                       :class="`input-sm ${errors.has('name') ? 'has-danger' : ''}`"
                       placeholder="name..."
@@ -88,11 +88,11 @@
                     >
                     </fg-input>
                     <span v-show="errors.has('name')" class="text-danger">{{ errors.first('name') }}</span>
-                    
+
                   </div>
                   <div class="form-group col-md-6">
                     <label>Surname</label>
-                    <fg-input 
+                    <fg-input
                       type="text"
                       :class="`input-sm ${errors.has('name') ? 'has-danger' : ''}`"
                       placeholder="surame..."
@@ -105,7 +105,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label>Email</label>
-                    <fg-input 
+                    <fg-input
                       type="email"
                       :class="`input-sm ${errors.has('name') ? 'has-danger' : ''}`"
                       class="input-sm"
@@ -211,7 +211,7 @@
                   </div>
                 </div>
                 <button class="btn-round btn btn-primary" rounded :disabled="isUploading || isVideoUploading" >Submit</button>
-                
+
               </form>
             </div>
           </div>
@@ -223,6 +223,8 @@
 import { mapGetters, mapActions } from "vuex";
 import { Card, Tabs, TabPane, Button, FormGroupInput, Radio } from '@/components';
 import { DatePicker, Icon } from 'element-ui';
+import SendEmailMixin from "@/mixins/SendEmailMixin";
+import moment from "moment";
 
 export default {
   name: 'JobInfo',
@@ -233,6 +235,7 @@ export default {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput
   },
+  mixins: [SendEmailMixin],
   computed: {
     ...mapGetters(['allJobs', 'assets']),
     job () {
@@ -329,6 +332,7 @@ export default {
       })
     },
     applicationCompleted () {
+      this.handleEmailNotification()
       this.$swal({
         title: 'Application sent',
         text: 'You will recieve email for confirmation',
@@ -339,6 +343,17 @@ export default {
           this.$router.push({name: 'JobsMain'})
         }
       })
+    },
+    handleTwoWeeksLater() {
+      return moment(new Date()).add(2, 'weeks').format("DD MMM YYYY")
+    },
+    handleEmailNotification() {
+      const email = {};
+      email.message = `<div> <div> Dear ${this.fullName} </div> <div> <p> Thank you for your interest in the full time teaching position at ${this.job.school}.We have received your application for the position of a ${this.handleTime(this.job.fullTime)} teacher. We are currently in the middle of our recruitment process, and initial screening should be completed by ${this.handleTwoWeeksLater()}. You may expect another response around this time. </p> </div> <div> <p> In the meantime, you can learn more about Teazeap by following us on <a href="https://www.facebook.com/teazeap" target="_blank"> Facebook </a>, <a href="https://www.instagram.com/teazeap/" target="_blank"> Instagram </a> and our <a href='https://www.teazeap.com/'>company website</a> for the latest updates.<br /> You may contact me at <a href='mailto:teazeaprecruitingagency@gmail.com' >teazeaprecruitingagency@gmail.com</a >if you have any questions regarding your application. </p> </div> </div>`;
+      email.subject = "Application Received Email";
+      email.address = this.form.email
+      email.regards = "Sincerely,";
+      this.sendEmail(email);
     },
     uploadRequired () {
       this.$swal({
@@ -411,8 +426,8 @@ export default {
   async created() {
     await this.fetchJobs()
     let job = this.allJobs.filter(item => item.id === this.$route.params.id)
+    if (job.length == 0) this.$router.push({ name: "JobsMain" });
     this.currentJob = job[0]
-    this.$store.dispatch('updateView',this.currentJob.id)
   }
 };
 </script>

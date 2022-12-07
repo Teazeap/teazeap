@@ -64,23 +64,21 @@ const actions = {
 
     commit("setPreviewBlogPosts", formattedBlogPosts);
   },
-  async addBlog({ commit, dispatch }, profile) {
-    // Create profile
+  async addBlog({ commit, dispatch }, blog) {
+    // Create blog
     const {
-      firstName,
-      lastName,
-      email,
-      entryId,
-      gender,
-      birthDate,
-      hasCertificate,
-      country,
-      teachingExperience,
-      yearsInTaiwan,
+      title,
+      author,
+      category,
+      youtubeLink,
       description,
-      uploadedCvAsset,
-      uploadedProfilePictureAsset
-    } = profile;
+      authorAvatarAsset,
+      blogPostImageAsset,
+      entryId,
+      publishDate
+    } = blog;
+
+    console.log(blog);
 
     return new Promise((resolve, reject) => {
       client
@@ -89,51 +87,40 @@ const actions = {
         .then(environment =>
           environment.createEntryWithId("blogPosts", entryId, {
             fields: {
-              firstName: {
-                "en-US": firstName
+              title: {
+                "en-US": title
               },
-              lastName: {
-                "en-US": lastName
+              author: {
+                "en-US": author
               },
-              email: {
-                "en-US": email
-              },
-              gender: {
-                "en-US": gender
-              },
-              country: {
-                "en-US": [country]
-              },
-              teachingExperience: {
-                "en-US": teachingExperience
-              },
-              yearsInTaiwan: {
-                "en-US": yearsInTaiwan
-              },
-              birthDate: {
-                "en-US": birthDate
+              category: {
+                "en-US": category
               },
               description: {
                 "en-US": description
               },
-              hasCertificate: {
-                "en-US": hasCertificate
+              youtubeLink: {
+                "en-US": youtubeLink
               },
-              resumes: {
-                "en-US": [
-                  {
-                    sys: {
-                      id: uploadedCvAsset.sys.id,
-                      linkType: "Asset",
-                      type: "Link"
-                    }
-                  }
-                ]
+              youtubeLink: {
+                "en-US": youtubeLink
               },
-              profilePicture: {
+              publishDate: {
+                "en-US": publishDate
+              },
+              authorAvatar: {
                 "en-US": {
                   sys: {
-                    id: uploadedProfilePictureAsset.sys.id,
+                    id: authorAvatarAsset.sys.id,
+                    linkType: "Asset",
+                    type: "Link"
+                  }
+                }
+              },
+              blogPostImage: {
+                "en-US": {
+                  sys: {
+                    id: blogPostImageAsset.sys.id,
                     linkType: "Asset",
                     type: "Link"
                   }
@@ -142,8 +129,11 @@ const actions = {
             }
           })
         )
-        .then(entry => {
-          resolve(entry);
+        .then(asset => asset.publish())
+        .then(asset => {
+          dispatch("fetchBlogPosts");
+          dispatch("fetchPreviewBlogPosts");
+          resolve(asset);
         })
         .catch(error => {
           reject(error);
@@ -188,7 +178,8 @@ const actions = {
     const response = await Client.getAssets();
     commit("setAssets", response.items);
   },
-  uploadBlogAsset({ commit, dispatch }, file) {
+  async uploadBlogAsset({ commit, dispatch }, payload) {
+    const { image, blog, type } = payload;
     return new Promise((resolve, reject) => {
       client
         .getSpace(process.env.VUE_APP_SPACE)
@@ -197,16 +188,16 @@ const actions = {
           environment.createAssetFromFiles({
             fields: {
               title: {
-                "en-US": file.fullName
+                "en-US": image.name
               },
               description: {
-                "en-US": file.description
+                "en-US": `${type} for ${blog.title}`
               },
               file: {
                 "en-US": {
-                  contentType,
-                  fileName: file.name,
-                  file
+                  contentType: "image/jpeg",
+                  fileName: image.name,
+                  file: image
                 }
               }
             }

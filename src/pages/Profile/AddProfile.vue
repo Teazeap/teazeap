@@ -1504,7 +1504,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .small-flag {
   margin: -0.9em -1.2em -1.1em -1.2em !important;
 }

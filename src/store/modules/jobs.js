@@ -23,6 +23,7 @@ const state = {
 };
 const getters = {
   allJobs: state => state.jobs,
+  allPreviewJobs: state => state.previewJobs,
   asset: state => state.asset,
   assets: state => state.assets
 };

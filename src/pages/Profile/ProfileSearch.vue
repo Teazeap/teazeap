@@ -1124,7 +1124,7 @@ export default {
   methods: {}
 };
 </script>
-<style>
+<style scoped>
 .v-application--wrap {
   height: 100%;
   min-height: 100%;

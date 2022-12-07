@@ -221,12 +221,16 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .tab-content.tab-content-padding {
   padding: 20px;
 }
 
 .profile-section {
   padding: 20px 0px 70px 0 !important;
+}
+
+::v-deep .v-list-item {
+  text-align: start;
 }
 </style>

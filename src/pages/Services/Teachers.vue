@@ -1,31 +1,6 @@
 <template>
   <div>
-    <div class="page-header page-header-small">
-      <parallax
-        class="page-header-image"
-        style="background-image: url('img/bg6.jpg')"
-      >
-      </parallax>
-      <div class="content-center">
-        <div class="container">
-          <h1 class="title company-name">TeaZeaP Recruiting Agency</h1>
-          <div class="text-center">
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round mx-2">
-              <i class="fab fa-facebook-square"></i>
-            </a>
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round mx-2">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#pablo" class="btn btn-primary btn-icon btn-round mx-2">
-              <i class="fab fa-google-plus"></i>
-            </a>
-          </div>
-          <div class="button-container d-lg-none">
-            <router-link :to="{name: 'JobsMain'}" tag="button" class="btn btn-primary btn-round btn-md">Apply Now</router-link>
-          </div>
-        </div>
-      </div>
-    </div>
+    <PageHeader/>
     <div class="section section-about-us">
       <div class="container">
         <div class="row">
@@ -54,6 +29,7 @@
 import { Button, FormGroupInput } from '@/components';
 import  Contact  from "@/pages/Services/Contact";
 import TesimonialsCard from './TesimonialsCard.vue';
+import PageHeader from '../PageHeader.vue';
 
 export default {
   name: 'teachers',
@@ -62,7 +38,8 @@ export default {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
     Contact,
-    TesimonialsCard
+    TesimonialsCard,
+    PageHeader
   },
   data() {
     return {

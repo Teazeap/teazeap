@@ -27,7 +27,7 @@
           class="pt-0 d-flex justify-content-center"
           :class="{ 'mt-n6': adjustCardAction }"
         >
-          <a class="card-link btn btn-primary btn-icon btn-round"
+          <a class="card-link btn btn-primary btn-icon btn-round mx-2"
             ><i class="fab fa-twitter"></i
           ></a>
           <a class="btn btn-primary btn-icon btn-round"

@@ -137,16 +137,16 @@ export default {
         {
           name: "Calerb Louis Jean",
           quote: "landing-page.project-quote",
-          pictureUrl: "img/jake.jpg",
+          pictureUrl: "img/jake_2.jpg",
           title: "landing-page.project",
-          position: "center"
+          position: "top"
         },
         {
           name: "Nnenia Stephens",
           quote: "landing-page.comm-quote",
-          pictureUrl: "img/nnenia.jpg",
+          pictureUrl: "img/nnenia_1.jpg",
           title: "landing-page.comm",
-          position: "center"
+          position: "top"
         }
       ]
     };

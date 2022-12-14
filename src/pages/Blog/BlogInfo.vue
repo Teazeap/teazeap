@@ -53,7 +53,7 @@
                 <div class="row">
                   <div class="col-24">
                     <div class="py-2 mx-2 px-2 offset-xl-1">
-                      <p class="card-text text-left">
+                      <p class="card-text text-justify">
                         {{ blogPost.description }}
                       </p>
                     </div>

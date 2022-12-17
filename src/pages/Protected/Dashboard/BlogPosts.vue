@@ -306,6 +306,7 @@ export default {
       const isValid = this.$refs.form.validate();
       if (isValid) {
         this.dialogLoading = true;
+        this.loading = true;
         try {
           const authorAvatarAsset = await this.uploadBlogAsset({
             image: this.editedBlog.authorAvatar,
@@ -314,7 +315,7 @@ export default {
           });
 
           const blogPostImageAsset = await this.uploadBlogAsset({
-            image: this.editedBlog.authorAvatar,
+            image: this.editedBlog.blogPostImage,
             type: "blog post image",
             blog: this.editedBlog
           });
@@ -327,6 +328,7 @@ export default {
             publishDate: moment().format()
           });
           this.dialogLoading = false;
+          this.loading = false;
 
           this.handleAlert({
             title: "Blog Post Created Successfully",
@@ -336,6 +338,7 @@ export default {
           this.closeDialog();
         } catch (error) {
           this.dialogLoading = false;
+          this.loading = false;
           this.handleAlert({
             title: "Blog Post Not Created",
             text: "Please try again",

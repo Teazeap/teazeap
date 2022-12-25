@@ -138,6 +138,43 @@ const actions = {
         });
     });
   },
+  async updateBlog({ commit, dispatch }, blog) {
+    // Create blog
+    const {
+      title,
+      author,
+      category,
+      youtubeLink,
+      description,
+      id,
+    } = blog;
+
+    return new Promise((resolve, reject) => {
+      client
+        .getSpace(process.env.VUE_APP_SPACE)
+        .then(space => space.getEnvironment(config.environment))
+        .then(space => space.getEntry(id))
+        .then(entry => {
+          entry.fields.title["en-US"] = title;
+          entry.fields.author["en-US"] = author;
+          entry.fields.category["en-US"] = category;
+          entry.fields.youtubeLink["en-US"] = youtubeLink;
+          entry.fields.description["en-US"] = description;
+          entry.fields.title["en-US"] = title;
+          return entry.update();
+        })
+        .then((entry) => entry.publish())
+        .then(entry => {
+          console.log(entry);
+          dispatch("fetchBlogPosts");
+          dispatch("fetchPreviewBlogPosts");
+          resolve(entry);
+        })
+        .catch(error => {
+          reject(error);
+        });
+    });
+  },
   async publishBlog({ commit, dispatch }, entryId) {
     return new Promise((resolve, reject) => {
       client

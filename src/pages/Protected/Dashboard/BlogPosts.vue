@@ -76,47 +76,45 @@
                                 required
                               ></v-text-field>
                             </v-col>
-                            <v-col cols="12" md="6">
-                              <!-- <v-textarea
+                          </v-row>
+                          <v-row>
+                            <v-col>
+                              <vue-editor
                                 v-model="editedBlog.description"
-                                :rules="descriptionRules"
-                                label="Description"
-                                outlined
+                                :editor-toolbar="customToolbar"
+                              />
+                            </v-col>
+                          </v-row>
+                          <v-row v-if="!inEditMode">
+                            <v-col cols="12" md="6">
+                              <!-- :value="editedBlog.authorAvatar" -->
+                              <v-file-input
+                                label="Author Avatar"
+                                :rules="authorAvatarRules"
+                                accept="image/png, image/jpeg, image/bmp"
                                 required
-                              ></v-textarea> -->
-                              <vue-editor v-model="editedBlog.description" :editor-toolbar="customToolbar"/>
+                                outlined
+                                dense
+                                @change="authorAvatarChangeHandler"
+                                @click:clear="editedBlog.authorAvatar = ''"
+                              ></v-file-input>
                             </v-col>
 
-                            <v-col cols="12" md="6" class="mt-3">
-                              <v-row>
-                                <!-- :value="editedBlog.authorAvatar" -->
-                                <v-file-input
-                                  label="Author Avatar"
-                                  :rules="authorAvatarRules"
-                                  accept="image/png, image/jpeg, image/bmp"
-                                  required
-                                  outlined
-                                  dense
-                                  @change="authorAvatarChangeHandler"
-                                  @click:clear="editedBlog.authorAvatar = ''"
-                                ></v-file-input>
-                              </v-row>
-                              <v-row>
-                                <!-- :value="editedBlog.blogPostImage" -->
-                                <v-file-input
-                                  label="Blog Post Image"
-                                  :rules="blogPostImageRules"
-                                  accept="image/png, image/jpeg, image/bmp"
-                                  outlined
-                                  dense
-                                  @change="blogPostImageChangeHandler"
-                                  @click:clear="editedBlog.blogPostImage = ''"
-                                ></v-file-input>
-                              </v-row>
+                            <v-col cols="12" md="6">
+                              <!-- :value="editedBlog.blogPostImage" -->
+                              <v-file-input
+                                label="Blog Post Image"
+                                :rules="blogPostImageRules"
+                                accept="image/png, image/jpeg, image/bmp"
+                                outlined
+                                dense
+                                @change="blogPostImageChangeHandler"
+                                @click:clear="editedBlog.blogPostImage = ''"
+                              ></v-file-input>
                             </v-col>
                           </v-row>
 
-                          <v-card-actions>
+                          <v-card-actions class="mt-6">
                             <v-btn
                               :disabled="!valid || dialogLoading"
                               :loading="dialogLoading"
@@ -170,7 +168,7 @@
           </td>
         </template>
         <template v-slot:item.actions="{ item }">
-          <v-icon small class="mr-2" @click="editItem(item)" v-if="false">
+          <v-icon small class="mr-2" @click="editItem(item)">
             mdi-pencil
           </v-icon>
           <v-btn
@@ -215,6 +213,12 @@ export default {
     ...mapGetters(["allBlogPosts", "allPreviewBlogPosts"]),
     formTitle() {
       return this.editedIndex === -1 ? "New Blog" : "Edit Blog";
+    },
+    inEditMode() {
+      return this.editedIndex !== -1;
+    },
+    cols() {
+      return this.inEditMode ? [24, 24] : [12, 6];
     }
   },
   mixins: [SendEmailMixin],
@@ -249,7 +253,8 @@ export default {
       "publishBlog",
       "unPublishBlog",
       "uploadBlogAsset",
-      "addBlog"
+      "addBlog",
+      "updateBlog"
     ]),
     handleBlogPosts() {
       const allBlogPostsIds = this.allBlogPosts.map(p => p.id);
@@ -263,7 +268,6 @@ export default {
       return createdAt.format(format);
     },
     async handleItemPublish(item) {
-      this.sendEmail("email");
       try {
         this.loading = true;
         await this.publishBlog(item.id);
@@ -307,8 +311,40 @@ export default {
         this.loading = false;
       });
     },
+    async handleBlogUpdate () {
+       this.dialogLoading = true;
+        this.loading = true;
+
+        try {
+          await this.updateBlog({
+            ...this.editedBlog,
+          });
+          this.dialogLoading = false;
+          this.loading = false;
+
+          this.handleAlert({
+            title: "Blog Post Updated Successfully",
+            text: "",
+            icon: "success"
+          });
+          this.closeDialog();
+        } catch (error) {
+          console.log(error);
+          this.dialogLoading = false;
+          this.loading = false;
+          this.handleAlert({
+            title: "Blog Post Not Updated",
+            text: "Please try again",
+            icon: "error"
+          });
+        }
+    },
     async submit() {
       const isValid = this.$refs.form.validate();
+      if (this.inEditMode && isValid) {
+        this.handleBlogUpdate()
+        return;
+      }
       if (isValid) {
         this.dialogLoading = true;
         this.loading = true;
@@ -426,16 +462,11 @@ export default {
       authorAvatar: "",
       blogPostImage: ""
     },
-    // author: '',
     authorRules: [v => !!v || "Author is required"],
-    // title: '',
     titleRules: [v => !!v || "Title is required"],
-    // youtubeLink: '',
-    // category: null,
     youtubeLinkRules: [v => !!v || "Youtube Link is required"],
     authorAvatarRules: [v => !!v || "Author Avatar  is required"],
     blogPostImageRules: [v => !!v || "Blog Post Image  is required"],
-    // description: '',
     descriptionRules: [v => !!v || "Description is required"],
     select: null,
     catergories: [
@@ -459,4 +490,27 @@ export default {
   height: 100%;
   min-height: 100%;
 }
+
+.editor-container {
+  max-height: 300px;
+  overflow: scroll;
+}
+
+.ql-editor {
+  min-height: 200px;
+  max-height: 200px;
+  overflow: scroll;
+  font-size: 16px;
+}
 </style>
+
+
+client.getSpace('<space_id>')
+.then((space) => space.getEnvironment('<environment-id>'))
+.then((environment) => environment.getEntry('<entry_id>'))
+.then((entry) => {
+  entry.fields.title['en-US'] = 'New entry title'
+  return entry.update()
+})
+.then((entry) => console.log(`Entry ${entry.sys.id} updated.`))
+.catch(console.error)

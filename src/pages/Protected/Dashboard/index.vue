@@ -3,7 +3,7 @@
     <v-navigation-drawer v-model="drawer" :mini-variant.sync="mini" app>
       <v-list-item class="px-2">
         <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
+          <v-img :src="'img/jake_2.jpg'" position="top"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-title>Jake</v-list-item-title>

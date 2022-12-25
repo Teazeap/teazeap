@@ -255,10 +255,11 @@ export default {
     ]),
     handleBlogPosts() {
       const allBlogPostsIds = this.allBlogPosts.map(p => p.id);
-      this.combinedBlogPosts = this.allPreviewBlogPosts.map(blog => {
-        const isPublished = allBlogPostsIds.includes(blog.id);
-        return { isPublished, ...blog };
-      });
+      // this.combinedBlogPosts = this.allPreviewBlogPosts.map(blog => {
+      //   const isPublished = allBlogPostsIds.includes(blog.id);
+      //   return { isPublished, ...blog };
+      // });
+      this.combinedBlogPosts = []
     },
     formatDate(date, format = "llll") {
       const createdAt = moment(new Date(date));

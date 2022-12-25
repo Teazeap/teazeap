@@ -165,7 +165,6 @@ const actions = {
         })
         .then((entry) => entry.publish())
         .then(entry => {
-          console.log(entry);
           dispatch("fetchBlogPosts");
           dispatch("fetchPreviewBlogPosts");
           resolve(entry);

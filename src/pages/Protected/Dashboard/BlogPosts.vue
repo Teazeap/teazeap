@@ -77,13 +77,14 @@
                               ></v-text-field>
                             </v-col>
                             <v-col cols="12" md="6">
-                              <v-textarea
+                              <!-- <v-textarea
                                 v-model="editedBlog.description"
                                 :rules="descriptionRules"
                                 label="Description"
                                 outlined
                                 required
-                              ></v-textarea>
+                              ></v-textarea> -->
+                              <vue-editor v-model="editedBlog.description" />
                             </v-col>
 
                             <v-col cols="12" md="6" class="mt-3">
@@ -163,7 +164,9 @@
         <template v-slot:expanded-item="{ headers, item }">
           <td :colspan="headers.length">
             <h4 class="font-weight-black">Description</h4>
-            <p>{{ item.description }}</p>
+            <p>
+              <span v-html="item.description"></span>
+            </p>
           </td>
         </template>
         <template v-slot:item.actions="{ item }">
@@ -203,9 +206,11 @@ import moment from "moment";
 import { mapGetters, mapActions } from "vuex";
 import SendEmailMixin from "@/mixins/SendEmailMixin";
 import { v4 as uuidv4 } from "uuid";
+import { VueEditor } from "vue2-editor";
 
 export default {
   name: "dashboard-blog-posts",
+  components: { VueEditor },
   computed: {
     ...mapGetters(["allBlogPosts", "allPreviewBlogPosts"]),
     formTitle() {

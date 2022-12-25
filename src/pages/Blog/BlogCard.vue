@@ -31,7 +31,7 @@
         </v-card-title>
 
         <v-card-text class="blog-description text-justify my-0 py-0">
-          {{ blogPost.description }}
+          {{ stripHtml(blogPost.description) }}
         </v-card-text>
 
         <v-list-item two-line class=" my-0 py-0">
@@ -117,6 +117,11 @@ export default {
     },
     handleVideoLinkClick(e) {
       e.stopPropagation();
+    },
+    stripHtml(html) {
+      let tmp = document.createElement("div");
+      tmp.innerHTML = html;
+      return tmp.textContent || tmp.innerText || "";
     }
   }
 };

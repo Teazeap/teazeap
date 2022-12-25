@@ -84,7 +84,7 @@
                                 outlined
                                 required
                               ></v-textarea> -->
-                              <vue-editor v-model="editedBlog.description" />
+                              <vue-editor v-model="editedBlog.description" :editor-toolbar="customToolbar"/>
                             </v-col>
 
                             <v-col cols="12" md="6" class="mt-3">
@@ -445,7 +445,12 @@ export default {
       "Travel",
       "Housing"
     ],
-    checkbox: false
+    checkbox: false,
+    customToolbar: [
+      ["bold", "italic", "underline"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["code-block"]
+    ]
   })
 };
 </script>

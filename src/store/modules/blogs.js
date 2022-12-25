@@ -147,6 +147,7 @@ const actions = {
       youtubeLink,
       description,
       id,
+      isPublished
     } = blog;
 
     return new Promise((resolve, reject) => {
@@ -163,7 +164,12 @@ const actions = {
           entry.fields.title["en-US"] = title;
           return entry.update();
         })
-        .then((entry) => entry.publish())
+        .then((entry) => {
+          if (isPublished) {
+            entry.publish()
+          }
+          resolve(entry);
+        })
         .then(entry => {
           dispatch("fetchBlogPosts");
           dispatch("fetchPreviewBlogPosts");

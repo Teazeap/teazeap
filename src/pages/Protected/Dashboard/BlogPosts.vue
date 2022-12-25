@@ -329,7 +329,6 @@ export default {
           });
           this.closeDialog();
         } catch (error) {
-          console.log(error);
           this.dialogLoading = false;
           this.loading = false;
           this.handleAlert({
@@ -491,11 +490,6 @@ export default {
   min-height: 100%;
 }
 
-.editor-container {
-  max-height: 300px;
-  overflow: scroll;
-}
-
 .ql-editor {
   min-height: 200px;
   max-height: 200px;
@@ -503,14 +497,3 @@ export default {
   font-size: 16px;
 }
 </style>
-
-
-client.getSpace('<space_id>')
-.then((space) => space.getEnvironment('<environment-id>'))
-.then((environment) => environment.getEntry('<entry_id>'))
-.then((entry) => {
-  entry.fields.title['en-US'] = 'New entry title'
-  return entry.update()
-})
-.then((entry) => console.log(`Entry ${entry.sys.id} updated.`))
-.catch(console.error)

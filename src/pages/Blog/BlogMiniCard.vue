@@ -15,7 +15,7 @@
               {{ blogPost.title }}
             </v-list-item-title>
             <v-list-item-subtitle>{{
-              blogPost.description
+              stripHtml (blogPost.description)
             }}</v-list-item-subtitle>
             <div>
               <v-chip
@@ -77,11 +77,11 @@ export default {
     }
   }),
   methods: {
-    // postedAt(date) {
-    //   const createdAt = moment(new Date(date));
-    //   const now = moment(new Date());
-    //   return createdAt.from(now);
-    // },
+    stripHtml(html) {
+      let tmp = document.createElement("div");
+      tmp.innerHTML = html;
+      return tmp.textContent || tmp.innerText || "";
+    },
     getCatagoryColor(catergory) {
       const color = this.catergoryColorPallete[catergory];
       return color ? color : "green";

@@ -695,7 +695,7 @@ export default {
         this.job.school
       }.We have received your application for the position of a ${this.handleTime(
         this.job.fullTime
-      )} teacher. We are currently in the middle of our recruitment process, and initial screening should be completed by ${this.handleTwoWeeksLater()}. You may expect another response around this time. </p> </div> <div> <p> In the meantime, you can learn more about Teazeap by following us on <a href="https://www.facebook.com/teazeap" target="_blank"> Facebook </a>, <a href="https://www.instagram.com/teazeap/" target="_blank"> Instagram </a> and our <a href='https://www.teazeap.com/'>company website</a> for the latest updates.<br /> You may contact me at <a href='mailto:teazeaprecruitingagency@gmail.com' >teazeaprecruitingagency@gmail.com</a >if you have any questions regarding your application. </p> </div> </div>`;
+      )} teacher. We are currently in the middle of our recruitment process, and initial screening should be completed by ${this.handleTwoWeeksLater()}. You may expect another response around this time. </p> </div> <div> <p> In the meantime, you can learn more about Teazeap by following us on <a href="https://www.facebook.com/teazeap" target="_blank"> Facebook </a>, <a href="https://www.instagram.com/teazeap/" target="_blank"> Instagram </a> and our <a href='https://www.teazeap.com/'>company website</a> for the latest updates.<br /> You may contact me at <a href='mailto:teazeaprecruitingagency@gmail.com' >teazeaprecruitingagency@gmail.com </a >if you have any questions regarding your application. </p> </div> </div>`;
       email.subject = "Application Received Email";
       email.address = this.form.email;
       email.regards = "Sincerely,";

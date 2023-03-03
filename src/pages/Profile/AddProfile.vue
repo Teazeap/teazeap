@@ -298,6 +298,7 @@ import { mapGetters, mapActions } from "vuex";
 import { Button, FormGroupInput, Radio } from "@/components";
 import { DatePicker, Icon } from "element-ui";
 import { v4 as uuidv4 } from "uuid";
+import moment from "moment";
 
 export default {
   name: "AddProfile",
@@ -1496,8 +1497,7 @@ export default {
     },
     formatDate(date) {
       if (date) {
-        date = new Date(date);
-        date = date.toISOString().substring(0, 10);
+        date = moment(new Date(date)).format("DD MMMM YYYY");
       }
       return date;
     }

@@ -761,8 +761,7 @@ export default {
     },
     formatDate(date) {
       if (date) {
-        date = new Date(date);
-        date = date.toISOString().substring(0, 10);
+        date = moment(new Date(date)).format("DD MMMM YYYY");
       }
       return date;
     }

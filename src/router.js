@@ -1,7 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Index from "./pages/Index.vue";
 import Landing from "./pages/Landing.vue";
+import Telemarketing from "./pages/Telemarketing.vue";
+import RecruitmentAgency from "./pages/RecruitmentAgency.vue";
 import Schools from "./pages/Services/Schools.vue";
 import Teachers from "./pages/Services/Teachers.vue";
 import Process from "./pages/Procedure/ApplicationProcess.vue";
@@ -13,6 +14,8 @@ import Jobs from "./pages/Jobs/Jobs.vue";
 import JobInfo from "./pages/Jobs/JobInfo.vue";
 import BlogInfo from "./pages/Blog/BlogInfo.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
+import RecruitmentAgencyNavbar from "./layout/RecruitmentAgencyNavbar.vue";
+import TelemarketingNavbar from "./layout/TelemarketingNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import store from "@/store";
 import Dashboard from "./pages/Protected/Dashboard/index.vue";
@@ -130,18 +133,27 @@ export default new Router({
       }
     },
     {
-      path: "/index",
-      name: "index",
-      components: { default: Index, header: MainNavbar, footer: MainFooter },
+      path: "/",
+      name: "landing",
+      components: { default: Landing, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" }
       }
     },
     {
-      path: "/",
-      name: "landing",
-      components: { default: Landing, header: MainNavbar, footer: MainFooter },
+      path: "/recruitment-agency",
+      name: "RecruitmentAgency",
+      components: { default: RecruitmentAgency, header: RecruitmentAgencyNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" }
+      }
+    },
+    {
+      path: "/telemarketing",
+      name: "Telemarketing",
+      components: { default: Telemarketing, header: TelemarketingNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" }

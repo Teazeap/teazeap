@@ -14,6 +14,7 @@
         <div class="separator separator-primary"></div>
       </div>
     </div>
+    <!-- video sectiuon -->
     <div class="section-about-us">
       <div class="container text-center">
         <div class="row justify-content-around">
@@ -24,26 +25,45 @@
         </div>
       </div>
     </div>
-    <div class="section mt-0 pt-0">
-      <div class="container text-center">
-        <h2 class="title">{{ $t("landing-page.team") }}</h2>
+    <!-- process sectio -->
+    <div class="section pt-0">
+      <div class="container process">
+        <h2 class="title  text-center">Let us build your virtual telemarketing phone room.</h2>
         <div class="row mt-4">
-          <TeamCard
-            v-for="(profile, index) in team"
-            :key="index"
-            :profile="profile"
-          />
+          <v-col cols="12" sm="7" lg="6">
+            <img
+              src="/img/process.png"
+              alt="banner" class="img-fluid"
+            />
+          </v-col>
+          <v-col  cols="12" sm="5" lg="6">
+            <Collapsible />
+          </v-col>
         </div>
+      </div>
+    </div>
+    <!-- testimonials sectio -->
+    <div class="section pt-0">
+      <div class="container process">
+        <h2 class="title  text-center">Real Clients. Real Results</h2>
+          <flickity
+            ref="communityBadgeInfoModalSwiper"
+            :options="flickityOptions"
+            class="carousel"
+          >
+          <TesimonialsCard v-for="(testimonial, index) in testimonials" :key="index" :testimonial="testimonial"/>
+          </flickity>
       </div>
     </div>
     <Contact />
   </div>
 </template>
 <script>
-import { Button, FormGroupInput } from "@/components";
+import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Services/Contact";
-import TeamCard from "./TeamCard.vue";
 import Header from "@/pages/Telemarketing/Header.vue";
+import Flickity from "vue-flickity";
+import TesimonialsCard from '@/pages/Telemarketing/TesimonialsCard';
 
 export default {
   name: "telemarketing",
@@ -52,8 +72,10 @@ export default {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
     Contact,
-    TeamCard,
-    Header
+    TesimonialsCard,
+    Header,
+    Collapsible,
+    Flickity
   },
   data() {
     return {
@@ -98,11 +120,47 @@ export default {
           id: 3,
           src: "https://www.youtube.com/embed/6SINX6jkZmw?autoplay=0&mute=0&controls=1&loop=0&origin=https%3A%2F%2Fwww.avatarandechotelemarketing.com&playsinline=1&enablejsapi=1&widgetid=17"
         }
-      ]
+      ],
+      flickityOptions: {
+        adaptiveHeight: false,
+        cellAlign: "left",
+        contain: true,
+        draggable: true,
+        freeScroll: true,
+        groupCells: true,
+        pageDots: false,
+        percentPosition: true,
+        autoPlay: 3000,
+        wrapAround: true,
+        pauseAutoPlayOnHover: false,
+        resize: true
+      },
+      testimonials : [
+        {
+          picUrl: 'img/agent-1.webp',
+          name: 'Debt Settlement',
+          message: `"How many other outbound call centers did we try?At least 12 in India and the Philippines. They all failed because of the accents. Avatar & Echo telemarketing outsourcing works, the agents don't have accents and prospects listen to what they say."`
+        },
+        {
+          picUrl: 'img/agent-2.webp',
+          name: 'Mortgage',
+          message: `"American-run, they get lead generation. Avatar & Echo delivers the lowest cost, qualified leads. Its as east to get as siding up for their service. Listen to what they say – they know the business."`
+        },
+        {
+          picUrl: 'img/agent-3.webp',
+          name: 'Insurance',
+          message: `With the RXR we manager our team and it feels like we are in the middle of the action.  The software is amazing are we run better then we did when we had the call center here. It's amazing that they turned the complex process of running a call center into a service!`
+        }
+      ],
     };
   },
   created() {
     this.handleLangauge();
+  },
+  computed: {
+    swiper() {
+      return this.$refs.communityBadgeInfoModalSwiper;
+    },
   },
   methods: {
     handleLangauge() {
@@ -114,7 +172,7 @@ export default {
       } else {
         this.$i18n.locale = browserLanguage.includes("zh") ? "zh" : "en";
       }
-    }
+    },
   }
 };
 </script>
@@ -130,5 +188,27 @@ export default {
 .video-frame :hover {
   transform: translateY(-2px);
   cursor: pointer;
+}
+
+.process {
+  border: 1px solid #ebeef5;
+  -webkit-box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
+  box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
+  transition: 0.3s;
+  border-radius: 24px;
+  margin-top: 4rem;
+}
+.carousel {
+  margin: 84px 0 0;
+  padding: 0;
+  width: 100%;
+  height: 500px;
+}
+
+.carousel-cell {
+  height: 450px;
+  margin: 0 20px 0;
+  padding: 0;
+  width: 300px;
 }
 </style>

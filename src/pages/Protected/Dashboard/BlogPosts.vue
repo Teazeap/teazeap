@@ -487,7 +487,7 @@ export default {
 <style lang="scss">
 .v-application--wrap {
   height: 100%;
-  min-height: 100%;
+  min-height: 100% !important;
 }
 
 .ql-editor {

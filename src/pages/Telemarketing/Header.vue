@@ -43,7 +43,7 @@
           <v-col cols="12" sm="7" lg="6" class="d-flex align-center">
             <div class="text-sm-left text-center">
               <h1 class="banner-title font-weight-bold text-white">
-                Teazeap Telemarketing Outsourcing
+                 Teazeap Telemarketing And Call Center Services
               </h1>
               <h4 class="banner-subtitle white--text font-weight-regular text-white">
                 "Maximize your sales potential with our expert telemarketing services."

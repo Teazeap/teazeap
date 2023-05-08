@@ -34,18 +34,18 @@ export default {
       processes: [
         {
           id: 1,
-          title: "CHOOSE YOUR TEAM",
-          content: "Interview and select your telemarketers. All college educated, non-accented, and rigorously trained in sales skills."
+          title: "UNDERSTAND CUSTOMER NEEDS",
+          content: "Teazeap would start by understanding the customer's business requirements, target audience, and sales goals. Based on this information, we would recommend the most appropriate virtual telemarketing service to meet the customer's needs."
         },
         {
           id: 2,
-          title: "USE OUR TOOLS",
-          content: "You just provide the script, call list, and schedule. New to lead gen? No problem! We'll help you establish best practices for success."
+          title: "CONFIGURE INFRASTRUCTURE",
+          content: "Once the service is chosen, Teazeap would configure the necessary infrastructure, including software, hardware, and network components. This would ensure that the virtual telemarketing service is set up correctly and functions optimally."
         },
         {
           id: 3,
-          title: "USE OUR TOOLS",
-          content: "We reduce costs and hassle. You manage your telemarketers directly. Stop wasting money. Start getting results"
+          title: "TRAIN AGENTS",
+          content: "Teazeap would provide comprehensive training to agents on how to use the virtual telemarketing service effectively, including best practices for managing calls, handling objections, and closing sales. This training would help agents to provide top-quality service to customers and achieve the customer's sales goals."
         }
       ]
   })

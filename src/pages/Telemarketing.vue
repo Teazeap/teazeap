@@ -180,7 +180,7 @@ export default {
         {
           id: 1,
           src:
-            "https://www.youtube.com/embed/nZ7RNgTDxB0?autoplay=0&mute=0&controls=1&loop=0&origin=https%3A%2F%2Fwww.avatarandechotelemarketing.com&playsinline=1&enablejsapi=1&widgetid=23"
+            "https://videos.ctfassets.net/dr15y1pi2yc9/77uBczZTTHGFOYJNjgL6qD/1a4577bff54f4a117ee37a4c7aee7b92/videoplayback-1.mp4"
         },
         {
           id: 2,

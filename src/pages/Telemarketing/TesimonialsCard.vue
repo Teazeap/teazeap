@@ -9,7 +9,7 @@
         :min-height="450"
         :max-height="450"
       >
-        <v-img loading="lazy"  :src="testimonial.picUrl"></v-img>
+        <v-img :src="testimonial.picUrl"></v-img>
 
         <v-card-title class="d-flex  team-name text-primary justify-content-center">
           {{ $t(testimonial.name) }}

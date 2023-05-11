@@ -185,12 +185,12 @@ export default {
         {
           id: 2,
           src:
-            "https://www.youtube.com/embed/tNHjG_Qqdy0?autoplay=0&mute=0&controls=1&loop=0&origin=https%3A%2F%2Fwww.avatarandechotelemarketing.com&playsinline=1&enablejsapi=1&widgetid=15"
+            "https://videos.ctfassets.net/dr15y1pi2yc9/3p9fUqGM6nLVbKWMBSsqt9/634faaa8c15656d5b6ccd0b0d7c8ac1c/videoplayback-2.mp4"
         },
         {
           id: 3,
           src:
-            "https://www.youtube.com/embed/6SINX6jkZmw?autoplay=0&mute=0&controls=1&loop=0&origin=https%3A%2F%2Fwww.avatarandechotelemarketing.com&playsinline=1&enablejsapi=1&widgetid=17"
+            "https://videos.ctfassets.net/dr15y1pi2yc9/NVi7i40iXbsu30guZRUak/ce71561a78a2a18bb474181d98437cdc/videoplayback-3.mp4"
         }
       ],
       flickityOptions: {

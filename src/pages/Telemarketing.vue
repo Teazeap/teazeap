@@ -1,25 +1,45 @@
 <template>
   <div>
     <Header />
-    <div class="section-about-us">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">
-              Let us build your virtual telemarketing phone room.
-            </h2>
-            <h5 class="description text-justify">
-              Welcome to Teazeap, your  trusted telemarketing partner for business success. Our team of experienced and skilled telemarketing professionals are dedicated to providing top-notch services to businesses of all sizes. From generating leads to increasing sales, we help you achieve your marketing goals with the power of telemarketing. Promote your brand, connect with your target audience, and grow your business with Teazeap. Get in touch with us today to see how we can help you take your business to the next level.
-            </h5>
-          </div>
+        <div class="pt-0 intro-container">
+      <div class="container process intro">
+        <h2 class="title  text-center">
+          Let us build your virtual telemarketing phone room.
+        </h2>
+        <div class="row mt-4">
+          <v-col cols="12" sm="7" lg="6">
+            <img src="/img/intro-pic.png" alt="banner" class="img-fluid" />
+          </v-col>
+          <v-col cols="12" sm="5" lg="6">
+            <p class="introduction-text">
+            Welcome to Teazeap, your  trusted telemarketing partner for business success. Our team of experienced and skilled telemarketing professionals are dedicated to providing top-notch services to businesses of all sizes. From generating leads to increasing sales, we help you achieve your marketing goals with the power of telemarketing. Promote your brand, connect with your target audience, and grow your business with Teazeap. Get in touch with us today to see how we can help you take your business to the next level.
+          </p>
+          </v-col>
         </div>
-        <div class="separator separator-primary"></div>
       </div>
     </div>
+    <!-- <div class="section-about-us intro-container">
+      <div class="container process intro">
+        <h2 class="title  text-center">
+          Let us build your virtual telemarketing phone room.
+        </h2>
+        <p class="video-section-introduction">
+          Welcome to Teazeap, your  trusted telemarketing partner for business success. Our team of experienced and skilled telemarketing professionals are dedicated to providing top-notch services to businesses of all sizes. From generating leads to increasing sales, we help you achieve your marketing goals with the power of telemarketing. Promote your brand, connect with your target audience, and grow your business with Teazeap. Get in touch with us today to see how we can help you take your business to the next level.
+        </p>
+        <div class="separator separator-primary"></div>
+      </div>
+    </div> -->
     <!-- video section -->
-    <div class="section-about-us">
-      <div class="container text-center">
-        <div class="row justify-content-around">
+    <div class="section pt-0 mobile-padding">
+      <div class="container process">
+        <h2 class="title  text-center">
+          Get a Glimpse Inside: Watch Our Call Center Agents in Action
+        </h2>
+        <p class="video-section-introduction">
+          At Teazeap, we take pride in our team of professional and dedicated call center agents who work tirelessly to provide exceptional service to our clients. Our video gallery offers an inside look into the daily operations of our call center, highlighting the professionalism, expertise, and dedication of our agents. See firsthand how our team works to generate leads, increase sales, and promote brands through the power of telemarketing.
+        </p>
+
+        <div class="row mt-4 videos-container">
           <div class="col-md-4" v-for="(video, id) in videos" :key="id">
             <iframe
               width="100%"
@@ -32,11 +52,11 @@
         </div>
       </div>
     </div>
-    <!-- process section -->
-    <div class="section pt-0">
+    <!-- video section -->
+    <div class="section pt-0 mobile-padding">
       <div class="container process">
         <h2 class="title  text-center">
-          Let us build your virtual telemarketing phone room.
+          Our Strategic Approach To Providing Telemarketing Services
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
@@ -50,7 +70,7 @@
     </div>
 
     <!-- plans section -->
-    <div class="section pt-0">
+    <div class="section pt-0 mobile-padding">
       <div class="container process">
         <h2 class="title">CHOOSING Your Solution:</h2>
         <h5 class="description">
@@ -106,7 +126,7 @@
       </div>
     </div>
     <!-- testimonials section -->
-    <div class="section pt-0">
+    <div class="section pt-0 mobile-padding">
       <div class="container process">
         <h2 class="title  text-center">Real Clients. Real Results</h2>
         <flickity
@@ -283,4 +303,50 @@ export default {
   padding: 0;
   width: 300px;
 }
+
+.video-section-introduction {
+  text-align: justify;
+}
+
+@media (min-width: 600px) {
+  .video-section-introduction {
+    text-align: center;
+    margin: 0 5%;
+  }
+}
+
+.videos-container {
+  margin: 0 5%;
+}
+
+.mobile-padding {
+  margin: 0 16px;
+}
+
+.intro {
+  background: white;
+}
+
+.intro-container {
+  margin: 0 16px;
+}
+
+@media (min-width: 600px) {
+  .intro-container {
+    margin-top: -10rem;
+  }
+}
+
+.introduction-text {
+  text-align: justify;
+}
+
+@media (min-width: 600px) {
+  .introduction-text {
+    margin-right: 16px
+  }
+}
+
+
+
 </style>

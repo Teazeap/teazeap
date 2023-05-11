@@ -39,7 +39,7 @@
   </div> -->
   <div class="banner-wrapper">
       <v-container class="container">
-        <v-row justify="center mt-12">
+        <v-row class="center mt-12">
           <v-col cols="12" sm="7" lg="6" class="d-flex align-center">
             <div class="text-sm-left text-center">
               <h1 class="banner-title font-weight-bold text-white">

@@ -1,7 +1,7 @@
 <template>
   <div>
     <PageHeader />
-    <div class="section section-about-us">
+    <div class="section section-about-us" :style="commonMarginClass">
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
@@ -14,10 +14,10 @@
         <div class="separator separator-primary"></div>
       </div>
     </div>
-    <div class="section section-about-us">
+    <div class="section section-about-us" :style="commonMarginClass">
       <div class="container text-center">
         <div class="row justify-content-around">
-          <div class="col-md-3">
+          <div class="col-md-3 ml-auto mr-auto">
             <div class="team-player">
               <span style="color: #f96332;">
                 <i class="fas fa-address-card fa-5x"></i>
@@ -28,7 +28,7 @@
               </p>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 ml-auto mr-auto">
             <div class="team-player">
               <span style="color: #f96332;">
                 <i class="fas fa-address-card fa-5x"></i>
@@ -39,7 +39,7 @@
               </p>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 ml-auto mr-auto">
             <div class="team-player">
               <span style="color: #f96332;">
                 <i class="fas fa-address-card fa-5x"></i>
@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <div class="section mt-0 pt-0">
+    <div class="section mt-0 pt-0" :style="commonMarginClass">
       <div class="container text-center">
         <h2 class="title">{{ $t("landing-page.team") }}</h2>
         <div class="row mt-4">
@@ -73,6 +73,8 @@ import { Button, FormGroupInput } from "@/components";
 import Contact from "@/pages/Services/Contact";
 import TeamCard from "./TeamCard.vue";
 import PageHeader from "./PageHeader.vue";
+import sizeMixin from "@/plugins/sizeMixin.js";
+
 
 export default {
   name: "landing",
@@ -84,6 +86,7 @@ export default {
     TeamCard,
     PageHeader
   },
+  mixins: [sizeMixin],
   data() {
     return {
       form: {

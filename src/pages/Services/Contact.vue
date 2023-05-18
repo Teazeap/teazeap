@@ -1,5 +1,5 @@
 <template>
-  <div class="section text-center">
+  <div class="section text-center" :style="commonMarginClass">
     <div class="container">
       <h2 class="title">{{ $t("contact.with-us") }}</h2>
       <p class="description">{{ $t("contact.important") }}</p>
@@ -76,6 +76,7 @@
 <script>
 import { Button, FormGroupInput } from "@/components";
 import SendEmailMixin from "@/mixins/SendEmailMixin";
+import sizeMixin from "@/plugins/sizeMixin.js";
 
 export default {
   name: "contact",
@@ -83,7 +84,7 @@ export default {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput
   },
-  mixins: [SendEmailMixin],
+  mixins: [SendEmailMixin, sizeMixin],
   data() {
     return {
       form: {
@@ -106,7 +107,7 @@ export default {
     },
     firstPlaceholder() {
       return this.$t("contact.name");
-    }
+    },
   },
   methods: {
     sendMessage() {

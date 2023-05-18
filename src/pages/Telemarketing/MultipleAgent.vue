@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Header />
+    <AgentsHeader
+      title="Multi-Agent Telemarketing"
+      sub-title="Maximize your sales potential with our expert telemarketing services."
+    />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
         <h2 class="title text-center">
@@ -26,7 +29,7 @@
         </div>
       </div>
     </div>
-    <!-- video section -->
+    <!-- intro section -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
@@ -60,35 +63,7 @@
         </div>
       </div>
     </div>
-
-    <!-- agent picture section -->
-    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
-      <div class="container section-card">
-        <h2 class="title text-center">
-          Discover our skilled agents in action, driving telemarketing success.
-        </h2>
-        <p class="video-section-introduction">
-         Our agents are adept at generating high-quality leads for our clients. Through strategic prospecting and persuasive communication, they identify potential customers who are a perfect fit for your products or services. Their goal is to provide you with a steady stream of qualified leads, driving your business growth.
-        </p>
-
-        <div class="row mt-4 videos-container">
-          <flickity
-            :options="flickityOptions"
-            class="video-carousel"
-          >
-            <div class="col-md-4" v-for="(agent, id) in agents" :key="id">
-              <img
-                width="100%"
-                height="345"
-                class="video-frame"
-                :src="agent.src"
-              >
-            </div>
-          </flickity>
-        </div>
-      </div>
-    </div>
-    <!-- video section -->
+    <!-- plan details section -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
@@ -182,20 +157,19 @@
       </div>
     </div>
     <Contact />
-    <router-view/>
   </div>
 </template>
 <script>
 import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Telemarketing/Contact";
-import Header from "@/pages/Telemarketing/Header.vue";
+import AgentsHeader from "@/pages/Telemarketing/AgentsHeader.vue";
 import Flickity from "vue-flickity";
 import TesimonialsCard from "@/pages/Telemarketing/TesimonialsCard";
 import PlanCard from "@/pages/Telemarketing/PlanCard";
 import sizeMixin from "@/plugins/sizeMixin.js";
 
 export default {
-  name: "telemarketing",
+  name: "multiple-agent",
   bodyClass: "landing-page",
   mixins: [sizeMixin],
   components: {
@@ -203,7 +177,7 @@ export default {
     [FormGroupInput.name]: FormGroupInput,
     Contact,
     TesimonialsCard,
-    Header,
+    AgentsHeader,
     Collapsible,
     Flickity,
     PlanCard,
@@ -251,26 +225,6 @@ export default {
           id: 3,
           src: "https://videos.ctfassets.net/dr15y1pi2yc9/NVi7i40iXbsu30guZRUak/ce71561a78a2a18bb474181d98437cdc/videoplayback-3.mp4",
         },
-      ],
-      agents: [
-        {
-          src: "img/agents/IMG_0255.JPG"
-        },
-        {
-          src: "img/agents/IMG_0254.JPG"
-        },
-        {
-          src: "img/agents/IMG_0258.JPG"
-        },
-        {
-          src: "img/agents/IMG_0257.JPG"
-        },
-        {
-          src: "img/agents/IMG_0256.JPG"
-        },
-        {
-          src: "img/agents/IMG_0255.JPG"
-        }
       ],
       flickityOptions: {
         adaptiveHeight: false,

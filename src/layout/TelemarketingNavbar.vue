@@ -8,7 +8,7 @@
     menu-classes="ml-auto"
   >
     <template>
-      <router-link v-popover:popover1 class="navbar-brand" to="/">
+      <router-link v-popover:popover1 class="navbar-brand" to="/telemarketing">
         TeaZeap
       </router-link>
     </template>
@@ -18,10 +18,10 @@
         title="Agents"
         class="nav-item nav-ul"
       >
-        <nav-link>
+        <nav-link to="/telemarketing/single-agent">
           Single Agent Program
         </nav-link>
-        <nav-link>
+        <nav-link to="/telemarketing/multiple-agent">
           Multi Agent Program
         </nav-link>
       </drop-down>

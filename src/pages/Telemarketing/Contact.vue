@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-section text-center">
+  <div class="contact-section text-center" :style="commonMarginClass">
     <div class="container section-card">
       <h2 class="title">{{ $t("contact.get-in-touch") }}</h2>
       <p class="description">{{ $t("contact.reach-out") }}</p>
@@ -76,6 +76,7 @@
 <script>
 import { Button, FormGroupInput } from "@/components";
 import SendEmailMixin from "@/mixins/SendEmailMixin";
+import sizeMixin from "@/plugins/sizeMixin.js";
 
 export default {
   name: "telemarketing-contact",
@@ -83,7 +84,7 @@ export default {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput
   },
-  mixins: [SendEmailMixin],
+  mixins: [SendEmailMixin, sizeMixin],
   data() {
     return {
       form: {

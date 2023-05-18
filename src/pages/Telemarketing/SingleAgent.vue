@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Header />
+    <AgentsHeader
+      title="Single Agent Program"
+      sub-title="Maximize your sales potential with our expert telemarketing services."
+    />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
         <h2 class="title text-center">
@@ -12,82 +15,99 @@
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
-              Welcome to Teazeap, your trusted telemarketing partner for
-              business success. Our team of experienced and skilled
-              telemarketing professionals are dedicated to providing top-notch
-              services to businesses of all sizes. From generating leads to
-              increasing sales, we help you achieve your marketing goals with
-              the power of telemarketing. Promote your brand, connect with your
-              target audience, and grow your business with Teazeap. Get in touch
-              with us today to see how we can help you take your business to the
-              next level.
+              When you’re ready to free yourself from a failure-ridden telemarketing process and try something that actually works, call us. Avatar & Echo Telemarketing specializes in outsourcing single agent telemarketing campaigns. These campaigns are hassle-free for you and provide real results. Our highly-trained, non-accented telemarketers have a proven track record of success. Single agents start at $7.00 per hour.
             </p>
           </v-col>
         </div>
       </div>
     </div>
     <!-- video section -->
-    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
-      <div class="container section-card">
-        <h2 class="title text-center">
-          Get a Glimpse Inside: Watch Our Call Center Agents in Action
-        </h2>
-        <p class="video-section-introduction">
-          At Teazeap, we take pride in our team of professional and dedicated
-          call center agents who work tirelessly to provide exceptional service
-          to our clients. Our video gallery offers an inside look into the daily
-          operations of our call center, highlighting the professionalism,
-          expertise, and dedication of our agents. See firsthand how our team
-          works to generate leads, increase sales, and promote brands through
-          the power of telemarketing.
-        </p>
-
-        <div class="row mt-4 videos-container">
-          <flickity
-            :options="flickityOptions"
-            class="video-carousel"
-          >
-            <div class="col-md-4" v-for="(video, id) in videos" :key="id">
-              <iframe
-                width="100%"
-                height="345"
-                class="video-frame"
-                :src="video.src"
-              >
-              </iframe>
+    <!-- <div class="container" :style="commonMarginClass">
+      <v-row>
+        <v-col cols="12" sm="7" lg="5" >
+          <div class="section pt-0">
+            <div class="container section-card">
+              <h2 class="title text-center">
+                Get a Glimpse Inside: Watch Our Call Center Agents in Action
+              </h2>
+              <p class="video-section-introduction">
+                At Teazeap, we take pride in our team of professional and
+                dedicated call center agents who work tirelessly to provide
+                exceptional service to our clients. Our video gallery offers an
+                inside look into the daily operations of our call center,
+                highlighting the professionalism, expertise, and dedication of
+                our agents. See firsthand how our team works to generate leads,
+                increase sales, and promote brands through the power of
+                telemarketing.
+              </p>
             </div>
-          </flickity>
+          </div>
+        </v-col>
+        <v-col cols="12" sm="7" lg="3" >
+          <div class="section pt-0">
+            <div class="container section-card">
+              <h2 class="title text-center">
+                Get a Glimpse Inside: Watch Our Call Center Agents in Action
+              </h2>
+              <p class="video-section-introduction">
+                At Teazeap, we take pride in our team of professional and
+                dedicated call center agents who work tirelessly to provide
+                exceptional service to our clients. Our video gallery offers an
+                inside look into the daily operations of our call center,
+                highlighting the professionalism, expertise, and dedication of
+                our agents. See firsthand how our team works to generate leads,
+                increase sales, and promote brands through the power of
+                telemarketing.
+              </p>
+            </div>
+          </div>
+        </v-col>
+      </v-row>
+    </div> -->
+
+    <!-- what to expect section -->
+    <div class="row what-to-expect" :style="commonMarginClass">
+      <v-col cols="12" sm="12" lg="6" class="section pt-0">
+        <div class="container section-card">
+          <h2 class="title text-center">
+            What to Expect
+          </h2>
+          <p class="video-section-introduction">
+            At Teazeap, we take pride in our team of professional and dedicated
+            call center agents who work tirelessly to provide exceptional
+            service to our clients. Our video gallery offers an inside look into
+            the daily operations of our call center, highlighting the
+            professionalism, expertise, and dedication of our agents. See
+            firsthand how our team works to generate leads, increase sales, and
+            promote brands through the power of telemarketing.
+          </p>
         </div>
-      </div>
+      </v-col>
+      <v-col cols="12" sm="12" lg="6" class="section pt-0">
+        <div class="container section-card benefits">
+          <h2 class="title text-center what-to-expect-title">
+            The Benefits
+          </h2>
+          <p>Taking a Certified Educator exam will enable users to:</p>
+          <ul>
+            <li>More appointment setting</li>
+            <li>More lead generation</li>
+            <li>More live transfers</li>
+            <li>Less expense, overhead, and hassle</li>
+          </ul>
+          <!-- <p class="video-section-introduction">
+            At Teazeap, we take pride in our team of professional and dedicated
+            call center agents who work tirelessly to provide exceptional
+            service to our clients. Our video gallery offers an inside look into
+            the daily operations of our call center, highlighting the
+            professionalism, expertise, and dedication of our agents. See
+            firsthand how our team works to generate leads, increase sales, and
+            promote brands through the power of telemarketing.
+          </p> -->
+        </div>
+      </v-col>
     </div>
 
-    <!-- agent picture section -->
-    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
-      <div class="container section-card">
-        <h2 class="title text-center">
-          Discover our skilled agents in action, driving telemarketing success.
-        </h2>
-        <p class="video-section-introduction">
-         Our agents are adept at generating high-quality leads for our clients. Through strategic prospecting and persuasive communication, they identify potential customers who are a perfect fit for your products or services. Their goal is to provide you with a steady stream of qualified leads, driving your business growth.
-        </p>
-
-        <div class="row mt-4 videos-container">
-          <flickity
-            :options="flickityOptions"
-            class="video-carousel"
-          >
-            <div class="col-md-4" v-for="(agent, id) in agents" :key="id">
-              <img
-                width="100%"
-                height="345"
-                class="video-frame"
-                :src="agent.src"
-              >
-            </div>
-          </flickity>
-        </div>
-      </div>
-    </div>
     <!-- video section -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
@@ -182,20 +202,19 @@
       </div>
     </div>
     <Contact />
-    <router-view/>
   </div>
 </template>
 <script>
 import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Telemarketing/Contact";
-import Header from "@/pages/Telemarketing/Header.vue";
+import AgentsHeader from "@/pages/Telemarketing/AgentsHeader.vue";
 import Flickity from "vue-flickity";
 import TesimonialsCard from "@/pages/Telemarketing/TesimonialsCard";
 import PlanCard from "@/pages/Telemarketing/PlanCard";
 import sizeMixin from "@/plugins/sizeMixin.js";
 
 export default {
-  name: "telemarketing",
+  name: "single-agent",
   bodyClass: "landing-page",
   mixins: [sizeMixin],
   components: {
@@ -203,7 +222,7 @@ export default {
     [FormGroupInput.name]: FormGroupInput,
     Contact,
     TesimonialsCard,
-    Header,
+    AgentsHeader,
     Collapsible,
     Flickity,
     PlanCard,
@@ -251,26 +270,6 @@ export default {
           id: 3,
           src: "https://videos.ctfassets.net/dr15y1pi2yc9/NVi7i40iXbsu30guZRUak/ce71561a78a2a18bb474181d98437cdc/videoplayback-3.mp4",
         },
-      ],
-      agents: [
-        {
-          src: "img/agents/IMG_0255.JPG"
-        },
-        {
-          src: "img/agents/IMG_0254.JPG"
-        },
-        {
-          src: "img/agents/IMG_0258.JPG"
-        },
-        {
-          src: "img/agents/IMG_0257.JPG"
-        },
-        {
-          src: "img/agents/IMG_0256.JPG"
-        },
-        {
-          src: "img/agents/IMG_0255.JPG"
-        }
       ],
       flickityOptions: {
         adaptiveHeight: false,
@@ -403,5 +402,13 @@ export default {
   .introduction-text {
     margin-right: 16px;
   }
+}
+
+.what-to-expect {
+  margin-top: 28px;
+}
+
+.what-to-expect-title {
+  color: #1ecd6e;
 }
 </style>

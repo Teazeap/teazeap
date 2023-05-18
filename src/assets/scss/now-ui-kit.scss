@@ -149,6 +149,23 @@ input[type="file"] {
     transition: 0.3s;
     border-radius: 24px;
     margin-top: 4rem;
+    &.benefits {
+        background: #f5faf7;
+        p {
+            font-size: 18px;
+            margin-left: 16px;
+        }
+        ul {
+            margin-left: 44px;
+        }
+        li {
+            font-weight: 400;
+            list-style-image: url("../img/checkmark.svg");
+            margin-bottom: 6px;
+            font-size: 18px;
+            padding: 0;
+        }
+    }
 }
 
 // flickity

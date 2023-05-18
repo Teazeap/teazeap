@@ -4,7 +4,7 @@
     :class="{ [`footer-${type}`]: type }"
     :data-background-color="backgroundColor"
   >
-    <div class="container text-center">
+    <div class="container text-center d-flex flex-column">
       <nav>
         <ul>
           <li>
@@ -66,7 +66,10 @@
   </footer>
 </template>
 <script>
+import sizeMixin from "@/plugins/sizeMixin.js";
+
 export default {
+  mixins: [sizeMixin],
   props: {
     backgroundColor: String,
     type: String

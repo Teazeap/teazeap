@@ -165,7 +165,7 @@ export default {
     },
     close() {
       if (this.showMenu) {
-        this.setNav(false);
+        // this.setNav(false);
       }
     },
     handleScroll() {

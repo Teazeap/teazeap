@@ -124,7 +124,7 @@
                 actionButtonBackground: 'white',
               }"
               :plan="{
-                title: 'AVATAR',
+                title: 'FILTERING AVATAR',
                 subtitle: 'If this describes your campaign:',
                 keyPoints: [
                   'Identify ideal customers for products/services.',
@@ -147,7 +147,7 @@
                 actionButtonBackground: 'white',
               }"
               :plan="{
-                title: 'SPECIALS',
+                title: 'FILTERING SPECIALS',
                 subtitle: 'If this describes your campaign:',
                 keyPoints: [
                   'Credit check for prospects.',

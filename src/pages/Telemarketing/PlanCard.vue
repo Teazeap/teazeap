@@ -12,9 +12,9 @@
     >
       <v-card-title
         :style="textStyles"
-        class="d-flex  team-name justify-content-center"
+        class="d-flex  team-name justify-content-center mb-2"
       >
-        <h5 class="font-weight-bold">{{ plan.title }}</h5>
+        <h5 class="font-weight-bold plan-title">{{ plan.title }}</h5>
       </v-card-title>
 
       <v-card-text :style="textStyles" class="mt-n2 plan-text">
@@ -102,6 +102,9 @@ export default {
 }
 .plan-text {
   font-size: 18px;
+}
+.plan-title {
+  font-size: 26px;
 }
 .team-name {
   font-size: 24px;

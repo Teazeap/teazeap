@@ -13,25 +13,12 @@
       </router-link>
     </template>
     <template slot="navbar-menu">
-      <drop-down
-        tag="li"
-        :title="ourServices"
-        icon="now-ui-icons design_image"
-        class="nav-item nav-ul"
-      >
-        <nav-link to="/our-services/teachers">
-          <i class="now-ui-icons education_paper"></i> {{ $t("nav.teachers") }}
-        </nav-link>
-        <nav-link to="/our-services/schools">
-          <i class="now-ui-icons education_hat"></i> {{ $t("nav.schools") }}
-        </nav-link>
-      </drop-down>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <nav-link class="nav-link about-us" to="/">
           <i class="now-ui-icons arrows-1_share-66"></i>
           <p>{{ $t("nav.about-us") }}</p>
         </nav-link>
-      </li>
+      </li> -->
       <li class="nav-item">
         <nav-link class="nav-link btn btn-neutral" to="/jobs">
           <i class="now-ui-icons arrows-1_share-66  nav-link-icon"></i>
@@ -50,11 +37,28 @@
       </li>
 
       <li class="nav-item">
-        <nav-link class="nav-link  btn  btn-neutral btn-blog" to="/blog">
-          <i class="now-ui-icons files_paper nav-link-icon"></i>
-          <p>{{ $t("nav.blog") }}</p>
+        <nav-link class="nav-link  btn  btn-neutral btn-telemarketing" to="/telemarketing">
+          <i class="now-ui-icons tech_headphones nav-link-icon"></i>
+          <p>{{ $t("nav.telemarketing") }}</p>
         </nav-link>
       </li>
+
+      <drop-down
+        tag="li"
+        :title="ourServices"
+        icon="now-ui-icons design_image"
+        class="nav-item nav-ul"
+      >
+        <nav-link to="/our-services/teachers">
+          <i class="now-ui-icons education_paper"></i> {{ $t("nav.teachers") }}
+        </nav-link>
+        <nav-link to="/our-services/schools">
+          <i class="now-ui-icons education_hat"></i> {{ $t("nav.schools") }}
+        </nav-link>
+        <nav-link to="/blog">
+          <i class="now-ui-icons files_paper"></i> {{ $t("nav.blog") }}
+        </nav-link>
+      </drop-down>
 
       <drop-down
         tag="li"

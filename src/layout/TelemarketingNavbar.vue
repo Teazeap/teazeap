@@ -41,6 +41,15 @@
       </li>
 
       <li class="nav-item">
+        <nav-link
+          class="nav-link  btn btn-neutral nav-recruitment"
+          to="/"
+        >
+          <p>Recruitment</p>
+        </nav-link>
+      </li>
+
+      <li class="nav-item">
         <a
           class="nav-link"
           rel="tooltip"

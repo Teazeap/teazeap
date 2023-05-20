@@ -10,7 +10,10 @@
         "admin": "Admin",
         "create-profile": "Create Profile",
         "blog": "Blog",
-        "no-blogs": "No Blogs"
+        "no-blogs": "No Blogs",
+        "telemarketing": "Telemarketing",
+        "single-agent": "Single Agent",
+        "multiple-agent": "Multiple Agent"
     },
     "landing-page": {
         "who": "Who we are",

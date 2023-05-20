@@ -44,6 +44,33 @@
               {{ $t("nav.admin") }}
             </router-link>
           </li>
+          <li>
+            <router-link
+              v-popover:popover1
+              class="navbar-brand"
+              to="/telemarketing"
+            >
+            {{ $t("nav.telemarketing") }}
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              v-popover:popover1
+              class="navbar-brand"
+              to="/telemarketing/single-agent"
+            >
+            {{ $t("nav.single-agent") }}
+            </router-link>
+          </li>
+           <li>
+            <router-link
+              v-popover:popover1
+              class="navbar-brand"
+              to="/telemarketing/multiple-agent"
+            >
+            {{ $t("nav.multiple-agent") }}
+            </router-link>
+          </li>
         </ul>
       </nav>
       <div class="copyright">

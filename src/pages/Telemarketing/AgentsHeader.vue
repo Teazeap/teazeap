@@ -33,7 +33,7 @@
           </div>
         </v-col>
         <v-col cols="12" sm="5" lg="6">
-          <img src="/img/tele.png" alt="banner" class="img-fluid" />
+          <img :src="programPicUrl" alt="banner" class="img-fluid" />
         </v-col>
       </v-row>
     </v-container>
@@ -52,6 +52,10 @@ export default {
       type: String,
       required: true,
       default: "",
+    },
+    programPicUrl: {
+      type: String,
+      default: "/img/tele.png",
     },
     subTitle: {
       type: String,

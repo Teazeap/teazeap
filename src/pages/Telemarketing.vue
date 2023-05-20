@@ -99,7 +99,7 @@
             <img src="/img/process.png" alt="banner" class="img-fluid" />
           </v-col>
           <v-col cols="12" sm="5" lg="6">
-            <Collapsible />
+            <Collapsible :processes="processes" />
           </v-col>
         </div>
       </div>
@@ -215,6 +215,23 @@ export default {
         email: "",
         message: "",
       },
+      processes: [
+        {
+          id: 1,
+          title: "UNDERSTAND CUSTOMER NEEDS",
+          content: "Teazeap would start by understanding the customer's business requirements, target audience, and sales goals. Based on this information, we would recommend the most appropriate virtual telemarketing service to meet the customer's needs."
+        },
+        {
+          id: 2,
+          title: "CONFIGURE INFRASTRUCTURE",
+          content: "Once the service is chosen, Teazeap would configure the necessary infrastructure, including software, hardware, and network components. This would ensure that the virtual telemarketing service is set up correctly and functions optimally."
+        },
+        {
+          id: 3,
+          title: "TRAIN AGENTS",
+          content: "Teazeap would provide comprehensive training to agents on how to use the virtual telemarketing service effectively, including best practices for managing calls, handling objections, and closing sales. This training would help agents to provide top-quality service to customers and achieve the customer's sales goals."
+        }
+      ],
       team: [
         {
           name: "Clifton Moreau",

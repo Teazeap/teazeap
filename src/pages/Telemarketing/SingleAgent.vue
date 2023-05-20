@@ -2,7 +2,7 @@
   <div>
     <AgentsHeader
       title="Single Agent Program"
-      sub-title="Maximize your sales potential with our expert telemarketing services."
+      sub-title="Experience success with hassle-free single agent telemarketing campaigns at Teazeap"
     />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
@@ -15,95 +15,43 @@
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
-              When you’re ready to free yourself from a failure-ridden telemarketing process and try something that actually works, call us. Avatar & Echo Telemarketing specializes in outsourcing single agent telemarketing campaigns. These campaigns are hassle-free for you and provide real results. Our highly-trained, non-accented telemarketers have a proven track record of success. Single agents start at $7.00 per hour.
+              When you’re ready to free yourself from a failure-ridden
+              telemarketing process and try something that actually works, contact
+              us. Teazeap Telemarketing specializes in outsourcing single
+              agent telemarketing campaigns. These campaigns are hassle-free for
+              you and provide real results. Our highly-trained, non-accented
+              telemarketers have a proven track record of success. Single agents
+              start at $7.00 per hour.
             </p>
           </v-col>
         </div>
       </div>
     </div>
-    <!-- video section -->
-    <!-- <div class="container" :style="commonMarginClass">
-      <v-row>
-        <v-col cols="12" sm="7" lg="5" >
-          <div class="section pt-0">
-            <div class="container section-card">
-              <h2 class="title text-center">
-                Get a Glimpse Inside: Watch Our Call Center Agents in Action
-              </h2>
-              <p class="video-section-introduction">
-                At Teazeap, we take pride in our team of professional and
-                dedicated call center agents who work tirelessly to provide
-                exceptional service to our clients. Our video gallery offers an
-                inside look into the daily operations of our call center,
-                highlighting the professionalism, expertise, and dedication of
-                our agents. See firsthand how our team works to generate leads,
-                increase sales, and promote brands through the power of
-                telemarketing.
-              </p>
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" sm="7" lg="3" >
-          <div class="section pt-0">
-            <div class="container section-card">
-              <h2 class="title text-center">
-                Get a Glimpse Inside: Watch Our Call Center Agents in Action
-              </h2>
-              <p class="video-section-introduction">
-                At Teazeap, we take pride in our team of professional and
-                dedicated call center agents who work tirelessly to provide
-                exceptional service to our clients. Our video gallery offers an
-                inside look into the daily operations of our call center,
-                highlighting the professionalism, expertise, and dedication of
-                our agents. See firsthand how our team works to generate leads,
-                increase sales, and promote brands through the power of
-                telemarketing.
-              </p>
-            </div>
-          </div>
-        </v-col>
-      </v-row>
-    </div> -->
-
     <!-- what to expect section -->
     <div class="row what-to-expect" :style="commonMarginClass">
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
-        <div class="container section-card">
-          <h2 class="title text-center">
-            What to Expect
-          </h2>
-          <p class="video-section-introduction">
-            At Teazeap, we take pride in our team of professional and dedicated
-            call center agents who work tirelessly to provide exceptional
-            service to our clients. Our video gallery offers an inside look into
-            the daily operations of our call center, highlighting the
-            professionalism, expertise, and dedication of our agents. See
-            firsthand how our team works to generate leads, increase sales, and
-            promote brands through the power of telemarketing.
-          </p>
+        <div class="container section-card contact-steps">
+          <h2 class="title text-center">Just Follow These Steps</h2>
+          <ol>
+            <li>Set their schedule</li>
+            <li>Supply a script</li>
+            <li>Provide the call list</li>
+            <li>Get us the credentials to set them up on dialers if needed</li>
+            <li>Manage them as you would an in-office telemarketing agent</li>
+            <li><span class="step-empasize">GROW YOUR SALES!</span></li>
+          </ol>
         </div>
       </v-col>
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
         <div class="container section-card benefits">
-          <h2 class="title text-center what-to-expect-title">
-            The Benefits
-          </h2>
-          <p>Taking a Certified Educator exam will enable users to:</p>
-          <ul>
+          <h2 class="title text-center what-to-expect-title">The Benefits</h2>
+          <p>Contact Teazeap when you’re ready for:</p>
+          <ul lang="la">
             <li>More appointment setting</li>
             <li>More lead generation</li>
             <li>More live transfers</li>
             <li>Less expense, overhead, and hassle</li>
           </ul>
-          <!-- <p class="video-section-introduction">
-            At Teazeap, we take pride in our team of professional and dedicated
-            call center agents who work tirelessly to provide exceptional
-            service to our clients. Our video gallery offers an inside look into
-            the daily operations of our call center, highlighting the
-            professionalism, expertise, and dedication of our agents. See
-            firsthand how our team works to generate leads, increase sales, and
-            promote brands through the power of telemarketing.
-          </p> -->
         </div>
       </v-col>
     </div>
@@ -112,93 +60,16 @@
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
-          Our Strategic Approach To Providing Telemarketing Services
+          Make More Money with Live Lead Transfers
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
-            <img src="/img/process.png" alt="banner" class="img-fluid" />
+            <img src="/img/single-agent.png" alt="banner" class="img-fluid" />
           </v-col>
           <v-col cols="12" sm="5" lg="6">
-            <Collapsible />
+            <Collapsible :processes="processes" />
           </v-col>
         </div>
-      </div>
-    </div>
-
-    <!-- plans section -->
-    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
-      <div class="container section-card">
-        <h2 class="title">CHOOSING Your Solution:</h2>
-        <h5 class="description">
-          If you're looking for a reliable partner to help you reach your sales
-          goals and improve customer engagement, look no further than Teazeap.
-          Our telemarketing and call center services are tailored to meet your
-          unique needs and deliver results.
-        </h5>
-        <div class="row mt-n4 mb-4" style="justify-content: center">
-          <v-col cols="12" sm="7" lg="4">
-            <PlanCard
-              :card-styles="{
-                backgroundColor: 'rgb(96, 125, 249)',
-                actionButtonColor: 'rgb(96, 125, 249)',
-                actionButtonBackground: 'white',
-              }"
-              :plan="{
-                title: 'AVATAR',
-                subtitle: 'If this describes your campaign:',
-                keyPoints: [
-                  'Identify ideal customers for products/services.',
-                  'Research potential leads for sales.',
-                  'Generate leads through surveys.',
-                ],
-                actionButton: {
-                  text: 'Reserve',
-                  url: '',
-                },
-              }"
-            />
-          </v-col>
-          <v-col cols="12" sm="5" lg="4">
-            <PlanCard
-              :card-styles="{
-                backgroundColor: '#f96332',
-                textColor: 'white',
-                actionButtonColor: '#f96332',
-                actionButtonBackground: 'white',
-              }"
-              :plan="{
-                title: 'SPECIALS',
-                subtitle: 'If this describes your campaign:',
-                keyPoints: [
-                  'Credit check for prospects.',
-                  'Thorough research for sales leads.',
-                  'Maintain accurate CRM data.',
-                ],
-                actionButton: {
-                  text: 'Reserve',
-                  url: '',
-                },
-              }"
-            />
-          </v-col>
-        </div>
-      </div>
-    </div>
-    <!-- testimonials section -->
-    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
-      <div class="container section-card">
-        <h2 class="title text-center">Real Clients. Real Results</h2>
-        <flickity
-          ref="communityBadgeInfoModalSwiper"
-          :options="flickityOptions"
-          class="carousel"
-        >
-          <TesimonialsCard
-            v-for="(testimonial, index) in testimonials"
-            :key="index"
-            :testimonial="testimonial"
-          />
-        </flickity>
       </div>
     </div>
     <Contact />
@@ -208,9 +79,6 @@
 import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Telemarketing/Contact";
 import AgentsHeader from "@/pages/Telemarketing/AgentsHeader.vue";
-import Flickity from "vue-flickity";
-import TesimonialsCard from "@/pages/Telemarketing/TesimonialsCard";
-import PlanCard from "@/pages/Telemarketing/PlanCard";
 import sizeMixin from "@/plugins/sizeMixin.js";
 
 export default {
@@ -221,11 +89,8 @@ export default {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
     Contact,
-    TesimonialsCard,
     AgentsHeader,
     Collapsible,
-    Flickity,
-    PlanCard,
   },
   data() {
     return {
@@ -234,6 +99,26 @@ export default {
         email: "",
         message: "",
       },
+      processes: [
+        {
+          id: 1,
+          title: "OUTSOURCE YOUR COLD CALLING",
+          content:
+            "Unlock the power of outsourcing your telemarketing to drive unparalleled growth. Experience seamless hiring and cold calling with our live lead transfer program. Tailored for businesses needing one to a few live agents, our single agent telemarketing program delivers exceptional results.",
+        },
+        {
+          id: 2,
+          title: "EFFECTIVE TELEMARKETING WITH SINGLE AGENTS.",
+          content:
+            "At Teazeap, we redefine excellence in outsourcing by prioritizing quality over chance. Our rigorous selection process ensures that only the best-trained telemarketing agents, with experience and motivation, join our American-run call centers.<br/> <br/>Our telemarketers are college graduates with <span style='font-weight: bold'>telesales experience</span>,<span style='font-weight: bold'>self-managers</span>, <span style='font-weight: bold'>skilled in appointments</span>,<span style='font-weight: bold'>scripts</span>,<span style='font-weight: bold'>sales reporting</span>",
+        },
+        {
+          id: 3,
+          title: "SKIP THE HEADACHE & STOP WASTING TIME",
+          content:
+            "We outsource only the best single agent telemarketers by providing all the following hiring requirements: <ul style='margin-left: 2rem'> <li>Background criminal checks </li><li>Office space </li><li>Speech training</li><li>Management</li><li>English comprehension testing</li></ul>",
+        },
+      ],
       team: [
         {
           name: "Clifton Moreau",
@@ -306,11 +191,6 @@ export default {
   },
   created() {
     this.handleLangauge();
-  },
-  computed: {
-    swiper() {
-      return this.$refs.communityBadgeInfoModalSwiper;
-    },
   },
   methods: {
     handleLangauge() {

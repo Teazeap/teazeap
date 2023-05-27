@@ -48,13 +48,9 @@
             class="video-carousel"
           >
             <div class="col-md-4" v-for="(video, id) in videos" :key="id">
-              <iframe
-                width="100%"
-                height="345"
-                class="video-frame"
-                :src="video.src"
-              >
-              </iframe>
+              <video width="100%" height="345" controls class="video-frame">
+                <source :src="video.src" type="video/mp4">
+              </video>
             </div>
           </flickity>
         </div>
@@ -88,7 +84,7 @@
         </div>
       </div>
     </div>
-    <!-- video section -->
+    <!-- telemarketing steps -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
@@ -132,10 +128,11 @@
                   'Generate leads through surveys.',
                 ],
                 actionButton: {
-                  text: 'Reserve',
+                  text: 'View',
                   url: '',
                 },
               }"
+              to="/telemarketing/single-agent"
             />
           </v-col>
           <v-col cols="12" sm="5" lg="4">
@@ -155,10 +152,11 @@
                   'Maintain accurate CRM data.',
                 ],
                 actionButton: {
-                  text: 'Reserve',
+                  text: 'View',
                   url: '',
                 },
               }"
+              to="/telemarketing/multiple-agent"
             />
           </v-col>
         </div>
@@ -349,7 +347,7 @@ export default {
 .video-frame {
   border-radius: 24px;
   -webkit-box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
-  box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
+  box-shadow: 0px 5px 12px 0px rgb(0 0 0 / 20%);
   transition: 0.3s;
 }
 

@@ -8,10 +8,10 @@
               Teazeap Telemarketing And Call Center Services
             </h1>
             <h4
-              class="banner-subtitle white--text font-weight-regular text-white"
+              class="banner-subtitle white--text font-weight-regular text-white text-justify"
             >
-              "Maximize your sales potential with our expert telemarketing
-              services."
+              Maximize your sales potential with our expert telemarketing
+               and call center services with price less than <strong>$10/agent</strong>
             </h4>
             <div class="mt-md-16 mt-10 d-sm-flex d-block">
               <button

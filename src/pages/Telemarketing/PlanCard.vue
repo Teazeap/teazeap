@@ -9,6 +9,7 @@
       :min-height="375"
       :max-height="375"
       :style="vcardStyles"
+      :to="to"
     >
       <v-card-title
         :style="textStyles"
@@ -55,6 +56,10 @@ export default {
       type: Object,
       required: true,
       default: () => {}
+    },
+    to: {
+      type: String,
+      default: () => ''
     }
   },
   computed: {
@@ -99,6 +104,7 @@ export default {
 .profile-card:hover {
   transform: translateY(-2px);
   cursor: pointer;
+  text-decoration: none;
 }
 .plan-text {
   font-size: 18px;

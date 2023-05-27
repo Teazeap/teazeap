@@ -20,9 +20,9 @@ export default {
   name: "Collapsible",
   props: {
     processes: {
-      type: Object,
+      type: Array,
       required: true,
-      default: () => {},
+      default: () => [],
     },
   },
   mounted() {

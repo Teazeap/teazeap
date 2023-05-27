@@ -56,7 +56,9 @@
       </v-col>
     </div>
 
-    <!-- video section -->
+    <PricingTable :plans="plans"/>
+
+    <!-- propgram steps-->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
@@ -79,6 +81,7 @@
 import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Telemarketing/Contact";
 import AgentsHeader from "@/pages/Telemarketing/AgentsHeader.vue";
+import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
 
 export default {
@@ -90,6 +93,7 @@ export default {
     [FormGroupInput.name]: FormGroupInput,
     Contact,
     AgentsHeader,
+    PricingTable,
     Collapsible,
   },
   data() {
@@ -187,6 +191,60 @@ export default {
           message: `With the RXR we manager our team and it feels like we are in the middle of the action.  The software is amazing are we run better then we did when we had the call center here. It's amazing that they turned the complex process of running a call center into a service!`,
         },
       ],
+      plans:  [
+        {
+          isPopular: false,
+          planName: "CALL CENTER",
+          planCost: 9.5,
+          planDetails: [
+            '<strong> 3/more</strong> Agents and <strong>1</strong> Manager',
+            '<strong>10</strong> Domains',
+            '<strong>10</strong> Domains',
+            '<strong>10</strong> Domains',
+            '<strong>10</strong> Domains'
+          ],
+          className: 'pro'
+        },
+        {
+          isPopular: false,
+          planName: "FILTERING AVATAR",
+          planCost: 9.5,
+          planDetails: [
+            '<strong>3</strong> Agents and <strong>1</strong> Manager',
+            '<strong>Scripting</strong>',
+            '<strong>CRM</strong>',
+            '<strong>10</strong> Domains',
+            '<strong>10</strong> Domains'
+          ],
+          className: 'basic'
+        },
+        {
+          isPopular: false,
+          planName: "FILTERING SPECIALS",
+          planCost: 10.5,
+          planDetails: [
+            '<strong>5/more</strong> Agents and <strong>1</strong> Manager',
+            '<strong>Scripting</strong>',
+            '<strong>CRM & Dialer</strong>',
+            '<strong>Training</strong>',
+            '<strong>Training</strong>',
+          ],
+          className: 'echo'
+        },
+        {
+          isPopular: true,
+          planName: "BUNDLE",
+          planCost: 12,
+          planDetails: [
+            'Filtering Avatar',
+            'Filtering Specials',
+            '',
+            '',
+            '',
+          ],
+          className: 'business'
+        }
+      ]
     };
   },
   created() {

@@ -2,7 +2,7 @@
   <div>
     <AgentsHeader
       title="Multiple Agent Program"
-      sub-title="Outsource your entire call center, escape failure, and maximize sales capacity"
+      sub-title="Advanced telemarketing services with live lead transfers and multi-agent program options."
       program-pic-url="/img/team-agents.png"
     />
     <div class="pt-0 intro-container" :style="commonMarginClass">

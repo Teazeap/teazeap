@@ -1,9 +1,7 @@
 <template>
   <div class="pt-0" :style="commonMarginClass">
     <div class="container section-card">
-      <h2 class="title text-center">
-        Simple, Transparent Pricing
-      </h2>
+      <h2 class="title text-center">Simple, Transparent Pricing</h2>
       <div class="row plan-container">
         <div
           v-for="(
@@ -291,6 +289,9 @@ body {
       margin: 0;
       border-bottom: 1px solid #f2f2f2;
       height: 30px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
     }
   }
   .buy-button-box {

@@ -16,18 +16,20 @@
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
               When you’re ready to free yourself from a failure-ridden
-              telemarketing process and try something that actually works, contact
-              us. Teazeap Telemarketing specializes in outsourcing single
-              agent telemarketing campaigns. These campaigns are hassle-free for
-              you and provide real results. Our highly-trained, non-accented
-              telemarketers have a proven track record of success. Single agents
-              start at $7.00 per hour.
+              telemarketing process and try something that actually works,
+              contact us. Teazeap Telemarketing specializes in outsourcing
+              single agent telemarketing campaigns. These campaigns are
+              hassle-free for you and provide real results. Our highly-trained,
+              non-accented telemarketers have a proven track record of success.
+              Single agents start at $9.5 per hour.
             </p>
           </v-col>
         </div>
       </div>
     </div>
-    <!-- what to expect section -->
+
+    <PriceBadge />
+    <!-- steps section -->
     <div class="row what-to-expect" :style="commonMarginClass">
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
         <div class="container section-card contact-steps">
@@ -56,7 +58,7 @@
       </v-col>
     </div>
 
-    <PricingTable :plans="plans"/>
+    <PricingTable :plans="plans" />
 
     <!-- propgram steps-->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
@@ -83,6 +85,7 @@ import Contact from "@/pages/Telemarketing/Contact";
 import AgentsHeader from "@/pages/Telemarketing/AgentsHeader.vue";
 import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
+import PriceBadge from "./PriceBadge.vue";
 
 export default {
   name: "single-agent",
@@ -95,6 +98,7 @@ export default {
     AgentsHeader,
     PricingTable,
     Collapsible,
+    PriceBadge,
   },
   data() {
     return {
@@ -191,60 +195,54 @@ export default {
           message: `With the RXR we manager our team and it feels like we are in the middle of the action.  The software is amazing are we run better then we did when we had the call center here. It's amazing that they turned the complex process of running a call center into a service!`,
         },
       ],
-      plans:  [
+      plans: [
         {
           isPopular: false,
           planName: "CALL CENTER",
           planCost: 9.5,
           planDetails: [
-            '<strong> 3/more</strong> Agents and <strong>1</strong> Manager',
-            '<strong>10</strong> Domains',
-            '<strong>10</strong> Domains',
-            '<strong>10</strong> Domains',
-            '<strong>10</strong> Domains'
+            "<strong> 3/more</strong> Agents and <strong>1</strong> Manager",
+            "<strong>10</strong> Domains",
+            "<strong>10</strong> Domains",
+            "<strong>10</strong> Domains",
+            "<strong>10</strong> Domains",
           ],
-          className: 'pro'
+          className: "pro",
         },
         {
           isPopular: false,
           planName: "FILTERING AVATAR",
           planCost: 9.5,
           planDetails: [
-            '<strong>3</strong> Agents and <strong>1</strong> Manager',
-            '<strong>Scripting</strong>',
-            '<strong>CRM</strong>',
-            '<strong>10</strong> Domains',
-            '<strong>10</strong> Domains'
+            "<strong>3</strong> Agents and <strong>1</strong> Manager",
+            "<strong>Scripting</strong>",
+            "<strong>CRM</strong>",
+            "<strong>10</strong> Domains",
+            "<strong>10</strong> Domains",
           ],
-          className: 'basic'
+          className: "basic",
         },
         {
           isPopular: false,
           planName: "FILTERING SPECIALS",
           planCost: 10.5,
           planDetails: [
-            '<strong>5/more</strong> Agents and <strong>1</strong> Manager',
-            '<strong>Scripting</strong>',
-            '<strong>CRM & Dialer</strong>',
-            '<strong>Training</strong>',
-            '<strong>Training</strong>',
+            "<strong>5/more</strong> Agents and <strong>1</strong> Manager",
+            "<strong>Scripting</strong>",
+            "<strong>CRM & Dialer</strong>",
+            "<strong>Training</strong>",
+            "<strong>Training</strong>",
           ],
-          className: 'echo'
+          className: "echo",
         },
         {
           isPopular: true,
           planName: "BUNDLE",
           planCost: 12,
-          planDetails: [
-            'Filtering Avatar',
-            'Filtering Specials',
-            '',
-            '',
-            '',
-          ],
-          className: 'business'
-        }
-      ]
+          planDetails: ["Filtering Avatar", "Filtering Specials", "", "", ""],
+          className: "business",
+        },
+      ],
     };
   },
   created() {
@@ -343,7 +341,7 @@ export default {
 }
 
 .what-to-expect {
-  margin-top: 28px;
+  /* margin-top: 28px; */
 }
 
 .what-to-expect-title {

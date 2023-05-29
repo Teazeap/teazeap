@@ -43,8 +43,60 @@ export default {
   props: {
     plans: {
       type: Array,
-      required: true,
-      default: () => [],
+      default: () => [
+        {
+          isPopular: false,
+          planName: "CALL CENTER",
+          planCost: 9.5,
+          planDetails: [
+            "<strong> 3/more</strong> Agents and <strong>1</strong> Manager",
+            "Multichannel",
+            "Call Recording",
+            "Quality Assurance",
+            "Analytics",
+          ],
+          className: "pro",
+        },
+        {
+          isPopular: false,
+          planName: "FILTERING AVATAR",
+          planCost: 9.5,
+          planDetails: [
+            "<strong>3</strong> Agents and <strong>1</strong> Manager",
+            "Lead Management",
+            "Reporting",
+            "",
+            "",
+          ],
+          className: "basic",
+        },
+        {
+          isPopular: false,
+          planName: "FILTERING SPECIALS",
+          planCost: 10.5,
+          planDetails: [
+            "<strong>5/more</strong> Agents and <strong>1</strong> Manager",
+            "Scripting",
+            "CRM Integration",
+            "Dialer",
+            "Performance Metrics",
+          ],
+          className: "echo",
+        },
+        {
+          isPopular: true,
+          planName: "BUNDLE",
+          planCost: 12,
+          planDetails: [
+            "Everything in <strong>Filtering Avatar </strong> ",
+            "Everything in <strong>Filtering Specials</strong>",
+            "Team Collaboration Features",
+            "Lead Database Management",
+            "Performance Tracking Tools",
+          ],
+          className: "business",
+        },
+      ],
     },
   },
 };

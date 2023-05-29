@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <PriceBadge />
+    <PriceBadge :plan="filteringAvatarPlan"/>
     <!-- steps section -->
     <div class="row what-to-expect" :style="commonMarginClass">
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
@@ -202,10 +202,10 @@ export default {
           planCost: 9.5,
           planDetails: [
             "<strong> 3/more</strong> Agents and <strong>1</strong> Manager",
-            "<strong>10</strong> Domains",
-            "<strong>10</strong> Domains",
-            "<strong>10</strong> Domains",
-            "<strong>10</strong> Domains",
+            "Multichannel",
+            "Call Recording",
+            "Quality Assurance",
+            "Analytics",
           ],
           className: "pro",
         },
@@ -215,10 +215,10 @@ export default {
           planCost: 9.5,
           planDetails: [
             "<strong>3</strong> Agents and <strong>1</strong> Manager",
-            "<strong>Scripting</strong>",
-            "<strong>CRM</strong>",
-            "<strong>10</strong> Domains",
-            "<strong>10</strong> Domains",
+            "Lead Management",
+            "Reporting",
+            "",
+            "",
           ],
           className: "basic",
         },
@@ -228,10 +228,10 @@ export default {
           planCost: 10.5,
           planDetails: [
             "<strong>5/more</strong> Agents and <strong>1</strong> Manager",
-            "<strong>Scripting</strong>",
-            "<strong>CRM & Dialer</strong>",
-            "<strong>Training</strong>",
-            "<strong>Training</strong>",
+            "Scripting",
+            "CRM Integration",
+            "Dialer",
+            "Performance Metrics",
           ],
           className: "echo",
         },
@@ -239,10 +239,15 @@ export default {
           isPopular: true,
           planName: "BUNDLE",
           planCost: 12,
-          planDetails: ["Filtering Avatar", "Filtering Specials", "", "", ""],
+          planDetails: ["Everything in <strong>Filtering Avatar </strong> ", "Everything in <strong>Filtering Specials</strong>", "Team Collaboration Features", "Lead Database Management", "Performance Tracking Tools"],
           className: "business",
         },
       ],
+      filteringAvatarPlan : {
+        name: "FILTERING AVATAR",
+        price: "9.5",
+        points: ['3 Agents and 1 Manager', 'Outbound and inbound call handling', 'Appointment scheduling and reminders']
+      }
     };
   },
   created() {

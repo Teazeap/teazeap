@@ -16,24 +16,33 @@
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
-              Leverage our advanced services for optimal telesales ROI through qualified live lead transfers. Say goodbye to unproductive cold calls, as our telemarketing experts generate warm, qualified leads. With our 100% USA-run call centers, professional representatives, and cost-effective solutions, streamline your costs and amplify profitability. Empower your sales team to focus on closing deals while we handle the groundwork. Take the first step today towards maximizing your revenue potential.
+              Leverage our advanced services for optimal telesales ROI through
+              qualified live lead transfers. Say goodbye to unproductive cold
+              calls, as our telemarketing experts generate warm, qualified
+              leads. With our 100% USA-run call centers, professional
+              representatives, and cost-effective solutions, streamline your
+              costs and amplify profitability. Empower your sales team to focus
+              on closing deals while we handle the groundwork. Take the first
+              step today towards maximizing your revenue potential.
             </p>
           </v-col>
         </div>
       </div>
     </div>
+    <PriceBadge :plan="filteringAvatarPlan"/>
     <!-- what to expect section -->
     <div class="row what-to-expect" :style="commonMarginClass">
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
         <div class="container section-card contact-steps">
-          <h2 class="title text-center">Just Follow These Steps</h2>
+          <h2 class="title text-center">How It Works</h2>
           <ol>
-            <li>Set their schedule</li>
-            <li>Supply a script</li>
-            <li>Provide the call list</li>
-            <li>Get us the credentials to set them up on dialers if needed</li>
-            <li>Manage them as you would an in-office telemarketing agent</li>
-            <li><span class="step-empasize">GROW YOUR SALES!</span></li>
+            <li>Echo Live separates prospect's voice and scripted prompts.</li>
+            <li>Telemarketers hear prospects in their left headphone.</li>
+            <li>Telemarketers push appropriate buttons based on prospect's response.</li>
+            <li>Pre-recorded responses played in right headphone, with script displayed on screen.</li>
+            <li>Telemarketers echo exactly what they hear and see, like karaoke.</li>
+            <li>Echo agents become proficient within an hour.</li>
+            <li><span class="step-empasize">GENERATES QUALIFIED, LIVE, WARM TRANSFERS.</span></li>
           </ol>
         </div>
       </v-col>
@@ -42,20 +51,21 @@
           <h2 class="title text-center what-to-expect-title">The Benefits</h2>
           <p>Contact Teazeap when you’re ready for:</p>
           <ul lang="la">
-            <li>Spend less money</li>
-            <li>Work with the experts</li>
-            <li>Get full transparency and control</li>
-            <li>Ensure success</li>
+            <li>Call Analytics Dashboard</li>
+            <li>Customizable Script Templates</li>
+            <li>Multi-Channel Outreach</li>
+            <li>Lead Generation Assistance</li>
+            <li>Call Disposition Management</li>
           </ul>
         </div>
       </v-col>
     </div>
 
-    <!-- video section -->
+    <!-- steps section -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
-          Make More Money: Outsource Your Call Center
+          Make More Money: Outsource Your Telemarketing Campaign
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
@@ -67,6 +77,8 @@
         </div>
       </div>
     </div>
+
+    <PricingTable />
     <Contact />
   </div>
 </template>
@@ -75,6 +87,8 @@ import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Telemarketing/Contact";
 import AgentsHeader from "@/pages/Telemarketing/AgentsHeader.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
+import PriceBadge from "./PriceBadge.vue";
+import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 
 export default {
   name: "multiple-agent",
@@ -85,7 +99,9 @@ export default {
     [FormGroupInput.name]: FormGroupInput,
     Contact,
     AgentsHeader,
+    PricingTable,
     Collapsible,
+    PriceBadge,
   },
   data() {
     return {
@@ -103,7 +119,7 @@ export default {
         },
         {
           id: 2,
-          title: "EFFECTIVE TELEMARKETING WITH SINGLE AGENTS.",
+          title: "EFFECTIVE TELEMARKETING WITH MULTIPLE AGENTS.",
           content:
             "At Teazeap, we redefine excellence in outsourcing by prioritizing quality over chance. Our rigorous selection process ensures that only the best-trained telemarketing agents, with experience and motivation, join our American-run call centers.<br/> <br/>Our telemarketers are college graduates with <span style='font-weight: bold'>telesales experience</span>,<span style='font-weight: bold'>self-managers</span>, <span style='font-weight: bold'>skilled in appointments</span>,<span style='font-weight: bold'>scripts</span>,<span style='font-weight: bold'>sales reporting</span>",
         },
@@ -114,43 +130,11 @@ export default {
             "We outsource only the best single agent telemarketers by providing all the following hiring requirements: <ul style='margin-left: 2rem'> <li>Background criminal checks </li><li>Office space </li><li>Speech training</li><li>Management</li><li>English comprehension testing</li></ul>",
         },
       ],
-      team: [
-        {
-          name: "Clifton Moreau",
-          quote: "landing-page.chief-quote",
-          pictureUrl: "img/ceo.jpg",
-          title: "landing-page.chief",
-          position: "top",
-        },
-        {
-          name: "Calerb Louis Jean",
-          quote: "landing-page.project-quote",
-          pictureUrl: "img/jake_2.jpg",
-          title: "landing-page.project",
-          position: "top",
-        },
-        {
-          name: "Nnenia Stephens",
-          quote: "landing-page.comm-quote",
-          pictureUrl: "img/nnenia_1.jpg",
-          title: "landing-page.comm",
-          position: "top",
-        },
-      ],
-      videos: [
-        {
-          id: 1,
-          src: "https://videos.ctfassets.net/dr15y1pi2yc9/77uBczZTTHGFOYJNjgL6qD/1a4577bff54f4a117ee37a4c7aee7b92/videoplayback-1.mp4",
-        },
-        {
-          id: 2,
-          src: "https://videos.ctfassets.net/dr15y1pi2yc9/3p9fUqGM6nLVbKWMBSsqt9/634faaa8c15656d5b6ccd0b0d7c8ac1c/videoplayback-2.mp4",
-        },
-        {
-          id: 3,
-          src: "https://videos.ctfassets.net/dr15y1pi2yc9/NVi7i40iXbsu30guZRUak/ce71561a78a2a18bb474181d98437cdc/videoplayback-3.mp4",
-        },
-      ],
+      filteringAvatarPlan : {
+        name: "FILTERING SPECIALS",
+        price: "10.5",
+        points: ['5/more and 1 Manager', 'Scripting', 'CRM Integration', 'Dialer']
+      },
       flickityOptions: {
         adaptiveHeight: false,
         cellAlign: "left",

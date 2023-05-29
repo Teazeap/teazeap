@@ -4,20 +4,16 @@
       <div class="row">
         <v-col cols="12">
           <div class="card-container">
-            <h1 class="card-title">FILTERING AVATAR</h1>
+            <h1 class="card-title">{{plan.name}}</h1>
             <p class="card-description">What You'll Get</p>
             <ul class="card-get_list">
-              <li class="card-get_list__item">One-time initiation fee $0</li>
-              <li class="card-get_list__item">Deposit $50k</li>
-              <li class="card-get_list__item">Pricing / rates Dynamic</li>
-              <li class="card-get_list__item">Priority fleet access Yes</li>
-              <li class="card-get_list__item">Guaranteed fleet access No</li>
+              <li v-for="p,index in plan.points" :key="index" class="card-get_list__item">{{p}}</li>
             </ul>
             <div class="card-price">
-              <h2>$9.5</h2>
+              <h2>${{plan.price}}</h2>
               /<span class="card-price_month">Hour</span>
             </div>
-            <button class="card-main_button">Choose</button>
+            <button class="card-main_button">Get Plan</button>
           </div>
         </v-col>
       </div>
@@ -26,8 +22,18 @@
 </template>
 
 <script>
+import sizeMixin from "@/plugins/sizeMixin.js";
+
 export default {
   name: "PriceBadge",
+  mixins: [sizeMixin],
+  props: {
+    plan: {
+      type: Object,
+      required: true,
+      default: () => {},
+    },
+  },
 };
 </script>
 
@@ -107,9 +113,10 @@ $main-color: #f96332;
   height: 20px;
   margin-right: 10px;
   width: 20px;
-  background-image: url(https://icons.veryicon.com/png/o/miscellaneous/zr_icon/checkbox-5.png);
+  background-image: url("../../assets/img/checkmark-1.svg");
   background-size: cover;
 }
+
 
 .card-price {
   display: flex;

@@ -106,7 +106,7 @@ export default {
       return this.$t("contact.email");
     },
     firstPlaceholder() {
-      return this.$t("contact.name");
+      return this.$t("contact.full-name");
     }
   },
   methods: {
@@ -115,19 +115,19 @@ export default {
         title: "Message sent",
         text: "Our team will review your request and reach out to you shortly.",
         icon: "success",
-        confirmButtonText: "Create Profile"
+        confirmButtonText: "Okay"
       }).then(result => {
         if (result.value) {
-          // this.handleEmailNotification();
+          this.handleEmailNotification();
           this.form = {};
           this.$validator.reset();
-          this.$router.push({name: 'landing'})
+          // this.$router.push({name: 'landing'})
         }
       });
     },
     handleEmailNotification() {
       const email = {};
-      email.message = `<div> Dear ${this.form.name} </div> <div> <p> The Teazeap recruiting team is very happy you have chosen us to help you find the best placement that will suit you. </p> </div> <div> <p> In order for us to fully assist you in the process, we would like to have some relevant information. </p> </div> <ol> <li>For starters, where are you from and where are you currently located?</li> <li>Do you have any teaching experience and are you familiar with teaching kindergarten?</li> <li>Do you have any teaching certificates?</li> <li>Are you fully vaccinated?</li> <li>Finally, When will you be willing to relocate to Taiwan?</li> </ol> <div> <p> Last but not least when will you be available for a quick e-meeting this week? </p> </div> <div> <p> Hope to hear from you soon </p> </div> </div>`;
+      email.message = `<div>Dear ${this.form.name}</div><div><p>Thank you for taking the time to fill out the form on our website and expressing your interest in Teazeap's telemarketing services. We appreciate your consideration and the opportunity to assist you in reaching your marketing goals.</p></div><div><p>At Teazeap, we understand the importance of effective telemarketing in today's competitive business landscape. Our call filtering avatar plan, which includes 3 agents and 1 manager, is designed to provide you with a comprehensive solution to maximize your telesales efforts.</p></div><div><p>We pride ourselves on delivering advanced telemarketing services that can help you optimize your telesales budget and achieve a real return on investment. Our plan offers various features such as scripting, CRM integration, and a reliable dialer system to streamline your telemarketing campaigns.</p></div><div><p>We would be delighted to discuss your specific requirements and tailor a solution that aligns with your business objectives. Our experienced team is ready to guide you through the process and ensure your telemarketing endeavors are successful.</p></div><div><p>Thank you again for considering Teazeap. We value your trust and confidence in our services.</p></div><div><p>Hope to hear from you soon</p></div>`;
       email.subject = "Thanks for reaching out to us";
       email.address = this.form.email;
       email.regards = "Regards,";

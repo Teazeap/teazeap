@@ -22,6 +22,10 @@ export default {
       type: String,
       default: "",
     },
+    type: {
+      type: String,
+      default: "link",
+    }
   },
   computed: {
     componentType() {
@@ -41,6 +45,9 @@ export default {
       if (this.text) {
         this.$emit("onLanguageChange", this.text);
       }
+
+      if (this.type === "phone-number")
+      this.$emit("onPhoneNumberClicked");
     },
   },
 };

@@ -27,7 +27,7 @@
             </li>
           </ul>
           <div class="buy-button-box">
-            <a href="#" :class="['buy-now', `${className}`]">GET PLAN</a>
+            <a href="#" :class="['buy-now', `${className}`]" @click="$emit('get-plan')">GET PLAN</a>
           </div>
         </div>
       </div>

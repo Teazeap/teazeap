@@ -41,7 +41,8 @@
         "full-name": "Full Name...",
         "email": "電子信箱",
         "type": "輸入訊息...",
-        "send": "轉送訊息"
+        "send": "轉送訊息",
+        "cancel": "Cancel"
     },
     "teachers": {
         "find": "為您找到下一份工作",

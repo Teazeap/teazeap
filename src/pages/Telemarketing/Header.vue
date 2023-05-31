@@ -16,6 +16,7 @@
             <div class="mt-md-16 mt-10 d-sm-flex d-block">
               <button
                 class="download mr-4 mr-0 mr-sm-5 mb-5 mb-md-0 btn-custom-md d-sm-flex d-block btn-100"
+                @click="openDialog = true"
               >
                 Free Consultation
               </button>
@@ -26,6 +27,7 @@
           <img src="/img/tele.png" alt="banner" class="img-fluid" />
         </v-col>
       </v-row>
+      <ContactDialog  :dialog="openDialog" @close="openDialog = false" />
     </v-container>
   </div>
 </template>
@@ -33,6 +35,7 @@
 <script>
 import { Button, FormGroupInput } from "@/components";
 import sizeMixin from "@/plugins/sizeMixin.js";
+import ContactDialog from "@/pages/Telemarketing/ContactDialog";
 
 export default {
   name: "telemarketing-header",
@@ -40,6 +43,7 @@ export default {
   components: {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
+    ContactDialog
   },
   computed: {
     commonHeaderMarginClass() {
@@ -56,6 +60,15 @@ export default {
       };
     },
   },
+  methods: {
+    handleFreeConsultation() {
+    }
+  },
+  data () {
+    return {
+      openDialog: false
+    }
+  }
 };
 </script>
 

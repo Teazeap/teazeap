@@ -41,7 +41,8 @@
         "full-name": "Full Name...",
         "email": "Email Here...",
         "type": "Type a message...",
-        "send": "Send Message"
+        "send": "Send Message",
+        "cancel": "Cancel"
     },
     "teachers": {
         "find": "Finding Your Next Job",

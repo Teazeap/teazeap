@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <PriceBadge :plan="filteringAvatarPlan"/>
+    <PriceBadge :plan="filteringAvatarPlan" />
     <!-- steps section -->
     <div class="row what-to-expect" :style="commonMarginClass">
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
@@ -58,7 +58,7 @@
       </v-col>
     </div>
 
-    <PricingTable :plans="plans" />
+    <PricingTable :plans="plans" @get-plan="openDialog = true" />
 
     <!-- propgram steps-->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
@@ -76,6 +76,7 @@
         </div>
       </div>
     </div>
+    <ContactDialog :dialog="openDialog" @close="openDialog = false" />
     <Contact />
   </div>
 </template>
@@ -86,6 +87,7 @@ import AgentsHeader from "@/pages/Telemarketing/AgentsHeader.vue";
 import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
 import PriceBadge from "./PriceBadge.vue";
+import ContactDialog from "@/pages/Telemarketing/ContactDialog";
 
 export default {
   name: "single-agent",
@@ -98,6 +100,7 @@ export default {
     AgentsHeader,
     PricingTable,
     Collapsible,
+    ContactDialog,
     PriceBadge,
   },
   data() {
@@ -239,15 +242,26 @@ export default {
           isPopular: true,
           planName: "BUNDLE",
           planCost: 12,
-          planDetails: ["Everything in <strong>Filtering Avatar </strong> ", "Everything in <strong>Filtering Specials</strong>", "Team Collaboration Features", "Lead Database Management", "Performance Tracking Tools"],
+          planDetails: [
+            "Everything in <strong>Filtering Avatar </strong> ",
+            "Everything in <strong>Filtering Specials</strong>",
+            "Team Collaboration Features",
+            "Lead Database Management",
+            "Performance Tracking Tools",
+          ],
           className: "business",
         },
       ],
-      filteringAvatarPlan : {
+      filteringAvatarPlan: {
         name: "FILTERING AVATAR",
         price: "9.5",
-        points: ['3 Agents and 1 Manager', 'Outbound and inbound call handling', 'Appointment scheduling and reminders']
-      }
+        points: [
+          "3 Agents and 1 Manager",
+          "Outbound and inbound call handling",
+          "Appointment scheduling and reminders",
+        ],
+      },
+      openDialog: false,
     };
   },
   created() {

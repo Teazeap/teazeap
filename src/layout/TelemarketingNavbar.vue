@@ -34,7 +34,8 @@
       <li class="nav-item">
         <nav-link
           class="nav-link  btn btn-neutral btn-call"
-          to="/create-profile"
+          type="phone-number"
+          @onPhoneNumberClicked="openDialog = true"
         >
           <p>+1 848 305 7850</p>
         </nav-link>
@@ -76,6 +77,7 @@
         </a>
       </li>
     </template>
+    <ContactDialog :dialog="openDialog" @close="openDialog = false" />
   </navbar>
 </template>
 
@@ -83,6 +85,7 @@
 import { DropDown, Navbar, NavLink } from "@/components";
 import { Popover } from "element-ui";
 import { v4 as uuidv4 } from "uuid";
+import ContactDialog from "@/pages/Telemarketing/ContactDialog";
 
 export default {
   name: "telemarketing-navbar-navbar",
@@ -92,6 +95,7 @@ export default {
   },
   components: {
     DropDown,
+    ContactDialog,
     Navbar,
     NavLink,
     [Popover.name]: Popover
@@ -112,7 +116,8 @@ export default {
     }
   },
   data: () => ({
-    closeNav: null
+    closeNav: null,
+    openDialog: false,
   })
 };
 </script>

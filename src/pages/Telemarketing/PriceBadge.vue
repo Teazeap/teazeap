@@ -13,24 +13,21 @@
               <h2>${{plan.price}}</h2>
               /<span class="card-price_month">Hour</span>
             </div>
-            <button @click="openDialog = true" class="card-main_button">Get Plan</button>
+            <button @click="$emit('get-plan')" class="card-main_button">Get Plan</button>
           </div>
         </v-col>
       </div>
     </div>
-    <ContactDialog  :dialog="openDialog" @close="openDialog = false" />
   </div>
 </template>
 
 <script>
 import sizeMixin from "@/plugins/sizeMixin.js";
-import ContactDialog from "@/pages/Telemarketing/ContactDialog";
 
 export default {
   name: "PriceBadge",
   mixins: [sizeMixin],
    components: {
-    ContactDialog
   },
   props: {
     plan: {

@@ -16,7 +16,7 @@
             <div class="mt-md-16 mt-10 d-sm-flex d-block">
               <button
                 class="download mr-4 mr-0 mr-sm-5 mb-5 mb-md-0 btn-custom-md d-sm-flex d-block btn-100"
-                @click="openDialog = true"
+                @click="showModal = true"
               >
                 Free Consultation
               </button>
@@ -27,7 +27,7 @@
           <img src="/img/tele.png" alt="banner" class="img-fluid" />
         </v-col>
       </v-row>
-      <ContactDialog  :dialog="openDialog" @close="openDialog = false" />
+    <ContactDialog v-if="showModal"  @close="showModal = false"  />
     </v-container>
   </div>
 </template>
@@ -66,7 +66,7 @@ export default {
   },
   data () {
     return {
-      openDialog: false
+      showModal: false
     }
   }
 };

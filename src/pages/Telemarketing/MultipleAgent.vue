@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-    <PriceBadge :plan="filteringAvatarPlan"/>
+    <PriceBadge :plan="filteringAvatarPlan" @get-plan="showModal = true"/>
     <!-- what to expect section -->
     <div class="row what-to-expect" :style="commonMarginClass">
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
@@ -78,7 +78,8 @@
       </div>
     </div>
 
-    <PricingTable />
+    <ContactDialog v-if="showModal"  @close="showModal = false"  />
+    <PricingTable @get-plan="showModal = true" />
     <Contact />
   </div>
 </template>
@@ -89,6 +90,7 @@ import AgentsHeader from "@/pages/Telemarketing/AgentsHeader.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
 import PriceBadge from "./PriceBadge.vue";
 import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
+import ContactDialog from "@/pages/Telemarketing/ContactDialog";
 
 export default {
   name: "multiple-agent",
@@ -100,11 +102,13 @@ export default {
     Contact,
     AgentsHeader,
     PricingTable,
+    ContactDialog,
     Collapsible,
     PriceBadge,
   },
   data() {
     return {
+      showModal: false,
       form: {
         firstName: "",
         email: "",

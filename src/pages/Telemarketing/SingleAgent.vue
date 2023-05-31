@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <PriceBadge :plan="filteringAvatarPlan" />
+    <PriceBadge :plan="filteringAvatarPlan" @get-plan="showModal = true" />
     <!-- steps section -->
     <div class="row what-to-expect" :style="commonMarginClass">
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
@@ -58,7 +58,7 @@
       </v-col>
     </div>
 
-    <PricingTable :plans="plans" @get-plan="openDialog = true" />
+    <PricingTable :plans="plans" @get-plan="showModal = true" />
 
     <!-- propgram steps-->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
@@ -76,7 +76,7 @@
         </div>
       </div>
     </div>
-    <ContactDialog :dialog="openDialog" @close="openDialog = false" />
+    <ContactDialog v-if="showModal"  @close="showModal = false"  />
     <Contact />
   </div>
 </template>
@@ -105,6 +105,7 @@ export default {
   },
   data() {
     return {
+      showModal: false,
       form: {
         firstName: "",
         email: "",

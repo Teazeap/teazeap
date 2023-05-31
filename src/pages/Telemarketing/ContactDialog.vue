@@ -1,19 +1,11 @@
 <template>
-  <v-row justify="center" data-app>
-    <v-dialog v-model="dialog" persistent width="auto">
-      <v-card>
-        <v-card-title
-          class="text-h4"
-          style="
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: bolder;
-          "
-        >
-          Get in Touch with Us
-        </v-card-title>
-        <div class="row mt-4">
-          <div class="col-lg-8 col-sm-10 ml-auto mr-auto col-md-8">
+  <transition name="modal">
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+          <div class="modal-header">Get in Touch with Us</div>
+
+          <div class="modal-body">
             <form
               name="contact"
               method="POST"
@@ -51,7 +43,7 @@
               }}</span>
               <div class="textarea-container">
                 <textarea
-                  class="form-control"
+                  class="form-control desc-textarea"
                   :class="`${errors.has('name') ? 'has-danger' : ''}`"
                   rows="4"
                   cols="80"
@@ -88,16 +80,16 @@
             </form>
           </div>
         </div>
-      </v-card>
-    </v-dialog>
-  </v-row>
+      </div>
+    </div>
+  </transition>
 </template>
 <script>
 import { Button, FormGroupInput } from "@/components";
 import SendEmailMixin from "@/mixins/SendEmailMixin";
 
 export default {
-  name: "Contact-dialog",
+  name: "custom-modal",
   components: {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
@@ -112,13 +104,6 @@ export default {
         subject: "",
       },
     };
-  },
-  props: {
-    dialog: {
-      type: Boolean,
-      required: true,
-      default: () => {},
-    },
   },
   computed: {
     subject() {
@@ -143,10 +128,9 @@ export default {
         confirmButtonText: "Okay",
       }).then((result) => {
         if (result.value) {
-          // this.handleEmailNotification();
+          this.handleEmailNotification();
           this.form = {};
           this.$validator.reset();
-          this.$emit("close", false);
         }
       });
     },
@@ -171,6 +155,7 @@ export default {
               ...this.form,
             }),
           }).then(() => {
+            this.$emit("close");
             this.sendMessage();
           });
         }
@@ -179,7 +164,7 @@ export default {
     handleCancel(e) {
       e.preventDefault();
       this.$validator.reset();
-      this.$emit("close", false);
+      this.$emit("close");
     },
     encode(data) {
       return Object.keys(data)
@@ -191,3 +176,75 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  max-width: 90%;
+  width: 400px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header {
+  margin-top: 0;
+  border: none;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bolder;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.desc-textarea {
+  border: 1px solid #e3e3e3 !important;
+  border-radius: 12px !important;
+  padding: 10px 18px 10px 18px;
+}
+</style>

@@ -35,7 +35,7 @@
         <nav-link
           class="nav-link  btn btn-neutral btn-call"
           type="phone-number"
-          @onPhoneNumberClicked="openDialog = true"
+          @onPhoneNumberClicked="handlePhoneNumberClicked"
         >
           <p>+1 848 305 7850</p>
         </nav-link>
@@ -77,7 +77,7 @@
         </a>
       </li>
     </template>
-    <ContactDialog :dialog="openDialog" @close="openDialog = false" />
+    <ContactDialog v-if="showModal"  @close="showModal = false"  />
   </navbar>
 </template>
 
@@ -113,11 +113,19 @@ export default {
       this.$i18n.locale = language === "en" ? "en" : "zh";
       localStorage.setItem("teapZeapLang", this.$i18n.locale);
       this.closeNav = uuidv4()
+    },
+    handlePhoneNumberClicked() {
+      this.closeNav = uuidv4();
+
+      setTimeout(() => {
+
+        this.showModal = true;
+      }, 500);
     }
   },
   data: () => ({
     closeNav: null,
-    openDialog: false,
+    showModal: false,
   })
 };
 </script>

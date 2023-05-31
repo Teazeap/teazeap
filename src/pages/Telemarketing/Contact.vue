@@ -43,7 +43,7 @@
             }}</span>
             <div class="textarea-container">
               <textarea
-                class="form-control"
+                class="form-control desc-textarea"
                 :class="`${errors.has('name') ? 'has-danger' : ''}`"
                 rows="4"
                 cols="80"
@@ -167,5 +167,11 @@ export default {
     position: relative;
     background: #FFFFFF;
     margin: 0 16px;
+}
+
+.desc-textarea {
+  border: 1px solid #e3e3e3 !important;
+  border-radius: 12px !important;
+  padding: 10px 18px 10px 18px;
 }
 </style>

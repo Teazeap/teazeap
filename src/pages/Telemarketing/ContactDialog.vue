@@ -134,6 +134,9 @@ export default {
         }
       });
     },
+    mounted() {
+      console.log('ndnndn');
+    },
     handleEmailNotification() {
       const email = {};
       email.message = `<div>Dear ${this.form.name}</div><div><p>Thank you for taking the time to fill out the form on our website and expressing your interest in Teazeap's telemarketing services. We appreciate your consideration and the opportunity to assist you in reaching your marketing goals.</p></div><div><p>At Teazeap, we understand the importance of effective telemarketing in today's competitive business landscape. Our call filtering avatar plan, which includes 3 agents and 1 manager, is designed to provide you with a comprehensive solution to maximize your telesales efforts.</p></div><div><p>We pride ourselves on delivering advanced telemarketing services that can help you optimize your telesales budget and achieve a real return on investment. Our plan offers various features such as scripting, CRM integration, and a reliable dialer system to streamline your telemarketing campaigns.</p></div><div><p>We would be delighted to discuss your specific requirements and tailor a solution that aligns with your business objectives. Our experienced team is ready to guide you through the process and ensure your telemarketing endeavors are successful.</p></div><div><p>Thank you again for considering Teazeap. We value your trust and confidence in our services.</p></div><div><p>Hope to hear from you soon</p></div>`;
@@ -213,6 +216,7 @@ export default {
   justify-content: center;
   font-size: 1.8rem;
   font-weight: bolder;
+  color: black;
 }
 
 .modal-default-button {

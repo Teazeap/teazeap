@@ -13,11 +13,7 @@
       </router-link>
     </template>
     <template slot="navbar-menu">
-      <drop-down
-        tag="li"
-        title="Agents"
-        class="nav-item nav-ul"
-      >
+      <drop-down tag="li" title="Agents" class="nav-item nav-ul">
         <nav-link to="/telemarketing/single-agent">
           Single Agent Program
         </nav-link>
@@ -31,9 +27,9 @@
         </nav-link>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item telephone-nav">
         <nav-link
-          class="nav-link  btn btn-neutral btn-call"
+          class="nav-link btn btn-neutral btn-call"
           type="phone-number"
           @onPhoneNumberClicked="handlePhoneNumberClicked"
         >
@@ -42,10 +38,7 @@
       </li>
 
       <li class="nav-item">
-        <nav-link
-          class="nav-link  btn btn-neutral nav-recruitment"
-          to="/"
-        >
+        <nav-link class="nav-link btn btn-neutral nav-recruitment" to="/">
           <p>Recruitment</p>
         </nav-link>
       </li>
@@ -77,7 +70,7 @@
         </a>
       </li>
     </template>
-    <ContactDialog v-if="showModal"  @close="showModal = false"  />
+    <ContactDialog v-if="showModal" @close="showModal = false" />
   </navbar>
 </template>
 
@@ -91,14 +84,14 @@ export default {
   name: "telemarketing-navbar-navbar",
   props: {
     transparent: Boolean,
-    colorOnScroll: Number
+    colorOnScroll: Number,
   },
   components: {
     DropDown,
     ContactDialog,
     Navbar,
     NavLink,
-    [Popover.name]: Popover
+    [Popover.name]: Popover,
   },
   computed: {
     ourServices() {
@@ -106,27 +99,26 @@ export default {
     },
     language() {
       return this.$t("nav.language");
-    }
+    },
   },
   methods: {
     onLanguageChange(language) {
       this.$i18n.locale = language === "en" ? "en" : "zh";
       localStorage.setItem("teapZeapLang", this.$i18n.locale);
-      this.closeNav = uuidv4()
+      this.closeNav = uuidv4();
     },
     handlePhoneNumberClicked() {
       this.closeNav = uuidv4();
 
       setTimeout(() => {
-
         this.showModal = true;
       }, 500);
-    }
+    },
   },
   data: () => ({
     closeNav: null,
     showModal: false,
-  })
+  }),
 };
 </script>
 
@@ -137,14 +129,20 @@ export default {
 }
 
 .about-us.active {
-    color: #fff;
-    text-decoration: none;
-    background-color: transparent !important;
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent !important;
 }
 
 .about-us {
-    color: #fff;
-    text-decoration: none;
-    background-color: transparent !important;
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent !important;
+}
+
+@media screen and (max-width: 991px) {
+  .telephone-nav {
+    display: none;
+  }
 }
 </style>

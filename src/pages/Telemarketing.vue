@@ -70,12 +70,12 @@
         <div class="row mt-4 videos-container">
           <flickity
             :options="flickityOptions"
-            class="video-carousel"
+            class="agents-carousel"
           >
             <div class="col-md-4" v-for="(agent, id) in agents" :key="id">
               <img
                 width="100%"
-                height="345"
+                style="object-fit: cover;width: 100%;height: 200px;"
                 class="video-frame"
                 :src="agent.src"
               >
@@ -269,22 +269,22 @@ export default {
       ],
       agents: [
         {
-          src: "img/agents/IMG_0255.JPG"
+          src: "img/agents/agent_1.webp"
         },
         {
-          src: "img/agents/IMG_0254.JPG"
+          src: "img/agents/agent_2.webp"
         },
         {
-          src: "img/agents/IMG_0258.JPG"
+          src: "img/agents/agent_4.webp"
         },
         {
-          src: "img/agents/IMG_0257.JPG"
+          src: "img/agents/agent_5.webp"
         },
         {
-          src: "img/agents/IMG_0256.JPG"
+          src: "img/agents/agent_3.webp"
         },
         {
-          src: "img/agents/IMG_0255.JPG"
+          src: "img/agents/agent_6.webp"
         }
       ],
       flickityOptions: {
@@ -377,6 +377,13 @@ export default {
   height: 400px;
 }
 
+
+.agents-carousel {
+  margin: 84px 0 0;
+  padding: 0;
+  width: 100%;
+  height: 250px;
+}
 .video-section-introduction {
   text-align: justify;
 }

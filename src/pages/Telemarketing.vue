@@ -269,22 +269,22 @@ export default {
       ],
       agents: [
         {
-          src: "img/agents/agent_1.webp"
+          src: "img/agents/agent_1.jpg"
         },
         {
-          src: "img/agents/agent_2.webp"
+          src: "img/agents/agent_2.jpg"
         },
         {
-          src: "img/agents/agent_4.webp"
+          src: "img/agents/agent_4.jpg"
         },
         {
-          src: "img/agents/agent_5.webp"
+          src: "img/agents/agent_5.jpg"
         },
         {
-          src: "img/agents/agent_3.webp"
+          src: "img/agents/agent_3.jpg"
         },
         {
-          src: "img/agents/agent_6.webp"
+          src: "img/agents/agent_6.jpg"
         }
       ],
       flickityOptions: {
@@ -303,17 +303,17 @@ export default {
       },
       testimonials: [
         {
-          picUrl: "img/agent-1.webp",
+          picUrl: "img/agent-1.jpg",
           name: "Debt Settlement",
           message: `"How many other outbound call centers did we try?At least 12 in India and the Philippines. They all failed because of the accents. Avatar & Echo telemarketing outsourcing works, the agents don't have accents and prospects listen to what they say."`,
         },
         {
-          picUrl: "img/agent-2.webp",
+          picUrl: "img/agent-2.jpg",
           name: "Mortgage",
           message: `"American-run, they get lead generation. Avatar & Echo delivers the lowest cost, qualified leads. Its as east to get as siding up for their service. Listen to what they say – they know the business."`,
         },
         {
-          picUrl: "img/agent-3.webp",
+          picUrl: "img/agent-3.jpg",
           name: "Insurance",
           message: `With the RXR we manager our team and it feels like we are in the middle of the action.  The software is amazing are we run better then we did when we had the call center here. It's amazing that they turned the complex process of running a call center into a service!`,
         },

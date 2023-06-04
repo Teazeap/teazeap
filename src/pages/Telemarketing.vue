@@ -48,7 +48,7 @@
             class="video-carousel"
           >
             <div class="col-md-4" v-for="(video, id) in videos" :key="id">
-              <video width="100%" height="345" controls class="video-frame">
+              <video width="100%" height="100%" controls class="video-frame">
                 <source :src="video.src" type="video/mp4">
               </video>
             </div>
@@ -374,7 +374,7 @@ export default {
   margin: 84px 0 0;
   padding: 0;
   width: 100%;
-  height: 400px;
+  height: 220px;
 }
 
 

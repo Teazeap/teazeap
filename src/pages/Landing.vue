@@ -1,126 +1,257 @@
 <template>
   <div>
-    <PageHeader />
-    <div class="section section-about-us" :style="commonMarginClass">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">{{ $t("landing-page.who") }}</h2>
-            <h5 class="description text-justify">
-              {{ $t("landing-page.goals") }}
-            </h5>
-          </div>
-        </div>
-        <div class="separator separator-primary"></div>
-      </div>
-    </div>
-    <div class="section section-about-us" :style="commonMarginClass">
-      <div class="container text-center">
-        <div class="row justify-content-around">
-          <div class="col-md-3 ml-auto mr-auto">
-            <div class="team-player">
-              <span style="color: #f96332;">
-                <i class="fas fa-address-card fa-5x"></i>
-              </span>
-              <h4 class="title">{{ $t("landing-page.full-time") }}</h4>
-              <p class="description text-justify">
-                {{ $t("landing-page.full-time-desc") }}
-              </p>
-            </div>
-          </div>
-          <div class="col-md-3 ml-auto mr-auto">
-            <div class="team-player">
-              <span style="color: #f96332;">
-                <i class="fas fa-address-card fa-5x"></i>
-              </span>
-              <h4 class="title">{{ $t("landing-page.part-time") }}</h4>
-              <p class="description text-justify">
-                {{ $t("landing-page.part-time-desc") }}
-              </p>
-            </div>
-          </div>
-          <div class="col-md-3 ml-auto mr-auto">
-            <div class="team-player">
-              <span style="color: #f96332;">
-                <i class="fas fa-address-card fa-5x"></i>
-              </span>
-              <h4 class="title">{{ $t("landing-page.sub-teacher") }}</h4>
-              <p class="description text-justify">
-                {{ $t("landing-page.sub-desc") }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section mt-0 pt-0" :style="commonMarginClass">
-      <div class="container text-center">
-        <h2 class="title">{{ $t("landing-page.team") }}</h2>
+    <Header />
+    <div class="pt-0 intro-container" :style="commonMarginClass">
+      <div class="container section-card intro">
+        <h2 class="title text-center">Who We Are</h2>
         <div class="row mt-4">
+          <v-col cols="12" sm="7" lg="6">
+            <img src="/img/landing/310731.png" alt="banner" class="img-fluid" />
+          </v-col>
+          <v-col cols="12" sm="5" lg="6">
+            <p class="introduction-text">
+              Teazeap was established as a comprehensive provider of
+              <strong>recruitment</strong>, <strong>telemarketing</strong>, and
+              <strong>call center</strong> services. Recognizing the growing
+              demand for skilled professionals in the tech, corporate, and
+              healthcare sectors, Teazeap set out to connect businesses with top
+              talent. With a mission to bridge the gap between employers and
+              exceptional candidates, Teazeap has achieved significant
+              accomplishments over the past decade. Through innovative
+              strategies and personalized approaches. <br /><br />
+              Teazeap has successfully facilitated numerous successful
+              placements, contributing to the growth and success of client
+              organizations. Teazeap remains committed to its mission of
+              delivering exceptional recruitment solutions and outstanding
+              customer experiences in the years to come.
+            </p>
+          </v-col>
+        </div>
+      </div>
+    </div>
+
+    <!-- teazeap products -->
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+      <div class="container section-card">
+        <h2 class="title text-center">Explore the world of Teazeap</h2>
+        <flickity :options="flickityOptions" class="teacher-type-carousel">
+          <ProductCard
+            v-for="(teazeapProduct, index) in teazeapProducts"
+            :key="index"
+            :teazeap-product="teazeapProduct"
+          />
+        </flickity>
+      </div>
+    </div>
+
+    <!-- telemarketing steps -->
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+      <div class="container section-card">
+        <h2 class="title text-center">
+          Our Strategic Approach To Providing Telemarketing Services
+        </h2>
+        <div class="row mt-4">
+          <v-col cols="12" sm="7" lg="6">
+            <img src="/img/process.png" alt="banner" class="img-fluid" />
+          </v-col>
+          <v-col cols="12" sm="5" lg="6">
+            <Collapsible :processes="processes" />
+          </v-col>
+        </div>
+      </div>
+    </div>
+
+    <!-- team section -->
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+      <div class="container section-card">
+        <h2 class="title text-center">Our Team</h2>
+        <flickity
+          ref="communityBadgeInfoModalSwiper"
+          :options="flickityOptions"
+          class="carousel team"
+        >
           <TeamCard
             v-for="(profile, index) in team"
             :key="index"
             :profile="profile"
           />
-        </div>
+        </flickity>
       </div>
     </div>
+
     <Contact />
+    <router-view />
   </div>
 </template>
 <script>
-import { Button, FormGroupInput } from "@/components";
-import Contact from "@/pages/Services/Contact";
-import TeamCard from "./TeamCard.vue";
-import PageHeader from "./PageHeader.vue";
+import { Button, FormGroupInput, Collapsible } from "@/components";
+import Contact from "@/pages/Telemarketing/Contact";
+import Header from "@/pages/Landing/Header.vue";
+import Flickity from "vue-flickity";
+// import TesimonialsCard from "@/pages/Telemarketing/TesimonialsCard";
 import sizeMixin from "@/plugins/sizeMixin.js";
-
+import TeamCard from "@/pages/TeamCard.vue";
+import ProductCard from "@/pages/Landing/ProductCard.vue";
 
 export default {
   name: "landing",
   bodyClass: "landing-page",
+  mixins: [sizeMixin],
   components: {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
     Contact,
+    // TesimonialsCard,
     TeamCard,
-    PageHeader
+    ProductCard,
+    Header,
+    Collapsible,
+    Flickity,
   },
-  mixins: [sizeMixin],
   data() {
     return {
       form: {
         firstName: "",
         email: "",
-        message: ""
+        message: "",
       },
+      processes: [
+        {
+          id: 1,
+          title: "UNDERSTAND CUSTOMER NEEDS",
+          content:
+            "Teazeap would start by understanding the customer's business requirements, target audience, and sales goals. Based on this information, we would recommend the most appropriate virtual telemarketing service to meet the customer's needs.",
+        },
+        {
+          id: 2,
+          title: "CONFIGURE INFRASTRUCTURE",
+          content:
+            "Once the service is chosen, Teazeap would configure the necessary infrastructure, including software, hardware, and network components. This would ensure that the virtual telemarketing service is set up correctly and functions optimally.",
+        },
+        {
+          id: 3,
+          title: "TRAIN AGENTS",
+          content:
+            "Teazeap would provide comprehensive training to agents on how to use the virtual telemarketing service effectively, including best practices for managing calls, handling objections, and closing sales. This training would help agents to provide top-quality service to customers and achieve the customer's sales goals.",
+        },
+      ],
       team: [
         {
           name: "Clifton Moreau",
           quote: "landing-page.chief-quote",
           pictureUrl: "img/ceo.jpg",
           title: "landing-page.chief",
-          position: "top"
+          position: "top",
         },
         {
           name: "Calerb Louis Jean",
           quote: "landing-page.project-quote",
           pictureUrl: "img/jake_2.jpg",
           title: "landing-page.project",
-          position: "top"
+          position: "top",
         },
         {
           name: "Nnenia Stephens",
           quote: "landing-page.comm-quote",
           pictureUrl: "img/nnenia_1.jpg",
           title: "landing-page.comm",
-          position: "top"
-        }
-      ]
+          position: "top",
+        },
+      ],
+      videos: [
+        {
+          id: 1,
+          src: "https://videos.ctfassets.net/dr15y1pi2yc9/77uBczZTTHGFOYJNjgL6qD/1a4577bff54f4a117ee37a4c7aee7b92/videoplayback-1.mp4",
+        },
+        {
+          id: 2,
+          src: "https://videos.ctfassets.net/dr15y1pi2yc9/3p9fUqGM6nLVbKWMBSsqt9/634faaa8c15656d5b6ccd0b0d7c8ac1c/videoplayback-2.mp4",
+        },
+        {
+          id: 3,
+          src: "https://videos.ctfassets.net/dr15y1pi2yc9/NVi7i40iXbsu30guZRUak/ce71561a78a2a18bb474181d98437cdc/videoplayback-3.mp4",
+        },
+      ],
+      agents: [
+        {
+          src: "img/agents/agent_1.jpg",
+        },
+        {
+          src: "img/agents/agent_2.jpg",
+        },
+        {
+          src: "img/agents/agent_4.jpg",
+        },
+        {
+          src: "img/agents/agent_5.jpg",
+        },
+        {
+          src: "img/agents/agent_3.jpg",
+        },
+        {
+          src: "img/agents/agent_6.jpg",
+        },
+      ],
+      flickityOptions: {
+        adaptiveHeight: false,
+        cellAlign: "left",
+        contain: true,
+        draggable: true,
+        freeScroll: true,
+        groupCells: true,
+        pageDots: false,
+        percentPosition: true,
+        autoPlay: 3000,
+        wrapAround: true,
+        pauseAutoPlayOnHover: false,
+        resize: true,
+      },
+      testimonials: [
+        {
+          picUrl: "img/agent-1.jpg",
+          name: "Debt Settlement",
+          message: `"How many other outbound call centers did we try?At least 12 in India and the Philippines. They all failed because of the accents. Avatar & Echo telemarketing outsourcing works, the agents don't have accents and prospects listen to what they say."`,
+        },
+        {
+          picUrl: "img/agent-2.jpg",
+          name: "Mortgage",
+          message: `"American-run, they get lead generation. Avatar & Echo delivers the lowest cost, qualified leads. Its as east to get as siding up for their service. Listen to what they say – they know the business."`,
+        },
+        {
+          picUrl: "img/agent-3.jpg",
+          name: "Insurance",
+          message: `With the RXR we manager our team and it feels like we are in the middle of the action.  The software is amazing are we run better then we did when we had the call center here. It's amazing that they turned the complex process of running a call center into a service!`,
+        },
+      ],
+      teazeapProducts: [
+        {
+          type: "landing-page.recruitment",
+          desc: "landing-page.recruitment-desc",
+          backgroupImgUrl: "img/landing/bg/recruitment-bg.webp",
+          productLink: "recruitment-agency"
+        },
+        {
+          type: "landing-page.telemarketing",
+          desc: "landing-page.telemarketing-desc",
+          backgroupImgUrl: "img/landing/bg/telemarketing-bg.webp",
+          productLink: "telemarketing"
+        },
+        {
+          type: "landing-page.call-center",
+          desc: "landing-page.call-center-desc",
+          backgroupImgUrl: "img/landing/bg/call-center-bg.webp",
+          productLink: "call-center"
+        },
+      ],
     };
   },
   created() {
     this.handleLangauge();
+  },
+  computed: {
+    swiper() {
+      return this.$refs.communityBadgeInfoModalSwiper;
+    },
   },
   methods: {
     handleLangauge() {
@@ -132,7 +263,98 @@ export default {
       } else {
         this.$i18n.locale = browserLanguage.includes("zh") ? "zh" : "en";
       }
-    }
-  }
+    },
+  },
 };
 </script>
+
+<style scoped lang="scss">
+.video-frame {
+  border-radius: 24px;
+  -webkit-box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
+  box-shadow: 0px 5px 12px 0px rgb(0 0 0 / 20%);
+  transition: 0.3s;
+}
+
+.video-frame :hover {
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.carousel {
+  margin: 84px 0 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-cell {
+  height: 450px;
+  margin: 0 20px 0;
+  padding: 0;
+  width: 300px;
+}
+
+.video-carousel {
+  margin: 84px 0 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.teacher-type-carousel {
+  margin: 20px 0 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.agents-carousel {
+  margin: 84px 0 0;
+  padding: 0;
+  width: 100%;
+  height: 250px;
+}
+.video-section-introduction {
+  text-align: justify;
+}
+
+@media (min-width: 600px) {
+  .video-section-introduction {
+    text-align: center;
+    margin: 0 5%;
+  }
+}
+
+.videos-container {
+  margin: 0 5%;
+}
+
+.mobile-padding {
+  margin: 0 16px;
+}
+
+.intro {
+  background: white;
+}
+
+.intro-container {
+  margin: 0 16px;
+}
+
+@media (min-width: 600px) {
+  .intro-container {
+    margin-top: -10rem;
+  }
+}
+
+.introduction-text {
+  text-align: justify;
+}
+
+@media (min-width: 600px) {
+  .introduction-text {
+    margin-right: 16px;
+  }
+}
+</style>

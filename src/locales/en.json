@@ -30,7 +30,13 @@
         "project": "Co-founder and COO",
         "project-quote": "“As you navigate through the rest of your life, be open to collaboration. Other people and other people’s ideas are often better than your own.” ",
         "comm": "Co-founder and CCO",
-        "comm-quote": "“Without publicity there can be no public support, and without public support every nation must decay.”"
+        "comm-quote": "“Without publicity there can be no public support, and without public support every nation must decay.”",
+        "telemarketing": "Telemarketing",
+        "telemarketing-desc": "Maximize your sales potential with our expert telemarketing and call center services with price less than $10/agent",
+        "recruitment": "Recruitment",
+        "recruitment-desc": "Unlock Your Career Potential with Teazeap: Connecting Exceptional Talent with Tech, Corporate, and Healthcare Opportunities!",
+        "call-center": "Call Center",
+        "call-center-desc": "Elevating Customer Experience with Exceptional Call Center Services for Businesses Worldwide!"
     },
     "contact": {
         "with-us": "Want to work with us?",

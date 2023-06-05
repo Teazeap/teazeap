@@ -8,7 +8,7 @@
     menu-classes="ml-auto"
   >
     <template>
-      <router-link v-popover:popover1 class="navbar-brand" to="/telemarketing">
+      <router-link v-popover:popover1 class="navbar-brand" to="/">
         TeaZeap
       </router-link>
     </template>
@@ -38,7 +38,10 @@
       </li>
 
       <li class="nav-item">
-        <nav-link class="nav-link btn btn-neutral nav-recruitment" to="/">
+        <nav-link
+          class="nav-link btn btn-neutral nav-recruitment"
+          to="/recruitment-agency"
+        >
           <p>Recruitment</p>
         </nav-link>
       </li>

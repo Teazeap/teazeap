@@ -1,37 +1,22 @@
 <template>
   <div class="col-md-6 col-lg-4 col-xl-4">
     <v-app id="inspire">
-      <v-card outlined class="mx-auto profile-card" width="350" :elevation="4">
-        <v-img
-          :position="profile.position"
-          :src="profile.pictureUrl"
-          height="350px"
-        ></v-img>
-
+      <v-card outlined class="mx-auto profile-card" min-height="360" width="350"  :elevation="4">
         <v-card-title
           class="d-flex mt-2 justify-content-center team-name font-weight-bold"
         >
-          {{ profile.name }}
+          <span style="color: #f96332">
+            <i class="fas fa-address-card fa-5x"></i>
+          </span>
         </v-card-title>
-        <v-card-title class="d-flex mt-n4 text-primary justify-content-center">
-          {{ $t(profile.title) }}
-        </v-card-title>
-
-        <v-card-text class="font-italic team-quote">
-          {{ $t(profile.quote) }}
-        </v-card-text>
-
-        <v-card-actions
-          class="pt-0 d-flex justify-content-center"
-          :class="{ 'mt-n6': adjustCardAction }"
+        <v-card-title
+          class="d-flex mt-2 justify-content-center team-name font-weight-bold"
         >
-          <a class="card-link btn btn-primary btn-icon btn-round mx-2"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a class="btn btn-primary btn-icon btn-round"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-        </v-card-actions>
+          {{ $t(`${teacherType.type}`) }}
+        </v-card-title>
+        <v-card-text class="font-italic team-quote">
+          {{ $t(`${teacherType.desc}`) }}
+        </v-card-text>
       </v-card>
     </v-app>
   </div>
@@ -39,28 +24,21 @@
 
 <script>
 export default {
-  name: "team-card",
+  name: "teacher-type-card",
   bodyClass: "profile-page",
   components: {},
   props: {
-    profile: {
+    teacherType: {
       type: Object,
       required: true,
       default: () => {},
     },
   },
-  computed: {
-    adjustCardAction() {
-      return this.profile.name === "Calerb Louis Jean";
-    },
-  },
-  methods: {},
 };
 </script>
 
 <style scoped lang="scss">
 .v-application--wrap {
-  height: 620px !important;
   min-height: 100%;
   font-family: "Montserr" !important;
 
@@ -74,7 +52,8 @@ export default {
   box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
   transition: 0.3s;
   border-radius: 24px !important;
-  height: 100% !important;
+  // height: 100% !important;
+  // min-height: 100% !important;
 }
 
 .profile-card:hover {

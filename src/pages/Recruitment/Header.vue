@@ -5,21 +5,22 @@
         <v-col cols="12" sm="7" lg="6" class="d-flex align-center">
           <div class="text-sm-left text-center">
             <h1 class="banner-title font-weight-bold text-white">
-              Telemarketing And Call Center Services
+              Recruiting Agency
             </h1>
             <h4
               class="banner-subtitle white--text font-weight-regular text-white text-justify"
             >
-              Maximize your sales potential with our expert telemarketing
-               and call center services with price less than <strong>$10/agent</strong>
+              Unlock Your Career Potential with Teazeap: Connecting Exceptional Talent with Tech, Corporate, and Healthcare Opportunities!
             </h4>
             <div class="mt-md-16 mt-10 d-sm-flex d-block">
-              <button
-                class="download mr-4 mr-0 mr-sm-5 mb-5 mb-md-0 btn-custom-md d-sm-flex d-block btn-100"
-                @click="showModal = true"
+              <router-link
+                to="/jobs"
+                class="program-link mr-0 mr-md-4 mb-2 mb-md-0 mt-4 mt-md-0 "
               >
-                Free Consultation
-              </button>
+                <div class="program-link-content">
+                  Apply Now
+                </div>
+              </router-link>
             </div>
           </div>
         </v-col>
@@ -27,7 +28,6 @@
           <img src="/img/tele.png" alt="banner" class="img-fluid" />
         </v-col>
       </v-row>
-    <ContactDialog v-if="showModal"  @close="showModal = false"  />
     </v-container>
   </div>
 </template>
@@ -35,7 +35,6 @@
 <script>
 import { Button, FormGroupInput } from "@/components";
 import sizeMixin from "@/plugins/sizeMixin.js";
-import ContactDialog from "@/pages/Telemarketing/ContactDialog";
 
 export default {
   name: "telemarketing-header",
@@ -43,7 +42,6 @@ export default {
   components: {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
-    ContactDialog
   },
   computed: {
     commonHeaderMarginClass() {
@@ -128,4 +126,31 @@ export default {
     margin-right: 150px;
   }
 }
+
+.program-link-content {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.program-link {
+  padding: 15px 20px;
+  background: #f96332;
+  color: white;
+  font-weight: bolder;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.program-link:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  transition-duration: 3s;
+}
+
+.program-link.active {
+  border: white solid 3px;
+}
+
 </style>

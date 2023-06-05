@@ -30,7 +30,13 @@
         "project": "專案經理",
         "project-quote": "“As you navigate through the rest of your life, be open to collaboration. Other people and other people’s ideas are often better than your own.” ",
         "comm": "通訊主管",
-        "comm-quote": "“Without publicity there can be no public support, and without public support every nation must decay.”"
+        "comm-quote": "“Without publicity there can be no public support, and without public support every nation must decay.”",
+        "telemarketing": "Telemarketing",
+        "telemarketing-desc": "以不到10美元/座位的价格，利用我们专业的电话营销和呼叫中心服务最大化您的销售潜力。",
+        "recruitment": "Recruitment",
+        "recruitment-desc": "释放您的职业潜力，与 Teazeap 连接起来：连接出色人才与科技、企业和医疗机会！",
+        "call-center": "Call Center",
+        "call-center-desc": "提升客户体验，为全球企业提供卓越的呼叫中心服务！"
     },
     "contact": {
         "with-us": "與我們聯繫",

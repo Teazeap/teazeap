@@ -1,8 +1,9 @@
 <template>
   <div>
     <AgentsHeader
-      title="Single Agent Program"
-      sub-title="Experience success with hassle-free single agent telemarketing campaigns at Teazeap"
+      title="Multiple Agent Program"
+      sub-title="Advanced telemarketing services with live lead transfers and multi-agent program options."
+      program-pic-url="/img/team-agents.png"
     />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
@@ -15,32 +16,33 @@
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
-              When you’re ready to free yourself from a failure-ridden
-              telemarketing process and try something that actually works,
-              contact us. Teazeap Telemarketing specializes in outsourcing
-              single agent telemarketing campaigns. These campaigns are
-              hassle-free for you and provide real results. Our highly-trained,
-              non-accented telemarketers have a proven track record of success.
-              Single agents start at $9.5 per hour.
+              Leverage our advanced services for optimal telesales ROI through
+              qualified live lead transfers. Say goodbye to unproductive cold
+              calls, as our telemarketing experts generate warm, qualified
+              leads. With our 100% USA-run call centers, professional
+              representatives, and cost-effective solutions, streamline your
+              costs and amplify profitability. Empower your sales team to focus
+              on closing deals while we handle the groundwork. Take the first
+              step today towards maximizing your revenue potential.
             </p>
           </v-col>
         </div>
       </div>
     </div>
-
-    <PriceBadge :plan="filteringAvatarPlan" @get-plan="showModal = true" />
-    <!-- steps section -->
+    <PriceBadge :plan="filteringAvatarPlan" @get-plan="showModal = true"/>
+    <!-- what to expect section -->
     <div class="row what-to-expect" :style="commonMarginClass">
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
         <div class="container section-card contact-steps">
-          <h2 class="title text-center">Just Follow These Steps</h2>
+          <h2 class="title text-center">How It Works</h2>
           <ol>
-            <li>Set their schedule</li>
-            <li>Supply a script</li>
-            <li>Provide the call list</li>
-            <li>Get us the credentials to set them up on dialers if needed</li>
-            <li>Manage them as you would an in-office telemarketing agent</li>
-            <li><span class="step-empasize">GROW YOUR SALES!</span></li>
+            <li>Echo Live separates prospect's voice and scripted prompts.</li>
+            <li>Telemarketers hear prospects in their left headphone.</li>
+            <li>Telemarketers push appropriate buttons based on prospect's response.</li>
+            <li>Pre-recorded responses played in right headphone, with script displayed on screen.</li>
+            <li>Telemarketers echo exactly what they hear and see, like karaoke.</li>
+            <li>Echo agents become proficient within an hour.</li>
+            <li><span class="step-empasize">GENERATES QUALIFIED, LIVE, WARM TRANSFERS.</span></li>
           </ol>
         </div>
       </v-col>
@@ -49,26 +51,25 @@
           <h2 class="title text-center what-to-expect-title">The Benefits</h2>
           <p>Contact Teazeap when you’re ready for:</p>
           <ul lang="la">
-            <li>More appointment setting</li>
-            <li>More lead generation</li>
-            <li>More live transfers</li>
-            <li>Less expense, overhead, and hassle</li>
+            <li>Call Analytics Dashboard</li>
+            <li>Customizable Script Templates</li>
+            <li>Multi-Channel Outreach</li>
+            <li>Lead Generation Assistance</li>
+            <li>Call Disposition Management</li>
           </ul>
         </div>
       </v-col>
     </div>
 
-    <PricingTable :plans="plans" @get-plan="showModal = true" />
-
-    <!-- propgram steps-->
+    <!-- steps section -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
-          Make More Money with Live Lead Transfers
+          Make More Money: Outsource Your Telemarketing Campaign
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
-            <img src="/img/single-agent.png" alt="banner" class="img-fluid" />
+            <img src="/img/multiple-agent.png" alt="banner" class="img-fluid" />
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <Collapsible :processes="processes" />
@@ -76,7 +77,9 @@
         </div>
       </div>
     </div>
-    <ContactDialog v-if="showModal" @close="showModal = false" />
+
+    <ContactDialog v-if="showModal"  @close="showModal = false"  />
+    <PricingTable @get-plan="showModal = true" />
     <Contact />
   </div>
 </template>
@@ -84,13 +87,13 @@
 import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Telemarketing/Contact";
 import AgentsHeader from "@/pages/Telemarketing/AgentsHeader.vue";
-import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
 import PriceBadge from "./PriceBadge.vue";
+import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 import ContactDialog from "@/pages/Telemarketing/ContactDialog";
 
 export default {
-  name: "single-agent",
+  name: "multiple-agent",
   bodyClass: "landing-page",
   mixins: [sizeMixin],
   components: {
@@ -99,8 +102,8 @@ export default {
     Contact,
     AgentsHeader,
     PricingTable,
-    Collapsible,
     ContactDialog,
+    Collapsible,
     PriceBadge,
   },
   data() {
@@ -120,7 +123,7 @@ export default {
         },
         {
           id: 2,
-          title: "EFFECTIVE TELEMARKETING WITH SINGLE AGENTS.",
+          title: "EFFECTIVE TELEMARKETING WITH MULTIPLE AGENTS.",
           content:
             "At Teazeap, we redefine excellence in outsourcing by prioritizing quality over chance. Our rigorous selection process ensures that only the best-trained telemarketing agents, with experience and motivation, join our American-run call centers.<br/> <br/>Our telemarketers are college graduates with <span style='font-weight: bold'>telesales experience</span>,<span style='font-weight: bold'>self-managers</span>, <span style='font-weight: bold'>skilled in appointments</span>,<span style='font-weight: bold'>scripts</span>,<span style='font-weight: bold'>sales reporting</span>",
         },
@@ -131,43 +134,11 @@ export default {
             "We outsource only the best single agent telemarketers by providing all the following hiring requirements: <ul style='margin-left: 2rem'> <li>Background criminal checks </li><li>Office space </li><li>Speech training</li><li>Management</li><li>English comprehension testing</li></ul>",
         },
       ],
-      team: [
-        {
-          name: "Clifton Moreau",
-          quote: "landing-page.chief-quote",
-          pictureUrl: "img/ceo.jpg",
-          title: "landing-page.chief",
-          position: "top",
-        },
-        {
-          name: "Calerb Louis Jean",
-          quote: "landing-page.project-quote",
-          pictureUrl: "img/jake_2.jpg",
-          title: "landing-page.project",
-          position: "top",
-        },
-        {
-          name: "Nnenia Stephens",
-          quote: "landing-page.comm-quote",
-          pictureUrl: "img/nnenia_1.jpg",
-          title: "landing-page.comm",
-          position: "top",
-        },
-      ],
-      videos: [
-        {
-          id: 1,
-          src: "https://videos.ctfassets.net/dr15y1pi2yc9/77uBczZTTHGFOYJNjgL6qD/1a4577bff54f4a117ee37a4c7aee7b92/videoplayback-1.mp4",
-        },
-        {
-          id: 2,
-          src: "https://videos.ctfassets.net/dr15y1pi2yc9/3p9fUqGM6nLVbKWMBSsqt9/634faaa8c15656d5b6ccd0b0d7c8ac1c/videoplayback-2.mp4",
-        },
-        {
-          id: 3,
-          src: "https://videos.ctfassets.net/dr15y1pi2yc9/NVi7i40iXbsu30guZRUak/ce71561a78a2a18bb474181d98437cdc/videoplayback-3.mp4",
-        },
-      ],
+      filteringAvatarPlan : {
+        name: "FILTERING SPECIALS",
+        price: "10.5",
+        points: ['5/more and 1 Manager', 'Scripting', 'CRM Integration', 'Dialer']
+      },
       flickityOptions: {
         adaptiveHeight: false,
         cellAlign: "left",
@@ -199,70 +170,6 @@ export default {
           message: `With the RXR we manager our team and it feels like we are in the middle of the action.  The software is amazing are we run better then we did when we had the call center here. It's amazing that they turned the complex process of running a call center into a service!`,
         },
       ],
-      plans: [
-        {
-          isPopular: false,
-          planName: "CALL CENTER",
-          planCost: 9.5,
-          planDetails: [
-            "<strong> 3/more</strong> Agents and <strong>1</strong> Manager",
-            "Multichannel",
-            "Call Recording",
-            "Quality Assurance",
-            "Analytics",
-          ],
-          className: "pro",
-        },
-        {
-          isPopular: false,
-          planName: "FILTERING AVATAR",
-          planCost: 9.5,
-          planDetails: [
-            "<strong>3</strong> Agents and <strong>1</strong> Manager",
-            "Lead Management",
-            "Reporting",
-            "",
-            "",
-          ],
-          className: "basic",
-        },
-        {
-          isPopular: false,
-          planName: "FILTERING SPECIALS",
-          planCost: 10.5,
-          planDetails: [
-            "<strong>5/more</strong> Agents and <strong>1</strong> Manager",
-            "Scripting",
-            "CRM Integration",
-            "Dialer",
-            "Performance Metrics",
-          ],
-          className: "echo",
-        },
-        {
-          isPopular: true,
-          planName: "BUNDLE",
-          planCost: 12,
-          planDetails: [
-            "Everything in <strong>Filtering Avatar </strong> ",
-            "Everything in <strong>Filtering Specials</strong>",
-            "Team Collaboration Features",
-            "Lead Database Management",
-            "Performance Tracking Tools",
-          ],
-          className: "business",
-        },
-      ],
-      filteringAvatarPlan: {
-        name: "FILTERING AVATAR",
-        price: "9.5",
-        points: [
-          "3 Agents and 1 Manager",
-          "Outbound and inbound call handling",
-          "Appointment scheduling and reminders",
-        ],
-      },
-      openDialog: false,
     };
   },
   created() {
@@ -361,7 +268,7 @@ export default {
 }
 
 .what-to-expect {
-  /* margin-top: 28px; */
+  margin-top: 28px;
 }
 
 .what-to-expect-title {

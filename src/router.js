@@ -16,6 +16,7 @@ import Blogs from "./pages/Blog/Blogs.vue";
 import Jobs from "./pages/Jobs/Jobs.vue";
 import JobInfo from "./pages/Jobs/JobInfo.vue";
 import BlogInfo from "./pages/Blog/BlogInfo.vue";
+import LandingNavbar from "./layout/LandingNavbar.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import RecruitmentAgencyNavbar from "./layout/RecruitmentAgencyNavbar.vue";
 import TelemarketingNavbar from "./layout/TelemarketingNavbar.vue";
@@ -39,128 +40,140 @@ export default new Router({
       name: "login",
       components: { default: Login, header: MainNavbar },
       props: {
-        header: { colorOnScroll: 400 }
-      }
+        header: { colorOnScroll: 400 },
+      },
     },
     {
       path: "/admin/dashboard",
       name: "Dashboard",
       redirect: { name: "DashboardJobs" },
       components: {
-        default: Dashboard
+        default: Dashboard,
       },
       props: {
-        header: { colorOnScroll: 400 }
+        header: { colorOnScroll: 400 },
       },
       children: [
         {
           path: "jobs",
           name: "DashboardJobs",
           components: {
-            default: DashboardJobs
+            default: DashboardJobs,
           },
           props: {
-            header: { colorOnScroll: 400 }
+            header: { colorOnScroll: 400 },
           },
           beforeEnter: (to, from, next) => {
-            const isAuthenticated = store.getters.user
-            if (!isAuthenticated) next({ name: 'login' })
-            else next()
+            const isAuthenticated = store.getters.user;
+            if (!isAuthenticated) next({ name: "login" });
+            else next();
           },
         },
         {
           path: "jobs-applications",
           name: "DashboardJobsApplications",
           components: {
-            default: DashboardJobsApplications
+            default: DashboardJobsApplications,
           },
           props: {
-            header: { colorOnScroll: 400 }
+            header: { colorOnScroll: 400 },
           },
           beforeEnter: (to, from, next) => {
-            const isAuthenticated = store.getters.user
-            if (!isAuthenticated) next({ name: 'login' })
-            else next()
+            const isAuthenticated = store.getters.user;
+            if (!isAuthenticated) next({ name: "login" });
+            else next();
           },
         },
         {
           path: "profiles",
           name: "DashboardProfiles",
           components: {
-            default: DashboardProfiles
+            default: DashboardProfiles,
           },
           props: {
-            header: { colorOnScroll: 400 }
+            header: { colorOnScroll: 400 },
           },
           beforeEnter: (to, from, next) => {
-            const isAuthenticated = store.getters.user
-            if (!isAuthenticated) next({ name: 'login' })
-            else next()
+            const isAuthenticated = store.getters.user;
+            if (!isAuthenticated) next({ name: "login" });
+            else next();
           },
         },
         {
           path: "profile-applications",
           name: "DashboardProfileApplications",
           components: {
-            default: DashboardProfileApplications
+            default: DashboardProfileApplications,
           },
           props: {
-            header: { colorOnScroll: 400 }
+            header: { colorOnScroll: 400 },
           },
           beforeEnter: (to, from, next) => {
-            const isAuthenticated = store.getters.user
-            if (!isAuthenticated) next({ name: 'login' })
-            else next()
+            const isAuthenticated = store.getters.user;
+            if (!isAuthenticated) next({ name: "login" });
+            else next();
           },
         },
         {
           path: "blog-posts",
           name: "DashboardBlogPosts",
           components: {
-            default: DashboardBlogPosts
+            default: DashboardBlogPosts,
           },
           props: {
-            header: { colorOnScroll: 400 }
+            header: { colorOnScroll: 400 },
           },
           beforeEnter: (to, from, next) => {
-            const isAuthenticated = store.getters.user
-            if (!isAuthenticated) next({ name: 'login' })
-            else next()
+            const isAuthenticated = store.getters.user;
+            if (!isAuthenticated) next({ name: "login" });
+            else next();
           },
-        }
+        },
       ],
       beforeEnter: (to, from, next) => {
         const isAuthenticated = store.getters.user;
         if (to.name == "Dashboard" && !isAuthenticated) next({ name: "login" });
         else next();
-      }
+      },
     },
     {
       path: "/",
       name: "landing",
-      components: { default: Landing, header: MainNavbar, footer: MainFooter },
+      components: {
+        default: Landing,
+        header: LandingNavbar,
+        footer: MainFooter,
+      },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/recruitment-agency",
       name: "RecruitmentAgency",
-      components: { default: RecruitmentAgency, header: RecruitmentAgencyNavbar, footer: MainFooter },
+      components: {
+        default: RecruitmentAgency,
+        header: RecruitmentAgencyNavbar,
+        footer: MainFooter,
+      },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/telemarketing",
       name: "TelemarketingIndex",
-      components: { default: TelemarketingIndex, header: TelemarketingNavbar, footer: MainFooter },
+      components: {
+        default: TelemarketingIndex,
+        header: TelemarketingNavbar,
+        footer: MainFooter,
+      },
       redirect: { name: "TelemarketingIndex" },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
+        footer: { backgroundColor: "black" },
       },
       children: [
         {
@@ -168,7 +181,7 @@ export default new Router({
           name: "Telemarketing",
           component: Telemarketing,
           props: {
-            header: { colorOnScroll: 400 }
+            header: { colorOnScroll: 400 },
           },
         },
         {
@@ -176,7 +189,7 @@ export default new Router({
           name: "SingleAgent",
           component: SingleAgent,
           props: {
-            header: { colorOnScroll: 400 }
+            header: { colorOnScroll: 400 },
           },
         },
         {
@@ -184,10 +197,10 @@ export default new Router({
           name: "MultipleAgent",
           component: MultipleAgent,
           props: {
-            header: { colorOnScroll: 400 }
+            header: { colorOnScroll: 400 },
           },
         },
-      ]
+      ],
     },
     {
       path: "/our-services/schools",
@@ -195,8 +208,8 @@ export default new Router({
       components: { default: Schools, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/process",
@@ -204,8 +217,8 @@ export default new Router({
       components: { default: Process, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/qualification",
@@ -213,12 +226,12 @@ export default new Router({
       components: {
         default: Qualification,
         header: MainNavbar,
-        footer: MainFooter
+        footer: MainFooter,
       },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/our-services/teachers",
@@ -226,23 +239,23 @@ export default new Router({
       components: { default: Teachers, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
-        footer: { backgroundColor: "black" }
-      }
+        footer: { backgroundColor: "black" },
+      },
     },
     {
       path: "/jobs",
       name: "JobsMain",
       components: { default: Jobs, header: MainNavbar, footer: MainFooter },
       props: {
-        header: { colorOnScroll: 400 }
-      }
+        header: { colorOnScroll: 400 },
+      },
     },
     {
       path: "/jobs/:id",
       name: "Jobs",
       components: { default: JobInfo, header: MainNavbar, footer: MainFooter },
       props: {
-        header: { colorOnScroll: 400 }
+        header: { colorOnScroll: 400 },
       },
       children: [
         {
@@ -251,28 +264,28 @@ export default new Router({
           components: {
             default: JobInfo,
             header: MainNavbar,
-            footer: MainFooter
+            footer: MainFooter,
           },
           props: {
-            header: { colorOnScroll: 400 }
-          }
-        }
-      ]
+            header: { colorOnScroll: 400 },
+          },
+        },
+      ],
     },
     {
       path: "/create-profile",
       name: "Profiles",
       components: { default: Profiles, header: MainNavbar, footer: MainFooter },
       props: {
-        header: { colorOnScroll: 400 }
-      }
+        header: { colorOnScroll: 400 },
+      },
     },
     {
       path: "/blog",
       name: "BlogsMain",
       components: { default: Blogs, header: MainNavbar, footer: MainFooter },
       props: {
-        header: { colorOnScroll: 400 }
+        header: { colorOnScroll: 400 },
       },
     },
     {
@@ -281,10 +294,10 @@ export default new Router({
       components: {
         default: BlogInfo,
         header: MainNavbar,
-        footer: MainFooter
+        footer: MainFooter,
       },
       props: {
-        header: { colorOnScroll: 400 }
+        header: { colorOnScroll: 400 },
       },
       children: [
         {
@@ -293,21 +306,21 @@ export default new Router({
           components: {
             default: BlogInfo,
             header: MainNavbar,
-            footer: MainFooter
+            footer: MainFooter,
           },
           props: {
-            header: { colorOnScroll: 400 }
-          }
-        }
-      ]
+            header: { colorOnScroll: 400 },
+          },
+        },
+      ],
     },
-    { path: "*", redirect: "/" }
+    { path: "*", redirect: "/" },
   ],
-  scrollBehavior: to => {
+  scrollBehavior: (to) => {
     if (to.hash) {
       return { selector: to.hash };
     } else {
       return { x: 0, y: 0 };
     }
-  }
+  },
 });

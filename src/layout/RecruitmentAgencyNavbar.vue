@@ -33,6 +33,14 @@
         </nav-link>
       </li>
 
+       <li class="nav-item">
+        <nav-link class="nav-link  btn  btn-neutral btn-profile" to="/telemarketing">
+          <i class="now-ui-icons tech_headphones nav-link-icon"></i>
+          <p>{{ $t("nav.telemarketing") }}</p>
+        </nav-link>
+      </li>
+
+
       <li class="nav-item">
         <nav-link
           class="nav-link  btn btn-neutral btn-profile"
@@ -44,7 +52,10 @@
       </li>
 
       <li class="nav-item">
-        <nav-link class="nav-link  btn  btn-neutral btn-blog" to="/blog">
+        <nav-link
+          class="nav-link  btn btn-neutral btn-profile"
+          to="/blog"
+        >
           <i class="now-ui-icons files_paper nav-link-icon"></i>
           <p>{{ $t("nav.blog") }}</p>
         </nav-link>

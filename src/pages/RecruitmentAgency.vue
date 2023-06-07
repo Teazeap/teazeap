@@ -35,6 +35,20 @@
       </div>
     </div>
 
+    <!-- recruitment steps -->
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+      <div class="container section-card">
+        <h2 class="title text-center">
+          Our Strategic  Recruitment Process
+        </h2>
+        <div class="row mt-4">
+          <v-col cols="12">
+            <img src="/img/recruitment/recruitment-4.png" alt="banner" class="img-fluid" />
+          </v-col>
+        </div>
+      </div>
+    </div>
+
    <!-- teacher type -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">

@@ -22,7 +22,7 @@
         </v-card-text>
 
         <v-card-actions
-          class="pt-0 d-flex justify-content-center"
+          class="pt-0 d-flex justify-content-center team-card-actions"
           :class="{ 'mt-n6': adjustCardAction }"
         >
           <a class="card-link btn btn-primary btn-icon btn-round mx-2"
@@ -86,5 +86,28 @@ export default {
 }
 .team-name {
   font-size: 24px;
+}
+
+.team-card-actions::after {
+	content: "";
+	background: url('https://inventive.netlify.app/images/objects/6.png');
+	background-repeat: no-repeat;
+	height: 180px;
+	width: 188px;
+	position: absolute;
+	right: 5px;
+	bottom: 0;
+	opacity: 0.2;
+	z-index: 0;
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-moz-transition: all 400ms ease-out 0s;
+	-webkit-transition: all 400ms ease-out 0s;
+	-ms-transition: all 400ms ease-out 0s;
+	-o-transition: all 400ms ease-out 0s;
+	transition: all 400ms ease-out 0s;
 }
 </style>

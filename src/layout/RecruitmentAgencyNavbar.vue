@@ -27,12 +27,6 @@
         </nav-link>
       </drop-down>
       <li class="nav-item">
-        <nav-link class="nav-link about-us" to="/">
-          <i class="now-ui-icons arrows-1_share-66"></i>
-          <p>{{ $t("nav.about-us") }}</p>
-        </nav-link>
-      </li>
-      <li class="nav-item">
         <nav-link class="nav-link btn btn-neutral" to="/jobs">
           <i class="now-ui-icons arrows-1_share-66  nav-link-icon"></i>
           <p>{{ $t("nav.apply-now") }}</p>

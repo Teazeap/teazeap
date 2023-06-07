@@ -25,7 +25,7 @@
           </div>
         </v-col>
         <v-col cols="12" sm="5" lg="6">
-          <img src="/img/tele.png" alt="banner" class="img-fluid" />
+          <img src="/img/recruitment/recruitment-2.png" alt="banner" class="img-fluid" />
         </v-col>
       </v-row>
     </v-container>
@@ -75,7 +75,8 @@ export default {
   margin-top: 5%;
 }
 .banner-wrapper {
-  background: rgb(96, 125, 249);
+  /* background-image: linear-gradient(90deg,#795DA6 0%,#5652A3 45%,#33C1D0 100%); */
+  background-image: linear-gradient(90deg, rgb(0, 66, 112), rgb(48, 94, 176));
   padding: 20px 0 20px;
   min-height: 600px;
   display: flex;
@@ -98,7 +99,7 @@ export default {
 
 .img-fluid {
   max-width: 100%;
-  height: auto;
+  height: 88%;
 }
 
 .banner-title {

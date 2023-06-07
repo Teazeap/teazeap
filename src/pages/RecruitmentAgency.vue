@@ -4,23 +4,15 @@
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
         <h2 class="title text-center">
-          Let us build your virtual telemarketing phone room.
+          Revolutionizing Recruitment Tech, Corporate, and Healthcare.
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
-            <img src="/img/intro-pic.png" alt="banner" class="img-fluid" />
+            <img src="/img/recruitment/recruitment-1.jpg" alt="banner" class="img-fluid" />
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
-              Welcome to Teazeap, your trusted telemarketing partner for
-              business success. Our team of experienced and skilled
-              telemarketing professionals are dedicated to providing top-notch
-              services to businesses of all sizes. From generating leads to
-              increasing sales, we help you achieve your marketing goals with
-              the power of telemarketing. Promote your brand, connect with your
-              target audience, and grow your business with Teazeap. Get in touch
-              with us today to see how we can help you take your business to the
-              next level.
+              In today's highly competitive job market, finding top talent that perfectly aligns with your organization's needs and values is no easy feat. That's where Teazeap steps in, redefining the landscape of recruitment in the tech, corporate, and healthcare sectors. As a leading recruiting company, Teazeap is dedicated to providing innovative solutions that bridge the gap between exceptional talent and forward-thinking organizations. With a distinct focus on these three sectors, Teazeap combines cutting-edge technology, industry expertise, and a passion for connecting professionals with their dream careers.
             </p>
           </v-col>
         </div>
@@ -30,11 +22,11 @@
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
-          Our Strategic Approach To Providing Telemarketing Services
+          Our Strategic Approach To Providing Recruitment Services
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
-            <img src="/img/process.png" alt="banner" class="img-fluid" />
+            <img src="/img/recruitment/recruitment-3.png" alt="banner" class="img-fluid" />
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <Collapsible :processes="processes" />
@@ -46,7 +38,7 @@
    <!-- teacher type -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
-        <h2 class="title text-center">Where We Started</h2>
+        <h2 class="title text-center">Where we started</h2>
         <p class="video-section-introduction text-justify">
           Teazeap embarked on its journey with a primary emphasis on talent
           acquisition within the education sector. However, over time, the
@@ -101,18 +93,18 @@ export default {
       processes: [
         {
           id: 1,
-          title: "UNDERSTAND CUSTOMER NEEDS",
-          content: "Teazeap would start by understanding the customer's business requirements, target audience, and sales goals. Based on this information, we would recommend the most appropriate virtual telemarketing service to meet the customer's needs."
+          title: "TARGETED EXPERTISE FOR SPECIALIZED SECTORS",
+          content: "Our industry-focused recruitment experts possess deep knowledge in tech, corporate, and healthcare sectors, enabling us to identify top talent and seamlessly align them with our clients' specific requirements"
         },
         {
           id: 2,
-          title: "CONFIGURE INFRASTRUCTURE",
-          content: "Once the service is chosen, Teazeap would configure the necessary infrastructure, including software, hardware, and network components. This would ensure that the virtual telemarketing service is set up correctly and functions optimally."
+          title: "CUTTING-EDGE TECHNOLOGY FOR STREAMLINED PROCESSES",
+          content: "Leveraging innovative tools, AI, and data analytics, we streamline recruitment processes, reducing time-to-hire and providing our clients with a competitive edge in accessing qualified talent efficiently."
         },
         {
           id: 3,
-          title: "TRAIN AGENTS",
-          content: "Teazeap would provide comprehensive training to agents on how to use the virtual telemarketing service effectively, including best practices for managing calls, handling objections, and closing sales. This training would help agents to provide top-quality service to customers and achieve the customer's sales goals."
+          title: "PERSONALIZED APPROACH FOR TAILORED CONNECTIONS",
+          content: "Understanding the unique values and aspirations of candidates and clients, we forge meaningful connections, offering tailored recommendations that drive long-term success and foster strong relationships for mutual growth and fulfillment."
         }
       ],
       team: [

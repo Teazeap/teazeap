@@ -28,7 +28,7 @@
           </div>
         </v-col>
         <v-col cols="12" sm="5" lg="6">
-          <img src="/img/landing/tele.png" alt="banner" class="img-fluid" />
+          <img src="/img/landing/landing-intro.png" alt="banner" class="img-fluid" />
         </v-col>
       </v-row>
       <ContactDialog v-if="showModal" @close="showModal = false" />

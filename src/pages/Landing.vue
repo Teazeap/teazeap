@@ -88,7 +88,6 @@ import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Telemarketing/Contact";
 import Header from "@/pages/Landing/Header.vue";
 import Flickity from "vue-flickity";
-// import TesimonialsCard from "@/pages/Telemarketing/TesimonialsCard";
 import sizeMixin from "@/plugins/sizeMixin.js";
 import TeamCard from "@/pages/TeamCard.vue";
 import ProductCard from "@/pages/Landing/ProductCard.vue";
@@ -101,7 +100,6 @@ export default {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
     Contact,
-    // TesimonialsCard,
     TeamCard,
     ProductCard,
     Header,

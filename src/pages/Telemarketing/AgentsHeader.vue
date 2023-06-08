@@ -23,10 +23,18 @@
               </router-link>
               <router-link
                 to="/telemarketing/multiple-agent"
-                class="program-link"
+                class="program-link mr-md-4 mb-2 mb-md-0 mt-md-0"
               >
                 <div class="program-link-content">
                   Multi-Agent
+                </div>
+              </router-link>
+              <router-link
+                to="/telemarketing/call-center"
+                class="program-link"
+              >
+                <div class="program-link-content">
+                  Call Center
                 </div>
               </router-link>
             </div>

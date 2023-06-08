@@ -6,6 +6,7 @@ import RecruitmentAgency from "./pages/RecruitmentAgency.vue";
 import TelemarketingIndex from "./pages/Telemarketing/index.vue";
 import SingleAgent from "./pages/Telemarketing/SingleAgent.vue";
 import MultipleAgent from "./pages/Telemarketing/MultipleAgent.vue";
+import CallCenter from "./pages/Telemarketing/CallCenter.vue"
 import Schools from "./pages/Services/Schools.vue";
 import Teachers from "./pages/Services/Teachers.vue";
 import Process from "./pages/Procedure/ApplicationProcess.vue";
@@ -196,6 +197,14 @@ export default new Router({
           path: "multiple-agent",
           name: "MultipleAgent",
           component: MultipleAgent,
+          props: {
+            header: { colorOnScroll: 400 },
+          },
+        },
+        {
+          path: "call-center",
+          name: "CallCenter",
+          component: CallCenter,
           props: {
             header: { colorOnScroll: 400 },
           },

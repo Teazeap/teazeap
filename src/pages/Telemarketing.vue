@@ -112,6 +112,8 @@
           unique needs and deliver results.
         </h5>
         <div class="row mt-n4 mb-4" style="justify-content: center">
+
+
           <v-col cols="12" sm="7" lg="4">
             <PlanCard
               :card-styles="{
@@ -135,6 +137,8 @@
               to="/telemarketing/single-agent"
             />
           </v-col>
+
+
           <v-col cols="12" sm="5" lg="4">
             <PlanCard
               :card-styles="{
@@ -159,6 +163,33 @@
               to="/telemarketing/multiple-agent"
             />
           </v-col>
+
+          <v-col cols="12" sm="5" lg="4">
+            <PlanCard
+              :card-styles="{
+                backgroundColor: '#f06053',
+                textColor: 'white',
+                actionButtonColor: '#f96332',
+                actionButtonBackground: 'white',
+              }"
+              :plan="{
+                title: 'Call Center',
+                subtitle: 'If this describes your campaign:',
+                keyPoints: [
+                  'Improve Customer Satisfaction.',
+                  'Increase Sales and Revenue.',
+                  'Streamline Operations and Efficiency.',
+                ],
+                actionButton: {
+                  text: 'View',
+                  url: '',
+                },
+              }"
+              to="/telemarketing/call-center"
+            />
+          </v-col>
+
+
         </div>
       </div>
     </div>
@@ -184,6 +215,7 @@
   </div>
 </template>
 <script>
+
 import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Telemarketing/Contact";
 import Header from "@/pages/Telemarketing/Header.vue";

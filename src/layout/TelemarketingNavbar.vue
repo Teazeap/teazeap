@@ -13,14 +13,28 @@
       </router-link>
     </template>
     <template slot="navbar-menu">
+
+      <!-- Changed by Serge  -->
+      <!-- adding the call center  -->
+
       <drop-down tag="li" title="Agents" class="nav-item nav-ul">
+
         <nav-link to="/telemarketing/single-agent">
           Single Agent Program
         </nav-link>
+
         <nav-link to="/telemarketing/multiple-agent">
           Multi Agent Program
         </nav-link>
+
+        <nav-link to="/telemarketing/call-center">
+          Call Center Program
+        </nav-link>
+
       </drop-down>
+
+
+
       <li class="nav-item">
         <nav-link class="nav-link about-us" to="/">
           <p>{{ $t("nav.about-us") }}</p>

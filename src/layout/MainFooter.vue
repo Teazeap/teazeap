@@ -53,6 +53,7 @@
             {{ $t("nav.telemarketing") }}
             </router-link>
           </li>
+          
           <li>
             <router-link
               v-popover:popover1
@@ -62,6 +63,7 @@
             {{ $t("nav.single-agent") }}
             </router-link>
           </li>
+
            <li>
             <router-link
               v-popover:popover1
@@ -71,6 +73,18 @@
             {{ $t("nav.multiple-agent") }}
             </router-link>
           </li>
+
+          <li>
+            <router-link
+              v-popover:popover1
+              class="navbar-brand"
+              to="/telemarketing/call-center"
+            >
+            {{ $t("call-center") }}
+            </router-link>
+          </li>
+
+
         </ul>
       </nav>
       <div class="copyright">

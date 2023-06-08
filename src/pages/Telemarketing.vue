@@ -167,13 +167,13 @@
           <v-col cols="12" sm="5" lg="4">
             <PlanCard
               :card-styles="{
-                backgroundColor: '#f06053',
+                backgroundColor: 'rgb(16, 77, 51)',
                 textColor: 'white',
-                actionButtonColor: '#f96332',
+                actionButtonColor: 'rgb(16, 77, 51)',
                 actionButtonBackground: 'white',
               }"
               :plan="{
-                title: 'Call Center',
+                title: 'CALL CENTER',
                 subtitle: 'If this describes your campaign:',
                 keyPoints: [
                   'Improve Customer Satisfaction.',

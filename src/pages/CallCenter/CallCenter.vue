@@ -1,8 +1,9 @@
 <template>
   <div>
     <AgentsHeader
-      title="Call Center Program"
+      title="Call Center"
       sub-title="Experience superior call center solutions that elevate customer satisfaction and boost productivity"
+      program-pic-url="/img/call-center-agent.png"
     />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
@@ -16,12 +17,12 @@
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
               When you're ready to break free from a flawed call ceter
-              operation and experience a solution that delivers tangible 
-              results, reach out to us. Teazeap Call Center specializes 
-              in outsourcing single agent call center campaigns. These 
+              operation and experience a solution that delivers tangible
+              results, reach out to us. Teazeap Call Center specializes
+              in outsourcing single agent call center campaigns. These
               campaigns are hassle-free for you and yield real outcomes.
-              Our extensively trained, clear-spoken call center agents boast 
-              a track record of success. Single agents start at $9.5 per hour, 
+              Our extensively trained, clear-spoken call center agents boast
+              a track record of success. Single agents start at $9.5 per hour,
               ensuring cost-effective support for your business. Contact us
               today and unlock the potential of a high-performing call center
               that drives customer satisfaction and boosts your bottom line.
@@ -62,7 +63,7 @@
     </div>
 
     <PricingTable :plans="plans" @get-plan="showModal = true" />
-    
+
     <!-- propgram steps-->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
@@ -89,7 +90,7 @@ import Contact from "@/pages/Telemarketing/Contact";
 import AgentsHeader from "@/pages/Telemarketing/AgentsHeader.vue";
 import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
-import PriceBadge from "./PriceBadge.vue";
+import PriceBadge from "../Telemarketing/PriceBadge.vue";
 import ContactDialog from "@/pages/Telemarketing/ContactDialog";
 
 export default {

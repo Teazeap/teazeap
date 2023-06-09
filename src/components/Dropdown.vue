@@ -18,7 +18,8 @@
         :class="{ 'no-caret': hideArrow }"
         data-toggle="dropdown"
       >
-        <i :class="icon"></i>
+        <font-awesome-icon :icon="icon" v-if="isFa" class="mr-1" />
+        <i :class="icon" v-else></i>
         <span class="no-icon">{{ title }}</span>
       </a>
     </slot>
@@ -44,6 +45,10 @@ export default {
     title: String,
     icon: String,
     position: String,
+    isFa:  {
+      type: Boolean,
+      default: false
+    },
     hideArrow: Boolean,
     tag: {
       type: String,

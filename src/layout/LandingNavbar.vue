@@ -13,92 +13,76 @@
       </router-link>
     </template>
     <template slot="navbar-menu">
-      <!-- <li class="nav-item">
-        <nav-link class="nav-link about-us" to="/">
-          <i class="now-ui-icons arrows-1_share-66"></i>
-          <p>{{ $t("nav.about-us") }}</p>
+      <drop-down
+        tag="li"
+        title="Recruitment"
+        icon="users-viewfinder"
+        class="nav-item nav-ul"
+        :isFa="true"
+      >
+        <nav-link to="https://www.facebook.com/teazeap">
+          <font-awesome-icon icon="code" /> <span class="ml-2">Tech</span>
         </nav-link>
-      </li> -->
-      <!-- <li class="nav-item">
-        <nav-link class="nav-link btn btn-neutral" to="/jobs">
-          <i class="now-ui-icons arrows-1_share-66  nav-link-icon"></i>
-          <p>{{ $t("nav.apply-now") }}</p>
+        <nav-link to="https://www.facebook.com/teazeap">
+          <font-awesome-icon icon="business-time" /> <span class="ml-2">Corporate</span>
         </nav-link>
-      </li> -->
-
-      <!-- <li class="nav-item">
-        <nav-link
-          class="nav-link  btn btn-neutral btn-profile"
-          to="/create-profile"
-        >
-          <i class="now-ui-icons users_single-02 nav-link-icon"></i>
-          <p>{{ $t("nav.create-profile") }}</p>
+        <nav-link to="https://www.facebook.com/teazeap">
+          <font-awesome-icon icon="graduation-cap" /> <span class="ml-2">Educational</span>
         </nav-link>
-      </li> -->
-
-      <!-- <li class="nav-item">
-        <nav-link class="nav-link  btn  btn-neutral btn-profile" to="/telemarketing">
-          <i class="now-ui-icons tech_headphones nav-link-icon"></i>
-          <p>{{ $t("nav.telemarketing") }}</p>
-        </nav-link>
-      </li> -->
+      </drop-down>
 
       <drop-down
         tag="li"
-        :title="ourServices"
-        icon="now-ui-icons design_image"
+        title="Telemarketing"
+        icon="headset"
         class="nav-item nav-ul"
+        :isFa="true"
       >
-        <nav-link to="/recruitment-agency">
-          <i class="now-ui-icons education_paper"></i> {{ $t("landing-page.recruitment") }}
+        <nav-link to="telemarketing/single-agent">
+          <font-awesome-icon icon="user" /> <span class="ml-2">Single Agent Program</span>
         </nav-link>
-        <nav-link to="/telemarketing">
-          <i class="now-ui-icons education_hat"></i> {{ $t("landing-page.telemarketing") }}
+        <nav-link to="telemarketing/multiple-agent">
+          <font-awesome-icon icon="user-group" /> <span class="ml-2">Multiple Agent Program</span>
         </nav-link>
-        <!-- <nav-link to="/blog">
-          <i class="now-ui-icons files_paper"></i> {{ $t("nav.blog") }}
-        </nav-link> -->
       </drop-down>
 
-      <!-- <drop-down
+      <drop-down
         tag="li"
-        :title="language"
+        title="Call Center"
+        icon="phone-volume"
+        class="nav-item nav-ul"
+        :isFa="true"
+      >
+        <nav-link to="telemarketing/call-center">
+          <font-awesome-icon icon="phone" /> <span class="ml-2">Learn More</span>
+        </nav-link>
+      </drop-down>
+
+      <drop-down
+        tag="li"
+        title="Get In Touch"
         icon="now-ui-icons business_globe"
         class="nav-item nav-ul"
       >
-        <nav-link text="en" @onLanguageChange="onLanguageChange">
-          <i class="now-ui-icons travel_istanbul"></i> English
+        <nav-link to="https://www.facebook.com/teazeap">
+          <i class="fab fa-facebook-square"></i> Facebook
         </nav-link>
-        <nav-link text="zh" @onLanguageChange="onLanguageChange">
-          <i class="now-ui-icons transportation_air-baloon"></i> Chinese
+        <nav-link to="https://www.facebook.com/teazeap">
+          <i class="fab fa-instagram"></i> Instagram
         </nav-link>
-      </drop-down> -->
+        <nav-link to="https://www.facebook.com/teazeap">
+          <font-awesome-icon icon="phone" /> <span class="ml-2">+1 848 305 7850</span>
+        </nav-link>
+      </drop-down>
 
       <li class="nav-item">
-        <a
-          class="nav-link"
-          rel="tooltip"
-          title="Like us on Facebook"
-          data-placement="bottom"
-          href="https://www.facebook.com/teazeap"
-          target="_blank"
+        <nav-link
+          class="nav-link  btn btn-neutral btn-profile"
+          to="/blog"
         >
-          <i class="fab fa-facebook-square"></i>
-          <p class="d-lg-none d-xl-none">Facebook</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          rel="tooltip"
-          title="Follow us on Instagram"
-          data-placement="bottom"
-          href="https://www.instagram.com/teazeap/"
-          target="_blank"
-        >
-          <i class="fab fa-instagram"></i>
-          <p class="d-lg-none d-xl-none">Instagram</p>
-        </a>
+          <i class="now-ui-icons files_paper nav-link-icon"></i>
+          <p>{{ $t("nav.blog") }}</p>
+        </nav-link>
       </li>
     </template>
   </navbar>

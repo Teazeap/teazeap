@@ -14,7 +14,7 @@
               <strong>recruitment</strong>, <strong>telemarketing</strong>, and
               <strong>call center</strong> services. Recognizing the growing
               demand for skilled professionals in the tech, corporate, and
-              healthcare sectors, Teazeap set out to connect businesses with top
+              education sectors, Teazeap set out to connect businesses with top
               talent. With a mission to bridge the gap between employers and
               exceptional candidates, Teazeap has achieved significant
               accomplishments over the past decade. Through innovative
@@ -41,23 +41,6 @@
             :teazeap-product="teazeapProduct"
           />
         </flickity>
-      </div>
-    </div>
-
-    <!-- telemarketing steps -->
-    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
-      <div class="container section-card">
-        <h2 class="title text-center">
-          Our Strategic Approach To Providing Telemarketing Services
-        </h2>
-        <div class="row mt-4">
-          <v-col cols="12" sm="7" lg="6">
-            <img src="/img/process.png" alt="banner" class="img-fluid" />
-          </v-col>
-          <v-col cols="12" sm="5" lg="6">
-            <Collapsible :processes="processes" />
-          </v-col>
-        </div>
       </div>
     </div>
 
@@ -103,7 +86,6 @@ export default {
     TeamCard,
     ProductCard,
     Header,
-    Collapsible,
     Flickity,
   },
   data() {
@@ -113,26 +95,6 @@ export default {
         email: "",
         message: "",
       },
-      processes: [
-        {
-          id: 1,
-          title: "UNDERSTAND CUSTOMER NEEDS",
-          content:
-            "Teazeap would start by understanding the customer's business requirements, target audience, and sales goals. Based on this information, we would recommend the most appropriate virtual telemarketing service to meet the customer's needs.",
-        },
-        {
-          id: 2,
-          title: "CONFIGURE INFRASTRUCTURE",
-          content:
-            "Once the service is chosen, Teazeap would configure the necessary infrastructure, including software, hardware, and network components. This would ensure that the virtual telemarketing service is set up correctly and functions optimally.",
-        },
-        {
-          id: 3,
-          title: "TRAIN AGENTS",
-          content:
-            "Teazeap would provide comprehensive training to agents on how to use the virtual telemarketing service effectively, including best practices for managing calls, handling objections, and closing sales. This training would help agents to provide top-quality service to customers and achieve the customer's sales goals.",
-        },
-      ],
       team: [
         {
           name: "Clifton Moreau",

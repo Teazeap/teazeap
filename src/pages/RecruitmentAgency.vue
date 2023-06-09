@@ -4,7 +4,7 @@
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
         <h2 class="title text-center">
-          Revolutionizing Recruitment Tech, Corporate, and Education.
+          Revolutionizing Recruitment Tech, Corporate, and Educational.
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
@@ -12,7 +12,7 @@
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
-              In today's highly competitive job market, finding top talent that perfectly aligns with your organization's needs and values is no easy feat. That's where Teazeap steps in, redefining the landscape of recruitment in the tech, corporate, and education sectors. As a leading recruiting company, Teazeap is dedicated to providing innovative solutions that bridge the gap between exceptional talent and forward-thinking organizations. With a distinct focus on these three sectors, Teazeap combines cutting-edge technology, industry expertise, and a passion for connecting professionals with their dream careers.
+              In today's highly competitive job market, finding top talent that perfectly aligns with your organization's needs and values is no easy feat. That's where Teazeap steps in, redefining the landscape of recruitment in the tech, corporate, and educational sectors. As a leading recruiting company, Teazeap is dedicated to providing innovative solutions that bridge the gap between exceptional talent and forward-thinking organizations. With a distinct focus on these three sectors, Teazeap combines cutting-edge technology, industry expertise, and a passion for connecting professionals with their dream careers.
             </p>
           </v-col>
         </div>
@@ -55,7 +55,7 @@
         <h2 class="title text-center">Where we started</h2>
         <p class="video-section-introduction text-justify">
           Teazeap embarked on its journey with a primary emphasis on talent
-          acquisition within the education sector. However, over time, the
+          acquisition within the educational sector. However, over time, the
           organization evolved into a well-rounded provider of recruitment
           solutions, telemarketing services, and call center operations.
           Teazeap's expanded scope encompassed various types of teaching
@@ -108,7 +108,7 @@ export default {
         {
           id: 1,
           title: "TARGETED EXPERTISE FOR SPECIALIZED SECTORS",
-          content: "Our industry-focused recruitment experts possess deep knowledge in tech, corporate, and education sectors, enabling us to identify top talent and seamlessly align them with our clients' specific requirements"
+          content: "Our industry-focused recruitment experts possess deep knowledge in tech, corporate, and educational sectors, enabling us to identify top talent and seamlessly align them with our clients' specific requirements"
         },
         {
           id: 2,

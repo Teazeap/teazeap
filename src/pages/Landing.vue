@@ -14,7 +14,7 @@
               <strong>recruitment</strong>, <strong>telemarketing</strong>, and
               <strong>call center</strong> services. Recognizing the growing
               demand for skilled professionals in the tech, corporate, and
-              education sectors, Teazeap set out to connect businesses with top
+              educational sectors, Teazeap set out to connect businesses with top
               talent. With a mission to bridge the gap between employers and
               exceptional candidates, Teazeap has achieved significant
               accomplishments over the past decade. Through innovative

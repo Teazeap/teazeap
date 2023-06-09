@@ -41,6 +41,32 @@ Vue.use(VeeValidate);
 Vue.use(VueSweetalert2, options)
 Vue.use(NowUiKit);
 
+
+/* import the fontawesome core */
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+/* import font awesome icon component */
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+/* import specific icons */
+import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faHeadset } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faUserGroup } from '@fortawesome/free-solid-svg-icons'
+import { faUsersViewfinder } from '@fortawesome/free-solid-svg-icons'
+import { faCode } from '@fortawesome/free-solid-svg-icons'
+import { faBlog } from '@fortawesome/free-solid-svg-icons'
+import { faBusinessTime } from '@fortawesome/free-solid-svg-icons'
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
+import { faPhoneVolume } from '@fortawesome/free-solid-svg-icons'
+import { faCrown } from '@fortawesome/free-solid-svg-icons'
+
+/* add icons to the library */
+library.add(faPhone, faHeadset, faUser, faUserGroup, faCode, faUsersViewfinder, faBlog, faBusinessTime, faGraduationCap, faPhoneVolume, faCrown)
+
+/* add font awesome icon component */
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 new Vue({
   router,
   store,

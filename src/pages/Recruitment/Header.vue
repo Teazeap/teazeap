@@ -10,7 +10,7 @@
             <h4
               class="banner-subtitle white--text font-weight-regular text-white text-justify"
             >
-              Unlock Your Career Potential with Teazeap: Connecting Exceptional Talent with Tech, Corporate, and Healthcare Opportunities!
+              Unlock Your Career Potential with Teazeap: Connecting Exceptional Talent with Tech, Corporate, and Education Opportunities!
             </h4>
             <div class="mt-md-16 mt-10 d-sm-flex d-block">
               <router-link

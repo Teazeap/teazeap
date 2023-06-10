@@ -327,7 +327,7 @@ export default new Router({
   ],
   scrollBehavior: (to) => {
     if (to.hash) {
-      return { selector: to.hash };
+      return { selector: to.hash, behavior: 'smooth', offset: { x: 0, y: 10 } };
     } else {
       return { x: 0, y: 0 };
     }

@@ -5,10 +5,10 @@
         <v-col cols="12" sm="7" lg="6" class="d-flex align-center">
           <div class="text-sm-left text-center">
             <h1 class="banner-title font-weight-bold text-white">
-              Telemarketing And Call Center Services
+              Telemarketing Agency
             </h1>
             <h4
-              class="banner-subtitle white--text font-weight-regular text-white text-justify"
+              class="banner-subtitle white--text font-weight-regular text-white"
             >
               Maximize your sales potential with our expert telemarketing
                and call center services with price less than <strong>$10/agent</strong>

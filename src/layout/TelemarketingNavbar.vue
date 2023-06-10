@@ -14,10 +14,28 @@
     </template>
     <template slot="navbar-menu">
 
-      <!-- Changed by Serge  -->
-      <!-- adding the call center  -->
+      <li class="nav-item">
+        <nav-link class="nav-link btn btn-profile" to="/telemarketing/single-agent">
+          <font-awesome-icon icon="user" />
+          <p class="ml-1">Single Agent</p>
+        </nav-link>
+      </li>
 
-      <drop-down tag="li" title="Agents" class="nav-item nav-ul">
+      <li class="nav-item">
+        <nav-link class="nav-link btn btn-profile" to="/telemarketing/multiple-agent">
+         <font-awesome-icon icon="user-group" />
+          <p class="ml-1">Multiple Agent</p>
+        </nav-link>
+      </li>
+
+      <li class="nav-item">
+        <nav-link class="nav-link btn btn-profile" to="/jobs">
+         <font-awesome-icon icon="crown" />
+          <p class="ml-1">Bundle</p>
+        </nav-link>
+      </li>
+
+      <!-- <drop-down tag="li" title="Agents" class="nav-item nav-ul">
 
         <nav-link to="/telemarketing/single-agent">
           Single Agent Program
@@ -85,14 +103,14 @@
           <i class="fab fa-instagram"></i>
           <p class="d-lg-none d-xl-none">Instagram</p>
         </a>
-      </li>
+      </li> -->
     </template>
     <ContactDialog v-if="showModal" @close="showModal = false" />
   </navbar>
 </template>
 
 <script>
-import { DropDown, Navbar, NavLink } from "@/components";
+import { Navbar, NavLink } from "@/components";
 import { Popover } from "element-ui";
 import { v4 as uuidv4 } from "uuid";
 import ContactDialog from "@/pages/Telemarketing/ContactDialog";
@@ -104,7 +122,6 @@ export default {
     colorOnScroll: Number,
   },
   components: {
-    DropDown,
     ContactDialog,
     Navbar,
     NavLink,

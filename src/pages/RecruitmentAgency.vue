@@ -4,7 +4,7 @@
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
         <h2 class="title text-center">
-          Revolutionizing Recruitment Tech, Corporate, and Educational.
+          Revolutionizing Recruitment Tech, Corporate and Educational.
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
@@ -18,6 +18,26 @@
         </div>
       </div>
     </div>
+
+    <!-- service industry -->
+    <div v-for="service, index in servicedIndustry" :key="index" class="section pt-0 mobile-padding" :style="commonMarginClass" :id="service.id">
+      <div class="container section-card">
+        <h2 class="title text-center">
+          {{service.name}}
+        </h2>
+        <div class="row mt-4">
+          <v-col cols="12" sm="7" lg="6">
+            <img :src="service.picUrl" alt="banner" class="img-fluid" :style="service.picUrlStyle" />
+          </v-col>
+          <v-col cols="12" sm="5" lg="6">
+            <p class="introduction-text">
+              {{service.description}}
+            </p>
+          </v-col>
+        </div>
+      </div>
+    </div>
+
     <!-- telemarketing steps -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
@@ -171,6 +191,29 @@ export default {
           type: "landing-page.sub-teacher",
           desc: "landing-page.sub-desc",
         },
+      ],
+      servicedIndustry: [
+        {
+          name: "Tech",
+          id: "tech",
+          picUrl: "/img/recruitment/tech.png",
+          picUrlStyle: "margin-top: -2.8rem",
+          description: "Teazeap's prowess in the tech industry stems from its ability to curate a network of top-tier tech talent, ensuring a competitive edge in the recruitment landscape. By staying at the forefront of industry trends and leveraging extensive industry knowledge, Teazeap consistently identifies exceptional candidates with specialized technical expertise. Its rigorous screening processes not only evaluate technical prowess but also assess cultural fit, resulting in optimal candidate placements for businesses seeking innovation and technological excellence."
+        },
+        {
+          name: "Corporate",
+          id: "corporate",
+          picUrl: "/img/recruitment/corporate.png",
+          picUrlStyle: "margin-top: -2.8rem",
+          description: "Teazeap's leadership in the corporate industry arises from its adeptness in tailoring bespoke recruitment solutions to meet the distinct demands of corporations. With an acute understanding of corporate requirements and an impeccable track record, Teazeap sources and places qualified professionals in executive, managerial, and administrative roles. Through a comprehensive database and proactive sourcing techniques, Teazeap identifies individuals with the ideal qualifications, experience, and leadership acumen to align with a corporation's unique culture and strategic objectives."
+        },
+         {
+          name: "Educational",
+          id: "educational",
+          picUrl: "/img/recruitment/educational.png",
+          picUrlStyle: "margin-top: -2.8rem",
+          description: "Teazeap distinguishes itself as a premier healthcare recruitment provider by specializing in the intricacies of the industry. Its dedicated team possesses deep expertise in sourcing and placing healthcare professionals across various critical roles. Teazeap's meticulous screening and credential verification processes ensure that healthcare organizations are connected with highly skilled professionals who meet regulatory and quality standards. Armed with an extensive network and robust relationships within the healthcare sector, Teazeap consistently identifies the ideal candidates to cater to the industry's evolving needs, fostering enhanced patient care and operational excellence."
+        }
       ],
     };
   },

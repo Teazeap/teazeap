@@ -12,7 +12,7 @@
             >
               {{ subTitle }}
             </h4>
-            <div class="mt-md-16 mt-10 d-sm-flex d-block">
+            <!-- <div class="mt-md-16 mt-10 d-sm-flex d-block">
               <router-link
                 to="/telemarketing/single-agent"
                 class="program-link mr-0 mr-md-4 mb-2 mb-md-0 mt-4 mt-md-0 "
@@ -29,7 +29,7 @@
                   Multi-Agent
                 </div>
               </router-link>
-            </div>
+            </div> -->
           </div>
         </v-col>
         <v-col cols="12" sm="5" lg="6">

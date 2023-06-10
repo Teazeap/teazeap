@@ -6,7 +6,7 @@
         class="mx-auto profile-card"
         min-height="220"
         width="334"
-        to="telemarketing"
+        :to="teazeapProduct.productLink"
         :elevation="4"
         :style="{
           backgroundImage: 'url(' + teazeapProduct.backgroupImgUrl + ')',

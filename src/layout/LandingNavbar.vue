@@ -20,13 +20,13 @@
         class="nav-item nav-ul"
         :isFa="true"
       >
-        <nav-link to="https://www.facebook.com/teazeap">
+        <nav-link to="recruitment-agency#tech">
           <font-awesome-icon icon="code" /> <span class="ml-2">Tech</span>
         </nav-link>
-        <nav-link to="https://www.facebook.com/teazeap">
+        <nav-link to="recruitment-agency#corporate">
           <font-awesome-icon icon="business-time" /> <span class="ml-2">Corporate</span>
         </nav-link>
-        <nav-link to="https://www.facebook.com/teazeap">
+        <nav-link to="recruitment-agency#educational">
           <font-awesome-icon icon="graduation-cap" /> <span class="ml-2">Educational</span>
         </nav-link>
       </drop-down>

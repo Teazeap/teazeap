@@ -15,21 +15,21 @@
     <template slot="navbar-menu">
 
       <li class="nav-item">
-        <nav-link class="nav-link btn btn-profile" to="/jobs">
-          <font-awesome-icon icon="business-time" />
-          <p class="ml-1">Corporate</p>
-        </nav-link>
-      </li>
-
-      <li class="nav-item">
-        <nav-link class="nav-link btn btn-profile" to="/jobs">
+        <nav-link class="nav-link btn btn-profile" to="recruitment-agency#tech">
           <font-awesome-icon icon="code" />
           <p class="ml-1">Tech</p>
         </nav-link>
       </li>
 
       <li class="nav-item">
-        <nav-link class="nav-link btn btn-profile" to="/jobs">
+        <nav-link class="nav-link btn btn-profile" to="recruitment-agency#corporate">
+          <font-awesome-icon icon="business-time" />
+          <p class="ml-1">Corporate</p>
+        </nav-link>
+      </li>
+
+      <li class="nav-item">
+        <nav-link class="nav-link btn btn-profile" to="recruitment-agency#educational">
           <font-awesome-icon icon="graduation-cap" />
           <p class="ml-1">Educational</p>
         </nav-link>

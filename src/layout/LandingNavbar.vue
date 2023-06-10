@@ -39,10 +39,13 @@
         :isFa="true"
       >
         <nav-link to="telemarketing/single-agent">
-          <font-awesome-icon icon="user" /> <span class="ml-2">Single Agent Program</span>
+          <font-awesome-icon icon="user" /> <span class="ml-2">Single Agent </span>
         </nav-link>
         <nav-link to="telemarketing/multiple-agent">
-          <font-awesome-icon icon="user-group" /> <span class="ml-2">Multiple Agent Program</span>
+          <font-awesome-icon icon="user-group" /> <span class="ml-2">Multiple Agent </span>
+        </nav-link>
+        <nav-link to="telemarketing/bundle">
+          <font-awesome-icon icon="crown" /> <span class="ml-2">Bundle</span>
         </nav-link>
       </drop-down>
 
@@ -53,8 +56,14 @@
         class="nav-item nav-ul"
         :isFa="true"
       >
-        <nav-link to="telemarketing/call-center">
-          <font-awesome-icon icon="phone" /> <span class="ml-2">Learn More</span>
+        <nav-link to="/call-center#single-agent">
+          <font-awesome-icon icon="user" /> <span class="ml-2">Single Agent</span>
+        </nav-link>
+        <nav-link to="/call-center#multiple-agent">
+          <font-awesome-icon icon="user-group" /> <span class="ml-2">Multiple Agent</span>
+        </nav-link>
+        <nav-link to="/call-center#bundle">
+          <font-awesome-icon icon="crown" /> <span class="ml-2">Bundle</span>
         </nav-link>
       </drop-down>
 

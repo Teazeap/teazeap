@@ -28,6 +28,8 @@ import vuetify from './plugins/vuetify'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@fortawesome/fontawesome-free/css/all.css'
 import CountryFlag from 'vue-country-flag'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.component('country-flag', CountryFlag)
 Vue.config.productionTip = false;
@@ -40,6 +42,7 @@ const options = {
 Vue.use(VeeValidate);
 Vue.use(VueSweetalert2, options)
 Vue.use(NowUiKit);
+Vue.use(ElementUI);
 
 
 /* import the fontawesome core */

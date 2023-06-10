@@ -3,6 +3,7 @@
     <AgentsHeader
       title="Single Agent Program"
       sub-title="Experience success with hassle-free single agent telemarketing campaigns at Teazeap"
+      planSelector= "/telemarketing/single-agent#filterinng-avatar"
     />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
@@ -261,6 +262,7 @@ export default {
           "Outbound and inbound call handling",
           "Appointment scheduling and reminders",
         ],
+        id: "filterinng-avatar"
       },
       openDialog: false,
     };

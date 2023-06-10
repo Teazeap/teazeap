@@ -26,6 +26,9 @@
             width: 49px;
             top: -4px;
         }
+        .nav-link.active {
+            border: white solid 1px;
+        }
         .nav-link.btn {
             padding: $padding-btn-vertical $padding-btn-horizontal;
             &.btn-lg {

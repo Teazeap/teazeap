@@ -10,18 +10,18 @@
             <h4
               class="banner-subtitle white--text font-weight-regular text-white"
             >
-              {{ subTitle }}
+            <span v-html="subTitle"></span>
             </h4>
             <div class="mt-md-16 mt-10 d-sm-flex d-block">
               <router-link
-                to="/telemarketing/single-agent"
+                :to="planSelector"
                 class="program-link mr-0 mr-md-4 mb-2 mb-md-0 mt-4 mt-md-0 "
               >
                 <div class="program-link-content">
-                  Single Agent
+                  Get Plan
                 </div>
               </router-link>
-              <router-link
+              <!-- <router-link
                 to="/telemarketing/multiple-agent"
                 class="program-link mr-md-4 mb-2 mb-md-0 mt-md-0"
               >
@@ -36,7 +36,7 @@
                 <div class="program-link-content">
                   Call Center
                 </div>
-              </router-link>
+              </router-link> -->
             </div>
           </div>
         </v-col>
@@ -66,6 +66,11 @@ export default {
       default: "/img/tele.png",
     },
     subTitle: {
+      type: String,
+      required: true,
+      default: "",
+    },
+    planSelector: {
       type: String,
       required: true,
       default: "",
@@ -142,6 +147,7 @@ export default {
   border-radius: 8px;
   display: flex;
   justify-content: center;
+  border: white solid 1px;
 }
 
 .program-link:hover {
@@ -151,7 +157,7 @@ export default {
 }
 
 .program-link.active {
-  border: white solid 3px;
+  border: white solid 1px;
 }
 
 .program-link-content {

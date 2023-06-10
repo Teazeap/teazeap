@@ -6,6 +6,7 @@ import RecruitmentAgency from "./pages/RecruitmentAgency.vue";
 import TelemarketingIndex from "./pages/Telemarketing/index.vue";
 import SingleAgent from "./pages/Telemarketing/SingleAgent.vue";
 import MultipleAgent from "./pages/Telemarketing/MultipleAgent.vue";
+import TelemarketingBundle from "./pages/Telemarketing/Bundle.vue";
 import CallCenter from "./pages/CallCenter/CallCenter.vue"
 import Schools from "./pages/Services/Schools.vue";
 import Teachers from "./pages/Services/Teachers.vue";
@@ -21,6 +22,7 @@ import LandingNavbar from "./layout/LandingNavbar.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import RecruitmentAgencyNavbar from "./layout/RecruitmentAgencyNavbar.vue";
 import TelemarketingNavbar from "./layout/TelemarketingNavbar.vue";
+import CallCenterNavbar from "./layout/CallCenterNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
 import store from "@/store";
 import Dashboard from "./pages/Protected/Dashboard/index.vue";
@@ -164,6 +166,19 @@ export default new Router({
       },
     },
     {
+      path: "/call-center",
+      name: "CallCenter",
+      components: {
+        default: CallCenter,
+        header: CallCenterNavbar,
+        footer: MainFooter,
+      },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" },
+      },
+    },
+    {
       path: "/telemarketing",
       name: "TelemarketingIndex",
       components: {
@@ -202,9 +217,9 @@ export default new Router({
           },
         },
         {
-          path: "call-center",
-          name: "CallCenter",
-          component: CallCenter,
+          path: "bundle",
+          name: "TelemarketingBundle",
+          component: TelemarketingBundle,
           props: {
             header: { colorOnScroll: 400 },
           },

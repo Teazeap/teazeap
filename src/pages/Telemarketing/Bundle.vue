@@ -1,10 +1,10 @@
 <template>
   <div>
     <AgentsHeader
-      title="Multiple Agent Program"
-      sub-title="Advanced telemarketing services with live lead transfers and multi-agent program options."
+      title="Bundle"
+      sub-title="Advanced telemarketing services that include both <span style='font-weight: bold'>single agent</span>  and <span style='font-weight: bold'>mutltiple agent</span> deals."
       program-pic-url="/img/team-agents.png"
-      plan-selector="/telemarketing/multiple-agent#filtering-specials"
+      planSelector= "/telemarketing/bundle#bundle"
     />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <PriceBadge :plan="filteringSpecialPlan" @get-plan="showModal = true"/>
+    <PriceBadge :plan="bundlePlan" @get-plan="showModal = true"/>
     <!-- what to expect section -->
     <div class="row what-to-expect" :style="commonMarginClass">
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
@@ -94,7 +94,7 @@ import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 import ContactDialog from "@/pages/Telemarketing/ContactDialog";
 
 export default {
-  name: "multiple-agent",
+  name: "telemarketing-bundle",
   bodyClass: "landing-page",
   mixins: [sizeMixin],
   components: {
@@ -135,11 +135,11 @@ export default {
             "We outsource only the best single agent telemarketers by providing all the following hiring requirements: <ul style='margin-left: 2rem'> <li>Background criminal checks </li><li>Office space </li><li>Speech training</li><li>Management</li><li>English comprehension testing</li></ul>",
         },
       ],
-      filteringSpecialPlan : {
-        name: "FILTERING SPECIALS",
-        price: "10.5",
-        points: ['5/more and 1 Manager', 'Scripting', 'CRM Integration', 'Dialer'],
-        id: "filtering-specials"
+      bundlePlan : {
+        name: "BUNDLE",
+        price: "12",
+        points: ['Filtering Avatar', 'Filtering Specials', 'CRM Integration', 'Dialer'],
+        id: "bundle"
       },
       flickityOptions: {
         adaptiveHeight: false,

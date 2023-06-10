@@ -4,6 +4,7 @@
       title="Call Center"
       sub-title="Experience superior call center solutions that elevate customer satisfaction and boost productivity"
       program-pic-url="/img/call-center-agent.png"
+      planSelector= "/call-center/#bundle"
     />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
@@ -16,23 +17,43 @@
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
-              When you're ready to break free from a flawed call ceter
-              operation and experience a solution that delivers tangible
-              results, reach out to us. Teazeap Call Center specializes
-              in outsourcing single agent call center campaigns. These
-              campaigns are hassle-free for you and yield real outcomes.
-              Our extensively trained, clear-spoken call center agents boast
-              a track record of success. Single agents start at $9.5 per hour,
-              ensuring cost-effective support for your business. Contact us
-              today and unlock the potential of a high-performing call center
-              that drives customer satisfaction and boosts your bottom line.
+              When you're ready to break free from a flawed call ceter operation
+              and experience a solution that delivers tangible results, reach
+              out to us. Teazeap Call Center specializes in outsourcing single
+              agent call center campaigns. These campaigns are hassle-free for
+              you and yield real outcomes. Our extensively trained, clear-spoken
+              call center agents boast a track record of success. Single agents
+              start at $9.5 per hour, ensuring cost-effective support for your
+              business. Contact us today and unlock the potential of a
+              high-performing call center that drives customer satisfaction and
+              boosts your bottom line.
             </p>
           </v-col>
         </div>
       </div>
     </div>
 
-    <PriceBadge :plan="filteringAvatarPlan" @get-plan="showModal = true" />
+    <!-- price section-->
+    <div
+      class="section pt-0 mobile-padding"
+      v-for="(program, index) in callCenterPlans"
+      :key="index"
+      :style="commonMarginClass"
+      :id="program.id"
+    >
+      <div class="container section-card">
+        <h2 class="title text-center">{{ program.name }}</h2>
+        <div class="row mt-4">
+          <v-col cols="12" sm="7" lg="6">
+            <PriceBadge :plan="program.plan" @get-plan="showModal = true" />
+          </v-col>
+          <v-col cols="12" sm="5" lg="6">
+            <Collapsible :processes="processes" />
+          </v-col>
+        </div>
+      </div>
+    </div>
+
     <!-- steps section -->
     <div class="row what-to-expect" :style="commonMarginClass">
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
@@ -44,7 +65,9 @@
             <li>Agreement and Contract</li>
             <li>Set-Up and Configuration</li>
             <li>Training and Knowledge Transfer</li>
-            <li><span class="step-empasize">Go-live and Continuous Support</span></li>
+            <li>
+              <span class="step-empasize">Go-live and Continuous Support</span>
+            </li>
           </ol>
         </div>
       </v-col>
@@ -62,7 +85,7 @@
       </v-col>
     </div>
 
-    <PricingTable :plans="plans" @get-plan="showModal = true" />
+    <!-- <PricingTable :plans="plans" @get-plan="showModal = true" /> -->
 
     <!-- propgram steps-->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
@@ -88,9 +111,9 @@
 import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Telemarketing/Contact";
 import AgentsHeader from "@/pages/Telemarketing/AgentsHeader.vue";
-import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
+// import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
-import PriceBadge from "../Telemarketing/PriceBadge.vue";
+import PriceBadge from "@/pages/CallCenter/PriceBadge.vue";
 import ContactDialog from "@/pages/Telemarketing/ContactDialog";
 
 export default {
@@ -102,7 +125,7 @@ export default {
     [FormGroupInput.name]: FormGroupInput,
     Contact,
     AgentsHeader,
-    PricingTable,
+    // PricingTable,
     Collapsible,
     ContactDialog,
     PriceBadge,
@@ -116,27 +139,31 @@ export default {
         message: "",
       },
       processes: [
-                    {
-                      id: 1,
-                      title: "Enhance Customer Satisfaction",
-                      content: "With our call center services, we prioritize exceptional customer experiences by providing prompt and knowledgeable support, resolving issues efficiently, and ensuring personalized interactions that leave a lasting positive impression."
-                    },
-                    {
-                      id: 2,
-                      title: "Increase Sales and Conversions",
-                      content: "Our skilled call center agents are trained in effective sales techniques, enabling them to engage customers, identify their needs, and effectively promote products or services. This leads to increased sales, higher conversion rates, and ultimately, improved revenue generation."
-                    },
-                    {
-                      id: 3,
-                      title: "Improve Efficiency and Productivity",
-                      content: "By leveraging advanced call center technologies and streamlined processes, we optimize operational efficiency. Our automation tools, call routing systems, and performance tracking capabilities allow for efficient call handling, reduced wait times, and improved agent productivity."
-                    },
-                    {
-                      id: 4,
-                      title: "Expand Reach and Market Presence",
-                      content: "Our call center services provide an opportunity to reach a broader customer base. Through outbound calling campaigns and lead generation strategies, we proactively engage potential customers, expanding your market presence and creating new business opportunities. This helps in increasing brand awareness and driving business growth."
-                    }
-            ],
+        {
+          id: 1,
+          title: "Enhance Customer Satisfaction",
+          content:
+            "With our call center services, we prioritize exceptional customer experiences by providing prompt and knowledgeable support, resolving issues efficiently, and ensuring personalized interactions that leave a lasting positive impression.",
+        },
+        {
+          id: 2,
+          title: "Increase Sales and Conversions",
+          content:
+            "Our skilled call center agents are trained in effective sales techniques, enabling them to engage customers, identify their needs, and effectively promote products or services. This leads to increased sales, higher conversion rates, and ultimately, improved revenue generation.",
+        },
+        {
+          id: 3,
+          title: "Improve Efficiency and Productivity",
+          content:
+            "By leveraging advanced call center technologies and streamlined processes, we optimize operational efficiency. Our automation tools, call routing systems, and performance tracking capabilities allow for efficient call handling, reduced wait times, and improved agent productivity.",
+        },
+        {
+          id: 4,
+          title: "Expand Reach and Market Presence",
+          content:
+            "Our call center services provide an opportunity to reach a broader customer base. Through outbound calling campaigns and lead generation strategies, we proactively engage potential customers, expanding your market presence and creating new business opportunities. This helps in increasing brand awareness and driving business growth.",
+        },
+      ],
       team: [
         {
           name: "Clifton Moreau",
@@ -172,6 +199,51 @@ export default {
         {
           id: 3,
           src: "https://videos.ctfassets.net/dr15y1pi2yc9/NVi7i40iXbsu30guZRUak/ce71561a78a2a18bb474181d98437cdc/videoplayback-3.mp4",
+        },
+      ],
+      callCenterPlans: [
+        {
+          name: "Single Agent",
+          id: "single-agent",
+          plan: {
+            name: "SINGLE AGENT",
+            price: "9.5",
+            points: [
+              "3/more Agents and 1 Manager",
+              "Robust Technology Integration",
+              "Skilled and Trained Agents",
+              "Scalability and Flexibility",
+            ],
+          },
+        },
+        {
+          name: "Multiple Agent",
+          id: "multiple-agent",
+          plan: {
+            name: "SINGLE AGENT",
+            price: "10.5",
+            points: [
+              "5/more Agents and 1 Manager",
+              "Robust Technology Integration",
+              "Skilled and Trained Agents",
+              "Scalability and Flexibility",
+            ],
+          },
+        },
+        {
+          name: "Bundle",
+          id: "bundle",
+          plan: {
+            name: "Bundle",
+            price: "9.5",
+            points: [
+              "Single Agent deal",
+              "Multiple Agent deal",
+              "Robust Technology Integration",
+              "Skilled and Trained Agents",
+              "Scalability and Flexibility",
+            ],
+          },
         },
       ],
       flickityOptions: {
@@ -267,7 +339,6 @@ export default {
           "Robust Technology Integration",
           "Skilled and Trained Agents",
           "Scalability and Flexibility",
-
         ],
       },
       openDialog: false,

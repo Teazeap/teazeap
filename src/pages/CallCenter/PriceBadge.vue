@@ -1,10 +1,10 @@
 <template>
-  <div :id="plan.id" class="pt-0" :style="commonMarginClass">
+  <div :id="plan.id" class="pt-0" style="margin-top: -2.5rem;">
     <div class="container price-badge-container">
       <div class="row">
         <v-col cols="12">
           <div class="card-container">
-            <h1 class="card-title">{{plan.name}}</h1>
+            <!-- <h1 class="card-title">{{plan.name}}</h1> -->
             <p class="card-description">What You'll Get</p>
             <ul class="card-get_list">
               <li v-for="p,index in plan.points" :key="index" class="card-get_list__item">{{p}}</li>

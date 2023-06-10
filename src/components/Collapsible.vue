@@ -1,18 +1,25 @@
 <template>
   <div class="col-12">
-    <div
+    <el-collapse v-model="activeNames">
+  <el-collapse-item :title="handleTitle(index, process.title)" :name="handleName(index)" v-for="(process, index) in processes" :key="index">
+    <div>
+      <span v-html="process.content"></span>
+    </div>
+  </el-collapse-item>
+</el-collapse>
+    <!-- <div
       v-for="(process, index) in processes"
       :key="index"
       :class="{ open: index === 0 }"
       class="collapsible-container"
     >
-      <button class="collapsible" :class="{ active: index === 0 }">
+      <button class="collapsible" :class="[{ active: index === 0}, selectorId]">
         {{ `${index + 1}. ${process.title}` }}
       </button>
       <div class="text">
         <span v-html="process.content"></span>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -24,49 +31,45 @@ export default {
       required: true,
       default: () => [],
     },
-  },
-  mounted() {
-    let coll = document.getElementsByClassName("collapsible");
-    let i;
-
-    coll[0].nextElementSibling.style.maxHeight =
-      coll[0].nextElementSibling.scrollHeight + "px";
-
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        this.parentElement.classList.toggle("open");
-        let content = this.nextElementSibling;
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      });
+    selectorId: {
+      type: String,
+      default: () => 'collapsible-default',
     }
   },
-  // data: () => ({
-  //   processes: [
-  //     {
-  //       id: 1,
-  //       title: "UNDERSTAND CUSTOMER NEEDS",
-  //       content:
-  //         "Teazeap would start by understanding the customer's business requirements, target audience, and sales goals. Based on this information, we would recommend the most appropriate virtual telemarketing service to meet the customer's needs.",
-  //     },
-  //     {
-  //       id: 2,
-  //       title: "CONFIGURE INFRASTRUCTURE",
-  //       content:
-  //         "Once the service is chosen, Teazeap would configure the necessary infrastructure, including software, hardware, and network components. This would ensure that the virtual telemarketing service is set up correctly and functions optimally.",
-  //     },
-  //     {
-  //       id: 3,
-  //       title: "TRAIN AGENTS",
-  //       content:
-  //         "Teazeap would provide comprehensive training to agents on how to use the virtual telemarketing service effectively, including best practices for managing calls, handling objections, and closing sales. This training would help agents to provide top-quality service to customers and achieve the customer's sales goals.",
-  //     },
-  //   ],
-  // }),
+  mounted() {
+    // console.log(this.processes[0].title);
+    // let coll = document.getElementsByClassName(this.selectorId);
+    // let i;
+
+    // coll[0].nextElementSibling.style.maxHeight =
+    //   coll[0].nextElementSibling.scrollHeight + "px";
+
+    // for (i = 0; i < coll.length; i++) {
+    //   coll[i].addEventListener("click", function () {
+    //     this.classList.toggle("active");
+    //     this.parentElement.classList.toggle("open");
+    //     let content = this.nextElementSibling;
+    //     if (content.style.maxHeight) {
+    //       content.style.maxHeight = null;
+    //     } else {
+    //       content.style.maxHeight = content.scrollHeight + "px";
+    //     }
+    //   });
+    // }
+  },
+  methods: {
+    handleTitle (index, title) {
+      return `${index + 1}. ${title}`
+    },
+    handleName (index) {
+      return `${index + 1}`
+    }
+  },
+  data() {
+    return {
+      activeNames: ['1']
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

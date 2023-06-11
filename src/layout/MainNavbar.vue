@@ -36,14 +36,14 @@
         </nav-link>
       </li>
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <nav-link class="nav-link  btn  btn-neutral btn-profile" to="/telemarketing">
           <i class="now-ui-icons tech_headphones nav-link-icon"></i>
           <p>{{ $t("nav.telemarketing") }}</p>
         </nav-link>
-      </li>
+      </li> -->
 
-      <drop-down
+      <!-- <drop-down
         tag="li"
         :title="ourServices"
         icon="now-ui-icons design_image"
@@ -58,9 +58,9 @@
         <nav-link to="/blog">
           <i class="now-ui-icons files_paper"></i> {{ $t("nav.blog") }}
         </nav-link>
-      </drop-down>
+      </drop-down> -->
 
-      <drop-down
+      <!-- <drop-down
         tag="li"
         :title="language"
         icon="now-ui-icons business_globe"
@@ -72,9 +72,9 @@
         <nav-link text="zh" @onLanguageChange="onLanguageChange">
           <i class="now-ui-icons transportation_air-baloon"></i> Chinese
         </nav-link>
-      </drop-down>
+      </drop-down> -->
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a
           class="nav-link"
           rel="tooltip"
@@ -99,13 +99,13 @@
           <i class="fab fa-instagram"></i>
           <p class="d-lg-none d-xl-none">Instagram</p>
         </a>
-      </li>
+      </li> -->
     </template>
   </navbar>
 </template>
 
 <script>
-import { DropDown, Navbar, NavLink } from "@/components";
+import {  Navbar, NavLink } from "@/components";
 import { Popover } from "element-ui";
 import { v4 as uuidv4 } from "uuid";
 
@@ -116,7 +116,6 @@ export default {
     colorOnScroll: Number
   },
   components: {
-    DropDown,
     Navbar,
     NavLink,
     [Popover.name]: Popover

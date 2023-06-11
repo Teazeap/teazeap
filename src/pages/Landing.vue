@@ -206,7 +206,7 @@ export default {
     };
   },
   created() {
-    this.handleLangauge();
+    // this.handleLangauge();
   },
   computed: {
     swiper() {

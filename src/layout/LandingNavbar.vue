@@ -73,15 +73,15 @@
         icon="now-ui-icons business_globe"
         class="nav-item nav-ul"
       >
-        <nav-link to="https://www.facebook.com/teazeap">
+        <nav-link href="https://www.facebook.com/teazeap" target="_blank">
           <i class="fab fa-facebook-square"></i> Facebook
         </nav-link>
-        <nav-link to="https://www.facebook.com/teazeap">
+        <nav-link href="https://www.instagram.com/teazeap/" target="_blank">
           <i class="fab fa-instagram"></i> Instagram
         </nav-link>
-        <nav-link to="https://www.facebook.com/teazeap">
+        <!-- <nav-link href="https://www.facebook.com/teazeap" target="_blank">
           <font-awesome-icon icon="phone" /> <span class="ml-2">+1 848 305 7850</span>
-        </nav-link>
+        </nav-link> -->
       </drop-down>
 
       <li class="nav-item">

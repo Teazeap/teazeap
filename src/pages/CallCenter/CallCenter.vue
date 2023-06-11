@@ -153,13 +153,13 @@ export default {
         },
         {
           id: 3,
-          title: "Improve Efficiency and Productivity",
+          title: "Improve Productivity",
           content:
             "By leveraging advanced call center technologies and streamlined processes, we optimize operational efficiency. Our automation tools, call routing systems, and performance tracking capabilities allow for efficient call handling, reduced wait times, and improved agent productivity.",
         },
         {
           id: 4,
-          title: "Expand Reach and Market Presence",
+          title: "Expand Market Presence",
           content:
             "Our call center services provide an opportunity to reach a broader customer base. Through outbound calling campaigns and lead generation strategies, we proactively engage potential customers, expanding your market presence and creating new business opportunities. This helps in increasing brand awareness and driving business growth.",
         },

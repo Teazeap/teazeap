@@ -60,33 +60,14 @@ export default {
 }
 
 ::v-deep(.el-collapse-item__header) {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .item-content {
-  font-size: 14px;
+  font-size: 13px;
 }
-
-// ::v-deep(.el-collapse-item__header):hover{
-//       background-color: #f96332;
-//       color: white;
-
-//       &.is-active {
-//         background-color: white;
-//         color: black;
-//       }
-//   }
-
-//   ::v-deep(.el-collapse-item):hover{
-//       background-color: #f96332;
-
-//       &.is-active {
-//         background-color: white;
-//         color: black;
-//       }
-//   }
 
 .text {
   max-height: 0;

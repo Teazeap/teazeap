@@ -235,7 +235,7 @@ export default {
           id: "bundle",
           plan: {
             name: "Bundle",
-            price: "9.5",
+            price: "12.5",
             points: [
               "Single Agent deal",
               "Multiple Agent deal",

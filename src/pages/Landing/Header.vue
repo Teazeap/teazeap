@@ -14,17 +14,21 @@
               Teazeap's innovative recruitment, telemarketing and call center
               solutions.
             </h4>
-            <!-- <div class="mt-md-16 mt-10 d-sm-flex d-block">
+            <div class="mt-md-16 mt-10 d-sm-flex d-block">
               <router-link
                 to="/recruitment-agency"
-                class="program-link mr-0 mr-md-4 mb-2 mb-md-0 mt-4 mt-md-0"
+                class="program-link mr-0 mr-md-4 mb-md-0 mb-sm-0 mt-4 mt-md-0"
               >
                 <div class="program-link-content">Recruitment</div>
               </router-link>
-              <router-link to="/telemarketing" class="program-link">
+              <router-link to="/telemarketing" class="program-link mr-0 mr-md-4 mb-2 mb-md-0 mt-2 mt-md-0 mt-sm-0">
                 <div class="program-link-content">Telemarketing</div>
               </router-link>
-            </div> -->
+
+              <router-link to="/call-center" class="program-link">
+                <div class="program-link-content">Call Center</div>
+              </router-link>
+            </div>
           </div>
         </v-col>
         <v-col cols="12" sm="5" lg="6">

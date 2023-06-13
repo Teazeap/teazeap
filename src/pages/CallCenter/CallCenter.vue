@@ -110,7 +110,7 @@
 <script>
 import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Telemarketing/Contact";
-import AgentsHeader from "@/pages/Telemarketing/AgentsHeader.vue";
+import AgentsHeader from "@/pages/CallCenter/AgentsHeader.vue";
 // import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
 import PriceBadge from "@/pages/CallCenter/PriceBadge.vue";

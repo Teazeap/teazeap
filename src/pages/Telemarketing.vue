@@ -43,13 +43,10 @@
         </p>
 
         <div class="row mt-4 videos-container">
-          <flickity
-            :options="flickityOptions"
-            class="video-carousel"
-          >
+          <flickity :options="flickityOptions" class="video-carousel">
             <div class="col-md-4" v-for="(video, id) in videos" :key="id">
               <video width="100%" height="100%" controls class="video-frame">
-                <source :src="video.src" type="video/mp4">
+                <source :src="video.src" type="video/mp4" />
               </video>
             </div>
           </flickity>
@@ -64,21 +61,22 @@
           Discover our skilled agents in action, driving telemarketing success.
         </h2>
         <p class="video-section-introduction">
-         Our agents are adept at generating high-quality leads for our clients. Through strategic prospecting and persuasive communication, they identify potential customers who are a perfect fit for your products or services. Their goal is to provide you with a steady stream of qualified leads, driving your business growth.
+          Our agents are adept at generating high-quality leads for our clients.
+          Through strategic prospecting and persuasive communication, they
+          identify potential customers who are a perfect fit for your products
+          or services. Their goal is to provide you with a steady stream of
+          qualified leads, driving your business growth.
         </p>
 
         <div class="row mt-4 videos-container">
-          <flickity
-            :options="flickityOptions"
-            class="agents-carousel"
-          >
+          <flickity :options="flickityOptions" class="agents-carousel">
             <div class="col-md-4" v-for="(agent, id) in agents" :key="id">
               <img
                 width="100%"
-                style="object-fit: cover;width: 100%;height: 200px;"
+                style="object-fit: cover; width: 100%; height: 200px"
                 class="video-frame"
                 :src="agent.src"
-              >
+              />
             </div>
           </flickity>
         </div>
@@ -112,8 +110,6 @@
           unique needs and deliver results.
         </h5>
         <div class="row mt-n4 mb-4" style="justify-content: center">
-
-
           <v-col cols="12" sm="7" lg="4">
             <PlanCard
               :card-styles="{
@@ -137,7 +133,6 @@
               to="/telemarketing/single-agent"
             />
           </v-col>
-
 
           <v-col cols="12" sm="5" lg="4">
             <PlanCard
@@ -188,13 +183,9 @@
               to="/telemarketing/call-center"
             />
           </v-col>
-
-
         </div>
       </div>
     </div>
-
-
 
     <!-- audio section -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
@@ -232,11 +223,10 @@
       </div>
     </div>
     <Contact />
-    <router-view/>
+    <router-view />
   </div>
 </template>
 <script>
-
 import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Telemarketing/Contact";
 import Header from "@/pages/Telemarketing/Header.vue";
@@ -259,7 +249,7 @@ export default {
     Collapsible,
     Flickity,
     PlanCard,
-    AudioPlayer
+    AudioPlayer,
   },
   data() {
     return {
@@ -272,18 +262,21 @@ export default {
         {
           id: 1,
           title: "UNDERSTAND CUSTOMER NEEDS",
-          content: "Teazeap would start by understanding the customer's business requirements, target audience, and sales goals. Based on this information, we would recommend the most appropriate virtual telemarketing service to meet the customer's needs."
+          content:
+            "Teazeap would start by understanding the customer's business requirements, target audience, and sales goals. Based on this information, we would recommend the most appropriate virtual telemarketing service to meet the customer's needs.",
         },
         {
           id: 2,
           title: "CONFIGURE INFRASTRUCTURE",
-          content: "Once the service is chosen, Teazeap would configure the necessary infrastructure, including software, hardware, and network components. This would ensure that the virtual telemarketing service is set up correctly and functions optimally."
+          content:
+            "Once the service is chosen, Teazeap would configure the necessary infrastructure, including software, hardware, and network components. This would ensure that the virtual telemarketing service is set up correctly and functions optimally.",
         },
         {
           id: 3,
           title: "TRAIN AGENTS",
-          content: "Teazeap would provide comprehensive training to agents on how to use the virtual telemarketing service effectively, including best practices for managing calls, handling objections, and closing sales. This training would help agents to provide top-quality service to customers and achieve the customer's sales goals."
-        }
+          content:
+            "Teazeap would provide comprehensive training to agents on how to use the virtual telemarketing service effectively, including best practices for managing calls, handling objections, and closing sales. This training would help agents to provide top-quality service to customers and achieve the customer's sales goals.",
+        },
       ],
       team: [
         {
@@ -324,23 +317,23 @@ export default {
       ],
       agents: [
         {
-          src: "img/agents/agent_1.jpg"
+          src: "img/agents/agent_1.jpg",
         },
         {
-          src: "img/agents/agent_2.jpg"
+          src: "img/agents/agent_2.jpg",
         },
         {
-          src: "img/agents/agent_4.jpg"
+          src: "img/agents/agent_4.jpg",
         },
         {
-          src: "img/agents/agent_5.jpg"
+          src: "img/agents/agent_5.jpg",
         },
         {
-          src: "img/agents/agent_3.jpg"
+          src: "img/agents/agent_3.jpg",
         },
         {
-          src: "img/agents/agent_6.jpg"
-        }
+          src: "img/agents/agent_6.jpg",
+        },
       ],
       audioFlickityOptions: {
         adaptiveHeight: false,
@@ -391,20 +384,36 @@ export default {
         {
           picUrl: "img/audio/debt-collection.webp",
           name: "Debt Settlement",
-          message: "Listen to our telemarketing agent and a client in a live call discussing effective debt collection strategies.",
-          audioFileUrl: "https://assets.ctfassets.net/dr15y1pi2yc9/5C8AG4kZi3Yxpssc6e9xG/839cd5efa2ca3b918b9a6739463fc20d/Debt_Settlement_1.mp3"
+          message:
+            "Listen to our telemarketing agent and a client in a live call discussing effective debt collection strategies.",
+          audioFileUrl:
+            "https://assets.ctfassets.net/dr15y1pi2yc9/5C8AG4kZi3Yxpssc6e9xG/839cd5efa2ca3b918b9a6739463fc20d/Debt_Settlement_1.mp3",
         },
         {
           picUrl: "img/audio/tax-relief.webp",
           name: "Tax Relief",
-          message: "Experience a seamless conversation between our telemarketing agent and a client, discussing important tax matters.",
-          audioFileUrl: "https://assets.ctfassets.net/dr15y1pi2yc9/3oRu2T6tSBwMT41b8tGCxp/7e51f0af942b4f29bd5bf917cd587dc1/Tax_Relief_Live_Agent_Sample_3.wav"
+          message:
+            "Experience a seamless conversation between our telemarketing agent and a client, discussing important tax matters.",
+          audioFileUrl:
+            "https://assets.ctfassets.net/dr15y1pi2yc9/3oRu2T6tSBwMT41b8tGCxp/7e51f0af942b4f29bd5bf917cd587dc1/Tax_Relief_Live_Agent_Sample_3.wav",
         },
         {
           picUrl: "img/audio/debt-collection-1.webp",
           name: "Debt Settlement",
-          message: "Eavesdrop on a call: Telemarketing agent and client discuss detailed debt collection solutions in real-time.",
-          audioFileUrl: "https://assets.ctfassets.net/dr15y1pi2yc9/2KtBbHpuM3bFP8WUliw0Xg/30958de06b157ed2022e8030e71cc19b/Debt_Settlement_2.mp3"
+          message:
+            "Eavesdrop on a call: Telemarketing agent and client discuss detailed debt collection solutions in real-time.",
+          audioFileUrl:
+            "https://assets.ctfassets.net/dr15y1pi2yc9/2KtBbHpuM3bFP8WUliw0Xg/30958de06b157ed2022e8030e71cc19b/Debt_Settlement_2.mp3",
+        },
+      ],
+      officeInteriorVideos: [
+        {
+          id: 1,
+          src: "https://videos.ctfassets.net/dr15y1pi2yc9/25vPZEL5MMaqlwMRUBglRJ/d2063e39d2d5ef4b29febeec96c73bf7/2203638109384894994.mp4",
+        },
+        {
+          id: 2,
+          src: "https://videos.ctfassets.net/dr15y1pi2yc9/3E8PcrJv2nqqGKiLgGRbUs/98402b0c07e8d641a12f4f0b4c308dca/1261371676653676733.mp4",
         },
       ],
     };
@@ -465,7 +474,6 @@ export default {
   width: 100%;
   height: 220px;
 }
-
 
 .agents-carousel {
   margin: 84px 0 0;

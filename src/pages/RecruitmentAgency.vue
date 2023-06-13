@@ -31,7 +31,7 @@
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
-              {{service.description}}
+              <span v-html="service.description"/>
             </p>
           </v-col>
         </div>
@@ -132,7 +132,7 @@ export default {
         },
         {
           id: 2,
-          title: "CUTTING-EDGE TECHNOLOGY FOR STREAMLINED PROCESSES",
+          title: "INNOVATIVE TECH FOR EFFICIENT OPERATIONS.",
           content: "Leveraging innovative tools, AI, and data analytics, we streamline recruitment processes, reducing time-to-hire and providing our clients with a competitive edge in accessing qualified talent efficiently."
         },
         {
@@ -198,21 +198,21 @@ export default {
           id: "tech",
           picUrl: "/img/recruitment/tech.png",
           picUrlStyle: "margin-top: -2.8rem",
-          description: "Teazeap's prowess in the tech industry stems from its ability to curate a network of top-tier tech talent, ensuring a competitive edge in the recruitment landscape. By staying at the forefront of industry trends and leveraging extensive industry knowledge, Teazeap consistently identifies exceptional candidates with specialized technical expertise. Its rigorous screening processes not only evaluate technical prowess but also assess cultural fit, resulting in optimal candidate placements for businesses seeking innovation and technological excellence."
+          description: "Teazeap's prowess in the tech industry stems from its ability to curate a network of top-tier tech talent, ensuring a competitive edge in the recruitment landscape. By staying at the forefront of industry trends and leveraging extensive industry knowledge, Teazeap consistently identifies exceptional candidates with specialized technical expertise. Its rigorous screening processes not only evaluate technical prowess but also assess cultural fit, resulting in optimal candidate placements for businesses seeking innovation and technological excellence. Companies we have worked with include <span style='font-weight: bold'> United Debt Settlement</span>, <span style='font-weight: bold'>Singulus LLC</span>, <span style='font-weight: bold'>Gotham Etp</span>"
         },
         {
           name: "Corporate",
           id: "corporate",
           picUrl: "/img/recruitment/corporate.png",
           picUrlStyle: "margin-top: -2.8rem",
-          description: "Teazeap's leadership in the corporate industry arises from its adeptness in tailoring bespoke recruitment solutions to meet the distinct demands of corporations. With an acute understanding of corporate requirements and an impeccable track record, Teazeap sources and places qualified professionals in executive, managerial, and administrative roles. Through a comprehensive database and proactive sourcing techniques, Teazeap identifies individuals with the ideal qualifications, experience, and leadership acumen to align with a corporation's unique culture and strategic objectives."
+          description: "Teazeap excels in the corporate industry by customizing recruitment solutions to meet each corporation's specific needs. With a deep understanding of corporate requirements and a proven track record, Teazeap successfully places qualified professionals in executive, managerial, and administrative positions. Notably, Teazeap has collaborated with industry-leading companies such as <span style='font-weight: bold'>MetroFuser</span> and <span style='font-weight: bold'>SoundCloud</span>, leveraging its comprehensive database and proactive sourcing techniques to connect them with candidates possessing the ideal qualifications, experience, and leadership skills that align with their unique cultures and strategic objectives."
         },
          {
           name: "Educational",
           id: "educational",
           picUrl: "/img/recruitment/educational.png",
           picUrlStyle: "margin-top: -2.8rem",
-          description: "Teazeap distinguishes itself as a premier healthcare recruitment provider by specializing in the intricacies of the industry. Its dedicated team possesses deep expertise in sourcing and placing healthcare professionals across various critical roles. Teazeap's meticulous screening and credential verification processes ensure that healthcare organizations are connected with highly skilled professionals who meet regulatory and quality standards. Armed with an extensive network and robust relationships within the healthcare sector, Teazeap consistently identifies the ideal candidates to cater to the industry's evolving needs, fostering enhanced patient care and operational excellence."
+          description: "Teazeap's leadership in the education industry stems from its profound comprehension of the unique needs of educational institutions and its ability to connect them with highly qualified professionals. Whether schools require academic staff, administrative personnel, or specialized educators, Teazeap possesses the expertise to identify the ideal candidates. Notably, Teazeap has successfully partnered with renowned schools such as <span style='font-weight: bold'>Ailyn English School</span>, <span style='font-weight: bold'>Kang Chiao School</span>, and <span style='font-weight: bold'>Yoder Bilingual Academy</span>, leveraging its extensive network and sector knowledge to consistently match these institutions with qualified individuals who possess the requisite qualifications, experience, and passion for cultivating enriching learning environments and promoting academic excellence."
         }
       ],
     };

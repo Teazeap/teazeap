@@ -3,7 +3,7 @@
     <AgentsHeader
       title="Single Agent Program"
       sub-title="Experience success with hassle-free single agent telemarketing campaigns at Teazeap"
-      planSelector= "/telemarketing/single-agent#filterinng-avatar"
+      planSelector="/telemarketing/single-agent#filterinng-avatar"
     />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
@@ -30,6 +30,20 @@
     </div>
 
     <PriceBadge :plan="filteringAvatarPlan" @get-plan="showModal = true" />
+
+    <!-- audio and office interio office-->
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+      <div class="container section-card">
+        <h2 class="title text-center">
+          Debt Settlement Insights: Real Client Conversations and Office Showcase
+        </h2>
+        <div class="row mt-4 pl-md-4 pl-sm-0" style="justify-content: center">
+          <AudioPlayer :testimonial="agentWorking" />
+          <VideoPlayer :testimonial="officeInterior" />
+        </div>
+      </div>
+    </div>
+
     <!-- steps section -->
     <div class="row what-to-expect" :style="commonMarginClass">
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
@@ -89,6 +103,8 @@ import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
 import PriceBadge from "./PriceBadge.vue";
 import ContactDialog from "@/pages/Telemarketing/ContactDialog";
+import AudioPlayer from "@/pages/Telemarketing/AudioPlayer";
+import VideoPlayer from "@/pages/Telemarketing/VideoPlayer";
 
 export default {
   name: "single-agent",
@@ -103,6 +119,8 @@ export default {
     Collapsible,
     ContactDialog,
     PriceBadge,
+    AudioPlayer,
+    VideoPlayer,
   },
   data() {
     return {
@@ -262,9 +280,25 @@ export default {
           "Outbound and inbound call handling",
           "Appointment scheduling and reminders",
         ],
-        id: "filterinng-avatar"
+        id: "filterinng-avatar",
       },
       openDialog: false,
+      agentWorking: {
+        picUrl: "img/audio/debt-collection.webp",
+        name: "Debt Settlement",
+        message:
+          "Listen to our telemarketing agent and a client in a live call discussing effective debt collection strategies.",
+        audioFileUrl:
+          "https://assets.ctfassets.net/dr15y1pi2yc9/5C8AG4kZi3Yxpssc6e9xG/839cd5efa2ca3b918b9a6739463fc20d/Debt_Settlement_1.mp3",
+      },
+      officeInterior: {
+        picUrl: "img/audio/debt-collection.webp",
+        name: "Our Office Interior",
+        message:
+          "Experience the vibrant Teazeap office through our captivating video tour. Explore modern workstations, collaborative meeting rooms, and witness our passionate team delivering exceptional call center services.",
+        videoFileUrl:
+          "https://videos.ctfassets.net/dr15y1pi2yc9/3E8PcrJv2nqqGKiLgGRbUs/98402b0c07e8d641a12f4f0b4c308dca/1261371676653676733.mp4",
+      },
     };
   },
   created() {

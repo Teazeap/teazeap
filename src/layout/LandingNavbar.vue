@@ -27,7 +27,7 @@
           <font-awesome-icon icon="business-time" /> <span class="ml-2">Corporate</span>
         </nav-link>
         <nav-link to="recruitment-agency#educational">
-          <font-awesome-icon icon="graduation-cap" /> <span class="ml-2">Educational</span>
+          <font-awesome-icon icon="graduation-cap" /> <span class="ml-2">Education</span>
         </nav-link>
       </drop-down>
 

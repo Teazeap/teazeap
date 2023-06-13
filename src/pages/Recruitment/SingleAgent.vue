@@ -29,6 +29,7 @@
     </div>
 
     <PriceBadge :plan="filteringAvatarPlan" @get-plan="showModal = true" />
+
     <!-- steps section -->
     <div class="row what-to-expect" :style="commonMarginClass">
       <v-col cols="12" sm="12" lg="6" class="section pt-0">

@@ -85,6 +85,19 @@
       </v-col>
     </div>
 
+
+ <!-- audio and office interio office-->
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+      <div class="container section-card">
+        <h2 class="title text-center">
+          Tax Relief Expertise: Agent-Client Conversations and Office Showcase
+        </h2>
+        <div class="row mt-4 pl-md-4 pl-sm-0" style="justify-content: center">
+          <AudioPlayer :testimonial="agentWorking" />
+          <VideoPlayer :testimonial="officeInterior" />
+        </div>
+      </div>
+    </div>
     <!-- <PricingTable :plans="plans" @get-plan="showModal = true" /> -->
 
     <!-- propgram steps-->
@@ -115,6 +128,8 @@ import AgentsHeader from "@/pages/CallCenter/AgentsHeader.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
 import PriceBadge from "@/pages/CallCenter/PriceBadge.vue";
 import ContactDialog from "@/pages/Telemarketing/ContactDialog";
+import AudioPlayer from "@/pages/Telemarketing/AudioPlayer";
+import VideoPlayer from "@/pages/Telemarketing/VideoPlayer";
 
 export default {
   name: "single-agent",
@@ -129,6 +144,8 @@ export default {
     Collapsible,
     ContactDialog,
     PriceBadge,
+    AudioPlayer,
+    VideoPlayer,
   },
   data() {
     return {
@@ -342,6 +359,22 @@ export default {
         ],
       },
       openDialog: false,
+      agentWorking:  {
+          picUrl: "img/audio/tax-relief.webp",
+          name: "Tax Relief",
+          message:
+            "Experience a seamless conversation between our telemarketing agent and a client, discussing important tax matters.",
+          audioFileUrl:
+            "https://assets.ctfassets.net/dr15y1pi2yc9/3oRu2T6tSBwMT41b8tGCxp/7e51f0af942b4f29bd5bf917cd587dc1/Tax_Relief_Live_Agent_Sample_3.wav",
+        },
+      officeInterior: {
+        picUrl: "img/audio/debt-collection.webp",
+        name: "Our Office Interior",
+        message:
+          "Experience the vibrant Teazeap office through our captivating video tour. Explore modern workstations, collaborative meeting rooms, and witness our passionate team delivering exceptional call center services.",
+        videoFileUrl:
+          "https://videos.ctfassets.net/dr15y1pi2yc9/25vPZEL5MMaqlwMRUBglRJ/d2063e39d2d5ef4b29febeec96c73bf7/2203638109384894994.mp4",
+      },
     };
   },
   created() {

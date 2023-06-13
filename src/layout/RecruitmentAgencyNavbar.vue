@@ -31,7 +31,7 @@
       <li class="nav-item">
         <nav-link class="nav-link btn btn-profile" to="recruitment-agency#educational">
           <font-awesome-icon icon="graduation-cap" />
-          <p class="ml-1">Educational</p>
+          <p class="ml-1">Education</p>
         </nav-link>
       </li>
 

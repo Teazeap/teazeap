@@ -4,7 +4,7 @@
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
         <h2 class="title text-center">
-          Revolutionizing Recruitment Tech, Corporate and Educational.
+          Revolutionizing Recruitment Tech, Corporate and Education.
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
@@ -208,7 +208,7 @@ export default {
           description: "Teazeap excels in the corporate industry by customizing recruitment solutions to meet each corporation's specific needs. With a deep understanding of corporate requirements and a proven track record, Teazeap successfully places qualified professionals in executive, managerial, and administrative positions. Notably, Teazeap has collaborated with industry-leading companies such as <span style='font-weight: bold'>MetroFuser</span> and <span style='font-weight: bold'>SoundCloud</span>, leveraging its comprehensive database and proactive sourcing techniques to connect them with candidates possessing the ideal qualifications, experience, and leadership skills that align with their unique cultures and strategic objectives."
         },
          {
-          name: "Educational",
+          name: "Education",
           id: "educational",
           picUrl: "/img/recruitment/educational.png",
           picUrlStyle: "margin-top: -2.8rem",

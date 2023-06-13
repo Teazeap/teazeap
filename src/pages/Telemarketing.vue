@@ -193,6 +193,27 @@
         </div>
       </div>
     </div>
+
+
+
+    <!-- audio section -->
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+      <div class="container section-card">
+        <h2 class="title text-center">Our Agents At Work</h2>
+        <flickity
+          ref="communityBadgeInfoModalSwiper"
+          :options="audioFlickityOptions"
+          class="carousel"
+        >
+          <AudioPlayer
+            v-for="(testimonial, index) in agentsWorking"
+            :key="index"
+            :testimonial="testimonial"
+          />
+        </flickity>
+      </div>
+    </div>
+
     <!-- testimonials section -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
@@ -221,6 +242,7 @@ import Contact from "@/pages/Telemarketing/Contact";
 import Header from "@/pages/Telemarketing/Header.vue";
 import Flickity from "vue-flickity";
 import TesimonialsCard from "@/pages/Telemarketing/TesimonialsCard";
+import AudioPlayer from "@/pages/Telemarketing/AudioPlayer";
 import PlanCard from "@/pages/Telemarketing/PlanCard";
 import sizeMixin from "@/plugins/sizeMixin.js";
 
@@ -237,6 +259,7 @@ export default {
     Collapsible,
     Flickity,
     PlanCard,
+    AudioPlayer
   },
   data() {
     return {
@@ -319,6 +342,20 @@ export default {
           src: "img/agents/agent_6.jpg"
         }
       ],
+      audioFlickityOptions: {
+        adaptiveHeight: false,
+        cellAlign: "left",
+        contain: true,
+        draggable: true,
+        freeScroll: true,
+        groupCells: true,
+        pageDots: false,
+        percentPosition: true,
+        autoPlay: false,
+        wrapAround: true,
+        pauseAutoPlayOnHover: false,
+        resize: true,
+      },
       flickityOptions: {
         adaptiveHeight: false,
         cellAlign: "left",
@@ -348,6 +385,26 @@ export default {
           picUrl: "img/agent-3.jpg",
           name: "Insurance",
           message: `With the RXR we manager our team and it feels like we are in the middle of the action.  The software is amazing are we run better then we did when we had the call center here. It's amazing that they turned the complex process of running a call center into a service!`,
+        },
+      ],
+      agentsWorking: [
+        {
+          picUrl: "img/audio/debt-collection.webp",
+          name: "Debt Settlement",
+          message: "Listen to our telemarketing agent and a client in a live call discussing effective debt collection strategies.",
+          audioFileUrl: "https://assets.ctfassets.net/dr15y1pi2yc9/5C8AG4kZi3Yxpssc6e9xG/839cd5efa2ca3b918b9a6739463fc20d/Debt_Settlement_1.mp3"
+        },
+        {
+          picUrl: "img/audio/tax-relief.webp",
+          name: "Tax Relief",
+          message: "Experience a seamless conversation between our telemarketing agent and a client, discussing important tax matters.",
+          audioFileUrl: "https://assets.ctfassets.net/dr15y1pi2yc9/3oRu2T6tSBwMT41b8tGCxp/7e51f0af942b4f29bd5bf917cd587dc1/Tax_Relief_Live_Agent_Sample_3.wav"
+        },
+        {
+          picUrl: "img/audio/debt-collection-1.webp",
+          name: "Debt Settlement",
+          message: "Eavesdrop on a call: Telemarketing agent and client discuss detailed debt collection solutions in real-time.",
+          audioFileUrl: "https://assets.ctfassets.net/dr15y1pi2yc9/2KtBbHpuM3bFP8WUliw0Xg/30958de06b157ed2022e8030e71cc19b/Debt_Settlement_2.mp3"
         },
       ],
     };

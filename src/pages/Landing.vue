@@ -161,7 +161,7 @@ export default {
         groupCells: true,
         pageDots: false,
         percentPosition: true,
-        autoPlay: false,
+        autoPlay: 3000,
         wrapAround: true,
         pauseAutoPlayOnHover: false,
         resize: true,

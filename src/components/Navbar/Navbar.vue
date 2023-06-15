@@ -108,6 +108,14 @@ export default {
       currentScrollValue: 0
     };
   },
+  created() {
+    this.unwatch = this.$store.watch(
+      (state, getters) => getters.navState,
+      (newValue, oldValue) => {
+        this.setNav(false);
+      }
+    );
+  },
   computed: {
     slotData() {
       return {

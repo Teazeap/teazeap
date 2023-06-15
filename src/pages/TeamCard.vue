@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-6 col-lg-4 col-xl-4">
     <v-app id="inspire">
-      <v-card outlined class="mx-auto profile-card" width="350" :elevation="4">
+      <v-card outlined class="mx-auto profile-card" width="350" :elevation="4" min-height="640">
         <v-img
           :position="profile.position"
           :src="profile.pictureUrl"

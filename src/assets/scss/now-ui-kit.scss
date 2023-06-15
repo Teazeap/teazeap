@@ -141,6 +141,7 @@ input[type="file"] {
     border-radius: 24px;
     margin-top: 4rem;
     &.benefits {
+        min-height: 345px;
         background: #f5faf7;
         p {
             font-size: 18px;
@@ -160,6 +161,7 @@ input[type="file"] {
     &.contact-steps {
         background: #fff8f6;
         width: 95%;
+        min-height: 345px;
         >.title {
             color: #f96332;
         }

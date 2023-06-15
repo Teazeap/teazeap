@@ -4,7 +4,7 @@
       <v-card
         outlined
         class="mx-auto profile-card"
-        min-height="220"
+        min-height="242"
         width="334"
         :to="teazeapProduct.productLink"
         :elevation="4"
@@ -14,7 +14,7 @@
       >
         <div class="content-containner">
           <div class="product-header">{{ $t(`${teazeapProduct.type}`) }}</div>
-          <div class="product-sub-header text-justify">
+          <div class="product-sub-header">
             {{ $t(`${teazeapProduct.desc}`) }}
           </div>
           <div class="product-footer"></div>

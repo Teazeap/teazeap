@@ -34,7 +34,7 @@ import DashboardBlogPosts from "./pages/Protected/Dashboard/BlogPosts.vue";
 
 Vue.use(Router);
 
-export default new Router({
+ const router = new Router({
   linkExactActiveClass: "active",
   routes: [
     // dashboard
@@ -348,3 +348,10 @@ export default new Router({
     }
   },
 });
+
+router.beforeEach((to, from, next) => {
+  store.dispatch('closeNav')
+  next();
+})
+
+export default router

@@ -63,6 +63,7 @@ export default {
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
+  line-height: 20px;
 }
 
 .item-content {

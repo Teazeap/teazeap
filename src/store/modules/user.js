@@ -1,8 +1,10 @@
 const state = {
-  isAuthenticated: false
+  isAuthenticated: false,
+  navStatus: 0,
 };
 const getters = {
-  user: (state) => state.isAuthenticated
+  user: (state) => state.isAuthenticated,
+  navState: (state) => state.navStatus
 }
 
 const actions = {
@@ -11,11 +13,15 @@ const actions = {
   },
   logout ({commit}) {
     commit('SET_SESSION', false)
+  },
+  closeNav ({commit}) {
+    commit('SET_CLOSE_NAV', 10)
   }
 }
 
 const mutations = {
-  SET_SESSION: (state, isAuthenticated) => (state.isAuthenticated = isAuthenticated)
+  SET_SESSION: (state, isAuthenticated) => (state.isAuthenticated = isAuthenticated),
+  SET_CLOSE_NAV: (state, payload) => (state.navStatus += payload),
 }
 
 export default {

@@ -4,7 +4,7 @@
       title="Call Center"
       sub-title="Experience superior call center solutions that elevate customer satisfaction and boost productivity"
       program-pic-url="/img/call-center-agent.png"
-      planSelector= "/call-center/#bundle"
+      planSelector="/call-center/#bundle"
     />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
@@ -30,6 +30,25 @@
             </p>
           </v-col>
         </div>
+      </div>
+    </div>
+
+        <!-- audio and office interio office-->
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+      <div class="container section-card">
+        <h2 class="title text-center">
+          Agents At Work
+        </h2>
+        <flickity
+          :options="flickityContentOptions"
+          class="carousel team"
+        >
+          <ContentPlayer
+            v-for="(content, index) in teazeapContent"
+            :key="index"
+            :content="content"
+          />
+        </flickity>
       </div>
     </div>
 
@@ -85,19 +104,6 @@
       </v-col>
     </div>
 
-
- <!-- audio and office interio office-->
-    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
-      <div class="container section-card">
-        <h2 class="title text-center">
-          Tax Relief Expertise: Agent-Client Conversations and Office Showcase
-        </h2>
-        <div class="row mt-4 pl-md-4 pl-sm-0" style="justify-content: center">
-          <AudioPlayer :testimonial="agentWorking" />
-          <VideoPlayer :testimonial="officeInterior" />
-        </div>
-      </div>
-    </div>
     <!-- <PricingTable :plans="plans" @get-plan="showModal = true" /> -->
 
     <!-- propgram steps-->
@@ -124,12 +130,12 @@
 import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Telemarketing/Contact";
 import AgentsHeader from "@/pages/CallCenter/AgentsHeader.vue";
+import Flickity from "vue-flickity";
 // import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
 import PriceBadge from "@/pages/CallCenter/PriceBadge.vue";
 import ContactDialog from "@/pages/Telemarketing/ContactDialog";
-import AudioPlayer from "@/pages/Telemarketing/AudioPlayer";
-import VideoPlayer from "@/pages/Telemarketing/VideoPlayer";
+import ContentPlayer from "@/pages/Telemarketing/ContentPlayer";
 
 export default {
   name: "single-agent",
@@ -140,12 +146,12 @@ export default {
     [FormGroupInput.name]: FormGroupInput,
     Contact,
     AgentsHeader,
+    Flickity,
     // PricingTable,
     Collapsible,
     ContactDialog,
     PriceBadge,
-    AudioPlayer,
-    VideoPlayer,
+    ContentPlayer,
   },
   data() {
     return {
@@ -277,6 +283,20 @@ export default {
         pauseAutoPlayOnHover: false,
         resize: true,
       },
+      flickityContentOptions: {
+        adaptiveHeight: false,
+        cellAlign: "left",
+        contain: true,
+        draggable: true,
+        freeScroll: true,
+        groupCells: true,
+        pageDots: false,
+        percentPosition: true,
+        autoPlay: false,
+        wrapAround: true,
+        pauseAutoPlayOnHover: false,
+        resize: true,
+      },
       testimonials: [
         {
           picUrl: "img/agent-1.jpg",
@@ -359,14 +379,69 @@ export default {
         ],
       },
       openDialog: false,
-      agentWorking:  {
-          picUrl: "img/audio/tax-relief.webp",
-          name: "Tax Relief",
+      teazeapContent: [
+          {
+          picUrl: "img/audio/george.webp",
+          name: "Complaints & Disputes",
           message:
-            "Experience a seamless conversation between our telemarketing agent and a client, discussing important tax matters.",
+            "Experience George's professional, empathetic, and efficient customer service in action. Liste now!",
           audioFileUrl:
-            "https://assets.ctfassets.net/dr15y1pi2yc9/3oRu2T6tSBwMT41b8tGCxp/7e51f0af942b4f29bd5bf917cd587dc1/Tax_Relief_Live_Agent_Sample_3.wav",
+            "https://assets.ctfassets.net/dr15y1pi2yc9/3aNlVmfZS1yQHKPD39bys1/fedc21f360f6f31376814bf9b3e92fb2/george.mp4",
+          isAudio: true,
         },
+        {
+          picUrl: "img/audio/daliah.webp",
+          name: "Product Info & Support",
+          message:
+            "Exemplary professionalism displayed by Dalia throughout the call, ensuring client satisfaction.",
+          audioFileUrl:
+            "https://assets.ctfassets.net/dr15y1pi2yc9/3OmNUBNAbF5178MxGbCRJU/5d9ee3eabc75a55be9d2e171ce669a3d/daliah.m4a",
+          isAudio: true,
+        },
+        {
+        name: "Order Processing",
+        message:
+          "Experience the professionalism of Teazeap's agents with our video showcasing a customer call. Watch now to see how Bella assists with a seamless flower order process!",
+        videoFileUrl:
+          "https://videos.ctfassets.net/dr15y1pi2yc9/7H5eI8EPquLp3x2BZyyZjY/213486e9f209c13bedac51431e2e97d3/Sample_Order_Taking_Customer_Support_Philippines.mp4",
+          isAudio: false,
+      },
+        {
+          picUrl: "img/audio/bella.webp",
+          name: "Exceptional Service",
+          message:
+            "Bella  exemplifies professionalism, empathy, and efficient customer service.",
+          audioFileUrl:
+            "https://assets.ctfassets.net/dr15y1pi2yc9/3DscREBaHYlG7frZpekO8f/4d3de757b4a936f9983296754d413324/bella_.m4a",
+          isAudio: true,
+        },
+                {
+        name: "Problem Solving",
+        message:
+          "Agent Rachel patiently assists frustrated customer with Bluetooth headset troubleshooting.",
+        videoFileUrl:
+          "https://videos.ctfassets.net/dr15y1pi2yc9/5qmKxDrWfHFWdqmNkfQn9M/9d4d4d0d25933a2fc97858df004338d9/mishandled_call.mp4",
+          isAudio: false,
+      },
+        {
+          picUrl: "img/audio/roger.webp",
+          name: "Product Delivery Issues",
+          message:
+            "Agent Roger handles delayed delivery with professionalism, updates, and alternative solutions.",
+          audioFileUrl:
+            "https://assets.ctfassets.net/dr15y1pi2yc9/7tUfQnRiIySE7cxuTwnHAJ/b48a31bdb9b719683f99cf72836abe1e/roger2.m4a",
+          isAudio: true,
+        },
+
+      ],
+      agentWorking: {
+        picUrl: "img/audio/tax-relief.webp",
+        name: "Tax Relief",
+        message:
+          "Experience a seamless conversation between our telemarketing agent and a client, discussing important tax matters.",
+        audioFileUrl:
+          "https://assets.ctfassets.net/dr15y1pi2yc9/3oRu2T6tSBwMT41b8tGCxp/7e51f0af942b4f29bd5bf917cd587dc1/Tax_Relief_Live_Agent_Sample_3.wav",
+      },
       officeInterior: {
         picUrl: "img/audio/debt-collection.webp",
         name: "Our Office Interior",

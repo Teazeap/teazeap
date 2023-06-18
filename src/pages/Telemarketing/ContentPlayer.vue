@@ -22,7 +22,7 @@
             {{ content.message }}
           </v-card-text>
 
-          <v-card-text class="d-flex justify-center">
+          <v-card-text v-if="content.audioFileUrl" class="d-flex justify-center">
             <audio controls>
               <source :src="content.audioFileUrl" type="audio/mpeg" />
               Your browser does not support the audio element.

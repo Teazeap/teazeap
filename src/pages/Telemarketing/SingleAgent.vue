@@ -31,7 +31,7 @@
 
     <PriceBadge :plan="filteringAvatarPlan" @get-plan="showModal = true" />
 
-    <!-- audio and office interio office-->
+    <!-- audio and office interio office
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
@@ -42,7 +42,7 @@
           <VideoPlayer :testimonial="officeInterior" />
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- steps section -->
     <div class="row what-to-expect" :style="commonMarginClass">
@@ -103,8 +103,6 @@ import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
 import PriceBadge from "./PriceBadge.vue";
 import ContactDialog from "@/pages/Telemarketing/ContactDialog";
-import AudioPlayer from "@/pages/Telemarketing/AudioPlayer";
-import VideoPlayer from "@/pages/Telemarketing/VideoPlayer";
 
 export default {
   name: "single-agent",
@@ -119,8 +117,6 @@ export default {
     Collapsible,
     ContactDialog,
     PriceBadge,
-    AudioPlayer,
-    VideoPlayer,
   },
   data() {
     return {

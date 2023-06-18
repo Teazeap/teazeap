@@ -26,35 +26,30 @@
         </div>
       </div>
     </div>
-    <!-- video section -->
+    <!-- audio and office interio office-->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
-        <h2 class="title text-center">
-          Get a Glimpse Inside: Watch Our Call Center Agents in Action
+         <h2 class="title text-center">
+          Discover our skilled agents in action, driving telemarketing success.
         </h2>
         <p class="video-section-introduction">
-          At Teazeap, we take pride in our team of professional and dedicated
-          call center agents who work tirelessly to provide exceptional service
-          to our clients. Our video gallery offers an inside look into the daily
-          operations of our call center, highlighting the professionalism,
-          expertise, and dedication of our agents. See firsthand how our team
-          works to generate leads, increase sales, and promote brands through
-          the power of telemarketing.
+          Our agents are adept at generating high-quality leads for our clients.
+          Through strategic prospecting and persuasive communication, they
+          identify potential customers who are a perfect fit for your products
+          or services. Their goal is to provide you with a steady stream of
+          qualified leads, driving your business growth.
         </p>
-
-        <div class="row mt-4 videos-container">
-          <flickity :options="flickityOptions" class="video-carousel">
-            <div class="col-md-4" v-for="(video, id) in videos" :key="id">
-              <video width="100%" height="100%" controls class="video-frame">
-                <source :src="video.src" type="video/mp4" />
-              </video>
-            </div>
-          </flickity>
-        </div>
+        <flickity :options="flickityContentOptions" class="carousel team">
+          <ContentPlayer
+            v-for="(content, index) in teazeapContent"
+            :key="index"
+            :content="content"
+          />
+        </flickity>
       </div>
     </div>
 
-    <!-- agent picture section -->
+    <!-- agent picture section
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
@@ -81,7 +76,7 @@
           </flickity>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- telemarketing steps -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
@@ -188,7 +183,7 @@
     </div>
 
     <!-- audio section -->
-    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+    <!-- <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">Our Agents At Work</h2>
         <flickity
@@ -203,7 +198,7 @@
           />
         </flickity>
       </div>
-    </div>
+    </div> -->
 
     <!-- testimonials section -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
@@ -232,9 +227,9 @@ import Contact from "@/pages/Telemarketing/Contact";
 import Header from "@/pages/Telemarketing/Header.vue";
 import Flickity from "vue-flickity";
 import TesimonialsCard from "@/pages/Telemarketing/TesimonialsCard";
-import AudioPlayer from "@/pages/Telemarketing/AudioPlayer";
 import PlanCard from "@/pages/Telemarketing/PlanCard";
 import sizeMixin from "@/plugins/sizeMixin.js";
+import ContentPlayer from "@/pages/Telemarketing/ContentPlayer";
 
 export default {
   name: "telemarketing",
@@ -249,7 +244,7 @@ export default {
     Collapsible,
     Flickity,
     PlanCard,
-    AudioPlayer,
+    ContentPlayer,
   },
   data() {
     return {
@@ -257,6 +252,20 @@ export default {
         firstName: "",
         email: "",
         message: "",
+      },
+      flickityContentOptions: {
+        adaptiveHeight: false,
+        cellAlign: "left",
+        contain: true,
+        draggable: true,
+        freeScroll: true,
+        groupCells: true,
+        pageDots: false,
+        percentPosition: true,
+        autoPlay: false,
+        wrapAround: true,
+        pauseAutoPlayOnHover: false,
+        resize: true,
       },
       processes: [
         {
@@ -414,6 +423,100 @@ export default {
         {
           id: 2,
           src: "https://videos.ctfassets.net/dr15y1pi2yc9/3E8PcrJv2nqqGKiLgGRbUs/98402b0c07e8d641a12f4f0b4c308dca/1261371676653676733.mp4",
+        },
+      ],
+      teazeapContent: [
+        {
+          picUrl: "img/audio/tax-relief.webp",
+        name: "Tax Relief",
+        message:
+          "Experience a seamless conversation between our telemarketing agent and a client, discussing important tax matters.",
+        audioFileUrl:
+          "https://assets.ctfassets.net/dr15y1pi2yc9/3oRu2T6tSBwMT41b8tGCxp/7e51f0af942b4f29bd5bf917cd587dc1/Tax_Relief_Live_Agent_Sample_3.wav",
+          isAudio: true,
+        },
+        {
+          name: "Office Interior",
+          message:
+            "Embark on an immersive tour of Teazeap's vibrant office, unveiling modern workstations, collaborative meeting rooms, and exceptional call center services.",
+          videoFileUrl:
+            "https://videos.ctfassets.net/dr15y1pi2yc9/3p9fUqGM6nLVbKWMBSsqt9/634faaa8c15656d5b6ccd0b0d7c8ac1c/videoplayback-2.mp4",
+          isAudio: false,
+        },
+        {
+          picUrl: "img/audio/debt-collection.webp",
+          name: "Debt Settlement",
+          message:
+            "Listen to our telemarketing agent and a client in a live call discussing effective debt collection strategies.",
+          audioFileUrl:
+            "https://assets.ctfassets.net/dr15y1pi2yc9/5C8AG4kZi3Yxpssc6e9xG/839cd5efa2ca3b918b9a6739463fc20d/Debt_Settlement_1.mp3",
+          isAudio: true,
+        },
+        {
+          name: "Equipment Financing",
+          message:
+            "Michael Cole of Teazeap demonstrates professionalism by offering 100% financing with low interest rates and addressing business-specific needs.",
+          videoFileUrl:
+            "https://videos.ctfassets.net/dr15y1pi2yc9/50NSjIaNZBpPeFS9TsXg1K/f737802d942a17c902535bec42ec3cb0/telemarketing-video-1.mp4",
+          isAudio: false,
+        },
+        {
+          name: "Medicare Benefits",
+          message:
+            "Teazeap's agent informs Marvel about potential extra Medicare benefits and introduces a licensed specialist to determine eligibility and explore additional entitlements.",
+          videoFileUrl:
+            "https://videos.ctfassets.net/dr15y1pi2yc9/77uBczZTTHGFOYJNjgL6qD/1a4577bff54f4a117ee37a4c7aee7b92/videoplayback-1.mp4",
+          isAudio: false,
+        },
+                {
+          picUrl: "img/audio/debt-collection-1.webp",
+          name: "Debt Settlement",
+          message:
+            "Eavesdrop on a call: Telemarketing agent and client discuss detailed debt collection solutions in real-time.",
+          audioFileUrl:
+            "https://assets.ctfassets.net/dr15y1pi2yc9/2KtBbHpuM3bFP8WUliw0Xg/30958de06b157ed2022e8030e71cc19b/Debt_Settlement_2.mp3",
+          isAudio: true,
+        },
+        {
+          name: "Mortgage Costs",
+          message:
+            "Teazeap's agent is discussing the potential to lower mortgage costs and consolidate debts for homeowners, offering a call to provide more information..",
+          videoFileUrl:
+            "https://videos.ctfassets.net/dr15y1pi2yc9/ZU7GoFasJoChGSrkGATVB/f80908ac9abf7f54aa26afcb3b05f269/telemarketing-video-2.mp4",
+          isAudio: false,
+        },
+
+                {
+          name: "Our Office Interior",
+          message:
+            "Experience the vibrant Teazeap office through our captivating video tour. Explore modern workstations, collaborative meeting rooms, and witness our passionate team delivering exceptional call center services.",
+          videoFileUrl:
+            "https://videos.ctfassets.net/dr15y1pi2yc9/25vPZEL5MMaqlwMRUBglRJ/d2063e39d2d5ef4b29febeec96c73bf7/2203638109384894994.mp4",
+          isAudio: false,
+        },
+        {
+          picUrl: "img/agents/agent_3.jpg",
+          name: "Agents At Work",
+          message:
+            "Immerse yourself in the vibrant atmosphere of Teazeap's office through our captivating office pictures. Discover the modern workstations & collaborative meeting rooms",
+          isAudio: true,
+        },
+        {
+          name: "Mortgage Rates",
+          message:
+            "Our agent discusses potential cash out on the mortgage, securing a fair interest rate, and scheduling a follow-up call.",
+          videoFileUrl:
+            "https://videos.ctfassets.net/dr15y1pi2yc9/NVi7i40iXbsu30guZRUak/ce71561a78a2a18bb474181d98437cdc/videoplayback-3.mp4",
+          isAudio: false,
+        },
+                {
+          picUrl: "img/audio/debt-collection-1.webp",
+          name: "Debt Settlement",
+          message:
+            "Eavesdrop on a call: Telemarketing agent and client discuss detailed debt collection solutions in real-time.",
+          audioFileUrl:
+            "https://assets.ctfassets.net/dr15y1pi2yc9/2KtBbHpuM3bFP8WUliw0Xg/30958de06b157ed2022e8030e71cc19b/Debt_Settlement_2.mp3",
+          isAudio: true,
         },
       ],
     };

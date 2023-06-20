@@ -86,6 +86,10 @@ export default {
   font-weight: 700;
   line-height: 1.3em;
   padding-bottom: 10px;
+
+   @media screen and (max-width: 991px) {
+        font-size: 24px;
+    }
 }
 
 .product-sub-header {

@@ -33,7 +33,7 @@
     <!-- teazeap products -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
-        <h2 class="title text-center">Explore the world of Teazeap</h2>
+        <h2 class="title text-center products-header">Explore the world of Teazeap</h2>
         <flickity :options="flickityOptions" class="teacher-type-carousel">
           <ProductCard
             v-for="(teazeapProduct, index) in teazeapProducts"
@@ -310,6 +310,10 @@ export default {
 
 .introduction-text {
   text-align: justify;
+}
+
+.products-header {
+  margin-bottom: 4rem;
 }
 
 @media (min-width: 600px) {

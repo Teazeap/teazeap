@@ -29,7 +29,7 @@
     <!-- audio and office interio office-->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
-         <h2 class="title text-center">
+        <h2 class="title text-center">
           Discover our skilled agents in action, driving telemarketing success.
         </h2>
         <p class="video-section-introduction">
@@ -229,12 +229,13 @@ import Flickity from "vue-flickity";
 import TesimonialsCard from "@/pages/Telemarketing/TesimonialsCard";
 import PlanCard from "@/pages/Telemarketing/PlanCard";
 import sizeMixin from "@/plugins/sizeMixin.js";
+import contentPlayerMixin from "@/mixins/contentPlayerMixin.js";
 import ContentPlayer from "@/pages/Telemarketing/ContentPlayer";
 
 export default {
   name: "telemarketing",
   bodyClass: "landing-page",
-  mixins: [sizeMixin],
+  mixins: [sizeMixin, contentPlayerMixin],
   components: {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
@@ -428,11 +429,11 @@ export default {
       teazeapContent: [
         {
           picUrl: "img/audio/tax-relief.webp",
-        name: "Tax Relief",
-        message:
-          "Experience a seamless conversation between our telemarketing agent and a client, discussing important tax matters.",
-        audioFileUrl:
-          "https://assets.ctfassets.net/dr15y1pi2yc9/3oRu2T6tSBwMT41b8tGCxp/7e51f0af942b4f29bd5bf917cd587dc1/Tax_Relief_Live_Agent_Sample_3.wav",
+          name: "Tax Relief",
+          message:
+            "Experience a seamless conversation between our telemarketing agent and a client, discussing important tax matters.",
+          audioFileUrl:
+            "https://assets.ctfassets.net/dr15y1pi2yc9/3oRu2T6tSBwMT41b8tGCxp/7e51f0af942b4f29bd5bf917cd587dc1/Tax_Relief_Live_Agent_Sample_3.wav",
           isAudio: true,
         },
         {
@@ -468,7 +469,7 @@ export default {
             "https://videos.ctfassets.net/dr15y1pi2yc9/77uBczZTTHGFOYJNjgL6qD/1a4577bff54f4a117ee37a4c7aee7b92/videoplayback-1.mp4",
           isAudio: false,
         },
-                {
+        {
           picUrl: "img/audio/debt-collection-1.webp",
           name: "Debt Settlement",
           message:
@@ -486,7 +487,7 @@ export default {
           isAudio: false,
         },
 
-                {
+        {
           name: "Our Office Interior",
           message:
             "Experience the vibrant Teazeap office through our captivating video tour. Explore modern workstations, collaborative meeting rooms, and witness our passionate team delivering exceptional call center services.",
@@ -509,7 +510,7 @@ export default {
             "https://videos.ctfassets.net/dr15y1pi2yc9/NVi7i40iXbsu30guZRUak/ce71561a78a2a18bb474181d98437cdc/videoplayback-3.mp4",
           isAudio: false,
         },
-                {
+        {
           picUrl: "img/audio/debt-collection-1.webp",
           name: "Debt Settlement",
           message:
@@ -521,8 +522,8 @@ export default {
       ],
     };
   },
-  created() {
-    this.handleLangauge();
+  mounted() {
+    this.handleContentPipelie()
   },
   computed: {
     swiper() {

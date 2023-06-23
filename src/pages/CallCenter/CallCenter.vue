@@ -136,11 +136,12 @@ import sizeMixin from "@/plugins/sizeMixin.js";
 import PriceBadge from "@/pages/CallCenter/PriceBadge.vue";
 import ContactDialog from "@/pages/Telemarketing/ContactDialog";
 import ContentPlayer from "@/pages/Telemarketing/ContentPlayer";
+import contentPlayerMixin from "@/mixins/contentPlayerMixin.js";
 
 export default {
   name: "single-agent",
   bodyClass: "landing-page",
-  mixins: [sizeMixin],
+  mixins: [sizeMixin, contentPlayerMixin],
   components: {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
@@ -451,6 +452,9 @@ export default {
           "https://videos.ctfassets.net/dr15y1pi2yc9/25vPZEL5MMaqlwMRUBglRJ/d2063e39d2d5ef4b29febeec96c73bf7/2203638109384894994.mp4",
       },
     };
+  },
+  mounted() {
+    this.handleContentPipelie()
   },
   created() {
     this.handleLangauge();

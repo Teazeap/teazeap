@@ -387,7 +387,7 @@ export default {
           message:
             "Experience George's professional, empathetic, and efficient customer service in action. Liste now!",
           audioFileUrl:
-            "https://assets.ctfassets.net/dr15y1pi2yc9/3aNlVmfZS1yQHKPD39bys1/fedc21f360f6f31376814bf9b3e92fb2/george.mp4",
+            "https://assets.ctfassets.net/dr15y1pi2yc9/1vZdNqAGVV46el28zv7anJ/d2e368ced7f3465c89927f39ac9fc956/george.mp3",
           isAudio: true,
         },
         {
@@ -413,7 +413,7 @@ export default {
           message:
             "Bella  exemplifies professionalism, empathy, and efficient customer service.",
           audioFileUrl:
-            "https://assets.ctfassets.net/dr15y1pi2yc9/3DscREBaHYlG7frZpekO8f/4d3de757b4a936f9983296754d413324/bella_.m4a",
+            "https://assets.ctfassets.net/dr15y1pi2yc9/58G8uW2ChhX0E8yww5wFEi/168a1debd96df331665a28ffeff94964/bella.mp3",
           isAudio: true,
         },
                 {

@@ -4,7 +4,7 @@
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
         <h2 class="title text-center">
-          Revolutionizing Recruitment Tech, Corporate and Education.
+          Revolutionizing Recruitment in Tech, Corporate and Education.
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">

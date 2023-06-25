@@ -17,9 +17,9 @@
               educational sectors, Teazeap set out to connect businesses with top
               talent. With a mission to bridge the gap between employers and
               exceptional candidates, Teazeap has achieved significant
-              accomplishments over the past decade. Through innovative
+              accomplishments through innovative
               strategies and personalized approaches. <br /><br />
-              Teazeap has successfully facilitated numerous successful
+              Teazeap has successfully facilitated numerous
               placements, contributing to the growth and success of client
               organizations. Teazeap remains committed to its mission of
               delivering exceptional recruitment solutions and outstanding

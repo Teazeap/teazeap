@@ -1,26 +1,6 @@
 <template>
   <div>
     <JobInfoHeader :job="job" :show-button="true" />
-    <!-- <div class="page-header clear-filter" filter-color="orange">
-      <parallax
-        class="page-header-image"
-        :style="`background-image: url(${job.imageUrl[0]})`"
-      >
-      </parallax>
-      <div class="container">
-        <h1 class="title">{{ job.school }}</h1>
-        <div class="content">
-          <div class="social-description">
-            <i class="now-ui-icons location_pin"></i>
-            <p>{{ job.city }}</p>
-          </div>
-          <div class="social-description">
-            <img src="img/calendar-clock.png" style="width:12%; height: 12%" />
-            <p>{{ handleTime(job.fullTime) }}</p>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <div class="section" :style="[commonMarginClass, sectionStyleOverride]">
       <div class="container-fluid text-center">
         <!-- <div class="button-container">
@@ -71,7 +51,7 @@
             </div>
           </div>
           <div
-            class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 py-2"
+            class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 py-2"
           >
             <div class="card h-100 section-card">
               <div class="card-body mx-2">

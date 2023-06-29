@@ -3,29 +3,18 @@
     <v-container class="container" :style="commonHeaderMarginClass">
       <v-row class="center mt-12">
         <v-col cols="12" sm="7" lg="6" class="d-flex align-center">
-          <div class="text-sm-left text-center" style="width: 100%">
+          <div class="text-center" style="width: 100%">
             <h1 class="banner-title font-weight-bold text-white">
-              {{header}}
+              {{ blog.title }}
             </h1>
-            <h4
-              class="banner-subtitle white--text font-weight-regular text-white"
-            >
-              {{subHeader}}
-            </h4>
-            <div class="mt-md-16 mt-10 d-sm-flex d-block" v-if="showButton">
-              <router-link
-                to="/jobs"
-                class="program-link mr-0 mr-md-4 mb-2 mb-md-0 mt-4 mt-md-0 "
-              >
-                <div class="program-link-content">
-                  Apply Now
-                </div>
-              </router-link>
-            </div>
           </div>
         </v-col>
-        <v-col cols="12" sm="5" lg="6" class="text-center">
-          <img :src="bannerSrc" alt="banner" class="img-fluid" />
+        <v-col cols="12" sm="5" lg="6"  class="text-center">
+          <img
+            :src="bannerSrc"
+            alt="banner"
+            class="img-fluid"
+          />
         </v-col>
       </v-row>
     </v-container>
@@ -37,24 +26,20 @@ import { Button, FormGroupInput } from "@/components";
 import sizeMixin from "@/plugins/sizeMixin.js";
 
 export default {
-  name: "telemarketing-header",
+  name: "blog-info-header",
   mixins: [sizeMixin],
   components: {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
   },
-  props : {
-    header: {
-      type: String,
-      default: () => "Recruiting Agency"
-    },
-    subHeader: {
-      type: String,
-      default: () => "Unlock Your Career Potential with Teazeap: Connecting Exceptional Talent with Tech, Corporate, and Education Opportunities!"
+  props: {
+    blog: {
+      type: Object,
+      default: () => {},
     },
     showButton: {
       type: Boolean,
-      default: () => true
+      default: () => true,
     },
     bannerSrc: {
       type: String,
@@ -77,14 +62,15 @@ export default {
     },
   },
   methods: {
-    handleFreeConsultation() {
-    }
+    handleTime(fullTime) {
+      return fullTime ? "Full Time" : "Sub";
+    },
   },
-  data () {
+  data() {
     return {
-      showModal: false
-    }
-  }
+      showModal: false,
+    };
+  },
 };
 </script>
 
@@ -93,8 +79,8 @@ export default {
   margin-top: 5%;
 }
 .banner-wrapper {
-  background-color: #0093E9;
-  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
   padding: 20px 0 20px;
   min-height: 600px;
   display: flex;
@@ -171,5 +157,4 @@ export default {
 .program-link.active {
   border: white solid 3px;
 }
-
 </style>

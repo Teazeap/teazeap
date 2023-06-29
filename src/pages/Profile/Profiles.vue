@@ -1,76 +1,43 @@
 <template>
   <div>
-    <!-- prallex -->
-    <div class="page-header page-header-small">
-      <parallax
-        class="page-header-image"
-        style="background-image: url('img/bg5.jpg')"
-      >
-      </parallax>
-      <div class="content-center">
-        <div class="container">
-          <h1 class="title company-name">TeaZeaP Recruiting Agency</h1>
-          <div class="text-center row">
-            <div class="col-4">
-              <h2 class="mb-2">{{ allProfiles.length }}</h2>
-              <p>{{ $t("schools.jobs") }}</p>
-            </div>
-            <div class="col-4">
-              <h2 class="mb-2">26</h2>
-              <p>{{ $t("schools.clients") }}</p>
-            </div>
-            <div class="col-4">
-              <h2 class="mb-2">48</h2>
-              <p>{{ $t("schools.schools") }}</p>
-            </div>
-            <div class="col-12">
-              <a
-                href="https://www.facebook.com/teazeap"
-                target="_blank"
-                class="btn btn-primary btn-icon btn-round mx-2"
-              >
-                <i class="fab fa-facebook-square"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/teazeap/"
-                class="btn btn-primary btn-icon btn-round"
-                target="_blank"
-              >
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Header
+      header="Teachers"
+      sub-header="Your teaching career is very important to us"
+      :show-button="false"
+      banner-src="/img/blog/blog.png"
+    />
     <!-- profiles -->
-    <div class="section profile-section" id="referenceSection">
-      <span v-if="!noProfiles" style="textAlign: center">
-        <h2 class="title">Meet Our Teachers</h2>
-        <p class="description">Your teaching career is very important to us.</p>
-        <div class="container">
-          <ProfileSearch @search="handleSearch" />
-          <div class="row justify-content-center">
-            <ProfileCard
-              v-for="profile in filteredProfiles.slice(start, end)"
-              :key="profile.id"
-              :profile="profile"
-            />
+    <div
+      class="section profile-section"
+      id="referenceSection"
+      :style="commonMarginClass"
+    >
+      <span v-if="!noProfiles" style="textalign: center">
+        <div class="section-card profile-card">
+          <div class="container">
+            <ProfileSearch @search="handleSearch" />
+            <div class="row justify-content-center">
+              <ProfileCard
+                v-for="profile in filteredProfiles.slice(start, end)"
+                :key="profile.id"
+                :profile="profile"
+              />
+            </div>
+            <h4 v-if="noProfiles" class="card-title text-primary">
+              {{ $t("profiles.no-profiles") }}
+            </h4>
           </div>
-          <h4 v-if="noProfiles" class="card-title text-primary">
-            {{ $t("profiles.no-profiles") }}
-          </h4>
-        </div>
-        <div class="row justify-content-end mt-2">
-          <div class="col align-self-end offset-xl-9 offset-md-9 offset-sm-9">
-            <Pagination
-              type="primary"
-              :total="pagination.total"
-              :page-count="pagination.pageCount"
-              :per-page="pagination.perPage"
-              @input="changePage"
-              v-model="pagination.simple"
-            />
+          <div class="row justify-content-end mt-2">
+            <div class="col align-self-end offset-xl-9 offset-md-9 offset-sm-9">
+              <Pagination
+                type="primary"
+                :total="pagination.total"
+                :page-count="pagination.pageCount"
+                :per-page="pagination.perPage"
+                @input="changePage"
+                v-model="pagination.simple"
+              />
+            </div>
           </div>
         </div>
       </span>
@@ -78,7 +45,7 @@
         <img
           v-lazy="'img/Ellipsis-3s-128px.svg'"
           alt="Rounded Image"
-          style="width:30px; height: 30px"
+          style="width: 30px; height: 30px"
         />
       </div>
       <AddProfile />
@@ -92,28 +59,32 @@ import { Button, FormGroupInput, Radio } from "@/components";
 import { mapGetters, mapActions } from "vuex";
 import AddProfile from "./AddProfile.vue";
 import ProfileSearch from "./ProfileSearch.vue";
+import Header from "@/pages/Recruitment/Header.vue";
+import sizeMixin from "@/plugins/sizeMixin.js";
 
 export default {
   name: "profiles",
   bodyClass: "landing-page",
   components: {
     ProfileCard,
+    Header,
     Pagination,
     AddProfile,
     ProfileSearch,
     [Radio.name]: Radio,
     [Button.name]: Button,
-    [FormGroupInput.name]: FormGroupInput
+    [FormGroupInput.name]: FormGroupInput,
   },
+  mixins: [sizeMixin],
   computed: {
-    ...mapGetters(["allProfiles"])
+    ...mapGetters(["allProfiles"]),
   },
   watch: {
     allProfiles() {
       this.handleSearch({});
       this.checkProfiles();
       this.handlePagination();
-    }
+    },
   },
   async created() {
     this.profilesLoading = true;
@@ -128,10 +99,10 @@ export default {
         full: 3,
         pageCount: 1,
         total: 0,
-        perPage: 6
+        perPage: 6,
       },
       search: {
-        name: ""
+        name: "",
       },
       profilesLoading: true,
       jobs: [],
@@ -175,7 +146,7 @@ export default {
       // search by fullName
       if (name) {
         const searchRegex = new RegExp(`${name}`, "i");
-        filteredProfiles = this.allProfiles.filter(profile => {
+        filteredProfiles = this.allProfiles.filter((profile) => {
           const fullName = `${profile.firstName} ${profile.lastName}`;
           const searchResult = fullName.match(searchRegex);
           return !!searchResult;
@@ -185,14 +156,15 @@ export default {
       // filfter by nationality
       if (country) {
         filteredProfiles = filteredProfiles.filter(
-          profile => profile.country[0].name === country
+          (profile) => profile.country[0].name === country
         );
       }
 
       // filfter by teachingExperience
       if (teachingExperience) {
         filteredProfiles = filteredProfiles.filter(
-          profile => profile.teachingExperience === parseInt(teachingExperience)
+          (profile) =>
+            profile.teachingExperience === parseInt(teachingExperience)
         );
       }
 
@@ -224,16 +196,24 @@ export default {
         randomIntsSet.add(randomInt);
       }
       return [...randomIntsSet];
-    }
-  }
+    },
+  },
 };
 </script>
-<style>
+<style scoped>
 .tab-content.tab-content-padding {
   padding: 20px;
 }
 
 .profile-section {
   padding: 20px 0px 70px 0 !important;
+}
+
+@media (min-width: 600px) {
+  .profile-card {
+    padding: 18px;
+    margin-top: -8rem;
+    background: white;
+  }
 }
 </style>

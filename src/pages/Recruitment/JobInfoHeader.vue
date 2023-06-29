@@ -3,11 +3,11 @@
     <v-container class="container" :style="commonHeaderMarginClass">
       <v-row class="center mt-12">
         <v-col cols="12" sm="7" lg="6" class="d-flex align-center">
-          <div class="text-sm-left text-center">
-            <h1 class="banner-title font-weight-bold text-white text-center">
+          <div class="text-center" style="width: 100%">
+            <h1 class="banner-title font-weight-bold text-white">
               {{ job.school }}
             </h1>
-            <div class="container pl-0 pr-0 ml-n3">
+            <div class="container pl-0 pr-0">
               <div class="content text-white p0">
                 <div class="social-description">
                   <i class="now-ui-icons location_pin"></i>
@@ -22,17 +22,17 @@
                 </div>
               </div>
             </div>
-            <div class="mt-md-16 mt-10 d-sm-flex d-block" v-if="showButton">
+            <!-- <div class="mt-md-16 mt-10 d-sm-flex d-block" v-if="showButton">
               <router-link
                 to="/jobs"
                 class="program-link mr-0 mr-md-4 mb-2 mb-md-0 mt-4 mt-md-0"
               >
                 <div class="program-link-content">Back To Jobs</div>
               </router-link>
-            </div>
+            </div> -->
           </div>
         </v-col>
-        <v-col cols="12" sm="5" lg="6">
+        <v-col cols="12" sm="5" lg="6"  class="text-center">
           <img
             src="/img/recruitment/recruitment-2.png"
             alt="banner"

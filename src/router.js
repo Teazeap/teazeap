@@ -309,6 +309,7 @@ Vue.use(Router);
       components: { default: Profiles, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" },
       },
     },
     {

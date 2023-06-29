@@ -1,17 +1,7 @@
 <template>
   <div>
     <div v-if="blogPost.title">
-      <div class="page-header clear-filter" filter-color="orange">
-        <parallax
-          class="page-header-image"
-          :style="`background-image: url(${blogPostImageUrl})`"
-        >
-        </parallax>
-        <div class="container">
-          <h1 class="title">{{ blogPost.title }}</h1>
-          <div class="content"></div>
-        </div>
-      </div>
+      <BlogInfoHeader :blog="blogPost" :show-button="true" banner-src="/img/blog/blog.png" />
       <div class="section">
         <div class="container-fluid text-start">
           <div class="button-container">
@@ -92,11 +82,12 @@
 import { mapGetters, mapActions } from "vuex";
 import moment from "moment";
 import BlogMiniCard from "./BlogMiniCard.vue";
+import BlogInfoHeader from "@/pages/Recruitment/BlogInfoHeader.vue";
 
 export default {
   name: "BlogInfo",
   bodyClass: "profile-page",
-  components: { BlogMiniCard },
+  components: { BlogMiniCard, BlogInfoHeader },
   computed: {
     ...mapGetters(["allBlogPosts"]),
     blogPostImageUrl() {

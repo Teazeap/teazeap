@@ -1,11 +1,9 @@
 <template>
   <div>
-    <Header header="Blog" sub-header="Follow our journey..." :show-button="false" />
+    <Header header="Blog" sub-header="Follow our journey..." :show-button="false"  banner-src="/img/blog/blog.png"  />
     <!-- blog post -->
     <div class="section profile-section" id="referenceSection"  :style="commonMarginClass">
       <span style="textAlign: center">
-        <!-- <h2 class="title mb-0">Blog Posts</h2>
-        <p class="description pt-0">Follow our journey....</p> -->
         <div class="container mt-4">
           <BlogSearch @search="handleSearch" v-if="!noBlogPosts" />
           <div class="row justify-content-center">

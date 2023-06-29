@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid section-card">
     <div style="textAlign: center">
       <h2 class="title">Want to join our communtiy of teachers?</h2>
       <p class="description">
@@ -277,6 +277,7 @@
           </div>
           <button
             class="btn-round btn btn-primary"
+            style="margin-bottom: 2rem"
             rounded
             :disabled="isUploading || isProfilePictureUploading"
           >

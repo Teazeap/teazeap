@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="page-header clear-filter" filter-color="orange">
+    <JobInfoHeader :job="job" :show-button="true" />
+    <!-- <div class="page-header clear-filter" filter-color="orange">
       <parallax
         class="page-header-image"
         :style="`background-image: url(${job.imageUrl[0]})`"
@@ -19,32 +20,32 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="section">
+    </div> -->
+    <div class="section" :style="[commonMarginClass, sectionStyleOverride]">
       <div class="container-fluid text-center">
-        <div class="button-container">
+        <!-- <div class="button-container">
           <router-link
             :to="{ name: 'JobsMain' }"
             tag="button"
             class="btn btn-primary btn-round btn-lg"
             >Back To Jobs</router-link
           >
-        </div>
+        </div> -->
         <div class="row">
           <div
-            class="col-12 col-xs-12  col-sm-12 col-md-12 col-lg-6 col-xl-6 py-2 offset-xl-1"
+            class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-8 py-2"
           >
-            <div class="card h-100">
+            <div class="card h-100 section-card">
               <div class="card-body">
                 <h5 class="card-title font-weight-bold">Introduction</h5>
-                <p class="card-text text-justify">{{ job.description }}</p>
+                <p class="card-text">{{ job.description }}</p>
               </div>
             </div>
           </div>
           <div
-            class="col-12 col-xs-12  col-sm-12 col-md-12 col-lg-6 col-xl-4 py-2"
+            class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 py-2"
           >
-            <div class="card h-100">
+            <div class="card h-100 section-card">
               <div class="card-body mx-2">
                 <h5 class="card-title font-weight-bold">Requirements</h5>
                 <ul class="text-left">
@@ -56,9 +57,9 @@
             </div>
           </div>
           <div
-            class="col-12 col-xs-12  col-sm-12 col-md-12 col-lg-6 col-xl-6 py-2 offset-xl-1"
+            class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-8 py-2"
           >
-            <div class="card h-100">
+            <div class="card h-100 section-card">
               <div class="card-body mx-2">
                 <h5 class="card-title font-weight-bold">What We Offer</h5>
                 <ul class="text-left">
@@ -70,9 +71,9 @@
             </div>
           </div>
           <div
-            class="col-12 col-xs-12  col-sm-12 col-md-12 col-lg-4 col-xl-4 py-2"
+            class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 py-2"
           >
-            <div class="card h-100">
+            <div class="card h-100 section-card">
               <div class="card-body mx-2">
                 <h5 class="card-title font-weight-bold">Schedule</h5>
                 <ul class="text-left">
@@ -86,10 +87,12 @@
         </div>
       </div>
     </div>
-    <div>
+    <div :style="[commonMarginClass, formContainer]">
       <div class="container-fluid">
         <div class="row justify-content-center">
-          <div class="col-md-12 col-lg-8 col-xl-6 align-self-center">
+          <div
+            class="col-md-12 col-lg-12 col-xl-12 section-card align-self-center"
+          >
             <p class="card-title font-weight-bold text-center">Apply</p>
             <!-- Nav tabs -->
             <form
@@ -107,9 +110,9 @@
                   <label>Name</label>
                   <fg-input
                     type="text"
-                    :class="
-                      `input-sm ${errors.has('name') ? 'has-danger' : ''}`
-                    "
+                    :class="`input-sm ${
+                      errors.has('name') ? 'has-danger' : ''
+                    }`"
                     placeholder="name..."
                     v-model="form.firstName"
                     v-validate="'required'"
@@ -124,9 +127,9 @@
                   <label>Surname</label>
                   <fg-input
                     type="text"
-                    :class="
-                      `input-sm ${errors.has('name') ? 'has-danger' : ''}`
-                    "
+                    :class="`input-sm ${
+                      errors.has('name') ? 'has-danger' : ''
+                    }`"
                     placeholder="surame..."
                     v-model="form.lastName"
                     v-validate="'required'"
@@ -141,9 +144,9 @@
                   <label>Email</label>
                   <fg-input
                     type="email"
-                    :class="
-                      `input-sm ${errors.has('name') ? 'has-danger' : ''}`
-                    "
+                    :class="`input-sm ${
+                      errors.has('name') ? 'has-danger' : ''
+                    }`"
                     class="input-sm"
                     placeholder="Email..."
                     v-model="form.email"
@@ -174,24 +177,20 @@
                     class="custom-select select-rounded"
                     v-model="form.country"
                   >
-                    <option
-                      v-for="(country, index) in countries"
-                      :key="index"
-                      >{{ country }}</option
-                    >
+                    <option v-for="(country, index) in countries" :key="index">
+                      {{ country }}
+                    </option>
                   </select>
                 </div>
                 <div class="form-group col-md-6">
                   <label>Date of Birth</label>
                   <div class="datepicker-container">
                     <fg-input
-                      :class="
-                        `${
-                          pickers.datePicker === '' && submitClicked
-                            ? 'has-danger'
-                            : ''
-                        }`
-                      "
+                      :class="`${
+                        pickers.datePicker === '' && submitClicked
+                          ? 'has-danger'
+                          : ''
+                      }`"
                     >
                       <el-date-picker
                         type="date"
@@ -245,7 +244,7 @@
                         v-if="isUploading"
                         v-lazy="'img/Ellipsis-3s-128px.svg'"
                         alt="Rounded Image"
-                        style="width:30px; height: 30px"
+                        style="width: 30px; height: 30px"
                       />
                       <p v-if="uploaded" class="text-success">
                         {{ selectedFile.name }}
@@ -254,7 +253,9 @@
                   </div>
                 </div>
                 <!-- added for netlify form submissions, not visible in ui -->
-                <div style="position: absolute;z-index: -1;top: 0; opacity: 0">
+                <div
+                  style="position: absolute; z-index: -1; top: 0; opacity: 0"
+                >
                   <fg-input v-model="fullName" name="name" />
                   <fg-input v-model="message" name="message" />
                   <fg-input v-model="subject" name="subject" />
@@ -286,7 +287,7 @@
                         v-if="isVideoUploading"
                         v-lazy="'img/Ellipsis-3s-128px.svg'"
                         alt="Rounded Image"
-                        style="width:30px; height: 30px"
+                        style="width: 30px; height: 30px"
                       />
                       <p v-if="videoUploaded" class="text-success">
                         {{ selectedVideoFile.name }}
@@ -311,13 +312,15 @@
 </template>
 <script>
 import { mapGetters, mapActions } from "vuex";
+import JobInfoHeader from "@/pages/Recruitment/JobInfoHeader.vue";
+import sizeMixin from "@/plugins/sizeMixin.js";
 import {
   Card,
   Tabs,
   TabPane,
   Button,
   FormGroupInput,
-  Radio
+  Radio,
 } from "@/components";
 import { DatePicker, Icon } from "element-ui";
 import SendEmailMixin from "@/mixins/SendEmailMixin";
@@ -330,13 +333,16 @@ export default {
     [Radio.name]: Radio,
     [DatePicker.name]: DatePicker,
     [Button.name]: Button,
-    [FormGroupInput.name]: FormGroupInput
+    [FormGroupInput.name]: FormGroupInput,
+    JobInfoHeader,
   },
-  mixins: [SendEmailMixin],
+  mixins: [SendEmailMixin, sizeMixin],
   computed: {
     ...mapGetters(["allJobs", "assets"]),
     job() {
-      let job = this.allJobs.filter(item => item.id === this.$route.params.id);
+      let job = this.allJobs.filter(
+        (item) => item.id === this.$route.params.id
+      );
       return job[0];
     },
     computedAsset() {
@@ -354,7 +360,7 @@ export default {
     },
     subject() {
       return `New Job Application: ${this.form.firstName} ${this.form.lastName} - ${this.job.school}`;
-    }
+    },
   },
   data: () => ({
     currentJob: {},
@@ -365,19 +371,26 @@ export default {
     id: "",
     submitClicked: false,
     pickers: {
-      datePicker: ""
+      datePicker: "",
     },
     isUploading: false,
     uploaded: false,
     isVideoUploading: false,
     videoUploaded: false,
     license: {
-      yes: "2"
+      yes: "2",
     },
     datePickerOptions: {
       disabledDate(date) {
         return date > new Date();
-      }
+      },
+    },
+    sectionStyleOverride: {
+      padding: "20px 0",
+    },
+    formContainer: {
+      marginTop: "20px",
+      marginBottom: "60px"
     },
     form: {
       firstName: "",
@@ -387,7 +400,7 @@ export default {
       description: "",
       subject: "",
       gender: "Male",
-      country: "Afghanistan"
+      country: "Afghanistan",
     },
     countries: [
       "Afghanistan",
@@ -628,8 +641,8 @@ export default {
       "Yemen",
       "Yugoslavia",
       "Zambia",
-      "Zimbabwe"
-    ]
+      "Zimbabwe",
+    ],
   }),
   methods: {
     ...mapActions(["fetchJobs"]),
@@ -648,7 +661,7 @@ export default {
       this.form.name = `${this.form.firstName} ${this.form.lastName}`;
       this.form.message = this.message;
       this.form.subject = this.subject;
-      this.$validator.validateAll().then(result => {
+      this.$validator.validateAll().then((result) => {
         if (result) {
           if (this.uploaded) {
             this.handleNetlifyForm();
@@ -665,8 +678,8 @@ export default {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: this.encode({
           "form-name": "job-applications",
-          ...this.form
-        })
+          ...this.form,
+        }),
       });
     },
     applicationCompleted() {
@@ -675,17 +688,15 @@ export default {
         title: "Application sent",
         text: "You will recieve email for confirmation",
         icon: "success",
-        confirmButtonText: "Okay"
-      }).then(result => {
+        confirmButtonText: "Okay",
+      }).then((result) => {
         if (result.value) {
           this.$router.push({ name: "JobsMain" });
         }
       });
     },
     handleTwoWeeksLater() {
-      return moment(new Date())
-        .add(2, "weeks")
-        .format("DD MMM YYYY");
+      return moment(new Date()).add(2, "weeks").format("DD MMM YYYY");
     },
     handleEmailNotification() {
       const email = {};
@@ -706,11 +717,11 @@ export default {
         title: "Application Error",
         text: "Please upload your latest CV",
         icon: "error",
-        confirmButtonText: "Okay"
+        confirmButtonText: "Okay",
       });
     },
     fileChangedHandler(e) {
-      this.$validator.validateAll().then(result => {
+      this.$validator.validateAll().then((result) => {
         if (result) {
           this.selectedFile = event.target.files[0];
           this.isUploading = true;
@@ -720,7 +731,7 @@ export default {
       });
     },
     videoChangedHandler(e) {
-      this.$validator.validateAll().then(result => {
+      this.$validator.validateAll().then((result) => {
         if (result) {
           this.selectedVideoFile = event.target.files[0];
           this.isVideoUploading = true;
@@ -746,7 +757,7 @@ export default {
         email: `${this.form.email}`,
         gender: `${this.form.gender}`,
         dob: `${this.pickers.datePicker}`,
-        lisence: `${this.license === "1" ? "yes" : "no"}`
+        lisence: `${this.license === "1" ? "yes" : "no"}`,
       });
     },
     handleTime(fullTime) {
@@ -755,7 +766,7 @@ export default {
     encode(data) {
       return Object.keys(data)
         .map(
-          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+          (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
         )
         .join("&");
     },
@@ -764,13 +775,13 @@ export default {
         date = moment(new Date(date)).format("DD MMMM YYYY");
       }
       return date;
-    }
+    },
   },
   async created() {
     await this.fetchJobs();
-    let job = this.allJobs.filter(item => item.id === this.$route.params.id);
+    let job = this.allJobs.filter((item) => item.id === this.$route.params.id);
     if (job.length == 0) this.$router.push({ name: "JobsMain" });
     this.currentJob = job[0];
-  }
+  },
 };
 </script>

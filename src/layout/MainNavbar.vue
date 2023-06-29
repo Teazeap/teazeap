@@ -9,7 +9,7 @@
   >
     <template>
       <router-link v-popover:popover1 class="navbar-brand" to="/">
-        TeaZeap
+         <img style="width: 60px" src="/img/logo/logo.png" />
       </router-link>
     </template>
     <template slot="navbar-menu">

@@ -198,6 +198,7 @@ Vue.use(Router);
           component: Telemarketing,
           props: {
             header: { colorOnScroll: 400 },
+            footer: { backgroundColor: "black" },
           },
         },
         {
@@ -206,6 +207,7 @@ Vue.use(Router);
           component: SingleAgent,
           props: {
             header: { colorOnScroll: 400 },
+            footer: { backgroundColor: "black" },
           },
         },
         {
@@ -214,6 +216,7 @@ Vue.use(Router);
           component: MultipleAgent,
           props: {
             header: { colorOnScroll: 400 },
+            footer: { backgroundColor: "black" },
           },
         },
         {
@@ -222,6 +225,7 @@ Vue.use(Router);
           component: TelemarketingBundle,
           props: {
             header: { colorOnScroll: 400 },
+            footer: { backgroundColor: "black" },
           },
         },
       ],
@@ -272,6 +276,7 @@ Vue.use(Router);
       components: { default: Jobs, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" },
       },
     },
     {
@@ -280,6 +285,7 @@ Vue.use(Router);
       components: { default: JobInfo, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" },
       },
       children: [
         {
@@ -292,6 +298,7 @@ Vue.use(Router);
           },
           props: {
             header: { colorOnScroll: 400 },
+            footer: { backgroundColor: "black" },
           },
         },
       ],
@@ -310,6 +317,7 @@ Vue.use(Router);
       components: { default: Blogs, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" },
       },
     },
     {
@@ -322,6 +330,7 @@ Vue.use(Router);
       },
       props: {
         header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" },
       },
       children: [
         {
@@ -334,6 +343,7 @@ Vue.use(Router);
           },
           props: {
             header: { colorOnScroll: 400 },
+            footer: { backgroundColor: "black" },
           },
         },
       ],

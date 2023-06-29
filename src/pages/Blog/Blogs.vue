@@ -1,53 +1,11 @@
 <template>
   <div>
-    <!-- prallex -->
-    <div class="page-header page-header-small">
-      <parallax
-        class="page-header-image"
-        style="background-image: url('img/bg5.jpg')"
-      >
-      </parallax>
-      <div class="content-center">
-        <div class="container">
-          <h1 class="title company-name">TeaZeaP Recruiting Agency</h1>
-          <div class="text-center row">
-            <div class="col-4">
-              <h2 class="mb-2">{{ allBlogPosts.length }}</h2>
-              <p>{{ $t("schools.jobs") }}</p>
-            </div>
-            <div class="col-4">
-              <h2 class="mb-2">26</h2>
-              <p>{{ $t("schools.clients") }}</p>
-            </div>
-            <div class="col-4">
-              <h2 class="mb-2">48</h2>
-              <p>{{ $t("schools.schools") }}</p>
-            </div>
-            <div class="col-12">
-              <a
-                href="https://www.facebook.com/teazeap"
-                target="_blank"
-                class="btn btn-primary btn-icon btn-round mx-2"
-              >
-                <i class="fab fa-facebook-square"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/teazeap/"
-                class="btn btn-primary btn-icon btn-round"
-                target="_blank"
-              >
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Header header="Blog" sub-header="Follow our journey..." :show-button="false" />
     <!-- blog post -->
-    <div class="section profile-section" id="referenceSection">
+    <div class="section profile-section" id="referenceSection"  :style="commonMarginClass">
       <span style="textAlign: center">
-        <h2 class="title mb-0">Blog Posts</h2>
-        <p class="description pt-0">Follow our journey....</p>
+        <!-- <h2 class="title mb-0">Blog Posts</h2>
+        <p class="description pt-0">Follow our journey....</p> -->
         <div class="container mt-4">
           <BlogSearch @search="handleSearch" v-if="!noBlogPosts" />
           <div class="row justify-content-center">
@@ -94,12 +52,14 @@ import { Button, FormGroupInput, Radio } from "@/components";
 import { mapGetters, mapActions } from "vuex";
 import BlogSearch from "./BlogSearch.vue";
 import moment from "moment";
+import Header from "@/pages/Recruitment/Header.vue";
 
 export default {
   name: "BlogPosts",
   bodyClass: "landing-page",
   components: {
     BlogCard,
+    Header,
     Pagination,
     BlogSearch,
     [Radio.name]: Radio,

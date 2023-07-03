@@ -8,7 +8,7 @@
       </p>
     </div>
     <div class="row justify-content-center">
-      <div class="col-md-12 col-lg-8 col-xl-6 align-self-center">
+      <div class="col-md-12 col-lg-12 col-xl-12 align-self-center" style="padding: 18px">
         <!-- Nav tabs -->
         <form
           @submit.prevent="handleSubmit"

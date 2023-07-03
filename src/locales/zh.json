@@ -1,20 +1,109 @@
 {
     "message": "你好",
     "nav": {
-        "our-services": "服務",
-        "about-us": "首頁",
-        "apply-now": "立刻申請",
-        "teachers": "師資陣容",
-        "schools": "學校",
-        "language": "語言",
-        "admin": "行政人員",
-        "create-profile": "Create Profile",
-        "blog": "Blog",
-        "no-blogs": "No Blogs",
-        "telemarketing": "Telemarketing",
-        "single-agent": "Single Agent",
-        "multiple-agent": "Multiple Agent"
+        "recruitment": "招聘",
+        "tech": "技术",
+        "corporate": "企业",
+        "education": "教育",
+        "telemarketing": "电话营销",
+        "singleAgent": "单一代理",
+        "multipleAgent": "多个代理",
+        "bundle": "捆绑",
+        "callCenter": "呼叫中心",
+        "english": "英文",
+        "chinese": "中文",
+        "getInTouch": "联系我们",
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "blog": "博客",
+        "language": "語言"
     },
+    "intro": {
+        "whoWeAre": "我们是谁",
+        "teazeapEstablished": "Teazeap成立于一个全面的提供者",
+        "recruitment": "招聘",
+        "telemarketing": "电话营销",
+        "and": "和",
+        "callCenter": "呼叫中心",
+        "services": "服务。",
+        "recognizingDemand": "认识到科技，企业和教育部门对技术人才的不断增长需求，Teazeap着手将企业与顶尖人才联系起来。",
+        "teazeapSetOut": "通过创新策略和个性化方法，Teazeap的使命是弥合雇主和优秀候选人之间的差距，取得了显著的成就。",
+        "teazeapHasAchieved": "Teazeap成功地促成了许多就业，为客户组织的增长和成功做出了贡献。",
+        "teazeapHasSuccessfully": "Teazeap将继续致力于在未来多年内提供出色的招聘解决方案和卓越的客户体验。",
+        "withAMission": "在致力于弥合雇主和优秀候选人之间差距的使命下，",
+        "teazeapRemainsCommitted": "Teazeap将继续致力于在未来多年内提供出色的招聘解决方案和卓越的客户体验。"
+    },
+    "products": {
+        "explore": "探索Teazeap的世界"
+    },
+    "team": {
+        "ourTeam": "我们的团队"
+    },
+    "banner": {
+        "teazeapAgency": "Teazeap代理",
+        "transformingWorkforce": "通过Teazeap创新的招聘、电话营销和呼叫中心解决方案，改变您的劳动力和客户互动。",
+        "recruitment": "招聘",
+        "telemarketing": "电话营销",
+        "callCenter": "呼叫中心"
+    },
+    "recruitmentPage": {
+        "revolutionizingRecruitment": "革命性地改革科技、企業和教育的招聘方式。",
+        "introText": "在當今競爭激烈的就業市場中，找到與您組織需求和價值觀完美契合的頂尖人才絕非易事。這就是Teazeap介入的地方，重新定義科技、企業和教育領域的招聘方式。作為領先的招聘公司，Teazeap致力於提供創新解決方案，彌合傑出人才和具有前瞻性思維的組織之間的差距。Teazeap專注於這三個行業，結合尖端技術、行業專業知識和對將專業人士與夢想職業聯繫的熱情。",
+        "stepsTitle": "提供招聘服務的我們的策略方法",
+        "processes": {
+            "1": {
+                "title": "專業領域的有針對性專業知識",
+                "content": "我們專注於行業的招聘專家擁有深厚的科技、企業和教育領域知識，使我們能夠確定頂尖人才並將其與客戶的特定要求無縫配合。"
+            },
+            "2": {
+                "title": "創新技術實現高效運營",
+                "content": "通過利用創新工具、人工智能和數據分析，我們簡化招聘流程，減少招聘時間，為客戶在高效獲取合格人才方面提供競爭優勢。"
+            },
+            "3": {
+                "title": "量身定制的人際關係",
+                "content": "了解候選人和客戶的獨特價值觀和渴望，我們建立有意義的聯繫，提供量身定制的建議，推動長期成功，促進共同成長和實現共榮。"
+            }
+        },
+        "startedTitle": "起點",
+        "startedContent": "Teazeap 在其旅程中主要侧重于教育部門的人才招聘。然而，隨著時間的推移，該組織逐漸發展成為提供全面的招聘解決方案、電訊營銷服務和呼叫中心運營的供應商。Teazeap 的範圍擴大到各種類型的教育專業人士，包括全職教育工作者、兼職講師和代課教師。",
+        "strategicProcess": "我們的戰略招聘流程",
+        "applyNow": "現在申請",
+        "createProfile": "創建個人資料"
+    },
+    "serviceIndustry": {
+        "tech": {
+            "name": "科技",
+            "description": "Teazeap在科技行業的優勢源於其能夠打造一個頂尖科技人才網絡，確保在招聘領域獲得競爭優勢。通過始終保持行業趨勢的領先地位並充分利用行業知識，Teazeap始終能夠識別具有專業技術專長的優秀候選人。其嚴格的篩選流程不僅評估技術能力，還評估文化匹配度，為尋求創新和技術卓越的企業提供了最佳候選人安排。我們合作過的公司包括<span style='font-weight: bold'>MetroFuser</span> 和 <span style='font-weight: bold'>SoundCloud</span>."
+        },
+        "corporate": {
+            "name": "企業",
+            "description": "Teazeap通過根據每個企業的特定需求定制招聘解決方案，在企業行業中表現出色。憑藉對企業需求的深入了解和經驗豐富的履歷，Teazeap成功地將合格的專業人士安置在高管、管理和行政職位上。值得注意的是，Teazeap與領先的公司，如<span style='font-weight: bold'>United Debt Settlement</span>、<span style='font-weight: bold'>Singulus LLC</span>和<span style='font-weight: bold'>Gotham Ltd</span>合作，利用其全面的數據庫和主動的人才搜尋技術，將這些公司與具備理想資格、經驗和領導技能的候選人聯繫起來，這些候選人與其獨特的企業文化和戰略目標相符。"
+        },
+        "educational": {
+            "name": "教育",
+            "description": "Teazeap在教育行業的領導地位源於其對教育機構的獨特需求的深刻理解，以及其將其與高素質專業人士聯繫起來的能力。無論學校需要學術人員、行政人員還是專業教育工作者，Teazeap都具備識別理想候選人的專業知識。值得注意的是，Teazeap已成功與知名學校，如<span style='font-weight: bold'>Ailyn English School</span>、<span style='font-weight: bold'>Kang Chiao School</span> 和<span style='font-weight: bold'>Yoder Bilingual Academy</span> 合作，利用其廣泛的網絡和行業知識，始終能夠將這些機構與具備所需資格、經驗和對培養豐富學習環境和促進學術卓越的熱情的合格人才匹配起來。"
+        }
+    },
+    "header": {
+        "header": "招聘代理機構",
+        "subHeader": "發掘您的職業潛力：Teazeap 將優秀人才與科技、企業和教育機會相連接！",
+        "applyNow": "現在申請",
+        "teachingJobs": "教學工作",
+        "significant": "我們非常重視您的教學事業及其對我們的重要性",
+        "teachers": "教師",
+        "profileSubHeader": "您的教學生涯對我們非常重要"
+    },
+    "viewJob": "查看職位",
+
+
+
+
+
+
+
+
+
+
     "landing-page": {
         "who": "我們是誰",
         "goals": "TeaZeaP 服務保證學校能擁有最優良的師資，不論是正職、兼職還是代課教師。TeaZeaP確保我們的夥伴得到完善的協助，除了安排任職，我們同時負責教師與學校兩端的溝通，以避免未清楚溝通所造成的任何誤會。 同時我們也提供教師能有導師協助及所需的資源。",
@@ -40,8 +129,8 @@
     },
     "contact": {
         "with-us": "與我們聯繫",
-        "get-in-touch": "Get in Touch with Us",
-        "reach-out": "Reach Out to Our Expert Team",
+        "get-in-touch": "請與我們聯繫",
+        "reach-out": "聯繫我們的專家團隊",
         "important": "您的教學生涯是我們的驕傲",
         "name": "姓名",
         "full-name": "Full Name...",

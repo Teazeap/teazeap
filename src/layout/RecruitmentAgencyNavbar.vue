@@ -17,28 +17,28 @@
       <li class="nav-item">
         <nav-link class="nav-link btn btn-profile" to="recruitment-agency#tech">
           <font-awesome-icon icon="code" />
-          <p class="ml-1">Tech</p>
+          <p class="ml-1">{{ $t("nav.tech") }}</p>
         </nav-link>
       </li>
 
       <li class="nav-item">
         <nav-link class="nav-link btn btn-profile" to="recruitment-agency#corporate">
           <font-awesome-icon icon="business-time" />
-          <p class="ml-1">Corporate</p>
+          <p class="ml-1">{{ $t("nav.corporate") }}</p>
         </nav-link>
       </li>
 
       <li class="nav-item">
         <nav-link class="nav-link btn btn-profile" to="recruitment-agency#educational">
           <font-awesome-icon icon="graduation-cap" />
-          <p class="ml-1">Education</p>
+          <p class="ml-1">{{ $t("nav.education") }}</p>
         </nav-link>
       </li>
 
       <li class="nav-item">
         <nav-link class="nav-link btn btn-profile" to="/jobs">
           <i class="now-ui-icons arrows-1_share-66 nav-link-icon"></i>
-          <p>{{ $t("nav.apply-now") }}</p>
+          <p>{{ $t("recruitmentPage.applyNow") }}</p>
         </nav-link>
       </li>
 
@@ -48,7 +48,7 @@
           to="/create-profile"
         >
           <i class="now-ui-icons users_single-02 nav-link-icon"></i>
-          <p>{{ $t("nav.create-profile") }}</p>
+          <p>{{ $t("recruitmentPage.createProfile") }}</p>
         </nav-link>
       </li>
 

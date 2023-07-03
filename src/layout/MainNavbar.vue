@@ -13,16 +13,10 @@
       </router-link>
     </template>
     <template slot="navbar-menu">
-      <!-- <li class="nav-item">
-        <nav-link class="nav-link about-us" to="/">
-          <i class="now-ui-icons arrows-1_share-66"></i>
-          <p>{{ $t("nav.about-us") }}</p>
-        </nav-link>
-      </li> -->
       <li class="nav-item">
         <nav-link class="nav-link btn btn-neutral" to="/jobs">
           <i class="now-ui-icons arrows-1_share-66  nav-link-icon"></i>
-          <p>{{ $t("nav.apply-now") }}</p>
+          <p>{{ $t("recruitmentPage.applyNow") }}</p>
         </nav-link>
       </li>
 
@@ -32,74 +26,9 @@
           to="/create-profile"
         >
           <i class="now-ui-icons users_single-02 nav-link-icon"></i>
-          <p>{{ $t("nav.create-profile") }}</p>
+          <p>{{ $t("recruitmentPage.createProfile") }}</p>
         </nav-link>
       </li>
-
-      <!-- <li class="nav-item">
-        <nav-link class="nav-link  btn  btn-neutral btn-profile" to="/telemarketing">
-          <i class="now-ui-icons tech_headphones nav-link-icon"></i>
-          <p>{{ $t("nav.telemarketing") }}</p>
-        </nav-link>
-      </li> -->
-
-      <!-- <drop-down
-        tag="li"
-        :title="ourServices"
-        icon="now-ui-icons design_image"
-        class="nav-item nav-ul"
-      >
-        <nav-link to="/our-services/teachers">
-          <i class="now-ui-icons education_paper"></i> {{ $t("nav.teachers") }}
-        </nav-link>
-        <nav-link to="/our-services/schools">
-          <i class="now-ui-icons education_hat"></i> {{ $t("nav.schools") }}
-        </nav-link>
-        <nav-link to="/blog">
-          <i class="now-ui-icons files_paper"></i> {{ $t("nav.blog") }}
-        </nav-link>
-      </drop-down> -->
-
-      <!-- <drop-down
-        tag="li"
-        :title="language"
-        icon="now-ui-icons business_globe"
-        class="nav-item nav-ul"
-      >
-        <nav-link text="en" @onLanguageChange="onLanguageChange">
-          <i class="now-ui-icons travel_istanbul"></i> English
-        </nav-link>
-        <nav-link text="zh" @onLanguageChange="onLanguageChange">
-          <i class="now-ui-icons transportation_air-baloon"></i> Chinese
-        </nav-link>
-      </drop-down> -->
-
-      <!-- <li class="nav-item">
-        <a
-          class="nav-link"
-          rel="tooltip"
-          title="Like us on Facebook"
-          data-placement="bottom"
-          href="https://www.facebook.com/teazeap"
-          target="_blank"
-        >
-          <i class="fab fa-facebook-square"></i>
-          <p class="d-lg-none d-xl-none">Facebook</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          rel="tooltip"
-          title="Follow us on Instagram"
-          data-placement="bottom"
-          href="https://www.instagram.com/teazeap/"
-          target="_blank"
-        >
-          <i class="fab fa-instagram"></i>
-          <p class="d-lg-none d-xl-none">Instagram</p>
-        </a>
-      </li> -->
     </template>
   </navbar>
 </template>

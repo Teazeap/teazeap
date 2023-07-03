@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header header="Teaching Jobs" sub-header="We highly value your teaching career and its significance to us." :show-button="false" />
+    <Header header="header.teachingJobs" sub-header="header.significant" :show-button="false" />
     <div class="section" :style="commonMarginClass">
       <div class="container text-center mt-16" v-if="jobsLoading">
         <img

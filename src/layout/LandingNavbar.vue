@@ -15,69 +15,93 @@
     <template slot="navbar-menu">
       <drop-down
         tag="li"
-        title="Recruitment"
+        :title="recruitment"
         icon="users-viewfinder"
         class="nav-item nav-ul"
         :isFa="true"
       >
         <nav-link to="recruitment-agency#tech">
-          <font-awesome-icon icon="code" /> <span class="ml-2">Tech</span>
+          <font-awesome-icon icon="code" />
+          <span class="ml-2">{{ $t("nav.tech") }}</span>
         </nav-link>
         <nav-link to="recruitment-agency#corporate">
-          <font-awesome-icon icon="business-time" /> <span class="ml-2">Corporate</span>
+          <font-awesome-icon icon="business-time" />
+          <span class="ml-2">{{ $t("nav.corporate") }}</span>
         </nav-link>
         <nav-link to="recruitment-agency#educational">
-          <font-awesome-icon icon="graduation-cap" /> <span class="ml-2">Education</span>
+          <font-awesome-icon icon="graduation-cap" />
+          <span class="ml-2">{{ $t("nav.education") }}</span>
         </nav-link>
       </drop-down>
 
       <drop-down
         tag="li"
-        title="Telemarketing"
+        :title="telemarketing"
         icon="headset"
         class="nav-item nav-ul"
         :isFa="true"
       >
         <nav-link to="telemarketing/single-agent">
-          <font-awesome-icon icon="user" /> <span class="ml-2">Single Agent </span>
+          <font-awesome-icon icon="user" />
+          <span class="ml-2">{{ $t("nav.singleAgent") }}</span>
         </nav-link>
         <nav-link to="telemarketing/multiple-agent">
-          <font-awesome-icon icon="user-group" /> <span class="ml-2">Multiple Agent </span>
+          <font-awesome-icon icon="user-group" />
+          <span class="ml-2">{{ $t("nav.multipleAgent") }}</span>
         </nav-link>
         <nav-link to="telemarketing/bundle">
-          <font-awesome-icon icon="crown" /> <span class="ml-2">Bundle</span>
+          <font-awesome-icon icon="crown" />
+          <span class="ml-2">{{ $t("nav.bundle") }}</span>
         </nav-link>
       </drop-down>
 
       <drop-down
         tag="li"
-        title="Call Center"
+        :title="callCenter"
         icon="phone-volume"
         class="nav-item nav-ul"
         :isFa="true"
       >
         <nav-link to="/call-center#single-agent">
-          <font-awesome-icon icon="user" /> <span class="ml-2">Single Agent</span>
+          <font-awesome-icon icon="user" />
+          <span class="ml-2">{{ $t("nav.singleAgent") }}</span>
         </nav-link>
         <nav-link to="/call-center#multiple-agent">
-          <font-awesome-icon icon="user-group" /> <span class="ml-2">Multiple Agent</span>
+          <font-awesome-icon icon="user-group" />
+          <span class="ml-2">{{ $t("nav.multipleAgent") }}</span>
         </nav-link>
         <nav-link to="/call-center#bundle">
-          <font-awesome-icon icon="crown" /> <span class="ml-2">Bundle</span>
+          <font-awesome-icon icon="crown" />
+          <span class="ml-2">{{ $t("nav.bundle") }}</span>
         </nav-link>
       </drop-down>
 
       <drop-down
         tag="li"
-        title="Get In Touch"
+        :title="language"
+        icon="now-ui-icons business_globe"
+        class="nav-item nav-ul"
+      >
+        <nav-link text="en" @onLanguageChange="onLanguageChange">
+          <i class="now-ui-icons travel_istanbul"></i> English
+        </nav-link>
+        <nav-link text="zh" @onLanguageChange="onLanguageChange">
+          <i class="now-ui-icons transportation_air-baloon"></i>
+          中文
+        </nav-link>
+      </drop-down>
+
+      <drop-down
+        tag="li"
+        :title="getInTouch"
         icon="now-ui-icons business_globe"
         class="nav-item nav-ul"
       >
         <nav-link href="https://www.facebook.com/teazeap" target="_blank">
-          <i class="fab fa-facebook-square"></i> Facebook
+          <i class="fab fa-facebook-square"></i> {{ $t("nav.facebook") }}
         </nav-link>
         <nav-link href="https://www.instagram.com/teazeap/" target="_blank">
-          <i class="fab fa-instagram"></i> Instagram
+          <i class="fab fa-instagram"></i> {{ $t("nav.instagram") }}
         </nav-link>
         <!-- <nav-link href="https://www.facebook.com/teazeap" target="_blank">
           <font-awesome-icon icon="phone" /> <span class="ml-2">+1 848 305 7850</span>
@@ -85,10 +109,7 @@
       </drop-down>
 
       <li class="nav-item">
-        <nav-link
-          class="nav-link  btn btn-neutral btn-profile"
-          to="/blog"
-        >
+        <nav-link class="nav-link btn btn-neutral btn-profile" to="/blog">
           <i class="now-ui-icons files_paper nav-link-icon"></i>
           <p>{{ $t("nav.blog") }}</p>
         </nav-link>
@@ -106,13 +127,13 @@ export default {
   name: "main-navbar",
   props: {
     transparent: Boolean,
-    colorOnScroll: Number
+    colorOnScroll: Number,
   },
   components: {
     DropDown,
     Navbar,
     NavLink,
-    [Popover.name]: Popover
+    [Popover.name]: Popover,
   },
   computed: {
     ourServices() {
@@ -120,18 +141,30 @@ export default {
     },
     language() {
       return this.$t("nav.language");
-    }
+    },
+    recruitment() {
+      return this.$t("nav.recruitment");
+    },
+    telemarketing() {
+      return this.$t("nav.telemarketing");
+    },
+    callCenter() {
+      return this.$t("nav.callCenter");
+    },
+    getInTouch() {
+      return this.$t("nav.getInTouch");
+    },
   },
   methods: {
     onLanguageChange(language) {
       this.$i18n.locale = language === "en" ? "en" : "zh";
       localStorage.setItem("teapZeapLang", this.$i18n.locale);
-      this.closeNav = uuidv4()
-    }
+      this.closeNav = uuidv4();
+    },
   },
   data: () => ({
-    closeNav: null
-  })
+    closeNav: null,
+  }),
 };
 </script>
 
@@ -142,14 +175,14 @@ export default {
 }
 
 .about-us.active {
-    color: #fff;
-    text-decoration: none;
-    background-color: transparent !important;
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent !important;
 }
 
 .about-us {
-    color: #fff;
-    text-decoration: none;
-    background-color: transparent !important;
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent !important;
 }
 </style>

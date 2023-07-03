@@ -5,12 +5,12 @@
         <v-col cols="12" sm="7" lg="6" class="d-flex align-center">
           <div class="text-sm-left text-center" style="width: 100%">
             <h1 class="banner-title font-weight-bold text-white">
-              {{header}}
+              {{ $t(`${header}`) }}
             </h1>
             <h4
               class="banner-subtitle white--text font-weight-regular text-white"
             >
-              {{subHeader}}
+              {{ $t(`${subHeader}`) }}
             </h4>
             <div class="mt-md-16 mt-10 d-sm-flex d-block" v-if="showButton">
               <router-link
@@ -18,7 +18,7 @@
                 class="program-link mr-0 mr-md-4 mb-2 mb-md-0 mt-4 mt-md-0 "
               >
                 <div class="program-link-content">
-                  Apply Now
+                  {{$t("recruitmentPage.applyNow")}}
                 </div>
               </router-link>
             </div>
@@ -46,11 +46,11 @@ export default {
   props : {
     header: {
       type: String,
-      default: () => "Recruiting Agency"
+      default: () => "header.header"
     },
     subHeader: {
       type: String,
-      default: () => "Unlock Your Career Potential with Teazeap: Connecting Exceptional Talent with Tech, Corporate, and Education Opportunities!"
+      default: () => "header.subHeader"
     },
     showButton: {
       type: Boolean,

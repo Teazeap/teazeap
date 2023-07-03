@@ -3,27 +3,20 @@
     <Header />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
-        <h2 class="title text-center">Who We Are</h2>
+        <h2 class="title text-center">{{ $t('intro.whoWeAre') }}</h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
             <img src="/img/landing/310731.png" alt="banner" class="img-fluid" />
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
-              Teazeap was established as a comprehensive provider of
-              <strong>recruitment</strong>, <strong>telemarketing</strong>, and
-              <strong>call center</strong> services. Recognizing the growing
-              demand for skilled professionals in the tech, corporate, and
-              educational sectors, Teazeap set out to connect businesses with top
-              talent. With a mission to bridge the gap between employers and
-              exceptional candidates, Teazeap has achieved significant
-              accomplishments through innovative
-              strategies and personalized approaches. <br /><br />
-              Teazeap has successfully facilitated numerous
-              placements, contributing to the growth and success of client
-              organizations. Teazeap remains committed to its mission of
-              delivering exceptional recruitment solutions and outstanding
-              customer experiences in the years to come.
+              {{ $t('intro.teazeapEstablished') }}
+              <strong>{{ $t('intro.recruitment') }}</strong>,
+              <strong>{{ $t('intro.telemarketing') }}</strong>,
+              {{ $t('intro.and') }}
+              <strong>{{ $t('intro.callCenter') }}</strong> {{ $t('intro.services') }}.{{ $t('intro.recognizingDemand') }}
+              {{ $t('intro.teazeapSetOut') }} {{ $t('intro.withAMission') }} {{ $t('intro.teazeapHasAchieved') }}
+              <br /><br />{{ $t('intro.teazeapHasSuccessfully') }} {{ $t('intro.teazeapRemainsCommitted') }}
             </p>
           </v-col>
         </div>
@@ -33,7 +26,7 @@
     <!-- teazeap products -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
-        <h2 class="title text-center products-header">Explore the world of Teazeap</h2>
+        <h2 class="title text-center products-header">{{ $t('products.explore') }}</h2>
         <flickity :options="flickityOptions" class="teacher-type-carousel">
           <ProductCard
             v-for="(teazeapProduct, index) in teazeapProducts"
@@ -47,7 +40,7 @@
     <!-- team section -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
-        <h2 class="title text-center">Our Team</h2>
+        <h2 class="title text-center">{{ $t('team.ourTeam') }}</h2>
         <flickity
           ref="communityBadgeInfoModalSwiper"
           :options="flickityOptions"
@@ -66,6 +59,7 @@
     <router-view />
   </div>
 </template>
+
 <script>
 import { Button, FormGroupInput, Collapsible } from "@/components";
 import Contact from "@/pages/Telemarketing/Contact";

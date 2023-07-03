@@ -1,65 +1,62 @@
 <template>
   <div>
     <Header />
-    <div class="pt-0 intro-container" :style="commonMarginClass">
-      <div class="container section-card intro">
-        <h2 class="title text-center">
-          Revolutionizing Recruitment in Tech, Corporate and Education.
-        </h2>
-        <div class="row mt-4">
-          <v-col cols="12" sm="7" lg="6">
-            <img src="/img/recruitment/recruitment-1.jpg" alt="banner" class="img-fluid" />
-          </v-col>
-          <v-col cols="12" sm="5" lg="6">
-            <p class="introduction-text">
-              In today's highly competitive job market, finding top talent that perfectly aligns with your organization's needs and values is no easy feat. That's where Teazeap steps in, redefining the landscape of recruitment in the tech, corporate, and educational sectors. As a leading recruiting company, Teazeap is dedicated to providing innovative solutions that bridge the gap between exceptional talent and forward-thinking organizations. With a distinct focus on these three sectors, Teazeap combines cutting-edge technology, industry expertise, and a passion for connecting professionals with their dream careers.
-            </p>
-          </v-col>
-        </div>
+  <div class="pt-0 intro-container" :style="commonMarginClass">
+    <div class="container section-card intro">
+      <h2 class="title text-center">{{ $t("recruitmentPage.revolutionizingRecruitment") }}</h2>
+      <div class="row mt-4">
+        <v-col cols="12" sm="7" lg="6">
+          <img src="/img/recruitment/recruitment-1.jpg" alt="banner" class="img-fluid" />
+        </v-col>
+        <v-col cols="12" sm="5" lg="6">
+          <p class="introduction-text">{{ $t("recruitmentPage.introText") }}</p>
+        </v-col>
       </div>
     </div>
+  </div>
 
     <!-- service industry -->
-    <div v-for="service, index in servicedIndustry" :key="index" class="section pt-0 mobile-padding" :style="commonMarginClass" :id="service.id">
-      <div class="container section-card">
-        <h2 class="title text-center">
-          {{service.name}}
-        </h2>
-        <div class="row mt-4">
-          <v-col cols="12" sm="7" lg="6">
-            <img :src="service.picUrl" alt="banner" class="img-fluid" :style="service.picUrlStyle" />
-          </v-col>
-          <v-col cols="12" sm="5" lg="6">
-            <p class="introduction-text">
-              <span v-html="service.description"/>
-            </p>
-          </v-col>
-        </div>
+     <div v-for="service, index in servicedIndustry" :key="index" class="section pt-0 mobile-padding" :style="commonMarginClass" :id="service.id">
+    <div class="container section-card">
+      <h2 class="title text-center">
+        {{ $t("serviceIndustry." + service.id + ".name") }}
+      </h2>
+      <div class="row mt-4">
+        <v-col cols="12" sm="7" lg="6">
+          <img :src="service.picUrl" alt="banner" class="img-fluid" :style="service.picUrlStyle" />
+        </v-col>
+        <v-col cols="12" sm="5" lg="6">
+          <p class="introduction-text">
+            <span v-html="$t('serviceIndustry.' + service.id + '.description')"/>
+          </p>
+        </v-col>
       </div>
     </div>
+  </div>
 
-    <!-- telemarketing steps -->
-    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
-      <div class="container section-card">
-        <h2 class="title text-center">
-          Our Strategic Approach To Providing Recruitment Services
-        </h2>
-        <div class="row mt-4">
-          <v-col cols="12" sm="7" lg="6">
-            <img src="/img/recruitment/recruitment-3.png" alt="banner" class="img-fluid" />
-          </v-col>
-          <v-col cols="12" sm="5" lg="6">
-            <Collapsible :processes="processes" />
-          </v-col>
-        </div>
-      </div>
+    <!-- recruitment steps -->
+<div class="section pt-0 mobile-padding" :style="commonMarginClass">
+  <div class="container section-card">
+    <h2 class="title text-center">
+      {{$t("recruitmentPage.stepsTitle")}}
+    </h2>
+    <div class="row mt-4">
+      <v-col cols="12" sm="7" lg="6">
+        <img src="/img/recruitment/recruitment-3.png" alt="banner" class="img-fluid" />
+      </v-col>
+      <v-col cols="12" sm="5" lg="6">
+        <Collapsible :processes="processes" />
+      </v-col>
     </div>
+  </div>
+</div>
+
 
     <!-- recruitment steps -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
-          Our Strategic  Recruitment Process
+          {{$t("recruitmentPage.strategicProcess")}}
         </h2>
         <div class="row mt-4">
           <v-col cols="12">
@@ -72,15 +69,9 @@
    <!-- teacher type -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
-        <h2 class="title text-center">Where we started</h2>
+        <h2 class="title text-center">{{$t("recruitmentPage.startedTitle")}}</h2>
         <p class="video-section-introduction text-justify">
-          Teazeap embarked on its journey with a primary emphasis on talent
-          acquisition within the educational sector. However, over time, the
-          organization evolved into a well-rounded provider of recruitment
-          solutions, telemarketing services, and call center operations.
-          Teazeap's expanded scope encompassed various types of teaching
-          professionals, including full-time educators, part-time instructors,
-          and substitute teachers.
+          {{$t("recruitmentPage.startedContent")}}
         </p>
 
         <flickity :options="flickityOptions" class="teacher-type-carousel">
@@ -105,7 +96,7 @@ import sizeMixin from "@/plugins/sizeMixin.js";
 import TeacherTypeCard from "@/pages/Landing/TeacherTypeCard.vue";
 
 export default {
-  name: "telemarketing",
+  name: "recruitment",
   bodyClass: "landing-page",
   mixins: [sizeMixin],
   components: {
@@ -125,22 +116,22 @@ export default {
         message: "",
       },
       processes: [
-        {
-          id: 1,
-          title: "TARGETED EXPERTISE FOR SPECIALIZED SECTORS",
-          content: "Our industry-focused recruitment experts possess deep knowledge in tech, corporate, and educational sectors, enabling us to identify top talent and seamlessly align them with our clients' specific requirements"
-        },
-        {
-          id: 2,
-          title: "INNOVATIVE TECH FOR EFFICIENT OPERATIONS.",
-          content: "Leveraging innovative tools, AI, and data analytics, we streamline recruitment processes, reducing time-to-hire and providing our clients with a competitive edge in accessing qualified talent efficiently."
-        },
-        {
-          id: 3,
-          title: "PERSONALIZED APPROACH FOR TAILORED CONNECTIONS",
-          content: "Understanding the unique values and aspirations of candidates and clients, we forge meaningful connections, offering tailored recommendations that drive long-term success and foster strong relationships for mutual growth and fulfillment."
-        }
-      ],
+  {
+    id: 1,
+    title: "recruitmentPage.processes.1.title",
+    content: "recruitmentPage.processes.1.content"
+  },
+  {
+    id: 2,
+    title: "recruitmentPage.processes.2.title",
+    content: "recruitmentPage.processes.2.content"
+  },
+  {
+    id: 3,
+    title: "recruitmentPage.processes.3.title",
+    content: "recruitmentPage.processes.3.content"
+  }
+],
       team: [
         {
           name: "Clifton Moreau",
@@ -198,21 +189,18 @@ export default {
           id: "tech",
           picUrl: "/img/recruitment/tech.png",
           picUrlStyle: "margin-top: -2.8rem",
-          description: "Teazeap's prowess in the tech industry stems from its ability to curate a network of top-tier tech talent, ensuring a competitive edge in the recruitment landscape. By staying at the forefront of industry trends and leveraging extensive industry knowledge, Teazeap consistently identifies exceptional candidates with specialized technical expertise. Its rigorous screening processes not only evaluate technical prowess but also assess cultural fit, resulting in optimal candidate placements for businesses seeking innovation and technological excellence. Companies we have worked with include <span style='font-weight: bold'>MetroFuser</span> and <span style='font-weight: bold'>SoundCloud</span>"
         },
         {
           name: "Corporate",
           id: "corporate",
           picUrl: "/img/recruitment/corporate.png",
           picUrlStyle: "margin-top: -2.8rem",
-          description: "Teazeap excels in the corporate industry by customizing recruitment solutions to meet each corporation's specific needs. With a deep understanding of corporate requirements and a proven track record, Teazeap successfully places qualified professionals in executive, managerial, and administrative positions. Notably, Teazeap has collaborated with industry-leading companies such as  <span style='font-weight: bold'> United Debt Settlement</span>, <span style='font-weight: bold'>Singulus LLC</span> and <span style='font-weight: bold'>Gotham Ltd</span> leveraging its comprehensive database and proactive sourcing techniques to connect them with candidates possessing the ideal qualifications, experience, and leadership skills that align with their unique cultures and strategic objectives."
         },
          {
           name: "Education",
           id: "educational",
           picUrl: "/img/recruitment/educational.png",
           picUrlStyle: "margin-top: -2.8rem",
-          description: "Teazeap's leadership in the education industry stems from its profound comprehension of the unique needs of educational institutions and its ability to connect them with highly qualified professionals. Whether schools require academic staff, administrative personnel, or specialized educators, Teazeap possesses the expertise to identify the ideal candidates. Notably, Teazeap has successfully partnered with renowned schools such as <span style='font-weight: bold'>Ailyn English School</span>, <span style='font-weight: bold'>Kang Chiao School</span>, and <span style='font-weight: bold'>Yoder Bilingual Academy</span>, leveraging its extensive network and sector knowledge to consistently match these institutions with qualified individuals who possess the requisite qualifications, experience, and passion for cultivating enriching learning environments and promoting academic excellence."
         }
       ],
     };
@@ -315,7 +303,8 @@ export default {
 }
 
 .introduction-text {
-  text-align: justify;
+  /* text-align: justify; */
+  /* word-spacing:-2px; */
 }
 
 @media (min-width: 600px) {

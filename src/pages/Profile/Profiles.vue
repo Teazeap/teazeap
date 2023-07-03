@@ -1,8 +1,8 @@
 <template>
   <div>
     <Header
-      header="Teachers"
-      sub-header="Your teaching career is very important to us"
+      header="header.teachers"
+      sub-header="header.profileSubHeader"
       :show-button="false"
       banner-src="/img/blog/blog.png"
     />

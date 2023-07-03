@@ -29,7 +29,7 @@
             tag="button"
             class="btn btn-primary view-job stretched-link"
           >
-            View Job
+            {{$t("viewJob")}}
           </router-link>
         </v-card-actions>
       </v-card>

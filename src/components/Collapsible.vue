@@ -8,7 +8,7 @@
         :key="index"
       >
         <div>
-          <span class="item-content" v-html="process.content"></span>
+          <span class="item-content" v-html="$t(`${process.content}`)"></span>
         </div>
       </el-collapse-item>
     </el-collapse>
@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     handleTitle(index, title) {
-      return `${index + 1}. ${title}`;
+      return `${index + 1}. ${this.$t(`${title}`)}`;
     },
     handleName(index) {
       return `${index + 1}`;

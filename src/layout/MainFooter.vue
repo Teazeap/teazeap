@@ -14,7 +14,7 @@
           </li>
           <li>
             <router-link v-popover:popover1 class="navbar-brand" to="/">
-              {{ $t("nav.about-us") }}
+              {{ $t("nav.aboutUs") }}
             </router-link>
           </li>
           <li>
@@ -53,14 +53,14 @@
             {{ $t("nav.telemarketing") }}
             </router-link>
           </li>
-          
+
           <li>
             <router-link
               v-popover:popover1
               class="navbar-brand"
               to="/telemarketing/single-agent"
             >
-            {{ $t("nav.single-agent") }}
+            {{ $t("nav.singleAgent") }}
             </router-link>
           </li>
 
@@ -70,7 +70,7 @@
               class="navbar-brand"
               to="/telemarketing/multiple-agent"
             >
-            {{ $t("nav.multiple-agent") }}
+            {{ $t("nav.multipleAgent") }}
             </router-link>
           </li>
 
@@ -80,7 +80,7 @@
               class="navbar-brand"
               to="/telemarketing/call-center"
             >
-            {{ $t("call-center") }}
+              {{ $t("nav.callCenter") }}
             </router-link>
           </li>
 

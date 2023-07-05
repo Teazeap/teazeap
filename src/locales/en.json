@@ -16,7 +16,11 @@
         "facebook": "Facebook",
         "instagram": "Instagram",
         "blog": "Blog",
-        "language": "Language"
+        "language": "Language",
+        "aboutUs": "ABOUT-US",
+        "teachers": "TEACHERS",
+        "schools": "SCHOOLS",
+        "admin": "ADMIN"
     },
     "intro": {
         "whoWeAre": "Who We Are",
@@ -95,6 +99,127 @@
         "profileSubHeader": "Your teaching career is very important to us"
     },
     "viewJob": "View Job",
+    "telemarketingPage": {
+        "introTitle": "Let us build your virtual telemarketing phone room.",
+        "introImageAlt": "banner",
+        "introText": "Welcome to Teazeap, your trusted telemarketing partner for business success. Our team of experienced and skilled telemarketing professionals are dedicated to providing top-notch services to businesses of all sizes. From generating leads to increasing sales, we help you achieve your marketing goals with the power of telemarketing. Promote your brand, connect with your target audience, and grow your business with Teazeap. Get in touch with us today to see how we can help you take your business to the next level.",
+        "discoverTitle": "Discover our skilled agents in action, driving telemarketing success",
+        "discoverText": "Our agents are adept at generating high-quality leads for our clients. Through strategic prospecting and persuasive communication, they identify potential customers who are a perfect fit for your products or services. Their goal is to provide you with a steady stream of qualified leads, driving your business growth.",
+        "processes": {
+            "1": {
+                "title": "UNDERSTAND CUSTOMER NEEDS",
+                "content": "Teazeap would start by understanding the customer's business requirements, target audience, and sales goals. Based on this information, we would recommend the most appropriate virtual telemarketing service to meet the customer's needs."
+            },
+            "2": {
+                "title": "CONFIGURE INFRASTRUCTURE",
+                "content": "Once the service is chosen, Teazeap would configure the necessary infrastructure, including software, hardware, and network components. This would ensure that the virtual telemarketing service is set up correctly and functions optimally."
+            },
+            "3": {
+                "title": "TRAIN AGENTS",
+                "content": "Teazeap would provide comprehensive training to agents on how to use the virtual telemarketing service effectively, including best practices for managing calls, handling objections, and closing sales. This training would help agents to provide top-quality service to customers and achieve the customer's sales goals."
+            },
+            "header": "Our Strategic Approach To Providing Telemarketing Services"
+        },
+        "plan": {
+            "0": {
+                "title": "FILTERING AVATAR",
+                "subtitle": "If this describes your campaign:",
+                "keyPoints": {
+                    "0": "Identify ideal customers for products/services.",
+                    "1": "Research potential leads for sales.",
+                    "2": "Generate leads through surveys."
+                },
+                "actionButton": { "text": "View" }
+            },
+            "1": {
+                "title": "FILTERING SPECIALS",
+                "subtitle": "If this describes your campaign:",
+                "keyPoints": {
+                    "0": "Credit check for prospects.",
+                    "1": "Thorough research for sales leads.",
+                    "2": "Maintain accurate CRM data."
+                },
+                "actionButton": { "text": "View" }
+            },
+            "2": {
+                "title": "CALL CENTER",
+                "subtitle": "If this describes your campaign:",
+                "keyPoints": {
+                    "0": "Improve Customer Satisfaction.",
+                    "1": "Increase Sales and Revenue.",
+                    "2": "Streamline Operations and Efficiency."
+                },
+                "actionButton": { "text": "View" }
+            },
+            "title": "CHOOSING Your Solution:",
+            "subtitle": "If you're looking for a reliable partner to help you reach your sales goals and improve customer engagement, look no further than Teazeap.Our telemarketing and call center services are tailored to meet your unique needs and deliver results."
+        },
+        "testimonials": {
+            "0": {
+                "name": "Debt Settlement",
+                "message": "\"How many other outbound call centers did we try? At least 12 in India and the Philippines. They all failed because of the accents. Avatar & Echo telemarketing outsourcing works, the agents don't have accents and prospects listen to what they say.\""
+            },
+            "1": {
+                "name": "Mortgage",
+                "message": "\"American-run, they get lead generation. Avatar & Echo delivers the lowest cost, qualified leads. Its as easy to get as signing up for their service. Listen to what they say – they know the business.\""
+            },
+            "2": {
+                "name": "Insurance",
+                "message": "With the RXR we manage our team and it feels like we are in the middle of the action. The software is amazing, and we run better than we did when we had the call center here. It's amazing that they turned the complex process of running a call center into a service!"
+            },
+            "title": "Real Clients. Real Results",
+            "headerTitle": "Telemarketing Agency",
+            "headerSubTitle1": "Maximize your sales potential with our expert telemarketing and call center services with price less than",
+            "headerSubTitle2": "$10/agent",
+            "headerCallOut": " Free Consultation"
+        },
+        "teazeapContent": {
+            "0": {
+                "name": "Tax Reduction",
+                "message": "Experience seamless conversations between our telemarketing agents and clients, discussing important tax matters."
+            },
+            "1": {
+                "name": "Office Interior",
+                "message": "Embark on an immersive tour of the vibrant Teazeap office, revealing modern workstations, collaborative meeting rooms, and top-quality call center services."
+            },
+            "2": {
+                "name": "Debt Settlement",
+                "message": "Listen to our telemarketing agents and clients discuss effective debt settlement strategies in real-time calls."
+            },
+            "3": {
+                "name": "Equipment Financing",
+                "message": "Teazeap's Michael Cole offers low-rate 100% financing with a professional approach to meet specific business needs."
+            },
+            "4": {
+                "name": "Medical Insurance Benefits",
+                "message": "Teazeap agents introduce potential additional medical insurance benefits to Marvel and refer licensed experts to determine eligibility and explore extra benefits."
+            },
+            "5": {
+                "name": "Debt Settlement",
+                "message": "Eavesdrop on calls: Telemarketing agents and clients discussing detailed debt settlement solutions in real-time."
+            },
+            "6": {
+                "name": "Mortgage Costs",
+                "message": "Teazeap agents discuss the potential to reduce mortgage costs and integrate debt, providing phone consultations for more information."
+            },
+            "7": {
+                "name": "Our Office Interior",
+                "message": "Experience the vibrant Teazeap office through an engaging video tour. Explore modern workstations, collaborative meeting rooms, and witness our passionate team delivering excellent call center services."
+            },
+            "8": {
+                "name": "Agents at Work",
+                "message": "Immerse yourself in the energetic atmosphere of the Teazeap office through captivating office images. Discover modern workstations and collaborative meeting rooms."
+            },
+            "9": {
+                "name": "Mortgage Rates",
+                "message": "Our agents discuss the potential for cash-out refinancing, obtaining fair rates, and arranging follow-up calls for mortgage inquiries."
+            },
+            "10": {
+                "name": "Debt Settlement",
+                "message": "Eavesdrop on calls: Telemarketing agents and clients discussing detailed debt settlement solutions in real-time."
+            }
+        }
+    },
 
 
 

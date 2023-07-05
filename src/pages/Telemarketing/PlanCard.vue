@@ -13,11 +13,11 @@
         :style="textStyles"
         class="d-flex  team-name justify-content-center mb-2"
       >
-        <h5 class="font-weight-bold plan-title">{{ plan.title }}</h5>
+        <h5 class="font-weight-bold plan-title">{{$t(plan.title)  }}</h5>
       </v-card-title>
 
       <v-card-text :style="textStyles" class="mt-n2 plan-text">
-        {{ plan.subtitle }}
+        {{  $t(plan.subtitle) }}
       </v-card-text>
       <v-card-text :style="textStyles" class="mt-n6 plan-text">
         <ul>
@@ -26,13 +26,13 @@
             :key="index"
             class="my-2 plan-text"
           >
-            {{ keyPoint }}
+            {{  $t(keyPoint) }}
           </li>
         </ul>
       </v-card-text>
       <v-card-actions class="mt-auto mb-4 justify-center">
         <button :style="actionButtonStyle">
-          {{ plan.actionButton.text }}
+            {{  $t(plan.actionButton.text) }}
         </button>
       </v-card-actions>
     </v-card>

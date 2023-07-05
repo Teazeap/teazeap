@@ -16,7 +16,11 @@
         "facebook": "Facebook",
         "instagram": "Instagram",
         "blog": "博客",
-        "language": "語言"
+        "language": "語言",
+        "aboutUs": "關於我們",
+        "teachers": "教師",
+        "schools": "學校",
+        "admin": "管理員"
     },
     "intro": {
         "whoWeAre": "我们是谁",
@@ -94,6 +98,133 @@
         "profileSubHeader": "您的教學生涯對我們非常重要"
     },
     "viewJob": "查看職位",
+    "telemarketingPage": {
+        "introTitle": "让我们帮您打造虚拟电话销售团队",
+        "introImageAlt": "横幅",
+        "introText": "欢迎来到 Teazeap，您可信赖的业务成功合作伙伴。我们拥有经验丰富、技术娴熟的电话销售专业人员团队，致力于为各类企业提供一流的服务。从潜在客户生成到销售增长，我们通过电话营销的力量帮助您实现营销目标。借助 Teazeap，推广您的品牌，与目标受众建立联系，并使您的业务蓬勃发展。立即与我们联系，了解如何将您的业务提升到一个新的水平。",
+        "discoverTitle": "探索我们的熟练代理人行动中的电话销售成功",
+        "discoverText": "我们的代理人擅长为客户生成高质量的潜在客户。通过战略性的潜在客户开发和有说服力的沟通，他们会找到与您的产品或服务完美匹配的潜在客户。他们的目标是为您提供稳定的合格潜在客户资源，推动您的业务增长。",
+        "processes": {
+            "1": {
+                "title": "專業領域的有針對性專業知識",
+                "content": "我們專注於行業的招聘專家擁有深厚的科技、企業和教育領域知識，使我們能夠確定頂尖人才並將其與客戶的特定要求無縫配合。"
+            },
+            "2": {
+                "title": "創新技術實現高效運營",
+                "content": "通過利用創新工具、人工智能和數據分析，我們簡化招聘流程，減少招聘時間，為客戶在高效獲取合格人才方面提供競爭優勢。"
+            },
+            "3": {
+                "title": "量身定制的人際關係",
+                "content": "了解候選人和客戶的獨特價值觀和渴望，我們建立有意義的聯繫，提供量身定制的建議，推動長期成功，促進共同成長和實現共榮。"
+            },
+            "header": "我们提供电话营销服务的战略方法"
+        },
+        "plan": {
+            "0": {
+                "title": "篩選頭像",
+                "subtitle": "如果這描述了您的活動：",
+                "keyPoints": {
+                    "0": "識別產品/服務的理想客戶。",
+                    "1": "研究潛在銷售機會。",
+                    "2": "通過調查產生潛在客戶。"
+                },
+                "actionButton": { "text": "查看" },
+                "actionButton.url": ""
+            },
+
+            "1": {
+                "title": "篩選優惠",
+                "subtitle": "如果這描述了您的活動：",
+                "keyPoints": {
+                    "0": "為潛在客戶進行信用檢查。",
+                    "1": "進行銷售機會的全面研究。",
+                    "2": "維護準確的CRM數據。"
+                },
+                "actionButton": { "text": "查看" },
+                "actionButton.url": ""
+            },
+            "2": {
+                "title": "呼叫中心",
+                "subtitle": "如果這描述了您的活動：",
+                "keyPoints": {
+                    "0": "提升客戶滿意度。",
+                    "1": "增加銷售和收入。",
+                    "2": "優化業務運營和效率。"
+                },
+                "actionButton": { "text": "查看" },
+                "actionButton.url": ""
+            },
+            "title": "選擇您的解決方案:",
+            "subtitle": "如果您正在尋找一個可靠的合作夥伴，幫助您達到銷售目標並提升客戶參與度，那麼Teazeap將是您的不二之選。我們的電話行銷和呼叫中心服務根據您獨特的需求進行定制，並交付結果。"
+        },
+        "testimonials": {
+            "0": {
+                "name": "債務處理",
+                "message": "「我們試過多少其他的外呼中心？至少在印度和菲律賓試了12家。由於口音的問題，它們都失敗了。Avatar & Echo 電話行銷外包可以解決這個問題，他們的代理商沒有口音，潛在客戶聽他們說話。」"
+            },
+            "1": {
+                "name": "抵押貸款",
+                "message": "「由美國人經營，他們瞭解潛在客戶的產生。Avatar & Echo 提供最低成本的合格潛在客戶。像註冊他們的服務一樣簡單。聽聽他們說的話 - 他們瞭解這個業務。」"
+            },
+            "2": {
+                "name": "保險",
+                "message": "透過 RXR，我們管理我們的團隊，感覺就像是身處行動的中心。這個軟體很神奇，我們運營得比在這裡擁有呼叫中心時更好。他們將運行呼叫中心的複雜流程變成了一項服務，真是太神奇了！"
+            },
+            "title": "真實客戶。真實效果",
+            "headerTitle": "電話行銷代理公司",
+            "headerSubTitle1": "透過我們專業的電話行銷和呼叫中心服務，最大化您的銷售潛力，價格低於",
+            "headerSubTitle2": "$10/坐席",
+            "headerCallOut": "免費諮詢"
+        },
+        "teazeapContent": {
+            "0": {
+                "name": "稅務減免",
+                "message": "體驗我們的電話行銷代理和客戶之間的無縫對話，討論重要的稅務事項。"
+            },
+            "1": {
+                "name": "辦公室內部",
+                "message": "踏上Teazeap生機勃勃辦公室的身歷其境之旅，揭示現代化的工作站、合作會議室和優質的呼叫中心服務。"
+            },
+            "2": {
+                "name": "債務處理",
+                "message": "聆聽我們的電話行銷代理和客戶在實時通話中討論有效的債務處理策略。"
+            },
+            "3": {
+                "name": "設備融資",
+                "message": "Teazeap的Michael Cole以專業態度提供低利率的100%融資，並滿足企業特定需求。"
+            },
+            "4": {
+                "name": "醫療保險福利",
+                "message": "Teazeap的代理商向Marvel介紹潛在的額外醫療保險福利，並引介持牌專家來確定符合資格並探索額外的福利。"
+            },
+            "5": {
+                "name": "債務處理",
+                "message": "竊聽通話：電話行銷代理和客戶實時討論詳細的債務處理解決方案。"
+            },
+            "6": {
+                "name": "抵押貸款成本",
+                "message": "Teazeap的代理商討論降低抵押貸款成本並整合債務的潛力，提供更多信息的電話咨詢。"
+            },
+            "7": {
+                "name": "我們的辦公室內部",
+                "message": "通過引人入勝的視頻導覽體驗充滿活力的Teazeap辦公室。探索現代化的工作站、合作會議室，目睹我們充滿熱情的團隊提供卓越的呼叫中心服務。"
+            },
+            "8": {
+                "name": "工作中的代理商",
+                "message": "透過引人入勝的辦公室圖片，沉浸在Teazeap辦公室充滿活力的氛圍中。發現現代化的工作站和合作會議室。"
+            },
+            "9": {
+                "name": "抵押貸款利率",
+                "message": "我們的代理商討論抵押貸款的潛在提取現金、獲得公平利率並安排後續電話跟進。"
+            },
+            "10": {
+                "name": "債務處理",
+                "message": "竊聽通話：電話行銷代理和客戶實時討論詳細的債務處理解決方案。"
+            }
+        }
+
+    },
+
 
 
 
@@ -115,11 +246,11 @@
         "sub-desc": "我們值得信賴的代課教師致力擔任代理一職，並達成學校交辦進度。",
         "team": "認識我們的團隊領導陣容",
         "chief": "執行長",
-        "chief-quote": "“It takes 20 years to build a reputation and five minutes to ruin it. If you think about that, you’ll do things differently.”",
+        "chief-quote": "“這需要20年才能建立起聲譽，但只需五分鐘就能毀掉它。如果你思考這一點，你會做出不同的選擇。”",
         "project": "專案經理",
-        "project-quote": "“As you navigate through the rest of your life, be open to collaboration. Other people and other people’s ideas are often better than your own.” ",
+        "project-quote": "“當你穿越你人生的餘下歲月時，請樂於合作。他人和他人的想法往往比你自己的更好。” ",
         "comm": "通訊主管",
-        "comm-quote": "“Without publicity there can be no public support, and without public support every nation must decay.”",
+        "comm-quote": "“沒有宣傳就沒有公眾的支持，沒有公眾的支持，每個國家都必將衰敗。”",
         "telemarketing": "Telemarketing",
         "telemarketing-desc": "以不到10美元/座位的价格，利用我们专业的电话营销和呼叫中心服务最大化您的销售潜力。",
         "recruitment": "Recruitment",
@@ -133,7 +264,7 @@
         "reach-out": "聯繫我們的專家團隊",
         "important": "您的教學生涯是我們的驕傲",
         "name": "姓名",
-        "full-name": "Full Name...",
+        "full-name": "全名...",
         "email": "電子信箱",
         "type": "輸入訊息...",
         "send": "轉送訊息",

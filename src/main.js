@@ -44,13 +44,15 @@ import { faUserGroup } from '@fortawesome/free-solid-svg-icons'
 import { faUsersViewfinder } from '@fortawesome/free-solid-svg-icons'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 import { faBlog } from '@fortawesome/free-solid-svg-icons'
+import { faLanguage } from '@fortawesome/free-solid-svg-icons'
+import { faHashtag } from '@fortawesome/free-solid-svg-icons'
 import { faBusinessTime } from '@fortawesome/free-solid-svg-icons'
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { faPhoneVolume } from '@fortawesome/free-solid-svg-icons'
 import { faCrown } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add(faPhone, faHeadset, faUser, faUserGroup, faCode, faUsersViewfinder, faBlog, faBusinessTime, faGraduationCap, faPhoneVolume, faCrown)
+library.add(faPhone, faHeadset, faUser, faUserGroup, faCode, faUsersViewfinder, faBlog, faBusinessTime, faGraduationCap, faPhoneVolume,faHashtag, faCrown, faLanguage)
 
 /* add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)

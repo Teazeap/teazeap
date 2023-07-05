@@ -83,10 +83,12 @@
         class="nav-item nav-ul"
       >
         <nav-link text="en" @onLanguageChange="onLanguageChange">
-          <i class="now-ui-icons travel_istanbul"></i> English
+          <country-flag country="gb" size="small"
+              /> English
         </nav-link>
         <nav-link text="zh" @onLanguageChange="onLanguageChange">
-          <i class="now-ui-icons transportation_air-baloon"></i>
+          <country-flag country="cn" size="small"
+              />
           中文
         </nav-link>
       </drop-down>
@@ -94,7 +96,8 @@
       <drop-down
         tag="li"
         :title="getInTouch"
-        icon="now-ui-icons business_globe"
+        icon="hashtag"
+        :isFa="true"
         class="nav-item nav-ul"
       >
         <nav-link href="https://www.facebook.com/teazeap" target="_blank">

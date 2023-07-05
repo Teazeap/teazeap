@@ -1,77 +1,107 @@
 <template>
   <div>
     <Header />
-  <div class="pt-0 intro-container" :style="commonMarginClass">
-    <div class="container section-card intro">
-      <h2 class="title text-center">{{ $t("recruitmentPage.revolutionizingRecruitment") }}</h2>
-      <div class="row mt-4">
-        <v-col cols="12" sm="7" lg="6">
-          <img src="/img/recruitment/recruitment-1.jpg" alt="banner" class="img-fluid" />
-        </v-col>
-        <v-col cols="12" sm="5" lg="6">
-          <p class="introduction-text">{{ $t("recruitmentPage.introText") }}</p>
-        </v-col>
-      </div>
-    </div>
-  </div>
-
-    <!-- service industry -->
-     <div v-for="service, index in servicedIndustry" :key="index" class="section pt-0 mobile-padding" :style="commonMarginClass" :id="service.id">
-    <div class="container section-card">
-      <h2 class="title text-center">
-        {{ $t("serviceIndustry." + service.id + ".name") }}
-      </h2>
-      <div class="row mt-4">
-        <v-col cols="12" sm="7" lg="6">
-          <img :src="service.picUrl" alt="banner" class="img-fluid" :style="service.picUrlStyle" />
-        </v-col>
-        <v-col cols="12" sm="5" lg="6">
-          <p class="introduction-text">
-            <span v-html="$t('serviceIndustry.' + service.id + '.description')"/>
-          </p>
-        </v-col>
-      </div>
-    </div>
-  </div>
-
-    <!-- recruitment steps -->
-<div class="section pt-0 mobile-padding" :style="commonMarginClass">
-  <div class="container section-card">
-    <h2 class="title text-center">
-      {{$t("recruitmentPage.stepsTitle")}}
-    </h2>
-    <div class="row mt-4">
-      <v-col cols="12" sm="7" lg="6">
-        <img src="/img/recruitment/recruitment-3.png" alt="banner" class="img-fluid" />
-      </v-col>
-      <v-col cols="12" sm="5" lg="6">
-        <Collapsible :processes="processes" />
-      </v-col>
-    </div>
-  </div>
-</div>
-
-
-    <!-- recruitment steps -->
-    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
-      <div class="container section-card">
+    <div class="pt-0 intro-container" :style="commonMarginClass">
+      <div class="container section-card intro">
         <h2 class="title text-center">
-          {{$t("recruitmentPage.strategicProcess")}}
+          {{ $t("recruitmentPage.revolutionizingRecruitment") }}
         </h2>
         <div class="row mt-4">
-          <v-col cols="12">
-            <img src="/img/recruitment/recruitment-4.png" alt="banner" class="img-fluid" />
+          <v-col cols="12" sm="7" lg="6">
+            <img
+              src="/img/recruitment/recruitment-1.jpg"
+              alt="banner"
+              class="img-fluid"
+            />
+          </v-col>
+          <v-col cols="12" sm="5" lg="6">
+            <p class="introduction-text">
+              {{ $t("recruitmentPage.introText") }}
+            </p>
           </v-col>
         </div>
       </div>
     </div>
 
-   <!-- teacher type -->
+    <!-- service industry -->
+    <div
+      v-for="(service, index) in servicedIndustry"
+      :key="index"
+      class="section pt-0 mobile-padding"
+      :style="commonMarginClass"
+      :id="service.id"
+    >
+      <div class="container section-card">
+        <h2 class="title text-center">
+          {{ $t("serviceIndustry." + service.id + ".name") }}
+        </h2>
+        <div class="row mt-4">
+          <v-col cols="12" sm="7" lg="6">
+            <img
+              :src="service.picUrl"
+              alt="banner"
+              class="img-fluid"
+              :style="service.picUrlStyle"
+            />
+          </v-col>
+          <v-col cols="12" sm="5" lg="6">
+            <p class="introduction-text">
+              <span
+                v-html="$t('serviceIndustry.' + service.id + '.description')"
+              />
+            </p>
+          </v-col>
+        </div>
+      </div>
+    </div>
+
+    <!-- recruitment steps -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
-        <h2 class="title text-center">{{$t("recruitmentPage.startedTitle")}}</h2>
+        <h2 class="title text-center">
+          {{ $t("recruitmentPage.stepsTitle") }}
+        </h2>
+        <div class="row mt-4">
+          <v-col cols="12" sm="7" lg="6">
+            <img
+              src="/img/recruitment/recruitment-3.png"
+              alt="banner"
+              class="img-fluid"
+            />
+          </v-col>
+          <v-col cols="12" sm="5" lg="6">
+            <Collapsible :processes="processes" />
+          </v-col>
+        </div>
+      </div>
+    </div>
+
+    <!-- recruitment steps -->
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+      <div class="container section-card">
+        <h2 class="title text-center">
+          {{ $t("recruitmentPage.strategicProcess") }}
+        </h2>
+        <div class="row mt-4">
+          <v-col cols="12">
+            <img
+              src="/img/recruitment/recruitment-4.png"
+              alt="banner"
+              class="img-fluid"
+            />
+          </v-col>
+        </div>
+      </div>
+    </div>
+
+    <!-- teacher type -->
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+      <div class="container section-card">
+        <h2 class="title text-center">
+          {{ $t("recruitmentPage.startedTitle") }}
+        </h2>
         <p class="video-section-introduction text-justify">
-          {{$t("recruitmentPage.startedContent")}}
+          {{ $t("recruitmentPage.startedContent") }}
         </p>
 
         <flickity :options="flickityOptions" class="teacher-type-carousel">
@@ -84,7 +114,7 @@
       </div>
     </div>
     <Contact />
-    <router-view/>
+    <router-view />
   </div>
 </template>
 <script>
@@ -116,22 +146,22 @@ export default {
         message: "",
       },
       processes: [
-  {
-    id: 1,
-    title: "recruitmentPage.processes.1.title",
-    content: "recruitmentPage.processes.1.content"
-  },
-  {
-    id: 2,
-    title: "recruitmentPage.processes.2.title",
-    content: "recruitmentPage.processes.2.content"
-  },
-  {
-    id: 3,
-    title: "recruitmentPage.processes.3.title",
-    content: "recruitmentPage.processes.3.content"
-  }
-],
+        {
+          id: 1,
+          title: "recruitmentPage.processes.1.title",
+          content: "recruitmentPage.processes.1.content",
+        },
+        {
+          id: 2,
+          title: "recruitmentPage.processes.2.title",
+          content: "recruitmentPage.processes.2.content",
+        },
+        {
+          id: 3,
+          title: "recruitmentPage.processes.3.title",
+          content: "recruitmentPage.processes.3.content",
+        },
+      ],
       team: [
         {
           name: "Clifton Moreau",
@@ -196,12 +226,12 @@ export default {
           picUrl: "/img/recruitment/corporate.png",
           picUrlStyle: "margin-top: -2.8rem",
         },
-         {
+        {
           name: "Education",
           id: "educational",
           picUrl: "/img/recruitment/educational.png",
           picUrlStyle: "margin-top: -2.8rem",
-        }
+        },
       ],
     };
   },
@@ -261,7 +291,6 @@ export default {
   width: 100%;
   height: 220px;
 }
-
 
 .agents-carousel {
   margin: 84px 0 0;

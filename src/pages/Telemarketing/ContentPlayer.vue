@@ -19,7 +19,7 @@
           </v-card-title>
 
           <v-card-text class="font-italic team-quote">
-            {{ content.message }}
+            {{ $t(content.message) }}
           </v-card-text>
 
           <v-card-text v-if="content.audioFileUrl" class="d-flex justify-center">
@@ -42,7 +42,7 @@
           </v-card-title>
 
           <v-card-text class="font-italic team-quote">
-            {{ content.message }}
+            {{ $t(content.message) }}
           </v-card-text>
         </span>
       </v-card>
@@ -92,6 +92,7 @@ export default {
 }
 .team-quote {
   font-size: 16px;
+  min-height: 82px;
 }
 .team-name {
   font-size: 24px;

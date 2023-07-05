@@ -1,14 +1,14 @@
 <template>
   <div>
     <AgentsHeader
-      title="Single Agent Program"
-      sub-title="Experience success with hassle-free single agent telemarketing campaigns at Teazeap"
+      title="recruitmentPage.singleAgent.header-title"
+      sub-title="recruitmentPage.singleAgent.header-subtitle"
       planSelector="/telemarketing/single-agent#filterinng-avatar"
     />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
         <h2 class="title text-center">
-          Let us build your virtual telemarketing phone room.
+          {{ $t("recruitmentPage.singleAgent.introTitle") }}
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
@@ -16,13 +16,7 @@
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
-              When you’re ready to free yourself from a failure-ridden
-              telemarketing process and try something that actually works,
-              contact us. Teazeap Telemarketing specializes in outsourcing
-              single agent telemarketing campaigns. These campaigns are
-              hassle-free for you and provide real results. Our highly-trained,
-              non-accented telemarketers have a proven track record of success.
-              Single agents start at $9.5 per hour.
+              {{ $t("recruitmentPage.singleAgent.introText") }}
             </p>
           </v-col>
         </div>
@@ -31,44 +25,36 @@
 
     <PriceBadge :plan="filteringAvatarPlan" @get-plan="showModal = true" />
 
-    <!-- audio and office interio office
-    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
-      <div class="container section-card">
-        <h2 class="title text-center">
-          Debt Settlement Insights: Real Client Conversations and Office Showcase
-        </h2>
-        <div class="row mt-4 pl-md-4 pl-sm-0" style="justify-content: center">
-          <AudioPlayer :testimonial="agentWorking" />
-          <VideoPlayer :testimonial="officeInterior" />
-        </div>
-      </div>
-    </div> -->
-
     <!-- steps section -->
     <div class="row what-to-expect" :style="commonMarginClass">
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
         <div class="container section-card contact-steps">
-          <h2 class="title text-center">Just Follow These Steps</h2>
+          <h2 class="title text-center">
+            {{ $t("recruitmentPage.singleAgent.justFollowTheseSteps") }}
+          </h2>
           <ol>
-            <li>Set their schedule</li>
-            <li>Supply a script</li>
-            <li>Provide the call list</li>
-            <li>Get us the credentials to set them up on dialers if needed</li>
-            <li>Manage them as you would an in-office telemarketing agent</li>
-            <li><span class="step-empasize">GROW YOUR SALES!</span></li>
+            <li>{{ $t("recruitmentPage.singleAgent.step1") }}</li>
+            <li>{{ $t("recruitmentPage.singleAgent.step2") }}</li>
+            <li>{{ $t("recruitmentPage.singleAgent.step3") }}</li>
+            <li>{{ $t("recruitmentPage.singleAgent.step4") }}</li>
+            <li>{{ $t("recruitmentPage.singleAgent.step5") }}</li>
+            <li>
+              <span class="step-empasize">{{
+                $t("recruitmentPage.singleAgent.step6")
+              }}</span>
+            </li>
           </ol>
         </div>
       </v-col>
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
         <div class="container section-card benefits">
-          <h2 class="title text-center what-to-expect-title">The Benefits</h2>
-          <p>Contact Teazeap when you’re ready for:</p>
-          <ul lang="la">
-            <li>More appointment setting</li>
-            <li>More lead generation</li>
-            <li>More live transfers</li>
-            <li>Less expense, overhead, and hassle</li>
-          </ul>
+          <h2 class="title text-center what-to-expect-title">
+            {{ $t("recruitmentPage.singleAgent.benefits") }}
+          </h2>
+          <p>{{ $t("recruitmentPage.singleAgent.benefit1") }}</p>
+          <p>{{ $t("recruitmentPage.singleAgent.benefit2") }}</p>
+          <p>{{ $t("recruitmentPage.singleAgent.benefit3") }}</p>
+          <p>{{ $t("recruitmentPage.singleAgent.benefit4") }}</p>
         </div>
       </v-col>
     </div>
@@ -79,7 +65,7 @@
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
-          Make More Money with Live Lead Transfers
+          {{$t("recruitmentPage.singleAgent.processes.title")}}
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
@@ -129,21 +115,18 @@ export default {
       processes: [
         {
           id: 1,
-          title: "OUTSOURCE YOUR COLD CALLING",
-          content:
-            "Unlock the power of outsourcing your telemarketing to drive unparalleled growth. Experience seamless hiring and cold calling with our live lead transfer program. Tailored for businesses needing one to a few live agents, our single agent telemarketing program delivers exceptional results.",
+          title: "recruitmentPage.singleAgent.processes.1.title",
+          content: "recruitmentPage.singleAgent.processes.1.content",
         },
         {
           id: 2,
-          title: "EFFECTIVE TELEMARKETING WITH SINGLE AGENTS.",
-          content:
-            "At Teazeap, we redefine excellence in outsourcing by prioritizing quality over chance. Our rigorous selection process ensures that only the best-trained telemarketing agents, with experience and motivation, join our American-run call centers.<br/> <br/>Our telemarketers are college graduates with <span style='font-weight: bold'>telesales experience</span>,<span style='font-weight: bold'>self-managers</span>, <span style='font-weight: bold'>skilled in appointments</span>,<span style='font-weight: bold'>scripts</span>,<span style='font-weight: bold'>sales reporting</span>",
+          title: "recruitmentPage.singleAgent.processes.2.title",
+          content: "recruitmentPage.singleAgent.processes.2.content",
         },
         {
           id: 3,
-          title: "SKIP THE HEADACHE & STOP WASTING TIME",
-          content:
-            "We outsource only the best single agent telemarketers by providing all the following hiring requirements: <ul style='margin-left: 2rem'> <li>Background criminal checks </li><li>Office space </li><li>Speech training</li><li>Management</li><li>English comprehension testing</li></ul>",
+          title: "recruitmentPage.singleAgent.processes.3.title",
+          content: "recruitmentPage.singleAgent.processes.3.content",
         },
       ],
       team: [
@@ -269,13 +252,13 @@ export default {
         },
       ],
       filteringAvatarPlan: {
-        name: "FILTERING AVATAR",
+        name: "recruitmentPage.singleAgent.avatarPlan.filteringAvatarPlan.name",
+    points: [
+      "recruitmentPage.singleAgent.avatarPlan.filteringAvatarPlan.points.0",
+      "recruitmentPage.singleAgent.avatarPlan.filteringAvatarPlan.points.1",
+      "recruitmentPage.singleAgent.avatarPlan.filteringAvatarPlan.points.2"
+    ],
         price: "9.5",
-        points: [
-          "3 Agents and 1 Manager",
-          "Outbound and inbound call handling",
-          "Appointment scheduling and reminders",
-        ],
         id: "filterinng-avatar",
       },
       openDialog: false,

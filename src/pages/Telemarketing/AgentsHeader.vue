@@ -5,12 +5,12 @@
         <v-col cols="12" sm="7" lg="6" class="d-flex align-center">
           <div class="text-sm-left text-center">
             <h1 class="banner-title font-weight-bold text-white">
-              {{ title }}
+              {{ $t(title) }}
             </h1>
             <h4
               class="banner-subtitle white--text font-weight-regular text-white"
             >
-            <span v-html="subTitle"></span>
+            <span v-html="$t(subTitle)"></span>
             </h4>
             <div class="mt-md-16 mt-10 d-sm-flex d-block">
               <router-link
@@ -18,7 +18,7 @@
                 class="program-link mr-0 mr-md-4 mb-2 mb-md-0 mt-4 mt-md-0 "
               >
                 <div class="program-link-content">
-                  Get Plan
+                  {{$t('recruitmentPage.singleAgent.avatarPlan.get-plan')}}
                 </div>
               </router-link>
               <!-- <router-link

@@ -72,7 +72,53 @@
         "startedContent": "Teazeap 在其旅程中主要侧重于教育部門的人才招聘。然而，隨著時間的推移，該組織逐漸發展成為提供全面的招聘解決方案、電訊營銷服務和呼叫中心運營的供應商。Teazeap 的範圍擴大到各種類型的教育專業人士，包括全職教育工作者、兼職講師和代課教師。",
         "strategicProcess": "我們的戰略招聘流程",
         "applyNow": "現在申請",
-        "createProfile": "創建個人資料"
+        "createProfile": "創建個人資料",
+        "singleAgent": {
+            "introTitle": "讓我們幫您打造虛擬電話銷售室。",
+            "introText": "當您準備擺脫充滿失敗的電話銷售過程，並嘗試一些實際有效的方法時，請聯繫我們。Teazeap Telemarketing 專門外包單一代理人的電話銷售活動。這些活動對您來說無需麻煩，並且提供實際的成果。我們經過高度訓練、無口音的電話銷售人員具有成功的實績。單一代理人每小時起價 $9.5。",
+            "justFollowTheseSteps": "只需按照以下步骤",
+            "step1": "设置他们的日程",
+            "step2": "提供剧本",
+            "step3": "提供呼叫列表",
+            "step4": "如有需要，向我们提供设置拨号器的凭据",
+            "step5": "像管理办公室内的电话销售代理一样管理他们",
+            "step6": "增加您的销售业绩！",
+            "benefits": "优势",
+            "benefit1": "更多预约设置",
+            "benefit2": "更多潜在客户生成",
+            "benefit3": "更多实时转接",
+            "benefit4": "成本、开销和麻烦更少",
+            "processes": {
+                "1": {
+                    "title": "外包你的冷电话",
+                    "content": "释放外包你的电话营销的力量，推动无与伦比的增长。通过我们的实时潜在客户转接计划，体验无缝的招聘和冷呼叫。我们的单一代理电话营销计划为需要一个到几个现场代理的企业提供卓越的结果。"
+                },
+                "2": {
+                    "title": "与单一代理进行有效的电话营销。",
+                    "content": "在Teazeap，我们通过优先考虑质量而非机会来重新定义外包中的卓越性。我们严格的选拔流程确保只有经过培训、具有经验和动力的最优秀的电话营销代理加入我们的美国运营呼叫中心。<br/><br/>我们的电话营销人员是大学毕业生，具有<span style='font-weight: bold'>电话销售经验</span>，<span style='font-weight: bold'>自我管理能力</span>，<span style='font-weight: bold'>熟练掌握预约</span>、<span style='font-weight: bold'>脚本</span>和<span style='font-weight: bold'>销售报告</span>技能。"
+                },
+                "3": {
+                    "title": "摆脱烦恼，停止浪费时间",
+                    "content": "我们通过提供以下所有招聘要求来外包最优秀的单一代理电话营销人员：<ul style='margin-left: 2rem'><li>背景犯罪检查</li><li>办公空间</li><li>语音培训</li><li>管理</li><li>英语理解测试</li></ul>"
+                },
+                "title": "通过现场线索转接赚更多钱"
+            },
+            "avatarPlan": {
+                "filteringAvatarPlan": {
+                    "name": "過濾化身",
+                    "points": {
+                        "0": "3 位代理商和 1 位經理",
+                        "1": "外呼和接聽電話",
+                        "2": "預約安排和提醒"
+                    }
+                },
+                "hour": "小時",
+                "what-get": "您將獲得什麼",
+                "get-plan": "獲取計劃"
+            },
+            "header-title": "單一代理計劃",
+            "header-subtitle": "在 Teazeap 上體驗無憂的單一代理電話銷售活動，取得成功"
+        }
     },
     "serviceIndustry": {
         "tech": {
@@ -268,7 +314,7 @@
         "email": "電子信箱",
         "type": "輸入訊息...",
         "send": "轉送訊息",
-        "cancel": "Cancel"
+        "cancel": "取消"
     },
     "teachers": {
         "find": "為您找到下一份工作",

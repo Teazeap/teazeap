@@ -76,7 +76,6 @@
         </nav-link>
       </drop-down>
 
-      <language-switcher/>
 
       <drop-down
         tag="li"
@@ -99,6 +98,7 @@
           <p>{{ $t("nav.blog") }}</p>
         </nav-link>
       </li>
+      <language-switcher/>
     </template>
   </navbar>
 </template>

@@ -3,7 +3,7 @@
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
-          <div class="modal-header">Get in Touch with Us</div>
+          <div class="modal-header">{{$t("contact.get-in-touch")}}</div>
 
           <div class="modal-body">
             <form

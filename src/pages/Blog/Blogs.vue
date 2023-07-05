@@ -49,12 +49,14 @@ import BlogCard from "@/pages/Blog/BlogCard";
 import { Button, FormGroupInput, Radio } from "@/components";
 import { mapGetters, mapActions } from "vuex";
 import BlogSearch from "./BlogSearch.vue";
+import sizeMixin from "@/plugins/sizeMixin.js";
 import moment from "moment";
 import Header from "@/pages/Recruitment/Header.vue";
 
 export default {
   name: "BlogPosts",
   bodyClass: "landing-page",
+  mixins: [sizeMixin],
   components: {
     BlogCard,
     Header,

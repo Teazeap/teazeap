@@ -34,6 +34,7 @@
           <p class="ml-1">{{ $t("nav.bundle") }}</p>
         </nav-link>
       </li>
+        <language-switcher/>
     </template>
     <ContactDialog v-if="showModal" @close="showModal = false" />
   </navbar>
@@ -44,6 +45,7 @@ import { Navbar, NavLink } from "@/components";
 import { Popover } from "element-ui";
 import { v4 as uuidv4 } from "uuid";
 import ContactDialog from "@/pages/Telemarketing/ContactDialog";
+import LanguageSwitcher from '../components/LanguageSwitcher.vue';
 
 export default {
   name: "telemarketing-navbar-navbar",
@@ -55,6 +57,7 @@ export default {
     ContactDialog,
     Navbar,
     NavLink,
+    LanguageSwitcher,
     [Popover.name]: Popover,
   },
   computed: {

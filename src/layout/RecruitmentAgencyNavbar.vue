@@ -13,7 +13,6 @@
       </router-link>
     </template>
     <template slot="navbar-menu">
-
       <li class="nav-item">
         <nav-link class="nav-link btn btn-profile" to="recruitment-agency#tech">
           <font-awesome-icon icon="code" />
@@ -22,14 +21,20 @@
       </li>
 
       <li class="nav-item">
-        <nav-link class="nav-link btn btn-profile" to="recruitment-agency#corporate">
+        <nav-link
+          class="nav-link btn btn-profile"
+          to="recruitment-agency#corporate"
+        >
           <font-awesome-icon icon="business-time" />
           <p class="ml-1">{{ $t("nav.corporate") }}</p>
         </nav-link>
       </li>
 
       <li class="nav-item">
-        <nav-link class="nav-link btn btn-profile" to="recruitment-agency#educational">
+        <nav-link
+          class="nav-link btn btn-profile"
+          to="recruitment-agency#educational"
+        >
           <font-awesome-icon icon="graduation-cap" />
           <p class="ml-1">{{ $t("nav.education") }}</p>
         </nav-link>
@@ -52,47 +57,8 @@
         </nav-link>
       </li>
 
-      <!-- <drop-down
-        tag="li"
-        :title="language"
-        icon="now-ui-icons business_globe"
-        class="nav-item nav-ul"
-      >
-        <nav-link text="en" @onLanguageChange="onLanguageChange">
-          <i class="now-ui-icons travel_istanbul"></i> English
-        </nav-link>
-        <nav-link text="zh" @onLanguageChange="onLanguageChange">
-          <i class="now-ui-icons transportation_air-baloon"></i> Chinese
-        </nav-link>
-      </drop-down> -->
-
-      <!-- <li class="nav-item">
-        <a
-          class="nav-link"
-          rel="tooltip"
-          title="Like us on Facebook"
-          data-placement="bottom"
-          href="https://www.facebook.com/teazeap"
-          target="_blank"
-        >
-          <i class="fab fa-facebook-square"></i>
-          <p class="d-lg-none d-xl-none">Facebook</p>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          rel="tooltip"
-          title="Follow us on Instagram"
-          data-placement="bottom"
-          href="https://www.instagram.com/teazeap/"
-          target="_blank"
-        >
-          <i class="fab fa-instagram"></i>
-          <p class="d-lg-none d-xl-none">Instagram</p>
-        </a>
-      </li> -->
-    </template>
+      <language-switcher
+    /></template>
   </navbar>
 </template>
 
@@ -100,6 +66,7 @@
 import { Navbar, NavLink } from "@/components";
 import { Popover } from "element-ui";
 import { v4 as uuidv4 } from "uuid";
+import LanguageSwitcher from "../components/LanguageSwitcher.vue";
 
 export default {
   name: "recruitment-agency-navbar",
@@ -110,6 +77,7 @@ export default {
   components: {
     Navbar,
     NavLink,
+    LanguageSwitcher,
     [Popover.name]: Popover,
   },
   computed: {

@@ -76,22 +76,7 @@
         </nav-link>
       </drop-down>
 
-      <drop-down
-        tag="li"
-        :title="language"
-        icon="now-ui-icons business_globe"
-        class="nav-item nav-ul"
-      >
-        <nav-link text="en" @onLanguageChange="onLanguageChange">
-          <country-flag country="gb" size="small"
-              /> English
-        </nav-link>
-        <nav-link text="zh" @onLanguageChange="onLanguageChange">
-          <country-flag country="cn" size="small"
-              />
-          中文
-        </nav-link>
-      </drop-down>
+      <language-switcher/>
 
       <drop-down
         tag="li"
@@ -106,9 +91,6 @@
         <nav-link href="https://www.instagram.com/teazeap/" target="_blank">
           <i class="fab fa-instagram"></i> {{ $t("nav.instagram") }}
         </nav-link>
-        <!-- <nav-link href="https://www.facebook.com/teazeap" target="_blank">
-          <font-awesome-icon icon="phone" /> <span class="ml-2">+1 848 305 7850</span>
-        </nav-link> -->
       </drop-down>
 
       <li class="nav-item">
@@ -125,6 +107,7 @@
 import { DropDown, Navbar, NavLink } from "@/components";
 import { Popover } from "element-ui";
 import { v4 as uuidv4 } from "uuid";
+import LanguageSwitcher from '../components/LanguageSwitcher.vue';
 
 export default {
   name: "main-navbar",
@@ -136,6 +119,7 @@ export default {
     DropDown,
     Navbar,
     NavLink,
+    LanguageSwitcher,
     [Popover.name]: Popover,
   },
   computed: {

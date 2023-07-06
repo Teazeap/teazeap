@@ -5,15 +5,15 @@
         <v-col cols="12">
           <div class="card-container">
             <h1 class="card-title">{{$t(plan.name)}}</h1>
-            <p class="card-description">{{$t('recruitmentPage.singleAgent.avatarPlan.what-get')}}</p>
+            <p class="card-description">{{$t('telemarketingPage.singleAgent.avatarPlan.what-get')}}</p>
             <ul class="card-get_list">
               <li v-for="p,index in plan.points" :key="index" class="card-get_list__item">{{$t(p)}}</li>
             </ul>
             <div class="card-price">
               <h2>${{plan.price}}</h2>
-              /<span class="card-price_month">{{$t('recruitmentPage.singleAgent.avatarPlan.hour')}}</span>
+              /<span class="card-price_month">{{$t('telemarketingPage.singleAgent.avatarPlan.hour')}}</span>
             </div>
-            <button @click="$emit('get-plan')" class="card-main_button">{{$t('recruitmentPage.singleAgent.avatarPlan.get-plan')}}</button>
+            <button @click="$emit('get-plan')" class="card-main_button">{{$t('telemarketingPage.singleAgent.avatarPlan.get-plan')}}</button>
           </div>
         </v-col>
       </div>

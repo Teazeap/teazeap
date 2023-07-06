@@ -1,7 +1,7 @@
 <template>
   <div class="pt-0" :style="commonMarginClass">
     <div class="container section-card">
-      <h2 class="title text-center">Simple, Transparent Pricing</h2>
+      <h2 class="title text-center">{{$t("telemarketingPage.singleAgent.pricingTableHeader")}}</h2>
       <div class="row plan-container">
         <div
           v-for="(

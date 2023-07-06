@@ -5,19 +5,19 @@
         <v-col cols="12" sm="7" lg="6" class="d-flex align-center">
           <div class="text-sm-left text-center">
             <h1 class="banner-title font-weight-bold text-white">
-              {{ $t("telemarketingPage.testimonials.headerTitle") }}
+              {{ $t("telemarketingPage.headerTitle") }}
             </h1>
             <h4
               class="banner-subtitle white--text font-weight-regular text-white"
             >
-              {{ $t("telemarketingPage.testimonials.headerSubTitle1") }} <strong>{{ $t("telemarketingPage.testimonials.headerSubTitle2") }}</strong>
+              {{ $t("telemarketingPage.headerSubTitle1") }} <strong>{{ $t("telemarketingPage.headerSubTitle2") }}</strong>
             </h4>
             <div class="mt-md-16 mt-10 d-sm-flex d-block">
               <button
                 class="download mr-4 mr-0 mr-sm-5 mb-5 mb-md-0 btn-custom-md d-sm-flex d-block btn-100"
                 @click="showModal = true"
               >
-                {{ $t("telemarketingPage.testimonials.headerCallOut") }}
+                {{ $t("telemarketingPage.headerCallOut") }}
               </button>
             </div>
           </div>

@@ -1,14 +1,14 @@
 <template>
   <div>
     <AgentsHeader
-      title="recruitmentPage.singleAgent.header-title"
-      sub-title="recruitmentPage.singleAgent.header-subtitle"
+      title="telemarketingPage.singleAgent.header-title"
+      sub-title="telemarketingPage.singleAgent.header-subtitle"
       planSelector="/telemarketing/single-agent#filterinng-avatar"
     />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
         <h2 class="title text-center">
-          {{ $t("recruitmentPage.singleAgent.introTitle") }}
+          {{ $t("telemarketingPage.singleAgent.introTitle") }}
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
@@ -16,7 +16,7 @@
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
-              {{ $t("recruitmentPage.singleAgent.introText") }}
+              {{ $t("telemarketingPage.singleAgent.introText") }}
             </p>
           </v-col>
         </div>
@@ -30,17 +30,17 @@
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
         <div class="container section-card contact-steps">
           <h2 class="title text-center">
-            {{ $t("recruitmentPage.singleAgent.justFollowTheseSteps") }}
+            {{ $t("telemarketingPage.singleAgent.justFollowTheseSteps") }}
           </h2>
           <ol>
-            <li>{{ $t("recruitmentPage.singleAgent.step1") }}</li>
-            <li>{{ $t("recruitmentPage.singleAgent.step2") }}</li>
-            <li>{{ $t("recruitmentPage.singleAgent.step3") }}</li>
-            <li>{{ $t("recruitmentPage.singleAgent.step4") }}</li>
-            <li>{{ $t("recruitmentPage.singleAgent.step5") }}</li>
+            <li>{{ $t("telemarketingPage.singleAgent.step1") }}</li>
+            <li>{{ $t("telemarketingPage.singleAgent.step2") }}</li>
+            <li>{{ $t("telemarketingPage.singleAgent.step3") }}</li>
+            <li>{{ $t("telemarketingPage.singleAgent.step4") }}</li>
+            <li>{{ $t("telemarketingPage.singleAgent.step5") }}</li>
             <li>
               <span class="step-empasize">{{
-                $t("recruitmentPage.singleAgent.step6")
+                $t("telemarketingPage.singleAgent.step6")
               }}</span>
             </li>
           </ol>
@@ -49,12 +49,12 @@
       <v-col cols="12" sm="12" lg="6" class="section pt-0">
         <div class="container section-card benefits">
           <h2 class="title text-center what-to-expect-title">
-            {{ $t("recruitmentPage.singleAgent.benefits") }}
+            {{ $t("telemarketingPage.singleAgent.benefits") }}
           </h2>
-          <p>{{ $t("recruitmentPage.singleAgent.benefit1") }}</p>
-          <p>{{ $t("recruitmentPage.singleAgent.benefit2") }}</p>
-          <p>{{ $t("recruitmentPage.singleAgent.benefit3") }}</p>
-          <p>{{ $t("recruitmentPage.singleAgent.benefit4") }}</p>
+          <p>{{ $t("telemarketingPage.singleAgent.benefit1") }}</p>
+          <p>{{ $t("telemarketingPage.singleAgent.benefit2") }}</p>
+          <p>{{ $t("telemarketingPage.singleAgent.benefit3") }}</p>
+          <p>{{ $t("telemarketingPage.singleAgent.benefit4") }}</p>
         </div>
       </v-col>
     </div>
@@ -65,7 +65,7 @@
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
-          {{$t("recruitmentPage.singleAgent.processes.title")}}
+          {{$t("telemarketingPage.singleAgent.processes.title")}}
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
@@ -115,18 +115,18 @@ export default {
       processes: [
         {
           id: 1,
-          title: "recruitmentPage.singleAgent.processes.1.title",
-          content: "recruitmentPage.singleAgent.processes.1.content",
+          title: "telemarketingPage.singleAgent.processes.1.title",
+          content: "telemarketingPage.singleAgent.processes.1.content",
         },
         {
           id: 2,
-          title: "recruitmentPage.singleAgent.processes.2.title",
-          content: "recruitmentPage.singleAgent.processes.2.content",
+          title: "telemarketingPage.singleAgent.processes.2.title",
+          content: "telemarketingPage.singleAgent.processes.2.content",
         },
         {
           id: 3,
-          title: "recruitmentPage.singleAgent.processes.3.title",
-          content: "recruitmentPage.singleAgent.processes.3.content",
+          title: "telemarketingPage.singleAgent.processes.3.title",
+          content: "telemarketingPage.singleAgent.processes.3.content",
         },
       ],
       team: [
@@ -252,11 +252,11 @@ export default {
         },
       ],
       filteringAvatarPlan: {
-        name: "recruitmentPage.singleAgent.avatarPlan.filteringAvatarPlan.name",
+        name: "telemarketingPage.singleAgent.avatarPlan.filteringAvatarPlan.name",
     points: [
-      "recruitmentPage.singleAgent.avatarPlan.filteringAvatarPlan.points.0",
-      "recruitmentPage.singleAgent.avatarPlan.filteringAvatarPlan.points.1",
-      "recruitmentPage.singleAgent.avatarPlan.filteringAvatarPlan.points.2"
+      "telemarketingPage.singleAgent.avatarPlan.filteringAvatarPlan.points.0",
+      "telemarketingPage.singleAgent.avatarPlan.filteringAvatarPlan.points.1",
+      "telemarketingPage.singleAgent.avatarPlan.filteringAvatarPlan.points.2"
     ],
         price: "9.5",
         id: "filterinng-avatar",

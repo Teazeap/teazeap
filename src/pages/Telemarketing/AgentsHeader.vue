@@ -18,25 +18,9 @@
                 class="program-link mr-0 mr-md-4 mb-2 mb-md-0 mt-4 mt-md-0 "
               >
                 <div class="program-link-content">
-                  {{$t('recruitmentPage.singleAgent.avatarPlan.get-plan')}}
+                  {{$t('telemarketingPage.singleAgent.avatarPlan.get-plan')}}
                 </div>
               </router-link>
-              <!-- <router-link
-                to="/telemarketing/multiple-agent"
-                class="program-link mr-md-4 mb-2 mb-md-0 mt-md-0"
-              >
-                <div class="program-link-content">
-                  Multi-Agent
-                </div>
-              </router-link>
-              <router-link
-                to="/telemarketing/call-center"
-                class="program-link"
-              >
-                <div class="program-link-content">
-                  Call Center
-                </div>
-              </router-link> -->
             </div>
           </div>
         </v-col>

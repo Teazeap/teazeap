@@ -2,13 +2,20 @@
   <v-card
     outlined
     :class="['mx-auto', 'card', loading ? 'show' : 'hide']"
+    :style="marginStyle"
     :elevation="4"
-    :height="450"
-    :min-height="450"
-    :max-height="450"
+    :height="height"
+    :min-height="height"
+    :max-height="height"
   >
     <div class="image-placeholder placeholder"></div>
     <div class="title-placeholder placeholder"></div>
+    <div class="text-placeholder placeholder"></div>
+    <div class="text-placeholder placeholder"></div>
+    <div class="text-placeholder placeholder"></div>
+    <div class="text-placeholder placeholder"></div>
+    <div class="text-placeholder placeholder"></div>
+    <div class="text-placeholder placeholder"></div>
     <div class="text-placeholder placeholder"></div>
     <div class="text-placeholder placeholder"></div>
   </v-card>
@@ -23,14 +30,25 @@ export default {
       required: true,
       default: () => true,
     },
+    height: {
+      type: Number,
+      default: () => 450,
+    },
+    margin: {
+      type: Number,
+      default: () => 450,
+    },
+  },
+  computed: {
+    marginStyle() {
+      return { margin: `-${this.margin}px auto 0 auto !important` };
+    },
   },
 };
 </script>
 
 <style scoped>
 .card {
-  width: 20rem;
-  height: 400px;
   aspect-ratio: 4 / 5;
   background: #fff;
   padding: 1rem;
@@ -42,6 +60,7 @@ export default {
   height: 100% !important;
   margin: -450px auto 0 auto !important;
   width: 100%;
+  overflow: hidden
 }
 
 .hide {

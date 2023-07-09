@@ -1,11 +1,19 @@
 <template>
   <div class="col-md-6 col-lg-4 col-xl-4">
     <v-app id="inspire">
-      <v-card outlined class="mx-auto profile-card" width="350" :elevation="4" min-height="640">
+      <v-card
+        outlined
+        class="mx-auto profile-card"
+        width="350"
+        :elevation="4"
+        min-height="640"
+      >
         <v-img
           :position="profile.position"
           :src="profile.pictureUrl"
           height="350px"
+          @loadstart="loading = true"
+          @load="loading = false"
         ></v-img>
 
         <v-card-title
@@ -33,15 +41,17 @@
           ></a>
         </v-card-actions>
       </v-card>
+      <ContentPlaceholder :loading="loading" :height="640" :margin="640" />
     </v-app>
   </div>
 </template>
 
 <script>
+import ContentPlaceholder from "@/components/ContentPlaceholder.vue";
 export default {
   name: "team-card",
   bodyClass: "profile-page",
-  components: {},
+  components: { ContentPlaceholder },
   props: {
     profile: {
       type: Object,
@@ -54,7 +64,11 @@ export default {
       return this.profile.name === "Calerb Louis Jean";
     },
   },
-  methods: {},
+  data() {
+    return {
+      loading: true,
+    };
+  },
 };
 </script>
 
@@ -89,25 +103,25 @@ export default {
 }
 
 .team-card-actions::after {
-	content: "";
-	background: url('https://inventive.netlify.app/images/objects/6.png');
-	background-repeat: no-repeat;
-	height: 180px;
-	width: 188px;
-	position: absolute;
-	right: 5px;
-	bottom: 0;
-	opacity: 0.2;
-	z-index: 0;
-	-moz-transform: scale(1);
-	-o-transform: scale(1);
-	-ms-transform: scale(1);
-	-webkit-transform: scale(1);
-	transform: scale(1);
-	-moz-transition: all 400ms ease-out 0s;
-	-webkit-transition: all 400ms ease-out 0s;
-	-ms-transition: all 400ms ease-out 0s;
-	-o-transition: all 400ms ease-out 0s;
-	transition: all 400ms ease-out 0s;
+  content: "";
+  background: url("https://inventive.netlify.app/images/objects/6.png");
+  background-repeat: no-repeat;
+  height: 180px;
+  width: 188px;
+  position: absolute;
+  right: 5px;
+  bottom: 0;
+  opacity: 0.2;
+  z-index: 0;
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -moz-transition: all 400ms ease-out 0s;
+  -webkit-transition: all 400ms ease-out 0s;
+  -ms-transition: all 400ms ease-out 0s;
+  -o-transition: all 400ms ease-out 0s;
+  transition: all 400ms ease-out 0s;
 }
 </style>

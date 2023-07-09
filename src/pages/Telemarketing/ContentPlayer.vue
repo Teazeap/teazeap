@@ -10,7 +10,13 @@
         :max-height="450"
       >
         <span v-if="content.isAudio">
-          <v-img :src="content.picUrl" height="224" class="audio-picture"></v-img>
+          <v-img
+            :src="content.picUrl"
+            height="224"
+            class="audio-picture"
+            @loadstart="handleLoadStart"
+            @load="handleLoadEnd"
+          ></v-img>
 
           <v-card-title
             class="d-flex team-name text-primary justify-content-center"
@@ -22,7 +28,10 @@
             {{ $t(content.message) }}
           </v-card-text>
 
-          <v-card-text v-if="content.audioFileUrl" class="d-flex justify-center">
+          <v-card-text
+            v-if="content.audioFileUrl"
+            class="d-flex justify-center"
+          >
             <audio controls>
               <source :src="content.audioFileUrl" type="audio/mpeg" />
               Your browser does not support the audio element.
@@ -31,7 +40,14 @@
         </span>
 
         <span v-else>
-          <video width="100%" height="100%" controls class="video-frame">
+          <video
+            width="100%"
+            height="100%"
+            controls
+            class="video-frame"
+            ref="video"
+            @loadedmetadata="handleVideoLoad"
+          >
             <source :src="content.videoFileUrl" type="video/mp4" />
           </video>
 
@@ -46,15 +62,17 @@
           </v-card-text>
         </span>
       </v-card>
+      <ContentPlaceholder :loading="loading" />
     </v-app>
   </div>
 </template>
 
 <script>
+import ContentPlaceholder from "@/components/ContentPlaceholder.vue";
 export default {
   name: "testimonial-card",
   bodyClass: "audio-player",
-  components: {},
+  components: { ContentPlaceholder },
   props: {
     content: {
       type: Object,
@@ -63,7 +81,32 @@ export default {
     },
   },
   computed: {},
-  methods: {},
+  data() {
+    return {
+      loading: true,
+    };
+  },
+  beforeUnmount() {
+    const videoElement = this.$refs.video;
+    videoElement.removeEventListener("loadedmetadata", this.handleVideoLoad);
+  },
+  mounted() {
+    const videoElement = this.$refs.video;
+    if (videoElement) {
+      videoElement.addEventListener("loadedmetadata", this.handleVideoLoad);
+    }
+  },
+  methods: {
+    handleVideoLoad() {
+      this.loading = false;
+    },
+    handleLoadStart() {
+      this.loading = true;
+    },
+    handleLoadEnd() {
+      this.loading = false;
+    },
+  },
 };
 </script>
 
@@ -101,7 +144,7 @@ export default {
 
 audio {
   border-radius: 12px;
-  width: 100%
+  width: 100%;
 }
 
 .audio-picture {

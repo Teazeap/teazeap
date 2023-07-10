@@ -46,7 +46,8 @@
             controls
             class="video-frame"
             ref="video"
-            @loadedmetadata="handleVideoLoad"
+            @canplaythrough="handleVideoLoad"
+            :poster="content.poster"
           >
             <source :src="content.videoFileUrl" type="video/mp4" />
           </video>
@@ -62,7 +63,7 @@
           </v-card-text>
         </span>
       </v-card>
-      <ContentPlaceholder :loading="loading" />
+      <ContentPlaceholder :loading="loading && content.isAudio" />
     </v-app>
   </div>
 </template>
@@ -88,12 +89,12 @@ export default {
   },
   beforeUnmount() {
     const videoElement = this.$refs.video;
-    videoElement.removeEventListener("loadedmetadata", this.handleVideoLoad);
+    videoElement.removeEventListener("canplaythrough", this.handleVideoLoad);
   },
   mounted() {
     const videoElement = this.$refs.video;
     if (videoElement) {
-      videoElement.addEventListener("loadedmetadata", this.handleVideoLoad);
+      videoElement.addEventListener("canplaythrough", this.handleVideoLoad);
     }
   },
   methods: {
@@ -157,6 +158,7 @@ audio {
   box-shadow: 0px 5px 12px 0px rgb(0 0 0 / 20%);
   transition: 0.3s;
   height: 225px;
+  object-fit: cover;
 }
 
 .video-frame :hover {

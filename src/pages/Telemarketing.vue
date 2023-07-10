@@ -317,6 +317,7 @@ export default {
 
           videoFileUrl:
             "https://videos.ctfassets.net/dr15y1pi2yc9/3p9fUqGM6nLVbKWMBSsqt9/634faaa8c15656d5b6ccd0b0d7c8ac1c/videoplayback-2.mp4",
+          poster: "img/thumbnails/thumb-1.jpeg",
           isAudio: false,
         },
         {
@@ -332,6 +333,7 @@ export default {
           message: "telemarketingPage.teazeapContent.3.message",
           videoFileUrl:
             "https://videos.ctfassets.net/dr15y1pi2yc9/50NSjIaNZBpPeFS9TsXg1K/f737802d942a17c902535bec42ec3cb0/telemarketing-video-1.mp4",
+          poster: "img/thumbnails/thumb-2.jpeg",
           isAudio: false,
         },
         {
@@ -339,6 +341,7 @@ export default {
           message: "telemarketingPage.teazeapContent.4.message",
           videoFileUrl:
             "https://videos.ctfassets.net/dr15y1pi2yc9/77uBczZTTHGFOYJNjgL6qD/1a4577bff54f4a117ee37a4c7aee7b92/videoplayback-1.mp4",
+          poster: "img/thumbnails/thumb-3.jpeg",
           isAudio: false,
         },
         {
@@ -354,6 +357,7 @@ export default {
           message: "telemarketingPage.teazeapContent.6.message",
           videoFileUrl:
             "https://videos.ctfassets.net/dr15y1pi2yc9/ZU7GoFasJoChGSrkGATVB/f80908ac9abf7f54aa26afcb3b05f269/telemarketing-video-2.mp4",
+          poster: "img/thumbnails/thumb-4.jpeg",
           isAudio: false,
         },
 
@@ -362,6 +366,7 @@ export default {
           message: "telemarketingPage.teazeapContent.7.message",
           videoFileUrl:
             "https://videos.ctfassets.net/dr15y1pi2yc9/25vPZEL5MMaqlwMRUBglRJ/d2063e39d2d5ef4b29febeec96c73bf7/2203638109384894994.mp4",
+          poster: "img/thumbnails/thumb-5.jpeg",
           isAudio: false,
         },
         {
@@ -375,6 +380,7 @@ export default {
           message: "telemarketingPage.teazeapContent.9.message",
           videoFileUrl:
             "https://videos.ctfassets.net/dr15y1pi2yc9/NVi7i40iXbsu30guZRUak/ce71561a78a2a18bb474181d98437cdc/videoplayback-3.mp4",
+          poster: "img/thumbnails/thumb-6.jpeg",
           isAudio: false,
         },
         {

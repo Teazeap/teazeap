@@ -405,6 +405,7 @@ export default {
           "Experience the professionalism of Teazeap's agents with our video showcasing a customer call. Watch now to see how Bella assists with a seamless flower order process!",
         videoFileUrl:
           "https://videos.ctfassets.net/dr15y1pi2yc9/7H5eI8EPquLp3x2BZyyZjY/213486e9f209c13bedac51431e2e97d3/Sample_Order_Taking_Customer_Support_Philippines.mp4",
+          poster: "img/thumbnails/thumb-7.jpeg",
           isAudio: false,
       },
         {
@@ -422,6 +423,7 @@ export default {
           "Agent Rachel patiently assists frustrated customer with Bluetooth headset troubleshooting.",
         videoFileUrl:
           "https://videos.ctfassets.net/dr15y1pi2yc9/5qmKxDrWfHFWdqmNkfQn9M/9d4d4d0d25933a2fc97858df004338d9/mishandled_call.mp4",
+          poster: "img/thumbnails/thumb-8.jpeg",
           isAudio: false,
       },
         {

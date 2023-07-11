@@ -57,8 +57,8 @@
         </nav-link>
       </li>
 
-      <language-switcher
-    /></template>
+      <!-- <language-switcher/> -->
+    </template>
   </navbar>
 </template>
 
@@ -66,7 +66,7 @@
 import { Navbar, NavLink } from "@/components";
 import { Popover } from "element-ui";
 import { v4 as uuidv4 } from "uuid";
-import LanguageSwitcher from "../components/LanguageSwitcher.vue";
+// import LanguageSwitcher from "../components/LanguageSwitcher.vue";
 
 export default {
   name: "recruitment-agency-navbar",
@@ -77,7 +77,7 @@ export default {
   components: {
     Navbar,
     NavLink,
-    LanguageSwitcher,
+    // LanguageSwitcher,
     [Popover.name]: Popover,
   },
   computed: {

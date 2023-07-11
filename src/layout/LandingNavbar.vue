@@ -98,7 +98,7 @@
           <p>{{ $t("nav.blog") }}</p>
         </nav-link>
       </li>
-      <language-switcher/>
+      <!-- <language-switcher/> -->
     </template>
   </navbar>
 </template>
@@ -107,7 +107,7 @@
 import { DropDown, Navbar, NavLink } from "@/components";
 import { Popover } from "element-ui";
 import { v4 as uuidv4 } from "uuid";
-import LanguageSwitcher from '../components/LanguageSwitcher.vue';
+// import LanguageSwitcher from '../components/LanguageSwitcher.vue';
 
 export default {
   name: "main-navbar",
@@ -119,7 +119,7 @@ export default {
     DropDown,
     Navbar,
     NavLink,
-    LanguageSwitcher,
+    // LanguageSwitcher,
     [Popover.name]: Popover,
   },
   computed: {

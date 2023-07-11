@@ -1,17 +1,23 @@
 <template>
-  <div class="col-md-6 col-lg-4 col-xl-4" >
+  <div class="col-md-6 col-lg-4 col-xl-4">
     <v-app id="inspire">
       <v-card
         outlined
-        class="mx-auto  profile-card"
+        class="mx-auto profile-card"
         :elevation="4"
         :height="450"
         :min-height="450"
         :max-height="450"
       >
-        <v-img :src="testimonial.picUrl"></v-img>
+        <v-img
+          :src="testimonial.picUrl"
+          @loadstart="loading = true"
+          @load="loading = false"
+        ></v-img>
 
-        <v-card-title class="d-flex  team-name text-primary justify-content-center">
+        <v-card-title
+          class="d-flex team-name text-primary justify-content-center"
+        >
           {{ $t(testimonial.name) }}
         </v-card-title>
 
@@ -19,25 +25,29 @@
           {{ $t(testimonial.message) }}
         </v-card-text>
       </v-card>
+      <ContentPlaceholder :loading="loading" />
     </v-app>
   </div>
 </template>
 
 <script>
+import ContentPlaceholder from "@/components/ContentPlaceholder.vue";
 export default {
   name: "testimonial-card",
   bodyClass: "profile-page",
-  components: {},
+  components: { ContentPlaceholder },
   props: {
     testimonial: {
       type: Object,
       required: true,
-      default: () => {}
-    }
+      default: () => {},
+    },
   },
-  computed: {
+  data() {
+    return {
+      loading: true,
+    };
   },
-  methods: {}
 };
 </script>
 

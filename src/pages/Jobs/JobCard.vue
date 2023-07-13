@@ -1,10 +1,15 @@
 <template>
-  <div class="col-md-6 col-lg-4 col-xl-4  py-2">
+  <div class="col-md-6 col-lg-4 col-xl-4 py-2">
     <v-app id="inspire">
       <v-card class="mx-auto profile-card" width="350" :elevation="4">
-        <v-img :src="job.imageUrl[0]" height="350px"></v-img>
+        <v-img
+          :src="job.imageUrl[0]"
+          height="350px"
+          @loadstart="loading = true"
+          @load="loading = false"
+        ></v-img>
 
-        <v-card-title class="d-flex  team-name justify-content-center"
+        <v-card-title class="d-flex team-name justify-content-center"
           >{{ job.school }}
         </v-card-title>
         <v-card-text class="d-flex justify-end justify-space-between pt-2 pb-2">
@@ -17,7 +22,7 @@
           <div class="d-flex">
             <div class="mr-2 font-weight-medium">
               <h6>
-                <img src="img/eye.png" style="width:50%; height: 50%" />
+                <img src="img/eye.png" style="width: 50%; height: 50%" />
                 {{ job.views + 4 }}
               </h6>
             </div>
@@ -29,39 +34,44 @@
             tag="button"
             class="btn btn-primary view-job stretched-link"
           >
-            {{$t("viewJob")}}
+            {{ $t("viewJob") }}
           </router-link>
         </v-card-actions>
       </v-card>
+      <ContentPlaceholder :loading="loading" :height="525" :margin="525" />
     </v-app>
   </div>
 </template>
 
 <script>
 import moment from "moment";
+import ContentPlaceholder from "../../components/ContentPlaceholder.vue";
 
 export default {
   name: "job-card",
   bodyClass: "profile-page",
-  components: {},
+  components: { ContentPlaceholder },
   props: {
     job: {
       type: Object,
       required: true,
-      default: () => {}
+      default: () => {},
     },
     isLink: {
       type: Boolean,
-      default: () => true
-    }
+      default: () => true,
+    },
   },
+  data: () => ({
+    loading: true,
+  }),
   methods: {
     postedAt(date) {
       const createdAt = moment(new Date(date));
       const now = moment(new Date());
       return createdAt.from(now);
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped lang="scss">

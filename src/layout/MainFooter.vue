@@ -21,24 +21,6 @@
             <router-link
               v-popover:popover1
               class="navbar-brand"
-              to="/our-services/teachers"
-            >
-              {{ $t("nav.teachers") }}
-            </router-link>
-          </li>
-          <li>
-            <router-link
-              v-popover:popover1
-              class="navbar-brand"
-              to="/our-services/schools"
-            >
-              {{ $t("nav.schools") }}
-            </router-link>
-          </li>
-          <li>
-            <router-link
-              v-popover:popover1
-              class="navbar-brand"
               to="/admin/login"
             >
               {{ $t("nav.admin") }}

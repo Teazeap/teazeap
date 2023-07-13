@@ -1,10 +1,17 @@
 <template>
-  <div class="col-md-6 col-lg-4 col-xl-4  py-2">
+  <div class="col-md-6 col-lg-4 col-xl-4 py-2">
     <v-app id="inspire">
       <v-card class="mx-auto profile-card" width="350" :elevation="4">
-        <v-img :src="profilePicUrl" height="350px"></v-img>
+        <v-img
+          :src="profilePicUrl"
+          height="350px"
+          @loadstart="loading = true"
+          @load="loading = false"
+        ></v-img>
 
-        <v-card-title> {{ profile.firstName }} {{ profile.lastName }} </v-card-title>
+        <v-card-title>
+          {{ profile.firstName }} {{ profile.lastName }}
+        </v-card-title>
 
         <v-card-text>
           <v-row align="center" class="mx-0">
@@ -13,7 +20,9 @@
             </div>
 
             <div class="grey--text ml-1">
-              <country-flag :country="profile.country[0]['alpha-2']" size="small"
+              <country-flag
+                :country="profile.country[0]['alpha-2']"
+                size="small"
               />
             </div>
           </v-row>
@@ -21,18 +30,14 @@
 
         <v-card-text class="d-flex justify-end justify-space-between pt-2 pb-2">
           <div class="d-flex">
-            <div class="mr-2 font-weight-medium">
-              Teaching Experience:
-            </div>
+            <div class="mr-2 font-weight-medium">Teaching Experience:</div>
             <div>
               {{ profile.teachingExperience }}
             </div>
           </div>
 
           <div class="d-flex">
-            <div class="mr-2 font-weight-medium">
-              Years In Taiwan:
-            </div>
+            <div class="mr-2 font-weight-medium">Years In Taiwan:</div>
             <div>
               {{ profile.yearsInTaiwan }}
             </div>
@@ -60,43 +65,46 @@
           </div>
         </v-expand-transition>
       </v-card>
+      <ContentPlaceholder :loading="loading" :height="510" :margin="510" />
     </v-app>
   </div>
 </template>
 
 <script>
 import moment from "moment";
+import ContentPlaceholder from "../../components/ContentPlaceholder.vue";
 
 export default {
   name: "profile-card",
   bodyClass: "profile-page",
-  components: {},
+  components: { ContentPlaceholder },
   props: {
     profile: {
       type: Object,
       required: true,
-      default: () => {}
+      default: () => {},
     },
     isLink: {
       type: Boolean,
-      default: () => true
-    }
+      default: () => true,
+    },
   },
   computed: {
     profilePicUrl() {
       return `https:${this.profile.imageUrl}`;
-    }
+    },
   },
   data: () => ({
-    show: false
+    show: false,
+    loading: true,
   }),
   methods: {
     postedAt(date) {
       const createdAt = moment(new Date(date));
       const now = moment(new Date());
       return createdAt.from(now);
-    }
-  }
+    },
+  },
 };
 </script>
 

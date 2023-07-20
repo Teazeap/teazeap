@@ -100,7 +100,7 @@ export default {
         {
           name: "Calerb Louis Jean",
           quote: "landing-page.project-quote",
-          pictureUrl: "img/jake_2.jpg",
+          pictureUrl: "img/jake_3.jpeg",
           title: "landing-page.project",
           position: "top",
         },

@@ -93,7 +93,7 @@ export default {
         {
           name: "Clifton Moreau",
           quote: "landing-page.chief-quote",
-          pictureUrl: "img/ceo.jpg",
+          pictureUrl: "img/ceo_1.jpeg",
           title: "landing-page.chief",
           position: "top",
         },

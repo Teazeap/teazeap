@@ -107,7 +107,7 @@ export default {
         {
           name: "Nnenia Stephens",
           quote: "landing-page.comm-quote",
-          pictureUrl: "img/nnenia_1.jpg",
+          pictureUrl: "img/nnenia_2.jpeg",
           title: "landing-page.comm",
           position: "top",
         },

@@ -231,7 +231,7 @@ export default {
           id: "single-agent",
           plan: {
             name: "SINGLE AGENT",
-            price: "10.5",
+            price: "11.5",
             points: [
               "3/more Agents and 1 Manager",
               "Robust Technology Integration",
@@ -245,7 +245,7 @@ export default {
           id: "multiple-agent",
           plan: {
             name: "MULTIPLE AGENT",
-            price: "11.5",
+            price: "12.5",
             points: [
               "5/more Agents and 1 Manager",
               "Robust Technology Integration",
@@ -259,7 +259,7 @@ export default {
           id: "bundle",
           plan: {
             name: "Bundle",
-            price: "13.5",
+            price: "13",
             points: [
               "Single Agent deal",
               "Multiple Agent deal",

@@ -201,7 +201,7 @@ export default {
         {
           isPopular: false,
           planName: "CALL CENTER",
-          planCost: 10.5,
+          planCost: 11.5,
           planDetails: [
             "<strong> 3/more</strong> Agents and <strong>1</strong> Manager",
             "Multichannel",
@@ -214,7 +214,7 @@ export default {
         {
           isPopular: false,
           planName: "FILTERING AVATAR",
-          planCost: 10.5,
+          planCost: 11.5,
           planDetails: [
             "<strong>3</strong> Agents and <strong>1</strong> Manager",
             "Lead Management",
@@ -227,7 +227,7 @@ export default {
         {
           isPopular: false,
           planName: "FILTERING SPECIALS",
-          planCost: 11.5,
+          planCost: 12.5,
           planDetails: [
             "<strong>5/more</strong> Agents and <strong>1</strong> Manager",
             "Scripting",
@@ -258,7 +258,7 @@ export default {
       "telemarketingPage.singleAgent.avatarPlan.filteringAvatarPlan.points.1",
       "telemarketingPage.singleAgent.avatarPlan.filteringAvatarPlan.points.2"
     ],
-        price: "10.5",
+        price: "11.5",
         id: "filterinng-avatar",
       },
       openDialog: false,

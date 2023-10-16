@@ -136,7 +136,7 @@ export default {
       ],
       filteringAvatarPlan : {
         name: "FILTERING SPECIALS",
-        price: "10.5",
+        price: "11.5",
         points: ['5/more and 1 Manager', 'Scripting', 'CRM Integration', 'Dialer']
       },
       flickityOptions: {

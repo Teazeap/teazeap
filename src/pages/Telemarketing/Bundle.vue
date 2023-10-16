@@ -137,7 +137,7 @@ export default {
       ],
       bundlePlan : {
         name: "BUNDLE",
-        price: "12",
+        price: "13",
         points: ['Filtering Avatar', 'Filtering Specials', 'CRM Integration', 'Dialer'],
         id: "bundle"
       },

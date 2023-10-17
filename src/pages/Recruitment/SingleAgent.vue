@@ -206,7 +206,7 @@ export default {
           planName: "CALL CENTER",
           planCost: 11.5,
           planDetails: [
-            "<strong> 3/more</strong> Agents and <strong>1</strong> Manager",
+            "<strong> 4/more</strong> Agents and <strong>1</strong> Manager",
             "Multichannel",
             "Call Recording",
             "Quality Assurance",

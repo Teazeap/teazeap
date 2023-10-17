@@ -233,7 +233,7 @@ export default {
             name: "SINGLE AGENT",
             price: "11.5",
             points: [
-              "3/more Agents and 1 Manager",
+              "4/more Agents and 1 Manager",
               "Robust Technology Integration",
               "Skilled and Trained Agents",
               "Scalability and Flexibility",
@@ -321,7 +321,7 @@ export default {
           planName: "CALL CENTER",
           planCost: 11.5,
           planDetails: [
-            "<strong> 3/more</strong> Agents and <strong>1</strong> Manager",
+            "<strong> 4/more</strong> Agents and <strong>1</strong> Manager",
             "Multichannel",
             "Call Recording",
             "Quality Assurance",
@@ -373,7 +373,7 @@ export default {
         name: "CALL CENTER",
         price: "9.5",
         points: [
-          "3/more Agents and 1 Manager",
+          "4/more Agents and 1 Manager",
           "Robust Technology Integration",
           "Skilled and Trained Agents",
           "Scalability and Flexibility",

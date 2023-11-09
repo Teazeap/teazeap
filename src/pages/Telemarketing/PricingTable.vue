@@ -1,11 +1,11 @@
 <template>
   <div class="pt-0" :style="commonMarginClass">
     <div class="container section-card">
-      <h2 class="title text-center">{{$t("telemarketingPage.singleAgent.pricingTableHeader")}}</h2>
+      <h2 class="title text-center">{{priceTableHeader}}</h2>
       <div class="row plan-container">
         <div
           v-for="(
-            { isPopular, planName, planCost, planDetails, className }, id
+            { isPopular, planName,planType, planCost, planDetails, className }, id
           ) in plans"
           :key="id"
           :class="['pricing-card', `${className}`]"
@@ -13,11 +13,12 @@
           <div v-if="isPopular" class="popular">POPULAR</div>
           <div class="pricing-header">
             <span class="plan-title">{{ planName }}</span>
+            <span class="plan-type">{{ planType }}</span>
             <div class="price-circle">
               <span class="price-title">
                 <small>$</small><span>{{ planCost }}</span>
               </span>
-              <span class="info">/ Hour</span>
+              <span class="info">/Hour/Agent</span>
             </div>
           </div>
           <div class="badge-box"></div>
@@ -27,7 +28,7 @@
             </li>
           </ul>
           <div class="buy-button-box">
-            <a href="#" :class="['buy-now', `${className}`]" @click="$emit('get-plan')">GET PLAN</a>
+            <a :class="['buy-now', `${className}`]" @click="$emit('get-plan')">GET PLAN</a>
           </div>
         </div>
       </div>
@@ -41,25 +42,16 @@ export default {
   name: "PricingTable",
   mixins: [sizeMixin],
   props: {
+    priceTableHeader: {
+      type: String,
+      default: () => "Simple, Transparent Pricing"
+    },
     plans: {
       type: Array,
       default: () => [
         {
           isPopular: false,
-          planName: "CALL CENTER",
-          planCost: 11.5,
-          planDetails: [
-            "<strong> 4/more</strong> Agents and <strong>1</strong> Manager",
-            "Multichannel",
-            "Call Recording",
-            "Quality Assurance",
-            "Analytics",
-          ],
-          className: "pro",
-        },
-        {
-          isPopular: false,
-          planName: "FILTERING AVATAR",
+          planName: "Filtering Agents",
           planCost: 11.5,
           planDetails: [
             "<strong>3</strong> Agents and <strong>1</strong> Manager",
@@ -72,7 +64,7 @@ export default {
         },
         {
           isPopular: false,
-          planName: "FILTERING SPECIALS",
+          planName: "Filtering Specialists",
           planCost: 12.5,
           planDetails: [
             "<strong>5/more</strong> Agents and <strong>1</strong> Manager",
@@ -85,10 +77,10 @@ export default {
         },
         {
           isPopular: true,
-          planName: "BUNDLE",
+          planName: "Bundle",
           planCost: 13,
           planDetails: [
-            "Everything in <strong>Filtering Avatar </strong> ",
+            "Everything in <strong>Filtering Agents </strong> ",
             "Everything in <strong>Filtering Specials</strong>",
             "Team Collaboration Features",
             "Lead Database Management",
@@ -134,6 +126,7 @@ $business: #a55eea;
     }
   }
   .buy-now {
+    cursor: pointer;
     &:hover {
       background-image: none !important;
       background-color: $primary !important;
@@ -156,6 +149,7 @@ $business: #a55eea;
     }
   }
   .buy-now {
+    cursor: pointer;
     &:hover {
       background-image: none !important;
       background-color: $echo !important;
@@ -178,6 +172,7 @@ $business: #a55eea;
     }
   }
   .buy-now {
+    cursor: pointer;
     &:hover {
       background-image: none !important;
       background-color: $pro !important;
@@ -200,6 +195,7 @@ $business: #a55eea;
     }
   }
   .buy-now {
+    cursor: pointer;
     &:hover {
       background-image: none !important;
       background-color: $business !important;
@@ -225,14 +221,14 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
-  grid-gap: 10px;
+  grid-gap: 16px;
   padding: 24px 16px;
 }
 
 .pricing-card {
   @include transition(0.4s, background-color);
   height: 450px;
-  width: 250px;
+  width: 280px;
   background-color: white;
   -moz-border-radius: $radius;
   -webkit-border-radius: $radius;
@@ -286,16 +282,25 @@ body {
     */
 
     .plan-title {
-      font-size: 24px;
+      font-size: 20px;
       color: white;
       position: relative;
       top: 25%;
     }
 
+    .plan-type {
+      color: white;
+      position: relative;
+      top: 25%;
+      display: block;
+      margin-top: -8px;
+      font-size: 14px;
+    }
+
     .price-circle {
       width: calc(33.3% - 30px);
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 130px;
       border-radius: 100%;
       left: calc(50% - 60px);
       top: 60%;

@@ -15,11 +15,20 @@
     <template slot="navbar-menu">
       <drop-down
         tag="li"
-        :title="recruitment"
+        :title="home"
         icon="users-viewfinder"
         class="nav-item nav-ul"
         :isFa="true"
       >
+        <nav-link to="landing#about-us">
+          <i class="now-ui-icons travel_info nav-link-icon"></i>
+          <p class="mt-1">{{ $t("nav.about-us") }}</p>
+        </nav-link>
+        <nav-link to="landing#explore-teazeap">
+          <i class="now-ui-icons ui-1_zoom-bold nav-link-icon"></i>
+          <p class="mt-1">{{ $t("nav.explore-teazeap") }}</p>
+        </nav-link>
+        <!--
         <nav-link to="recruitment-agency#tech">
           <font-awesome-icon icon="code" />
           <span class="ml-2">{{ $t("nav.tech") }}</span>
@@ -32,7 +41,30 @@
           <font-awesome-icon icon="graduation-cap" />
           <span class="ml-2">{{ $t("nav.education") }}</span>
         </nav-link>
+        -->
       </drop-down>
+
+      <drop-down
+        class="nav-item nav-ul"
+        :title="services"
+        tag="li"
+        icon="now-ui-icons business_money-coins"
+      >
+        <nav-link to="recruitment">
+          <font-awesome-icon icon="users-viewfinder" />
+          <span class="ml-2">{{ $t("nav.recruitment") }}</span>
+        </nav-link>
+        <nav-link to="telemarketing">
+          <font-awesome-icon icon="headset" />
+          <span class="ml-2">{{ $t("nav.telemarketing") }}</span>
+        </nav-link>
+        <nav-link to="customer-service">
+          <font-awesome-icon icon="phone-volume" />
+          <span class="ml-2">{{ $t("nav.customer-service") }}</span>
+        </nav-link>
+      </drop-down>
+
+      <!--
 
       <drop-down
         tag="li"
@@ -54,34 +86,33 @@
           <span class="ml-2">{{ $t("nav.bundle") }}</span>
         </nav-link>
       </drop-down>
-
+-->
       <drop-down
-        tag="li"
-        :title="callCenter"
-        icon="phone-volume"
         class="nav-item nav-ul"
-        :isFa="true"
+        :title="plans"
+        tag="li"
+        icon="now-ui-icons education_agenda-bookmark"
       >
-        <nav-link to="/call-center#single-agent">
+        <nav-link to="/plans#single-agent">
           <font-awesome-icon icon="user" />
-          <span class="ml-2">{{ $t("nav.singleAgent") }}</span>
+          <span class="ml-2">{{ $t("nav.starter") }}</span>
         </nav-link>
-        <nav-link to="/call-center#multiple-agent">
+        <nav-link to="/plans#multiple-agent">
           <font-awesome-icon icon="user-group" />
-          <span class="ml-2">{{ $t("nav.multipleAgent") }}</span>
+          <span class="ml-2">{{ $t("nav.standard") }}</span>
         </nav-link>
-        <nav-link to="/call-center#bundle">
+        <nav-link to="/plans#bundle">
           <font-awesome-icon icon="crown" />
           <span class="ml-2">{{ $t("nav.bundle") }}</span>
         </nav-link>
       </drop-down>
 
-
       <drop-down
         tag="li"
-        :title="getInTouch"
+        :title="contact"
         icon="hashtag"
         :isFa="true"
+        :isHighlighted="true"
         class="nav-item nav-ul"
       >
         <nav-link href="https://www.facebook.com/teazeap" target="_blank">
@@ -91,14 +122,6 @@
           <i class="fab fa-instagram"></i> {{ $t("nav.instagram") }}
         </nav-link>
       </drop-down>
-
-      <li class="nav-item">
-        <nav-link class="nav-link btn btn-neutral btn-profile" to="/blog">
-          <i class="now-ui-icons files_paper nav-link-icon"></i>
-          <p>{{ $t("nav.blog") }}</p>
-        </nav-link>
-      </li>
-      <!-- <language-switcher/> -->
     </template>
   </navbar>
 </template>
@@ -129,17 +152,17 @@ export default {
     language() {
       return this.$t("nav.language");
     },
-    recruitment() {
-      return this.$t("nav.recruitment");
+    home() {
+      return this.$t("nav.home");
     },
-    telemarketing() {
-      return this.$t("nav.telemarketing");
+    services() {
+      return this.$t("nav.services");
     },
-    callCenter() {
-      return this.$t("nav.callCenter");
+    plans() {
+      return this.$t("nav.plans");
     },
-    getInTouch() {
-      return this.$t("nav.getInTouch");
+    contact() {
+      return this.$t("nav.contact");
     },
   },
   methods: {

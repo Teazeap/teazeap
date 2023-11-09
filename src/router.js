@@ -3,11 +3,12 @@ import Router from "vue-router";
 import Landing from "./pages/Landing.vue";
 import Telemarketing from "./pages/Telemarketing.vue";
 import RecruitmentAgency from "./pages/RecruitmentAgency.vue";
+import Plans from "./pages/Plans.vue";
 import TelemarketingIndex from "./pages/Telemarketing/index.vue";
 import SingleAgent from "./pages/Telemarketing/SingleAgent.vue";
 import MultipleAgent from "./pages/Telemarketing/MultipleAgent.vue";
 import TelemarketingBundle from "./pages/Telemarketing/Bundle.vue";
-import CallCenter from "./pages/CallCenter/CallCenter.vue"
+import CallCenter from "./pages/CallCenter/CallCenter.vue";
 import Schools from "./pages/Services/Schools.vue";
 import Teachers from "./pages/Services/Teachers.vue";
 import Process from "./pages/Procedure/ApplicationProcess.vue";
@@ -34,7 +35,7 @@ import DashboardBlogPosts from "./pages/Protected/Dashboard/BlogPosts.vue";
 
 Vue.use(Router);
 
- const router = new Router({
+const router = new Router({
   linkExactActiveClass: "active",
   routes: [
     // dashboard
@@ -153,11 +154,11 @@ Vue.use(Router);
       },
     },
     {
-      path: "/recruitment-agency",
+      path: "/recruitment",
       name: "RecruitmentAgency",
       components: {
         default: RecruitmentAgency,
-        header: RecruitmentAgencyNavbar,
+        header: LandingNavbar,
         footer: MainFooter,
       },
       props: {
@@ -166,11 +167,24 @@ Vue.use(Router);
       },
     },
     {
-      path: "/call-center",
+      path: "/plans",
+      name: "Plans",
+      components: {
+        default: Plans,
+        header: LandingNavbar,
+        footer: MainFooter,
+      },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" },
+      },
+    },
+    {
+      path: "/customer-service",
       name: "CallCenter",
       components: {
         default: CallCenter,
-        header: CallCenterNavbar,
+        header: LandingNavbar,
         footer: MainFooter,
       },
       props: {
@@ -183,7 +197,7 @@ Vue.use(Router);
       name: "TelemarketingIndex",
       components: {
         default: TelemarketingIndex,
-        header: TelemarketingNavbar,
+        header: LandingNavbar,
         footer: MainFooter,
       },
       redirect: { name: "TelemarketingIndex" },
@@ -233,7 +247,11 @@ Vue.use(Router);
     {
       path: "/our-services/schools",
       name: "schools",
-      components: { default: Schools, header: MainNavbar, footer: MainFooter },
+      components: {
+        default: Schools,
+        header: LandingNavbar,
+        footer: MainFooter,
+      },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" },
@@ -242,7 +260,11 @@ Vue.use(Router);
     {
       path: "/process",
       name: "process",
-      components: { default: Process, header: MainNavbar, footer: MainFooter },
+      components: {
+        default: Process,
+        header: LandingNavbar,
+        footer: MainFooter,
+      },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" },
@@ -253,7 +275,7 @@ Vue.use(Router);
       name: "qualification",
       components: {
         default: Qualification,
-        header: MainNavbar,
+        header: LandingNavbar,
         footer: MainFooter,
       },
       props: {
@@ -264,7 +286,11 @@ Vue.use(Router);
     {
       path: "/our-services/teachers",
       name: "teachers",
-      components: { default: Teachers, header: MainNavbar, footer: MainFooter },
+      components: {
+        default: Teachers,
+        header: LandingNavbar,
+        footer: MainFooter,
+      },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" },
@@ -273,7 +299,7 @@ Vue.use(Router);
     {
       path: "/jobs",
       name: "JobsMain",
-      components: { default: Jobs, header: MainNavbar, footer: MainFooter },
+      components: { default: Jobs, header: LandingNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" },
@@ -282,7 +308,11 @@ Vue.use(Router);
     {
       path: "/jobs/:id",
       name: "Jobs",
-      components: { default: JobInfo, header: MainNavbar, footer: MainFooter },
+      components: {
+        default: JobInfo,
+        header: LandingNavbar,
+        footer: MainFooter,
+      },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" },
@@ -293,7 +323,7 @@ Vue.use(Router);
           name: "JobInfo",
           components: {
             default: JobInfo,
-            header: MainNavbar,
+            header: LandingNavbar,
             footer: MainFooter,
           },
           props: {
@@ -306,7 +336,11 @@ Vue.use(Router);
     {
       path: "/create-profile",
       name: "Profiles",
-      components: { default: Profiles, header: MainNavbar, footer: MainFooter },
+      components: {
+        default: Profiles,
+        header: LandingNavbar,
+        footer: MainFooter,
+      },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" },
@@ -315,7 +349,7 @@ Vue.use(Router);
     {
       path: "/blog",
       name: "BlogsMain",
-      components: { default: Blogs, header: MainNavbar, footer: MainFooter },
+      components: { default: Blogs, header: LandingNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" },
@@ -326,7 +360,7 @@ Vue.use(Router);
       name: "Blogs",
       components: {
         default: BlogInfo,
-        header: MainNavbar,
+        header: LandingNavbar,
         footer: MainFooter,
       },
       props: {
@@ -339,7 +373,7 @@ Vue.use(Router);
           name: "BlogInfo",
           components: {
             default: BlogInfo,
-            header: MainNavbar,
+            header: LandingNavbar,
             footer: MainFooter,
           },
           props: {
@@ -353,7 +387,7 @@ Vue.use(Router);
   ],
   scrollBehavior: (to) => {
     if (to.hash) {
-      return { selector: to.hash, behavior: 'smooth', offset: { x: 0, y: 10 } };
+      return { selector: to.hash, behavior: "smooth", offset: { x: 0, y: 10 } };
     } else {
       return { x: 0, y: 0 };
     }
@@ -361,8 +395,8 @@ Vue.use(Router);
 });
 
 router.beforeEach((to, from, next) => {
-  store.dispatch('closeNav')
+  store.dispatch("closeNav");
   next();
-})
+});
 
-export default router
+export default router;

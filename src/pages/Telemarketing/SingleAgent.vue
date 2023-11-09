@@ -198,22 +198,22 @@ export default {
         },
       ],
       plans: [
+        // {
+        //   isPopular: false,
+        //   planName: "CALL CENTER",
+        //   planCost: 11.5,
+        //   planDetails: [
+        //     "<strong> 4/more</strong> Agents and <strong>1</strong> Manager",
+        //     "Multichannel",
+        //     "Call Recording",
+        //     "Quality Assurance",
+        //     "Analytics",
+        //   ],
+        //   className: "pro",
+        // },
         {
           isPopular: false,
-          planName: "CALL CENTER",
-          planCost: 11.5,
-          planDetails: [
-            "<strong> 4/more</strong> Agents and <strong>1</strong> Manager",
-            "Multichannel",
-            "Call Recording",
-            "Quality Assurance",
-            "Analytics",
-          ],
-          className: "pro",
-        },
-        {
-          isPopular: false,
-          planName: "FILTERING AVATAR",
+          planName: "Filtering Agents",
           planCost: 11.5,
           planDetails: [
             "<strong>3</strong> Agents and <strong>1</strong> Manager",
@@ -226,7 +226,7 @@ export default {
         },
         {
           isPopular: false,
-          planName: "FILTERING SPECIALS",
+          planName: "Filtering Specialists",
           planCost: 12.5,
           planDetails: [
             "<strong>5/more</strong> Agents and <strong>1</strong> Manager",
@@ -239,7 +239,7 @@ export default {
         },
         {
           isPopular: true,
-          planName: "BUNDLE",
+          planName: "Bundle",
           planCost: 13,
           planDetails: [
             "Everything in <strong>Filtering Avatar </strong> ",

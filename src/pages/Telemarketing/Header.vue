@@ -10,7 +10,7 @@
             <h4
               class="banner-subtitle white--text font-weight-regular text-white"
             >
-              {{ $t("telemarketingPage.headerSubTitle1") }} <strong>{{ $t("telemarketingPage.headerSubTitle2") }}</strong>
+              {{ $t("telemarketingPage.headerSubTitle1") }}
             </h4>
             <div class="mt-md-16 mt-10 d-sm-flex d-block">
               <button

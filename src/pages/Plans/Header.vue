@@ -5,30 +5,21 @@
         <v-col cols="12" sm="7" lg="6" class="d-flex align-center">
           <div class="text-sm-left text-center" style="width: 100%">
             <h1 class="banner-title font-weight-bold text-white">
-              {{ $t(`${header}`) }}
+              Plans & Pricing
             </h1>
             <h4
               class="banner-subtitle white--text font-weight-regular text-white"
             >
-              {{ $t(`${subHeader}`) }}
+              Ready to streamline your operations? Take a look at a selection of
+              our plans and choose the best solution for you
             </h4>
-            <div class="mt-md-16 mt-10 d-sm-flex d-block" v-if="showButton">
-              <router-link
-                to="/create-profile"
-                class="program-link mr-0 mr-md-4 mb-2 mb-md-0 mt-4 mt-md-0 "
+            <div class="mt-md-16 mt-10 d-sm-flex d-block">
+              <button
+                class="download mr-4 mr-0 mr-sm-5 mb-5 mb-md-0 btn-custom-md d-sm-flex d-block btn-100"
+                @click="showModal = true"
               >
-                <div class="program-link-content">
-                  {{$t("recruitmentPage.recruitNow")}}
-                </div>
-              </router-link>
-                            <router-link
-                to="/jobs"
-                class="program-link mr-0 mr-md-4 mb-2 mb-md-0 mt-4 mt-md-0 "
-              >
-                <div class="program-link-content">
-                  {{$t("recruitmentPage.applyNow")}}
-                </div>
-              </router-link>
+                Contact Us for Personalized Plans
+              </button>
             </div>
           </div>
         </v-col>
@@ -36,6 +27,7 @@
           <img :src="bannerSrc" alt="banner" class="img-fluid" />
         </v-col>
       </v-row>
+    <ContactDialog v-if="showModal"  @close="showModal = false"  />
     </v-container>
   </div>
 </template>
@@ -43,6 +35,7 @@
 <script>
 import { Button, FormGroupInput } from "@/components";
 import sizeMixin from "@/plugins/sizeMixin.js";
+import ContactDialog from "@/pages/Telemarketing/ContactDialog";
 
 export default {
   name: "telemarketing-header",
@@ -50,24 +43,25 @@ export default {
   components: {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
+    ContactDialog
   },
-  props : {
+  props: {
     header: {
       type: String,
-      default: () => "header.header"
+      default: () => "header.header",
     },
     subHeader: {
       type: String,
-      default: () => "header.subHeader"
+      default: () => "header.subHeader",
     },
     showButton: {
       type: Boolean,
-      default: () => true
+      default: () => true,
     },
     bannerSrc: {
       type: String,
-      default: () => "/img/recruitment/recruitment-2.png"
-    }
+      default: () => "/img/plans/plans-intro.png",
+    },
   },
   computed: {
     commonHeaderMarginClass() {
@@ -85,14 +79,13 @@ export default {
     },
   },
   methods: {
-    handleFreeConsultation() {
-    }
+    handleFreeConsultation() {},
   },
-  data () {
+  data() {
     return {
-      showModal: false
-    }
-  }
+      showModal: false,
+    };
+  },
 };
 </script>
 
@@ -101,8 +94,8 @@ export default {
   margin-top: 5%;
 }
 .banner-wrapper {
-  background-color: #0093E9;
-  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
   padding: 20px 0 20px;
   min-height: 600px;
   display: flex;
@@ -179,5 +172,4 @@ export default {
 .program-link.active {
   border: white solid 3px;
 }
-
 </style>

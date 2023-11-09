@@ -14,7 +14,7 @@
             </h4>
             <div class="mt-md-16 mt-10 d-sm-flex d-block">
               <router-link
-                to="/recruitment-agency"
+                to="/recruitment"
                 class="program-link mr-0 mr-md-4 mb-md-0 mb-sm-0 mt-4 mt-md-0"
               >
                 <div class="program-link-content">{{ $t("banner.recruitment") }}</div>
@@ -23,8 +23,8 @@
                 <div class="program-link-content">{{ $t("banner.telemarketing") }}</div>
               </router-link>
 
-              <router-link to="/call-center" class="program-link">
-                <div class="program-link-content">{{ $t("banner.callCenter") }}</div>
+              <router-link to="/customer-service" class="program-link">
+                <div class="program-link-content">{{ $t("nav.customer-service") }}</div>
               </router-link>
             </div>
           </div>

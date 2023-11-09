@@ -2,7 +2,12 @@
     "message": "hello i18n !!",
     "nav": {
         "recruitment": "Recruitment",
+        "home": "Home",
+        "about-us": "About Us",
+        "explore-teazeap": "Explore TeaZeap",
         "tech": "Tech",
+        "plans": "Plans",
+        "services": "Services",
         "corporate": "Corporate",
         "education": "Education",
         "telemarketing": "Telemarketing",
@@ -20,20 +25,25 @@
         "aboutUs": "ABOUT-US",
         "teachers": "TEACHERS",
         "schools": "SCHOOLS",
-        "admin": "ADMIN"
+        "admin": "ADMIN",
+        "starter": "Starter",
+        "standard": "Standard",
+        "contact": "Contact",
+        "customer-service": "Customer Service"
     },
     "intro": {
         "whoWeAre": "Who We Are",
-        "teazeapEstablished": "Teazeap was established as a comprehensive provider of",
+        "teazeapEstablished": "Teazeap Agency, established as a leading provider of",
         "recruitment": "recruitment",
+        "home": "home",
         "telemarketing": "telemarketing",
         "and": "and",
         "callCenter": "call center",
-        "services": "services.",
-        "recognizingDemand": "Recognizing the growing demand for skilled professionals in the tech, corporate, and educational sectors, Teazeap set out to connect businesses with top talent.",
-        "teazeapSetOut": "With a mission to bridge the gap between employers and exceptional candidates, Teazeap has achieved significant accomplishments through innovative strategies and personalized approaches.",
+        "services": "services",
+        "recognizingDemand": " has been at the forefront of connecting businesses with top talent. With a keen awareness of the increasing demand for skilled professionals in the technology, corporate, and educational sectors, Teazeap embarked on a mission to facilitate this crucial connection, ultimately driving the growth and success of client organizations.",
+        "teazeapSetOut": "With a relentless commitment to bridging the gap between employers and exceptional candidates, Teazeap’s vision revolves around enhancing the professional landscape for both job seekers and employers. We understand that every organization and candidate is unique, and we tailor our solutions accordingly.",
         "teazeapHasAchieved": "Teazeap has successfully facilitated numerous placements, contributing to the growth and success of client organizations.",
-        "teazeapHasSuccessfully": "Teazeap remains committed to its mission of delivering exceptional recruitment solutions and outstanding customer experiences in the years to come.",
+        "teazeapHasSuccessfully": "As we move forward, Teazeap remains unwavering in our dedication to delivering exceptional recruitment solutions and providing outstanding customer experiences. Join us in building a brighter future for professionals and organizations, where excellence is the standard, and success is the result.",
         "withAMission": "With a mission to bridge the gap between employers and exceptional candidates,",
         "teazeapRemainsCommitted": "Teazeap remains committed to its mission of delivering exceptional recruitment solutions and outstanding customer experiences in the years to come."
 
@@ -46,7 +56,7 @@
     },
     "banner": {
         "teazeapAgency": "Teazeap Agency",
-        "transformingWorkforce": "Transforming your workforce and customer interactions with Teazeap's innovative recruitment, telemarketing, and call center solutions.",
+        "transformingWorkforce": "Transforming your workforce and customer interactions with innovative recruitment, telemarketing, and call center solutions.",
         "recruitment": "Recruitment",
         "telemarketing": "Telemarketing",
         "callCenter": "Call Center"
@@ -72,7 +82,8 @@
         "startedTitle": "Where we started",
         "startedContent": "Teazeap embarked on its journey with a primary emphasis on talent acquisition within the educational sector. However, over time, the organization evolved into a well-rounded provider of recruitment solutions, telemarketing services, and call center operations. Teazeap's expanded scope encompassed various types of teaching professionals, including full-time educators, part-time instructors, and substitute teachers.",
         "strategicProcess": "Our Strategic  Recruitment Process",
-        "applyNow": "Apply Now",
+        "recruitNow": "Find Me Talent",
+        "applyNow": "Find Me a Job",
         "createProfile": "Create Profile"
     },
 
@@ -91,8 +102,8 @@
         }
     },
     "header": {
-        "header": "Recruiting Agency",
-        "subHeader": "Unlock Your Career Potential with Teazeap: Connecting Exceptional Talent with Tech, Corporate, and Education Opportunities!",
+        "header": "Recruiting Services",
+        "subHeader": "Let us match you with the best professionals in the tech, corporate, and educational sectors. We look at the big picture, every detail, and find the perfect candidate for every client. ",
         "applyNow": "Apply Now",
         "teachingJobs": "Teaching Jobs",
         "significant": "We highly value your teaching career and its significance to us",
@@ -101,15 +112,16 @@
     },
     "viewJob": "View Job",
     "telemarketingPage": {
-        "introTitle": "Let us build your virtual telemarketing phone room.",
+        "introTitle": "Let Us Build Your Virtual Phone Room.",
         "introImageAlt": "banner",
-        "introText": "Welcome to Teazeap, your trusted telemarketing partner for business success. Our team of experienced and skilled telemarketing professionals are dedicated to providing top-notch services to businesses of all sizes. From generating leads to increasing sales, we help you achieve your marketing goals with the power of telemarketing. Promote your brand, connect with your target audience, and grow your business with Teazeap. Get in touch with us today to see how we can help you take your business to the next level.",
-        "discoverTitle": "Discover our skilled agents in action, driving telemarketing success",
+        "introText": "Our team of experienced and skilled agents are dedicated to providing top-notch services to businesses of every scale. Whether it’s lead generation, increasing sales, or achieving your marketing objectives, we harness the potential of telemarketing to assist you in reaching your aspirations. Elevate your brand’s presence, engage with your precise audience, and foster the growth of your enterprise with Teazeap.",
+        "introText1": "Get in touch with us today to explore how we can empower your business!",
+        "discoverTitle": "A Look At Our Skilled Agents in Action",
         "discoverText": "Our agents are adept at generating high-quality leads for our clients. Through strategic prospecting and persuasive communication, they identify potential customers who are a perfect fit for your products or services. Their goal is to provide you with a steady stream of qualified leads, driving your business growth.",
         "teazeapContent": {
             "0": {
                 "name": "Tax Reduction",
-                "message": "Experience seamless conversations between our telemarketing agents and clients, discussing important tax matters."
+                "message": "Experience seamless conversations between our telemarketing agents and clients, discussing tax matters."
             },
             "1": {
                 "name": "Office Interior",
@@ -169,37 +181,39 @@
         },
         "plan": {
             "0": {
-                "title": "FILTERING AVATAR",
-                "subtitle": "If this describes your campaign:",
+                "title": "Filtering Agents",
+                "subtitle": "These team members will:",
                 "keyPoints": {
-                    "0": "Identify ideal customers for products/services.",
-                    "1": "Research potential leads for sales.",
-                    "2": "Generate leads through surveys."
+                    "0": "Identify ideal customers for products/ services",
+                    "1": "Qualify potential leads for sales team",
+                    "2": "Set appointments",
+                    "3": "Conduct up to 500 calls a day ",
+                    "4": "Call analytics dashboard  "
                 },
-                "actionButton": { "text": "View" }
+                "actionButton": { "text": "View Starter Plan" }
             },
             "1": {
-                "title": "FILTERING SPECIALS",
-                "subtitle": "If this describes your campaign:",
+                "title": "Filtering Specialists",
+                "subtitle": "For additional support our specialists will:",
                 "keyPoints": {
-                    "0": "Credit check for prospects.",
-                    "1": "Thorough research for sales leads.",
-                    "2": "Maintain accurate CRM data."
+                    "0": "Perform credit checks for prospects",
+                    "1": "Maintain accurate CRM data.",
+                    "2": "Carry out multi- channel outreach",
+                    "3": "Customizable script templates",
+                    "4": "Live transfers"
                 },
-                "actionButton": { "text": "View" }
+                "actionButton": { "text": "View Standard Plan" }
             },
             "2": {
-                "title": "CALL CENTER",
-                "subtitle": "If this describes your campaign:",
+                "title": "Bundle",
+                "subtitle": "Looking for a combination of services?",
                 "keyPoints": {
-                    "0": "Improve Customer Satisfaction.",
-                    "1": "Increase Sales and Revenue.",
-                    "2": "Streamline Operations and Efficiency."
+                    "0": "No worries! We offer plans including telemarketing & call center team members all in one."
                 },
-                "actionButton": { "text": "View" }
+                "actionButton": { "text": "View Plans" }
             },
             "title": "CHOOSING Your Solution:",
-            "subtitle": "If you're looking for a reliable partner to help you reach your sales goals and improve customer engagement, look no further than Teazeap.Our telemarketing and call center services are tailored to meet your unique needs and deliver results."
+            "subtitle": "Our telemarketing services are tailored to meet your unique needs. First step is to decide which support you’re in search of:"
         },
         "testimonials": {
             "0": {
@@ -216,10 +230,10 @@
             },
             "title": "Real Clients. Real Results"
         },
-        "headerTitle": "Telemarketing Agency",
-        "headerSubTitle1": "Maximize your sales potential with our expert telemarketing and call center services with price less than",
+        "headerTitle": "Telemarketing Services",
+        "headerSubTitle1": "Maximize your business plan with a strategic approach to customer engagement, lead generation, and sales growth through our expert team of telemarketing agents.",
         "headerSubTitle2": "$11.5/agent",
-        "headerCallOut": " Free Consultation",
+        "headerCallOut": "Join Our Network",
         "singleAgent": {
             "introTitle": "Let us build your virtual telemarketing phone room.",
             "introText": "When you’re ready to free yourself from a failure-ridden telemarketing process and try something that actually works, contact us. Teazeap Telemarketing specializes in outsourcing single agent telemarketing campaigns. These campaigns are hassle-free for you and provide real results. Our highly-trained, non-accented telemarketers have a proven track record of success. Single agents start at $9.5 per hour.",
@@ -254,7 +268,7 @@
             "header-subtitle": "Experience success with hassle-free single agent telemarketing campaigns at Teazeap",
             "avatarPlan": {
                 "filteringAvatarPlan": {
-                    "name": "FILTERING AVATAR",
+                    "name": "Filtering Agents",
                     "points": {
                         "0": "3 Agents and 1 Manager",
                         "1": "Outbound and inbound call handling",
@@ -288,17 +302,17 @@
         "sub-desc": "Reliable, and trustworthy teachers open to fill in when requested by a school and willing to meet their needs.",
         "team": "Here is our team",
         "chief": "Founder and CEO",
-        "chief-quote": "“It takes 20 years to build a reputation and five minutes to ruin it. If you think about that, you’ll do things differently.”",
+        "chief-quote": "“Recruitment is not just about filling positions; it’s about shaping careers, building dreams, and connecting the right people to the right opportunities.”",
         "project": "Co-founder and COO",
         "project-quote": "“As you navigate through the rest of your life, be open to collaboration. Other people and other people’s ideas are often better than your own.” ",
         "comm": "Co-founder and CCO",
-        "comm-quote": "“Without publicity there can be no public support, and without public support every nation must decay.”",
+        "comm-quote": "“The success of every business is built on the foundation of support, both from within and from those who believe in its vision.”",
         "telemarketing": "Telemarketing",
-        "telemarketing-desc": "Maximize your sales potential with our expert telemarketing and call center services with price less than $11.5/agent",
+        "telemarketing-desc": "Maximize Your Sales and Marketing Potential With Our Expert Telemarketers (Agents as low as $12 an hour)",
         "recruitment": "Recruitment",
-        "recruitment-desc": "Unlock Your Career Potential with Teazeap: Connecting Exceptional Talent with Tech, Corporate, and Education Opportunities!",
+        "recruitment-desc": "Expand Your Team with Teazeap: Connecting Exceptional Talent With Tech, Corporate, and Educational Sectors ",
         "call-center": "Call Center",
-        "call-center-desc": "Elevating Customer Experience with Exceptional Call Center Services for Businesses Worldwide!"
+        "call-center-desc": "Elevate Your Customer Success, Support and Communication With Exceptional Call Center Services"
     },
     "contact": {
         "with-us": "Want to work with us?",

@@ -18,7 +18,7 @@
                 class="program-link mr-0 mr-md-4 mb-2 mb-md-0 mt-4 mt-md-0 "
               >
                 <div class="program-link-content">
-                  Get Plan
+                  Get in Touch
                 </div>
               </router-link>
               <!-- <router-link

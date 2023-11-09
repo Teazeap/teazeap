@@ -15,7 +15,7 @@
     <slot name="title">
       <a
         class="dropdown-toggle nav-link"
-        :class="{ 'no-caret': hideArrow }"
+        :class="{ 'no-caret': hideArrow, 'highlight': isHighlighted }"
         data-toggle="dropdown"
       >
         <font-awesome-icon :icon="icon" v-if="isFa" class="mr-1" />
@@ -50,6 +50,7 @@ export default {
       default: false
     },
     hideArrow: Boolean,
+    isHighlighted: Boolean,
     tag: {
       type: String,
       default: 'li'
@@ -84,5 +85,16 @@ export default {
 
 .dropdown .dropdown-toggle {
   cursor: pointer;
+}
+.highlight {
+  background-color: #f96332;
+}
+
+.highlight:hover{
+  background-color: #f96332 !important;
+}
+
+.dropdown-toggle::after {
+  margin-bottom: -2px;
 }
 </style>

@@ -1,15 +1,15 @@
 <template>
   <div>
     <AgentsHeader
-      title="Call Center"
-      sub-title="Experience superior call center solutions that elevate customer satisfaction and boost productivity"
+      title="Customer Service"
+      sub-title="Elevate your customer success, support, and communication through our exceptional call center solutions."
       program-pic-url="/img/call-center-agent.png"
       planSelector="/call-center/#bundle"
     />
     <div class="pt-0 intro-container" :style="commonMarginClass">
       <div class="container section-card intro">
         <h2 class="title text-center">
-          Revolutionize Your Business with Teazeap's Virtual Call Center.
+          Revolutionize Your Business with Teazeap’s Virtual and Live Customer Agent
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
@@ -17,16 +17,8 @@
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
-              When you're ready to break free from a flawed call ceter operation
-              and experience a solution that delivers tangible results, reach
-              out to us. Teazeap Call Center specializes in outsourcing single
-              agent call center campaigns. These campaigns are hassle-free for
-              you and yield real outcomes. Our extensively trained, clear-spoken
-              call center agents boast a track record of success. Single agents
-              start at $9.5 per hour, ensuring cost-effective support for your
-              business. Contact us today and unlock the potential of a
-              high-performing call center that drives customer satisfaction and
-              boosts your bottom line.
+              When it’s time to scale your business and seek a solution that guarantees concrete results, look no further than Tezeap. Our extensively trained and articulate call center agents have a proven track record of delivering exceptional results. With rates starting at just
+              <span style='font-weight: bold'>$11.50 per hour & agent</span>, our services are not only effective but also cost- efficient for your business. Contact us today to unlock the potential of a high-performing call center that not only enhances customer success but also significantly impacts your bottom line.
             </p>
           </v-col>
         </div>
@@ -52,19 +44,15 @@
       </div>
     </div>
 
-    <!-- price section-->
-    <div
-      class="section pt-0 mobile-padding"
-      v-for="(program, index) in callCenterPlans"
-      :key="index"
-      :style="commonMarginClass"
-      :id="program.id"
-    >
+    <!-- telemarketing steps -->
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
-        <h2 class="title text-center">{{ program.name }}</h2>
+        <h2 class="title text-center">
+          Our Strategic Approach to Providing Remarkable Customer Services
+        </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
-            <PriceBadge :plan="program.plan" @get-plan="showModal = true" />
+            <img src="/img/process.png" alt="banner" class="img-fluid" />
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <Collapsible :processes="processes" />
@@ -73,55 +61,49 @@
       </div>
     </div>
 
-    <!-- steps section -->
-    <div class="row what-to-expect" :style="commonMarginClass">
-      <v-col cols="12" sm="12" lg="6" class="section pt-0">
-        <div class="container section-card contact-steps">
-          <h2 class="title text-center">Just Follow These Steps</h2>
-          <ol>
-            <li>Discovery and Needs Assessment</li>
-            <li>Solution Design and Proposal</li>
-            <li>Agreement and Contract</li>
-            <li>Set-Up and Configuration</li>
-            <li>Training and Knowledge Transfer</li>
-            <li>
-              <span class="step-empasize">Go-live and Continuous Support</span>
-            </li>
-          </ol>
+        <!-- plans section -->
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+      <div class="container section-card">
+        <h2 class="title">{{ $t("telemarketingPage.plan.title") }}</h2>
+        <h5 class="description">
+          Our customer service is tailored to meet your unique needs. First step is to decide which support you’re in search of:
+        </h5>
+        <div class="row mt-n4 mb-4" style="justify-content: center">
+          <v-col
+            cols="12"
+            sm="7"
+            lg="4"
+            v-for="(plan, index) in planData"
+            :key="index"
+          >
+            <PlanCard
+              :card-styles="plan.cardStyles"
+              :plan="plan.plan"
+              :to="plan.to"
+            />
+          </v-col>
         </div>
-      </v-col>
-      <v-col cols="12" sm="12" lg="6" class="section pt-0">
-        <div class="container section-card benefits">
-          <h2 class="title text-center what-to-expect-title">The Benefits</h2>
-          <p>Contact Teazeap when you’re ready for:</p>
-          <ul lang="la">
-            <li>Enhanced Customer Satisfaction</li>
-            <li>Increased Sales and Conversions</li>
-            <li>mproved Efficiency and Productivity</li>
-            <li>Expanded Market Reach</li>
-          </ul>
-        </div>
-      </v-col>
+      </div>
     </div>
 
-    <!-- <PricingTable :plans="plans" @get-plan="showModal = true" /> -->
-
-    <!-- propgram steps-->
+        <!-- steps section -->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
-          Make More Money with Live Lead Transfers
+          Save Money While Elevating Your Brand With Effective & Efficient Customer Service
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
             <img src="/img/single-agent.png" alt="banner" class="img-fluid" />
           </v-col>
           <v-col cols="12" sm="5" lg="6">
-            <Collapsible :processes="processes" />
+            <Collapsible :processes="liveProcesses" />
           </v-col>
         </div>
       </div>
     </div>
+
+
     <ContactDialog v-if="showModal" @close="showModal = false" />
     <Contact />
   </div>
@@ -133,10 +115,10 @@ import AgentsHeader from "@/pages/CallCenter/AgentsHeader.vue";
 import Flickity from "vue-flickity";
 // import PricingTable from "@/pages/Telemarketing/PricingTable.vue";
 import sizeMixin from "@/plugins/sizeMixin.js";
-import PriceBadge from "@/pages/CallCenter/PriceBadge.vue";
 import ContactDialog from "@/pages/Telemarketing/ContactDialog";
 import ContentPlayer from "@/pages/Telemarketing/ContentPlayer";
 import contentPlayerMixin from "@/mixins/contentPlayerMixin.js";
+import PlanCard from "@/pages/Telemarketing/PlanCard";
 
 export default {
   name: "single-agent",
@@ -147,11 +129,10 @@ export default {
     [FormGroupInput.name]: FormGroupInput,
     Contact,
     AgentsHeader,
+    PlanCard,
     Flickity,
-    // PricingTable,
     Collapsible,
     ContactDialog,
-    PriceBadge,
     ContentPlayer,
   },
   data() {
@@ -162,30 +143,116 @@ export default {
         email: "",
         message: "",
       },
+      planData: [
+        {
+          plan: {
+            title: "Customer Service Reps ",
+            subtitle: "These team members will:",
+            keyPoints: [
+              "Answer inquiries",
+              "Issue resolution",
+              "Provide support",
+            ],
+            actionButton: {
+              text: "View Starter Plan",
+              url: "/telemarketing/single-agent",
+            },
+          },
+          cardStyles: {
+            backgroundColor: "rgb(96, 125, 249)",
+            actionButtonColor: "rgb(96, 125, 249)",
+            actionButtonBackground: "white",
+          },
+          to: "/telemarketing/single-agent",
+        },
+        {
+          plan: {
+            title: "Customer Service Specialists",
+            subtitle: "For additional support our specialists will: ",
+            keyPoints: [
+              "Handle complaints & escalate concerns",
+              "Maintain records",
+              "Provide information",
+              "Follow up after questions & concerns are resolved",
+            ],
+            actionButton: {
+              text: "View Standard Plan",
+              url: "/telemarketing/single-agent",
+            },
+          },
+          cardStyles: {
+            backgroundColor: "#f96332",
+            textColor: "white",
+            actionButtonColor: "#f96332",
+            actionButtonBackground: "white",
+          },
+          to: "/telemarketing/multiple-agent",
+        },
+        {
+          plan: {
+            title: "Bundle",
+            subtitle: "Looking for a combination of telemarketing & customer service?",
+            keyPoints: [
+              "No worries, we offer a customizable plan!",
+            ],
+            actionButton: {
+              text: "View Bundle Deal",
+              url: "/telemarketing/bundle",
+            },
+          },
+          cardStyles: {
+            backgroundColor: "rgb(16, 77, 51)",
+            textColor: "white",
+            actionButtonColor: "rgb(16, 77, 51)",
+            actionButtonBackground: "white",
+          },
+          to: "/telemarketing/bundle",
+        },
+      ],
       processes: [
         {
           id: 1,
-          title: "Enhance Customer Satisfaction",
+          title: "Faster Issue Resolution",
           content:
-            "With our call center services, we prioritize exceptional customer experiences by providing prompt and knowledgeable support, resolving issues efficiently, and ensuring personalized interactions that leave a lasting positive impression.",
+            "Efficient CS agents can resolve customer issues more quickly and accurately. This reduces the need for follow-up inquiries and repeated contacts, which can strain CS resources and increase operational costs.",
         },
         {
           id: 2,
-          title: "Increase Sales and Conversions",
+          title: "Productivity & Quality",
           content:
-            "Our skilled call center agents are trained in effective sales techniques, enabling them to engage customers, identify their needs, and effectively promote products or services. This leads to increased sales, higher conversion rates, and ultimately, improved revenue generation.",
+            "Efficiently manage their workload while consistently delivering a high level of service, which includes effective communication, problem-solving, empathy, and professionalism. Balancing productivity and quality is essential for providing exceptional customer service and building positive customer relationships.",
         },
         {
           id: 3,
-          title: "Improve Productivity",
+          title: "Higher Retention rates",
           content:
-            "By leveraging advanced call center technologies and streamlined processes, we optimize operational efficiency. Our automation tools, call routing systems, and performance tracking capabilities allow for efficient call handling, reduced wait times, and improved agent productivity.",
+            "Great CS agents have a positive impact on the company's operations, customer relationships, and financial performance. It signifies a more stable, satisfied, and experienced CS team, which is better equipped to provide exceptional service and support to customers.",
+        },
+      ],
+      liveProcesses: [
+        {
+          id: 1,
+          title: "Increase Brand Loyalty",
+          content:
+            "Exceptional customer service fosters brand loyalty leading to higher customer engagement and drives long-term profitability. By nurturing a loyal customer base.",
+        },
+        {
+          id: 2,
+          title: "Crisis Management",
+          content:
+            "",
+        },
+        {
+          id: 3,
+          title: "Establishing & Building Trus",
+          content:
+            "",
         },
         {
           id: 4,
-          title: "Expand Market Presence",
+          title: "Customer Satisfaction",
           content:
-            "Our call center services provide an opportunity to reach a broader customer base. Through outbound calling campaigns and lead generation strategies, we proactively engage potential customers, expanding your market presence and creating new business opportunities. This helps in increasing brand awareness and driving business growth.",
+            "",
         },
       ],
       team: [

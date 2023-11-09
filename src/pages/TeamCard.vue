@@ -7,6 +7,8 @@
         width="350"
         :elevation="4"
         min-height="640"
+        :href="profile.linkendLink"
+        target="_blank"
       >
         <v-img
           :position="profile.position"
@@ -31,11 +33,7 @@
 
         <v-card-actions
           class="pt-0 d-flex justify-content-center team-card-actions"
-          :class="{ 'mt-n6': adjustCardAction }"
         >
-          <a class="card-link btn btn-primary btn-icon btn-round mx-2"
-            ><i class="fab fa-twitter"></i
-          ></a>
           <a class="btn btn-primary btn-icon btn-round"
             ><i class="fab fa-linkedin"></i
           ></a>

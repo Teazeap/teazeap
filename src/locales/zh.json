@@ -2,7 +2,12 @@
     "message": "你好",
     "nav": {
         "recruitment": "招聘",
+        "home": "Home",
+        "about-us": "About Us",
+        "explore-teazeap": "Explore TeaZeap",
         "tech": "技术",
+        "plans": "Plans",
+        "services": "Services",
         "corporate": "企业",
         "education": "教育",
         "telemarketing": "电话营销",
@@ -20,12 +25,17 @@
         "aboutUs": "關於我們",
         "teachers": "教師",
         "schools": "學校",
-        "admin": "管理員"
+        "admin": "管理員",
+        "starter": "Starter",
+        "standard": "Standard",
+        "contact": "Contact",
+        "customer-service": "Customer Service"
     },
     "intro": {
         "whoWeAre": "我们是谁",
         "teazeapEstablished": "Teazeap成立于一个全面的提供者",
         "recruitment": "招聘",
+        "home": "home",
         "telemarketing": "电话营销",
         "and": "和",
         "callCenter": "呼叫中心",

@@ -136,7 +136,7 @@ export default {
         },
       ],
       filteringSpecialPlan : {
-        name: "FILTERING SPECIALS",
+        name: "Filtering Specialists",
         price: "12.5",
         points: ['5/more and 1 Manager', 'Scripting', 'CRM Integration', 'Dialer'],
         id: "filtering-specials"

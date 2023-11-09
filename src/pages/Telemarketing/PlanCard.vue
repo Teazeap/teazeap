@@ -4,7 +4,7 @@
       outlined
       class="mx-auto  plan-card d-flex flex-column"
       :elevation="4"
-      :min-height="378"
+      :min-height="460"
       :width="300"
       :style="vcardStyles"
       :to="to"
@@ -13,7 +13,7 @@
         :style="textStyles"
         class="d-flex  team-name justify-content-center mb-2"
       >
-        <h5 class="font-weight-bold plan-title">{{$t(plan.title)  }}</h5>
+        <h5 class="font-weight-bold plan-title" style="word-break: break-word">{{$t(plan.title)  }}</h5>
       </v-card-title>
 
       <v-card-text :style="textStyles" class="mt-n2 plan-text">

@@ -13,6 +13,9 @@
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
               {{ $t("telemarketingPage.introText") }}
+              <br/>
+              <br/>
+              {{ $t("telemarketingPage.introText1") }}
             </p>
           </v-col>
         </div>
@@ -40,11 +43,11 @@
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
-          {{ $t("telemarketingPage.processes.header") }}
+          Make More Money: Outsource Your Telemarketing Campaign
         </h2>
         <div class="row mt-4">
           <v-col cols="12" sm="7" lg="6">
-            <img src="/img/process.png" alt="banner" class="img-fluid" />
+            <img src="/img/multiple-agent.png" alt="banner" class="img-fluid" />
           </v-col>
           <v-col cols="12" sm="5" lg="6">
             <Collapsible :processes="processes" />
@@ -73,6 +76,23 @@
               :plan="plan.plan"
               :to="plan.to"
             />
+          </v-col>
+        </div>
+      </div>
+    </div>
+
+        <!-- propgram steps-->
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+      <div class="container section-card">
+        <h2 class="title text-center">
+          {{$t("telemarketingPage.singleAgent.processes.title")}}
+        </h2>
+        <div class="row mt-4">
+          <v-col cols="12" sm="7" lg="6">
+            <img src="/img/single-agent.png" alt="banner" class="img-fluid" />
+          </v-col>
+          <v-col cols="12" sm="5" lg="6">
+            <Collapsible :processes="leadProcesses" />
           </v-col>
         </div>
       </div>
@@ -150,18 +170,38 @@ export default {
       processes: [
         {
           id: 1,
-          title: "telemarketingPage.processes.1.title",
-          content: "telemarketingPage.processes.1.content",
+          title: "OUTSOURCE YOUR COLD CALLING",
+          content:
+            "Unlock the power of outsourcing your telemarketing to drive unparalleled growth. Experience seamless hiring and cold calling with our live lead transfer program. Tailored for businesses needing one to a few live agents, our single agent telemarketing program delivers exceptional results.",
         },
         {
           id: 2,
-          title: "telemarketingPage.processes.2.title",
-          content: "telemarketingPage.processes.2.content",
+          title: "EFFECTIVE TELEMARKETING WITH MULTIPLE AGENTS.",
+          content:
+            "At Teazeap, we redefine excellence in outsourcing by prioritizing quality over chance. Our rigorous selection process ensures that only the best-trained telemarketing agents, with experience and motivation, join our American-run call centers.<br/> <br/>Our telemarketers are college graduates with <span style='font-weight: bold'>telesales experience</span>,<span style='font-weight: bold'>self-managers</span>, <span style='font-weight: bold'>skilled in appointments</span>,<span style='font-weight: bold'>scripts</span>,<span style='font-weight: bold'>sales reporting</span>",
         },
         {
           id: 3,
-          title: "telemarketingPage.processes.3.title",
-          content: "telemarketingPage.processes.3.content",
+          title: "SKIP THE HEADACHE & STOP WASTING TIME",
+          content:
+            "We outsource only the best single agent telemarketers by providing all the following hiring requirements: <ul style='margin-left: 2rem'> <li>Background criminal checks </li><li>Office space </li><li>Speech training</li><li>Management</li><li>English comprehension testing</li></ul>",
+        },
+      ],
+      leadProcesses: [
+        {
+          id: 1,
+          title: "telemarketingPage.singleAgent.processes.1.title",
+          content: "telemarketingPage.singleAgent.processes.1.content",
+        },
+        {
+          id: 2,
+          title: "telemarketingPage.singleAgent.processes.2.title",
+          content: "telemarketingPage.singleAgent.processes.2.content",
+        },
+        {
+          id: 3,
+          title: "telemarketingPage.singleAgent.processes.3.title",
+          content: "telemarketingPage.singleAgent.processes.3.content",
         },
       ],
       team: [
@@ -401,6 +441,8 @@ export default {
               "telemarketingPage.plan.0.keyPoints.0",
               "telemarketingPage.plan.0.keyPoints.1",
               "telemarketingPage.plan.0.keyPoints.2",
+              "telemarketingPage.plan.0.keyPoints.3",
+              "telemarketingPage.plan.0.keyPoints.4",
             ],
             actionButton: {
               text: "telemarketingPage.plan.0.actionButton.text",
@@ -422,6 +464,8 @@ export default {
               "telemarketingPage.plan.1.keyPoints.0",
               "telemarketingPage.plan.1.keyPoints.1",
               "telemarketingPage.plan.1.keyPoints.2",
+              "telemarketingPage.plan.1.keyPoints.3",
+              "telemarketingPage.plan.1.keyPoints.4",
             ],
             actionButton: {
               text: "telemarketingPage.plan.1.actionButton.text",
@@ -442,8 +486,6 @@ export default {
             subtitle: "telemarketingPage.plan.2.subtitle",
             keyPoints: [
               "telemarketingPage.plan.2.keyPoints.0",
-              "telemarketingPage.plan.2.keyPoints.1",
-              "telemarketingPage.plan.2.keyPoints.2",
             ],
             actionButton: {
               text: "telemarketingPage.plan.2.actionButton.text",
@@ -456,7 +498,7 @@ export default {
             actionButtonColor: "rgb(16, 77, 51)",
             actionButtonBackground: "white",
           },
-          to: "/telemarketing/call-center",
+          to: "/telemarketing/bundle",
         },
       ],
     };

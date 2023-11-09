@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="pt-0 intro-container" :style="commonMarginClass">
+    <div class="pt-0 intro-container" :style="commonMarginClass" id="about-us">
       <div class="container section-card intro">
         <h2 class="title text-center">{{ $t('intro.whoWeAre') }}</h2>
         <div class="row mt-4">
@@ -14,9 +14,10 @@
               <strong>{{ $t('intro.recruitment') }}</strong>,
               <strong>{{ $t('intro.telemarketing') }}</strong>,
               {{ $t('intro.and') }}
-              <strong>{{ $t('intro.callCenter') }}</strong> {{ $t('intro.services') }}.{{ $t('intro.recognizingDemand') }}
-              {{ $t('intro.teazeapSetOut') }} {{ $t('intro.withAMission') }} {{ $t('intro.teazeapHasAchieved') }}
-              <br /><br />{{ $t('intro.teazeapHasSuccessfully') }} {{ $t('intro.teazeapRemainsCommitted') }}
+              <strong>{{ $t('intro.callCenter') }}</strong> {{ $t('intro.services') }},{{ $t('intro.recognizingDemand') }}
+              <br /><br />
+              {{ $t('intro.teazeapSetOut') }}
+              <br /><br />{{ $t('intro.teazeapHasSuccessfully') }}
             </p>
           </v-col>
         </div>
@@ -24,7 +25,7 @@
     </div>
 
     <!-- teazeap products -->
-    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
+    <div class="section pt-0 mobile-padding" :style="commonMarginClass" id="explore-teazeap">
       <div class="container section-card">
         <h2 class="title text-center products-header">{{ $t('products.explore') }}</h2>
         <flickity :options="flickityOptions" class="teacher-type-carousel">
@@ -36,25 +37,6 @@
         </flickity>
       </div>
     </div>
-
-    <!-- team section -->
-    <div class="section pt-0 mobile-padding" :style="commonMarginClass">
-      <div class="container section-card">
-        <h2 class="title text-center">{{ $t('team.ourTeam') }}</h2>
-        <flickity
-          ref="communityBadgeInfoModalSwiper"
-          :options="flickityOptions"
-          class="carousel team"
-        >
-          <TeamCard
-            v-for="(profile, index) in team"
-            :key="index"
-            :profile="profile"
-          />
-        </flickity>
-      </div>
-    </div>
-
     <Contact />
     <router-view />
   </div>
@@ -66,7 +48,6 @@ import Contact from "@/pages/Telemarketing/Contact";
 import Header from "@/pages/Landing/Header.vue";
 import Flickity from "vue-flickity";
 import sizeMixin from "@/plugins/sizeMixin.js";
-import TeamCard from "@/pages/TeamCard.vue";
 import ProductCard from "@/pages/Landing/ProductCard.vue";
 
 export default {
@@ -77,7 +58,6 @@ export default {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput,
     Contact,
-    TeamCard,
     ProductCard,
     Header,
     Flickity,
@@ -96,6 +76,7 @@ export default {
           pictureUrl: "img/ceo_1.jpeg",
           title: "landing-page.chief",
           position: "top",
+          linkendLink: "https://www.linkedin.com/in/johnscmoreau/"
         },
         {
           name: "Calerb Louis Jean",
@@ -103,6 +84,7 @@ export default {
           pictureUrl: "img/jake_3.jpeg",
           title: "landing-page.project",
           position: "top",
+          linkendLink: "https://www.linkedin.com/in/calerb-louis-jean-3b6a41135/"
         },
         {
           name: "Nnenia Stephens",
@@ -110,6 +92,7 @@ export default {
           pictureUrl: "img/nnenia_2.jpeg",
           title: "landing-page.comm",
           position: "top",
+          linkendLink: "https://www.linkedin.com/in/nnenia-moreau-1a558511a/"
         },
       ],
       videos: [

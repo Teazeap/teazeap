@@ -2,7 +2,7 @@
   <div>
     <AgentsHeader
       title="Customer Service"
-      sub-title="Elevate your customer success, support, and communication through our exceptional call center solutions."
+      sub-title="Elevate your customer success, support, and communication through our exceptional customer service solutions."
       program-pic-url="/img/call-center-agent.png"
       planSelector="/call-center/#bundle"
     />
@@ -18,7 +18,7 @@
           <v-col cols="12" sm="5" lg="6">
             <p class="introduction-text">
               When it’s time to scale your business and seek a solution that guarantees concrete results, look no further than Tezeap. Our extensively trained and articulate call center agents have a proven track record of delivering exceptional results. With rates starting at just
-              <span style='font-weight: bold'>$11.50 per hour & agent</span>, our services are not only effective but also cost- efficient for your business. Contact us today to unlock the potential of a high-performing call center that not only enhances customer success but also significantly impacts your bottom line.
+              <span style='font-weight: bold'>$12 per hour per agent</span>, our services are not only effective but also cost- efficient for your business. Contact us today to unlock the potential of a high-performing call center that not only enhances customer success but also significantly impacts your bottom line.
             </p>
           </v-col>
         </div>
@@ -152,18 +152,20 @@ export default {
               "Answer inquiries",
               "Issue resolution",
               "Provide support",
+              "Handle Escalations"
             ],
             actionButton: {
               text: "View Starter Plan",
-              url: "/telemarketing/single-agent",
+              url: "/plans#customer-service",
             },
           },
           cardStyles: {
             backgroundColor: "rgb(96, 125, 249)",
+            textColor: "white",
             actionButtonColor: "rgb(96, 125, 249)",
             actionButtonBackground: "white",
           },
-          to: "/telemarketing/single-agent",
+          to: "/plans#customer-service",
         },
         {
           plan: {
@@ -177,7 +179,7 @@ export default {
             ],
             actionButton: {
               text: "View Standard Plan",
-              url: "/telemarketing/single-agent",
+              url: "/plans#customer-service",
             },
           },
           cardStyles: {
@@ -186,7 +188,7 @@ export default {
             actionButtonColor: "#f96332",
             actionButtonBackground: "white",
           },
-          to: "/telemarketing/multiple-agent",
+          to: "/plans#customer-service",
         },
         {
           plan: {
@@ -240,19 +242,19 @@ export default {
           id: 2,
           title: "Crisis Management",
           content:
-            "",
+            "Teazeap’s CS agent  plays a crucial role in managing crises and handling customer complaints during adverse situations, such as product recalls or service",
         },
         {
           id: 3,
-          title: "Establishing & Building Trus",
+          title: "Establishing & Building Trust",
           content:
-            "",
+            "Our effective CS team builds trust and credibility with customers. When customers trust a company, they are more likely to engage in long-term relationships.",
         },
         {
           id: 4,
           title: "Customer Satisfaction",
           content:
-            "",
+            "We will  incorporate timely responses, clear communication, problem resolutions, pro-active listening, and follow up in your organization. These practices will enhance customer satisfaction, build loyalty, and create positive long-term relationships with your customers.",
         },
       ],
       team: [

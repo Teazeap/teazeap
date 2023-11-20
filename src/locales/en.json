@@ -33,6 +33,7 @@
     },
     "intro": {
         "whoWeAre": "Who We Are",
+        "customer-service": "Customer Service",
         "teazeapEstablished": "Teazeap Agency, established as a leading provider of",
         "recruitment": "recruitment",
         "home": "home",
@@ -56,7 +57,7 @@
     },
     "banner": {
         "teazeapAgency": "Teazeap Agency",
-        "transformingWorkforce": "Transforming your workforce and customer interactions with innovative recruitment, telemarketing, and call center solutions.",
+        "transformingWorkforce": "Transforming your workforce and customer interactions with innovative recruitment, telemarketing, and customer service solutions.",
         "recruitment": "Recruitment",
         "telemarketing": "Telemarketing",
         "callCenter": "Call Center"
@@ -112,7 +113,7 @@
     },
     "viewJob": "View Job",
     "telemarketingPage": {
-        "introTitle": "Let Us Build Your Virtual Phone Room.",
+        "introTitle": "Let Us Build Your Telemarketing Phone Room",
         "introImageAlt": "banner",
         "introText": "Our team of experienced and skilled agents are dedicated to providing top-notch services to businesses of every scale. Whether it’s lead generation, increasing sales, or achieving your marketing objectives, we harness the potential of telemarketing to assist you in reaching your aspirations. Elevate your brand’s presence, engage with your precise audience, and foster the growth of your enterprise with Teazeap.",
         "introText1": "Get in touch with us today to explore how we can empower your business!",
@@ -210,7 +211,7 @@
                 "keyPoints": {
                     "0": "No worries! We offer plans including telemarketing & call center team members all in one."
                 },
-                "actionButton": { "text": "View Plans" }
+                "actionButton": { "text": "View Bundle Deal" }
             },
             "title": "CHOOSING Your Solution:",
             "subtitle": "Our telemarketing services are tailored to meet your unique needs. First step is to decide which support you’re in search of:"
@@ -312,7 +313,8 @@
         "recruitment": "Recruitment",
         "recruitment-desc": "Expand Your Team with Teazeap: Connecting Exceptional Talent With Tech, Corporate, and Educational Sectors ",
         "call-center": "Call Center",
-        "call-center-desc": "Elevate Your Customer Success, Support and Communication With Exceptional Call Center Services"
+        "customer-service": "Customer Service",
+        "call-center-desc": " Elevate Your Customer Success, Support, and Communication With Our Exceptional Customer Service Agents"
     },
     "contact": {
         "with-us": "Want to work with us?",

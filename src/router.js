@@ -158,7 +158,7 @@ const router = new Router({
       name: "RecruitmentAgency",
       components: {
         default: RecruitmentAgency,
-        header: LandingNavbar,
+        header: TelemarketingNavbar,
         footer: MainFooter,
       },
       props: {
@@ -184,7 +184,7 @@ const router = new Router({
       name: "CallCenter",
       components: {
         default: CallCenter,
-        header: LandingNavbar,
+        header: TelemarketingNavbar,
         footer: MainFooter,
       },
       props: {
@@ -197,7 +197,7 @@ const router = new Router({
       name: "TelemarketingIndex",
       components: {
         default: TelemarketingIndex,
-        header: LandingNavbar,
+        header: TelemarketingNavbar,
         footer: MainFooter,
       },
       redirect: { name: "TelemarketingIndex" },
@@ -215,33 +215,33 @@ const router = new Router({
             footer: { backgroundColor: "black" },
           },
         },
-        {
-          path: "single-agent",
-          name: "SingleAgent",
-          component: SingleAgent,
-          props: {
-            header: { colorOnScroll: 400 },
-            footer: { backgroundColor: "black" },
-          },
-        },
-        {
-          path: "multiple-agent",
-          name: "MultipleAgent",
-          component: MultipleAgent,
-          props: {
-            header: { colorOnScroll: 400 },
-            footer: { backgroundColor: "black" },
-          },
-        },
-        {
-          path: "bundle",
-          name: "TelemarketingBundle",
-          component: TelemarketingBundle,
-          props: {
-            header: { colorOnScroll: 400 },
-            footer: { backgroundColor: "black" },
-          },
-        },
+        // {
+        //   path: "single-agent",
+        //   name: "SingleAgent",
+        //   component: SingleAgent,
+        //   props: {
+        //     header: { colorOnScroll: 400 },
+        //     footer: { backgroundColor: "black" },
+        //   },
+        // },
+        // {
+        //   path: "multiple-agent",
+        //   name: "MultipleAgent",
+        //   component: MultipleAgent,
+        //   props: {
+        //     header: { colorOnScroll: 400 },
+        //     footer: { backgroundColor: "black" },
+        //   },
+        // },
+        // {
+        //   path: "bundle",
+        //   name: "TelemarketingBundle",
+        //   component: TelemarketingBundle,
+        //   props: {
+        //     header: { colorOnScroll: 400 },
+        //     footer: { backgroundColor: "black" },
+        //   },
+        // },
       ],
     },
     {

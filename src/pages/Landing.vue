@@ -14,7 +14,7 @@
               <strong>{{ $t('intro.recruitment') }}</strong>,
               <strong>{{ $t('intro.telemarketing') }}</strong>,
               {{ $t('intro.and') }}
-              <strong>{{ $t('intro.callCenter') }}</strong> {{ $t('intro.services') }},{{ $t('intro.recognizingDemand') }}
+              <strong>{{ $t('intro.customer-service') }}</strong> {{ $t('intro.services') }},{{ $t('intro.recognizingDemand') }}
               <br /><br />
               {{ $t('intro.teazeapSetOut') }}
               <br /><br />{{ $t('intro.teazeapHasSuccessfully') }}
@@ -174,10 +174,10 @@ export default {
           productLink: "telemarketing"
         },
         {
-          type: "landing-page.call-center",
+          type: "landing-page.customer-service",
           desc: "landing-page.call-center-desc",
           backgroupImgUrl: "img/landing/bg/call-center-bg.webp",
-          productLink: "call-center"
+          productLink: "customer-service"
         },
       ],
     };

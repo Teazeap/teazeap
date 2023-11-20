@@ -9,7 +9,7 @@
   >
     <template>
       <router-link v-popover:popover1 class="navbar-brand" to="/">
-        <img style="width: 60px" src="/img/logo/logo.png" />
+        <img style="width: 80px" src="/img/logo/logo.png" />
       </router-link>
     </template>
     <template slot="navbar-menu">
@@ -59,7 +59,7 @@
           <span class="ml-2">{{ $t("nav.telemarketing") }}</span>
         </nav-link>
         <nav-link to="customer-service">
-          <font-awesome-icon icon="phone-volume" />
+          <font-awesome-icon icon="user-group" />
           <span class="ml-2">{{ $t("nav.customer-service") }}</span>
         </nav-link>
       </drop-down>
@@ -93,17 +93,13 @@
         tag="li"
         icon="now-ui-icons education_agenda-bookmark"
       >
-        <nav-link to="/plans#single-agent">
-          <font-awesome-icon icon="user" />
-          <span class="ml-2">{{ $t("nav.starter") }}</span>
+        <nav-link to="/plans#telemarketing">
+          <font-awesome-icon icon="headset" />
+          <span class="ml-2">{{ $t("nav.telemarketing") }}</span>
         </nav-link>
-        <nav-link to="/plans#multiple-agent">
+        <nav-link to="/plans#customer-service">
           <font-awesome-icon icon="user-group" />
-          <span class="ml-2">{{ $t("nav.standard") }}</span>
-        </nav-link>
-        <nav-link to="/plans#bundle">
-          <font-awesome-icon icon="crown" />
-          <span class="ml-2">{{ $t("nav.bundle") }}</span>
+          <span class="ml-2">{{ $t("nav.customer-service") }}</span>
         </nav-link>
       </drop-down>
 

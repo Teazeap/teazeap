@@ -26,47 +26,6 @@
               {{ $t("nav.admin") }}
             </router-link>
           </li>
-          <li>
-            <router-link
-              v-popover:popover1
-              class="navbar-brand"
-              to="/telemarketing"
-            >
-            {{ $t("nav.telemarketing") }}
-            </router-link>
-          </li>
-
-          <li>
-            <router-link
-              v-popover:popover1
-              class="navbar-brand"
-              to="/telemarketing/single-agent"
-            >
-            {{ $t("nav.singleAgent") }}
-            </router-link>
-          </li>
-
-           <li>
-            <router-link
-              v-popover:popover1
-              class="navbar-brand"
-              to="/telemarketing/multiple-agent"
-            >
-            {{ $t("nav.multipleAgent") }}
-            </router-link>
-          </li>
-
-          <li>
-            <router-link
-              v-popover:popover1
-              class="navbar-brand"
-              to="/telemarketing/call-center"
-            >
-              {{ $t("nav.callCenter") }}
-            </router-link>
-          </li>
-
-
         </ul>
       </nav>
       <div class="copyright">

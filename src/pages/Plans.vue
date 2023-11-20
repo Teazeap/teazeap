@@ -39,6 +39,7 @@
       priceTableHeader="Telemarketing Plans & Pricing"
       :plans="pricingPlans"
       @get-plan="showModal = true"
+      id="telemarketing"
     />
 
     <PricingTable
@@ -47,6 +48,7 @@ Customer Service Plans & Pricing
 "
       :plans="customerPlans"
       @get-plan="showModal = true"
+      id="customer-service"
     />
 
     <!-- recruitment steps
@@ -107,10 +109,10 @@ export default {
         {
           isPopular: false,
           planName: "CUSTOMER SERVICE REPRESENTATIVE(CSR)",
-          planType: "",
+          planType: "STARTER",
           planCost: 12,
           planDetails: [
-            "<strong>4</strong> Agents and <strong>1</strong> Manager",
+            "<strong>4</strong> Reps and <strong>1</strong> Manager",
             "Answer inquiries",
             "Issue resolution",
             "Provide support",
@@ -121,11 +123,11 @@ export default {
         },
         {
           isPopular: false,
-          planName: "CUSTOMER SERVICE SPECIALIST (CSS)",
-          planType: "",
+          planName: "CUSTOMER SERVICE SPECIALIST(CSS)",
+          planType: "STANDARD",
           planCost: 12.5,
           planDetails: [
-            "<strong>5</strong> Agents and <strong>1</strong> Manager",
+            "<strong>5</strong> Specialist and <strong>1</strong> Manager",
             "Handle complaints & escalate concerns",
             "Maintain records",
             "Provide information",
@@ -136,15 +138,15 @@ export default {
         },
         {
           isPopular: true,
-          planName: "CSS+FILTERING AGENTS",
-          planType: "",
+          planName: "CUSTOMER SERVICE+TELEMARKETING",
+          planType: "BUNDLE",
           planCost: 13,
           planDetails: [
-           "<strong>3</strong> agents from customer service",
-            "<strong>3</strong> agents from telemarketing",
-            "<strong>1</strong> manager",
-            "A customizable plan",
-            "",
+            "Customizable Plan",
+           "<strong>7</strong> team members (1 Manager + 6 team members)",
+            "Flexibility to select members based on your",
+            "needs",
+            "Choose members from CS & Telemarketing",
             "",
           ],
           className: "business",
@@ -154,7 +156,7 @@ export default {
         {
           isPopular: false,
           planName: "FILTERING AGENTS",
-          planType: "Starter",
+          planType: "STARTER",
           planCost: 12,
           planDetails: [
             "<strong>4</strong> Agents and <strong>1</strong> Manager",
@@ -169,10 +171,10 @@ export default {
         {
           isPopular: false,
           planName: "FILTERING SPECIALISTS",
-          planType: "Standard",
+          planType: "STANDARD",
           planCost: 12.5,
           planDetails: [
-            "<strong>5</strong> Agents and <strong>1</strong> Manager",
+            "<strong>5</strong> Specialist and <strong>1</strong> Manager",
             "Perform credit checks for prospects",
             "Maintain accurate CRM data",
             "Carry out multi- channel outreach",
@@ -183,16 +185,16 @@ export default {
         },
         {
           isPopular: true,
-          planName: "CSS + FILTERING AGENTS",
-          planType: "Bundle",
+          planName: "CUSTOMER SERVICE+TELEMARKETING",
+          planType: "BUNDLE",
           planCost: 13,
           planDetails: [
-            "<strong>3</strong> agents from customer service",
-            "<strong>3</strong> agents from telemarketing",
-            "<strong>1</strong> manager",
-            "A customizable plan",
+            "Customizable Plan",
+            "<strong>7</strong> team members (1 Manager + 6 team members)",
+            "Flexibility to select members based on your",
+            "needs",
+            "Choose members from CS & Telemarketing",
             "",
-            ""
           ],
           className: "business",
         },

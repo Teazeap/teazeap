@@ -88,9 +88,11 @@ export default {
 }
 .highlight {
   background-color: #f96332;
+  border-radius: 8px;
 }
 
 .highlight:hover{
+  border-radius: 8px;
   background-color: #f96332 !important;
 }
 

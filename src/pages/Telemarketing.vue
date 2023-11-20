@@ -81,7 +81,7 @@
       </div>
     </div>
 
-        <!-- propgram steps-->
+    <!-- propgram steps-->
     <div class="section pt-0 mobile-padding" :style="commonMarginClass">
       <div class="container section-card">
         <h2 class="title text-center">
@@ -92,7 +92,7 @@
             <img src="/img/single-agent.png" alt="banner" class="img-fluid" />
           </v-col>
           <v-col cols="12" sm="5" lg="6">
-            <Collapsible :processes="leadProcesses" />
+            <Collapsible :processes="otherProcesses" />
           </v-col>
         </div>
       </div>
@@ -167,6 +167,23 @@ export default {
         pauseAutoPlayOnHover: false,
         resize: true,
       },
+      otherProcesses: [
+        {
+          id: 1,
+          title: "telemarketingPage.singleAgent.processes.1.title",
+          content: "telemarketingPage.singleAgent.processes.1.content",
+        },
+        {
+          id: 2,
+          title: "telemarketingPage.singleAgent.processes.2.title",
+          content: "telemarketingPage.singleAgent.processes.2.content",
+        },
+        {
+          id: 3,
+          title: "telemarketingPage.singleAgent.processes.3.title",
+          content: "telemarketingPage.singleAgent.processes.3.content",
+        },
+      ],
       processes: [
         {
           id: 1,
@@ -446,15 +463,16 @@ export default {
             ],
             actionButton: {
               text: "telemarketingPage.plan.0.actionButton.text",
-              url: "telemarketingPage.plan.0.actionButton.url",
+              url: "/plans#telemarketing",
             },
           },
           cardStyles: {
             backgroundColor: "rgb(96, 125, 249)",
+            textColor: "white",
             actionButtonColor: "rgb(96, 125, 249)",
             actionButtonBackground: "white",
           },
-          to: "/telemarketing/single-agent",
+          to: "/plans#telemarketing",
         },
         {
           plan: {
@@ -469,7 +487,7 @@ export default {
             ],
             actionButton: {
               text: "telemarketingPage.plan.1.actionButton.text",
-              url: "telemarketingPage.plan.1.actionButton.url",
+              url: "/plans#telemarketing",
             },
           },
           cardStyles: {
@@ -478,7 +496,7 @@ export default {
             actionButtonColor: "#f96332",
             actionButtonBackground: "white",
           },
-          to: "/telemarketing/multiple-agent",
+          to: "/plans#telemarketing",
         },
         {
           plan: {
@@ -489,7 +507,7 @@ export default {
             ],
             actionButton: {
               text: "telemarketingPage.plan.2.actionButton.text",
-              url: "telemarketingPage.plan.2.actionButton.url",
+              url: "/plans#telemarketing",
             },
           },
           cardStyles: {
@@ -498,7 +516,7 @@ export default {
             actionButtonColor: "rgb(16, 77, 51)",
             actionButtonBackground: "white",
           },
-          to: "/telemarketing/bundle",
+          to: "/plans#telemarketing",
         },
       ],
     };

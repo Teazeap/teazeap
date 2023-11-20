@@ -10,10 +10,9 @@
           :key="id"
           :class="['pricing-card', `${className}`]"
         >
-          <div v-if="isPopular" class="popular">POPULAR</div>
+          <div v-if="true" class="popular">{{ planType }}</div>
           <div class="pricing-header">
             <span class="plan-title">{{ planName }}</span>
-            <span class="plan-type">{{ planType }}</span>
             <div class="price-circle">
               <span class="price-title">
                 <small>$</small><span>{{ planCost }}</span>
